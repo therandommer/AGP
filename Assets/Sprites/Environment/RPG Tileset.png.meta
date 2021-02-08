@@ -1,0 +1,7430 @@
+fileFormatVersion: 2
+guid: 406c10463eec73e4ca9d45db95756056
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2830761678862098231
+    second: RPG Tileset_0
+  - first:
+      213: 1311917189093283853
+    second: RPG Tileset_1
+  - first:
+      213: -3188067297622737236
+    second: RPG Tileset_2
+  - first:
+      213: -7848959182700815488
+    second: RPG Tileset_3
+  - first:
+      213: -1117256400628246049
+    second: RPG Tileset_4
+  - first:
+      213: -6210234852630468957
+    second: RPG Tileset_5
+  - first:
+      213: -1930307315976292543
+    second: RPG Tileset_6
+  - first:
+      213: 9138356579510653177
+    second: RPG Tileset_7
+  - first:
+      213: 7174103580926882083
+    second: RPG Tileset_8
+  - first:
+      213: 8594650282375250653
+    second: RPG Tileset_9
+  - first:
+      213: 3822479510594618024
+    second: RPG Tileset_10
+  - first:
+      213: -3352452066303129374
+    second: RPG Tileset_11
+  - first:
+      213: 8835787518034383298
+    second: RPG Tileset_12
+  - first:
+      213: 2364901495244792565
+    second: RPG Tileset_13
+  - first:
+      213: 6682459363590381813
+    second: RPG Tileset_14
+  - first:
+      213: 6914383619935168157
+    second: RPG Tileset_15
+  - first:
+      213: -4081234747018804689
+    second: RPG Tileset_16
+  - first:
+      213: 2107658826658602569
+    second: RPG Tileset_17
+  - first:
+      213: -4443667254196006335
+    second: RPG Tileset_18
+  - first:
+      213: 2981617168618207545
+    second: RPG Tileset_19
+  - first:
+      213: -7235185478866316960
+    second: RPG Tileset_20
+  - first:
+      213: -257638142158654208
+    second: RPG Tileset_21
+  - first:
+      213: 6763290828928553432
+    second: RPG Tileset_22
+  - first:
+      213: 6198173056317524857
+    second: RPG Tileset_23
+  - first:
+      213: -7519794059242192651
+    second: RPG Tileset_24
+  - first:
+      213: 5013100076333782042
+    second: RPG Tileset_25
+  - first:
+      213: -7611124931548929597
+    second: RPG Tileset_26
+  - first:
+      213: -1025794864806091888
+    second: RPG Tileset_27
+  - first:
+      213: -5005630141476734483
+    second: RPG Tileset_28
+  - first:
+      213: 6494079570439968176
+    second: RPG Tileset_29
+  - first:
+      213: 7208417972505484832
+    second: RPG Tileset_0
+  - first:
+      213: -9095904365504646735
+    second: RPG Tileset_1
+  - first:
+      213: 1913793277824479961
+    second: RPG Tileset_2
+  - first:
+      213: 7051008671639171642
+    second: RPG Tileset_3
+  - first:
+      213: -938222620853811629
+    second: RPG Tileset_4
+  - first:
+      213: -2327173028785633705
+    second: RPG Tileset_5
+  - first:
+      213: 135820051183854233
+    second: RPG Tileset_6
+  - first:
+      213: -1803807568100012509
+    second: RPG Tileset_7
+  - first:
+      213: -6307267351574377693
+    second: RPG Tileset_8
+  - first:
+      213: 4050686923390546538
+    second: RPG Tileset_9
+  - first:
+      213: -186981637966820685
+    second: RPG Tileset_10
+  - first:
+      213: -6245128471855723996
+    second: RPG Tileset_11
+  - first:
+      213: -450719940666248823
+    second: RPG Tileset_12
+  - first:
+      213: 8912527873269597568
+    second: RPG Tileset_13
+  - first:
+      213: -6813047601852111934
+    second: RPG Tileset_14
+  - first:
+      213: -7575932367021258179
+    second: RPG Tileset_15
+  - first:
+      213: -6221278561048347007
+    second: RPG Tileset_16
+  - first:
+      213: -380584084993179688
+    second: RPG Tileset_17
+  - first:
+      213: -1757549850796240536
+    second: RPG Tileset_18
+  - first:
+      213: -2540044190889891621
+    second: RPG Tileset_19
+  - first:
+      213: 3570823807244023463
+    second: RPG Tileset_20
+  - first:
+      213: -8539496803111456078
+    second: RPG Tileset_21
+  - first:
+      213: 3214090384529163530
+    second: RPG Tileset_22
+  - first:
+      213: 8729378646155542112
+    second: RPG Tileset_23
+  - first:
+      213: -3948616745880094169
+    second: RPG Tileset_24
+  - first:
+      213: 4380771716786230127
+    second: RPG Tileset_25
+  - first:
+      213: -4423217614841822942
+    second: RPG Tileset_26
+  - first:
+      213: 9099535246066356999
+    second: RPG Tileset_27
+  - first:
+      213: 6453104384061737882
+    second: RPG Tileset_28
+  - first:
+      213: 1478387242195946127
+    second: RPG Tileset_29
+  - first:
+      213: 7537590136054271872
+    second: RPG Tileset_30
+  - first:
+      213: 3213927867133817660
+    second: RPG Tileset_31
+  - first:
+      213: -3535597107034597810
+    second: RPG Tileset_32
+  - first:
+      213: -8375121327483756074
+    second: RPG Tileset_33
+  - first:
+      213: 7433080430069281494
+    second: RPG Tileset_34
+  - first:
+      213: -5997717060696104472
+    second: RPG Tileset_35
+  - first:
+      213: -247611812829253220
+    second: RPG Tileset_36
+  - first:
+      213: 865371957445649199
+    second: RPG Tileset_37
+  - first:
+      213: 2936858263784301453
+    second: RPG Tileset_38
+  - first:
+      213: 3930808389463544053
+    second: RPG Tileset_39
+  - first:
+      213: 1076649489097374633
+    second: RPG Tileset_40
+  - first:
+      213: -9123837798572492005
+    second: RPG Tileset_41
+  - first:
+      213: -3175073159313615089
+    second: RPG Tileset_42
+  - first:
+      213: 7721062782697992803
+    second: RPG Tileset_43
+  - first:
+      213: -4591766231746226470
+    second: RPG Tileset_44
+  - first:
+      213: 2163712951967276069
+    second: RPG Tileset_45
+  - first:
+      213: 5442604656230481332
+    second: RPG Tileset_46
+  - first:
+      213: 265465043877324400
+    second: RPG Tileset_47
+  - first:
+      213: -4343357810329685557
+    second: RPG Tileset_48
+  - first:
+      213: 6011910165708514566
+    second: RPG Tileset_49
+  - first:
+      213: 4287148085967080187
+    second: RPG Tileset_50
+  - first:
+      213: -4209086188951870117
+    second: RPG Tileset_51
+  - first:
+      213: 7209475594080915471
+    second: RPG Tileset_52
+  - first:
+      213: -4530463696421379559
+    second: RPG Tileset_53
+  - first:
+      213: -4284189718489321901
+    second: RPG Tileset_54
+  - first:
+      213: -433626683950813101
+    second: RPG Tileset_55
+  - first:
+      213: 5239621819984367936
+    second: RPG Tileset_56
+  - first:
+      213: 712892169567518923
+    second: RPG Tileset_57
+  - first:
+      213: 6371559062968800638
+    second: RPG Tileset_58
+  - first:
+      213: 6015400667477463021
+    second: RPG Tileset_59
+  - first:
+      213: 3154520597158500732
+    second: RPG Tileset_60
+  - first:
+      213: -6907132956803997883
+    second: RPG Tileset_61
+  - first:
+      213: 5966977048606022002
+    second: RPG Tileset_62
+  - first:
+      213: -386529039790150248
+    second: RPG Tileset_63
+  - first:
+      213: -8239349770266988346
+    second: RPG Tileset_64
+  - first:
+      213: 6155226357167565503
+    second: RPG Tileset_65
+  - first:
+      213: 5633553265200910800
+    second: RPG Tileset_66
+  - first:
+      213: -7990431894031283789
+    second: RPG Tileset_67
+  - first:
+      213: 7931625674285070443
+    second: RPG Tileset_68
+  - first:
+      213: -432693852201166653
+    second: RPG Tileset_69
+  - first:
+      213: 3202107765317995023
+    second: RPG Tileset_70
+  - first:
+      213: 843828563898566289
+    second: RPG Tileset_71
+  - first:
+      213: -1082714649225564470
+    second: RPG Tileset_72
+  - first:
+      213: 8436398492616490255
+    second: RPG Tileset_73
+  - first:
+      213: 8904773524954809607
+    second: RPG Tileset_74
+  - first:
+      213: -4934736623526961473
+    second: RPG Tileset_75
+  - first:
+      213: 115218213436292824
+    second: RPG Tileset_76
+  - first:
+      213: 4520474518929252646
+    second: RPG Tileset_77
+  - first:
+      213: 2456998480733354379
+    second: RPG Tileset_78
+  - first:
+      213: 9170373446890434268
+    second: RPG Tileset_79
+  - first:
+      213: -5227306903969962842
+    second: RPG Tileset_80
+  - first:
+      213: -8458412657393546500
+    second: RPG Tileset_81
+  - first:
+      213: -4681049750918356964
+    second: RPG Tileset_82
+  - first:
+      213: -418144653442483486
+    second: RPG Tileset_83
+  - first:
+      213: 2803431905937967651
+    second: RPG Tileset_84
+  - first:
+      213: -2665268885837256295
+    second: RPG Tileset_85
+  - first:
+      213: 1958371140107445648
+    second: RPG Tileset_86
+  - first:
+      213: 257449627803722415
+    second: RPG Tileset_87
+  - first:
+      213: 4354883728812406765
+    second: RPG Tileset_88
+  - first:
+      213: 5281850597271423362
+    second: RPG Tileset_89
+  - first:
+      213: -365073879501228496
+    second: RPG Tileset_90
+  - first:
+      213: 3871918603069864837
+    second: RPG Tileset_91
+  - first:
+      213: -3322940532936246126
+    second: RPG Tileset_92
+  - first:
+      213: 1532741540101503299
+    second: RPG Tileset_93
+  - first:
+      213: -2278003120897871599
+    second: RPG Tileset_94
+  - first:
+      213: -6025287269321542859
+    second: RPG Tileset_95
+  - first:
+      213: -4837617356319605054
+    second: RPG Tileset_96
+  - first:
+      213: -2182248467077075067
+    second: RPG Tileset_97
+  - first:
+      213: 8792310053425241486
+    second: RPG Tileset_98
+  - first:
+      213: -8687797083279266890
+    second: RPG Tileset_99
+  - first:
+      213: -4287883290811309252
+    second: RPG Tileset_100
+  - first:
+      213: -7704765180755573891
+    second: RPG Tileset_101
+  - first:
+      213: 8289948624639628440
+    second: RPG Tileset_102
+  - first:
+      213: 6837784269062867689
+    second: RPG Tileset_103
+  - first:
+      213: -4621045882323021584
+    second: RPG Tileset_104
+  - first:
+      213: -7947746558269367444
+    second: RPG Tileset_105
+  - first:
+      213: 2042345100521595348
+    second: RPG Tileset_106
+  - first:
+      213: 1599538260852162170
+    second: RPG Tileset_107
+  - first:
+      213: -8880149996447257286
+    second: RPG Tileset_108
+  - first:
+      213: -3503034025891842932
+    second: RPG Tileset_109
+  - first:
+      213: 4234226024346514946
+    second: RPG Tileset_110
+  - first:
+      213: -4173887313890726312
+    second: RPG Tileset_111
+  - first:
+      213: -4871624266303701105
+    second: RPG Tileset_112
+  - first:
+      213: 605558441398954038
+    second: RPG Tileset_113
+  - first:
+      213: 2704538486449783743
+    second: RPG Tileset_114
+  - first:
+      213: 5804511676515182044
+    second: RPG Tileset_115
+  - first:
+      213: -6582988465395492099
+    second: RPG Tileset_116
+  - first:
+      213: 4752354096743236699
+    second: RPG Tileset_117
+  - first:
+      213: -9120434578886483067
+    second: RPG Tileset_118
+  - first:
+      213: 1874053338029268293
+    second: RPG Tileset_119
+  - first:
+      213: -7092832321407241470
+    second: RPG Tileset_120
+  - first:
+      213: 3409727089230740602
+    second: RPG Tileset_121
+  - first:
+      213: 5828514235118394942
+    second: RPG Tileset_122
+  - first:
+      213: 745981915322985616
+    second: RPG Tileset_123
+  - first:
+      213: 5364529548503210903
+    second: RPG Tileset_124
+  - first:
+      213: -1304170964159692911
+    second: RPG Tileset_125
+  - first:
+      213: 5898377389461689318
+    second: RPG Tileset_126
+  - first:
+      213: 1869861762644825189
+    second: RPG Tileset_127
+  - first:
+      213: 8500503081366193146
+    second: RPG Tileset_128
+  - first:
+      213: 3059262561846644917
+    second: RPG Tileset_129
+  - first:
+      213: -168053822632475114
+    second: RPG Tileset_130
+  - first:
+      213: -5599916989188092196
+    second: RPG Tileset_131
+  - first:
+      213: 6716541199811240991
+    second: RPG Tileset_132
+  - first:
+      213: -1033841667493117002
+    second: RPG Tileset_133
+  - first:
+      213: 2409261612628016761
+    second: RPG Tileset_134
+  - first:
+      213: -2288915131872498142
+    second: RPG Tileset_135
+  - first:
+      213: -8321682641892869423
+    second: RPG Tileset_136
+  - first:
+      213: -3690648232557371193
+    second: RPG Tileset_137
+  - first:
+      213: -5620299207048134045
+    second: RPG Tileset_138
+  - first:
+      213: 4213708875722188223
+    second: RPG Tileset_139
+  - first:
+      213: 582606741475201425
+    second: RPG Tileset_140
+  - first:
+      213: -4600969683641713445
+    second: RPG Tileset_141
+  - first:
+      213: 5851123305064521048
+    second: RPG Tileset_142
+  - first:
+      213: 2001118543850945777
+    second: RPG Tileset_143
+  - first:
+      213: -3281035021922092955
+    second: RPG Tileset_144
+  - first:
+      213: -5823950723055552545
+    second: RPG Tileset_145
+  - first:
+      213: -7950299010508894708
+    second: RPG Tileset_146
+  - first:
+      213: -717928673746721128
+    second: RPG Tileset_147
+  - first:
+      213: -2489764628670589952
+    second: RPG Tileset_148
+  - first:
+      213: -8286595410744692613
+    second: RPG Tileset_149
+  - first:
+      213: -8350508449692389318
+    second: RPG Tileset_150
+  - first:
+      213: 8887620610825205554
+    second: RPG Tileset_151
+  - first:
+      213: 2202132957550899298
+    second: RPG Tileset_152
+  - first:
+      213: -4222504921489679922
+    second: RPG Tileset_153
+  - first:
+      213: -6724937439701085816
+    second: RPG Tileset_154
+  - first:
+      213: -336145291184560286
+    second: RPG Tileset_155
+  - first:
+      213: 8534484575332351819
+    second: RPG Tileset_156
+  - first:
+      213: -8043391518384863920
+    second: RPG Tileset_157
+  - first:
+      213: -3516300223036372457
+    second: RPG Tileset_158
+  - first:
+      213: -4911749474155842001
+    second: RPG Tileset_159
+  - first:
+      213: -2937367072834471884
+    second: RPG Tileset_160
+  - first:
+      213: -1249799590581990746
+    second: RPG Tileset_161
+  - first:
+      213: 5518664041036552131
+    second: RPG Tileset_162
+  - first:
+      213: -1530688729810379667
+    second: RPG Tileset_163
+  - first:
+      213: 7630373192601785766
+    second: RPG Tileset_164
+  - first:
+      213: 3162963299178492552
+    second: RPG Tileset_165
+  - first:
+      213: 6083236921585461833
+    second: RPG Tileset_166
+  - first:
+      213: 4561251494511198156
+    second: RPG Tileset_167
+  - first:
+      213: -2530146019544956161
+    second: RPG Tileset_168
+  - first:
+      213: -8627342460736939793
+    second: RPG Tileset_169
+  - first:
+      213: 5451470382614822835
+    second: RPG Tileset_170
+  - first:
+      213: -2471951891971962435
+    second: RPG Tileset_171
+  - first:
+      213: -1948940947632124050
+    second: RPG Tileset_172
+  - first:
+      213: -6086043957084070487
+    second: RPG Tileset_173
+  - first:
+      213: -3305942664722942939
+    second: RPG Tileset_174
+  - first:
+      213: 6224429320864803105
+    second: RPG Tileset_175
+  - first:
+      213: 8078439391727204147
+    second: RPG Tileset_176
+  - first:
+      213: -2261299836275086700
+    second: RPG Tileset_177
+  - first:
+      213: -1528781653356329134
+    second: RPG Tileset_178
+  - first:
+      213: -6023398852035684284
+    second: RPG Tileset_179
+  - first:
+      213: -4399038214246400358
+    second: RPG Tileset_180
+  - first:
+      213: -1910155164072827510
+    second: RPG Tileset_181
+  - first:
+      213: -7826021084278066976
+    second: RPG Tileset_182
+  - first:
+      213: -7440519611925847857
+    second: RPG Tileset_183
+  - first:
+      213: -6777083448199838275
+    second: RPG Tileset_184
+  - first:
+      213: 4140537856832226508
+    second: RPG Tileset_185
+  - first:
+      213: 7069104868647739016
+    second: RPG Tileset_186
+  - first:
+      213: -1726714988186552437
+    second: RPG Tileset_187
+  - first:
+      213: 8469343928864647202
+    second: RPG Tileset_188
+  - first:
+      213: 5622444532128249549
+    second: RPG Tileset_189
+  - first:
+      213: -327887111667471941
+    second: RPG Tileset_190
+  - first:
+      213: 472590127768612788
+    second: RPG Tileset_191
+  - first:
+      213: 1813168518639695039
+    second: RPG Tileset_192
+  - first:
+      213: -4321544189238420294
+    second: RPG Tileset_193
+  - first:
+      213: -764375720999573198
+    second: RPG Tileset_194
+  - first:
+      213: 3012137392603517021
+    second: RPG Tileset_195
+  - first:
+      213: -2401058618870690801
+    second: RPG Tileset_196
+  - first:
+      213: 4503763332715922027
+    second: RPG Tileset_197
+  - first:
+      213: 7359407368350051542
+    second: RPG Tileset_198
+  - first:
+      213: 8490578505644503571
+    second: RPG Tileset_199
+  - first:
+      213: 1986953727758020353
+    second: RPG Tileset_200
+  - first:
+      213: -8167474284031727906
+    second: RPG Tileset_201
+  - first:
+      213: -2393955167580948792
+    second: RPG Tileset_202
+  - first:
+      213: 3625825142367628340
+    second: RPG Tileset_203
+  - first:
+      213: -8470554104967202900
+    second: RPG Tileset_204
+  - first:
+      213: 955870007384300804
+    second: RPG Tileset_205
+  - first:
+      213: 5375414816731478473
+    second: RPG Tileset_206
+  - first:
+      213: 3146522257022395041
+    second: RPG Tileset_207
+  - first:
+      213: -7311495047559332934
+    second: RPG Tileset_208
+  - first:
+      213: 3418669773219653960
+    second: RPG Tileset_209
+  - first:
+      213: -1576155781760445376
+    second: RPG Tileset_210
+  - first:
+      213: 7467581851824177967
+    second: RPG Tileset_211
+  - first:
+      213: -6590590603154538531
+    second: RPG Tileset_212
+  - first:
+      213: -4008005891412063544
+    second: RPG Tileset_213
+  - first:
+      213: -5673704964860739402
+    second: RPG Tileset_214
+  - first:
+      213: -5416455854101839997
+    second: RPG Tileset_215
+  - first:
+      213: -582320875459768183
+    second: RPG Tileset_216
+  - first:
+      213: 6002137311327758323
+    second: RPG Tileset_217
+  - first:
+      213: -1440025573363173343
+    second: RPG Tileset_218
+  - first:
+      213: 4312428430459162087
+    second: RPG Tileset_219
+  - first:
+      213: -3000176813845890521
+    second: RPG Tileset_220
+  - first:
+      213: -5707201168111535253
+    second: RPG Tileset_221
+  - first:
+      213: -2837368593088383124
+    second: RPG Tileset_222
+  - first:
+      213: -2683972081872155708
+    second: RPG Tileset_223
+  - first:
+      213: 783871244155035617
+    second: RPG Tileset_224
+  - first:
+      213: 5712959667045543756
+    second: RPG Tileset_225
+  - first:
+      213: -4571331004626136663
+    second: RPG Tileset_226
+  - first:
+      213: -6985302870485984118
+    second: RPG Tileset_227
+  - first:
+      213: 769542842588364547
+    second: RPG Tileset_228
+  - first:
+      213: 1328469308028720649
+    second: RPG Tileset_36
+  - first:
+      213: -1059787212804565378
+    second: RPG Tileset_37
+  - first:
+      213: -2457101589974594019
+    second: RPG Tileset_38
+  - first:
+      213: 5277710191694989756
+    second: RPG Tileset_39
+  - first:
+      213: 3547909903165744825
+    second: RPG Tileset_44
+  - first:
+      213: 7579052126665643603
+    second: RPG Tileset_45
+  - first:
+      213: 5235460484032054445
+    second: RPG Tileset_46
+  - first:
+      213: 4524876563532644535
+    second: RPG Tileset_47
+  - first:
+      213: -7506543514418753978
+    second: RPG Tileset_48
+  - first:
+      213: -4612956972024847718
+    second: RPG Tileset_49
+  - first:
+      213: -3111596991031153345
+    second: RPG Tileset_50
+  - first:
+      213: 167539055220083215
+    second: RPG Tileset_51
+  - first:
+      213: -4075211119489137544
+    second: RPG Tileset_52
+  - first:
+      213: 3435513103881385627
+    second: RPG Tileset_53
+  - first:
+      213: 8097404711396319079
+    second: RPG Tileset_54
+  - first:
+      213: 245737423982127928
+    second: RPG Tileset_229
+  - first:
+      213: 7229770178763797353
+    second: RPG Tileset_230
+  - first:
+      213: -2639183517979538350
+    second: RPG Tileset_231
+  - first:
+      213: -8042779281225170427
+    second: RPG Tileset_232
+  - first:
+      213: 6344841098159193922
+    second: RPG Tileset_233
+  - first:
+      213: -4332938753013639064
+    second: RPG Tileset_234
+  - first:
+      213: -9009738096556145215
+    second: RPG Tileset_235
+  - first:
+      213: 3927409179512574588
+    second: RPG Tileset_236
+  - first:
+      213: -5892614191860946146
+    second: RPG Tileset_55
+  - first:
+      213: -2920345434107176393
+    second: RPG Tileset_56
+  - first:
+      213: -1616024573123909262
+    second: RPG Tileset_57
+  - first:
+      213: 3225949168678124893
+    second: RPG Tileset_58
+  - first:
+      213: -8144022091495016365
+    second: RPG Tileset_59
+  - first:
+      213: 4699524628563967165
+    second: RPG Tileset_60
+  - first:
+      213: -2345289268623390464
+    second: RPG Tileset_61
+  - first:
+      213: -2483530502540666913
+    second: RPG Tileset_62
+  - first:
+      213: -6964348270740310621
+    second: RPG Tileset_151
+  - first:
+      213: -7626979583884610056
+    second: RPG Tileset_152
+  - first:
+      213: -6706920214481935847
+    second: RPG Tileset_153
+  - first:
+      213: -553224443292778799
+    second: RPG Tileset_154
+  - first:
+      213: 8859773820925693523
+    second: RPG Tileset_63
+  - first:
+      213: 886342563878964587
+    second: RPG Tileset_64
+  - first:
+      213: 7689453641893425485
+    second: RPG Tileset_65
+  - first:
+      213: 9194506544173498206
+    second: RPG Tileset_66
+  - first:
+      213: -6732473664962360228
+    second: RPG Tileset_67
+  - first:
+      213: 6155317868485766384
+    second: RPG Tileset_68
+  - first:
+      213: 661195515599804487
+    second: RPG Tileset_69
+  - first:
+      213: -1216512191985188883
+    second: RPG Tileset_70
+  - first:
+      213: -6361550130503460324
+    second: RPG Tileset_71
+  - first:
+      213: 1879920795517374042
+    second: RPG Tileset_72
+  - first:
+      213: -4674899628381752582
+    second: RPG Tileset_73
+  - first:
+      213: -4252537598838511718
+    second: RPG Tileset_74
+  - first:
+      213: -7270794192066552937
+    second: RPG Tileset_75
+  - first:
+      213: 5043203112303691332
+    second: RPG Tileset_76
+  - first:
+      213: -5474636385242019102
+    second: RPG Tileset_77
+  - first:
+      213: -4587103764598613106
+    second: RPG Tileset_78
+  - first:
+      213: 3738260105913011981
+    second: RPG Tileset_79
+  - first:
+      213: 6049827695035013632
+    second: RPG Tileset_134
+  - first:
+      213: -7605677499262224279
+    second: RPG Tileset_141
+  - first:
+      213: 4216387595658653606
+    second: RPG Tileset_142
+  - first:
+      213: 7987357858746006816
+    second: RPG Tileset_149
+  - first:
+      213: 1837196745242367841
+    second: RPG Tileset_150
+  - first:
+      213: 5053807393633258730
+    second: RPG Tileset_175
+  - first:
+      213: 6211643157564752752
+    second: RPG Tileset_176
+  - first:
+      213: 3315388361745940670
+    second: RPG Tileset_177
+  - first:
+      213: -8354655749193574509
+    second: RPG Tileset_178
+  - first:
+      213: -7939423920060225039
+    second: RPG Tileset_179
+  - first:
+      213: -877488435975739391
+    second: RPG Tileset_180
+  - first:
+      213: 8369400720016322746
+    second: RPG Tileset_181
+  - first:
+      213: 9152638666008674971
+    second: RPG Tileset_237
+  - first:
+      213: 2994004083313638460
+    second: RPG Tileset_238
+  - first:
+      213: -4507308146996173137
+    second: RPG Tileset_239
+  - first:
+      213: 1188579791322058025
+    second: RPG Tileset_240
+  - first:
+      213: 7657584570296064072
+    second: RPG Tileset_241
+  - first:
+      213: -2003776508169660345
+    second: RPG Tileset_242
+  - first:
+      213: 1440809493747796297
+    second: RPG Tileset_243
+  - first:
+      213: 703693074243332092
+    second: RPG Tileset_244
+  - first:
+      213: -4417052737981534335
+    second: RPG Tileset_245
+  - first:
+      213: -3403278659043537763
+    second: RPG Tileset_246
+  - first:
+      213: -3660231660592470509
+    second: RPG Tileset_247
+  - first:
+      213: -510830633124273276
+    second: RPG Tileset_248
+  - first:
+      213: -325025765645317762
+    second: RPG Tileset_249
+  - first:
+      213: -6302822934100504421
+    second: RPG Tileset_250
+  - first:
+      213: 660504685384865774
+    second: RPG Tileset_251
+  - first:
+      213: 8926927941094058724
+    second: RPG Tileset_252
+  - first:
+      213: -2906508271376024120
+    second: RPG Tileset_253
+  - first:
+      213: -6303724105552723983
+    second: RPG Tileset_254
+  - first:
+      213: -8993406025546836249
+    second: RPG Tileset_255
+  - first:
+      213: -2780323096317837527
+    second: RPG Tileset_256
+  - first:
+      213: -7403797188627221343
+    second: RPG Tileset_257
+  - first:
+      213: -4663469997823019827
+    second: RPG Tileset_258
+  - first:
+      213: 6649078471090766491
+    second: RPG Tileset_259
+  - first:
+      213: 2696011433418827001
+    second: RPG Tileset_260
+  - first:
+      213: 6055978900589116332
+    second: RPG Tileset_261
+  - first:
+      213: -88224081797576759
+    second: RPG Tileset_262
+  - first:
+      213: 7164950021435008673
+    second: RPG Tileset_263
+  - first:
+      213: 3815714602857672357
+    second: RPG Tileset_264
+  - first:
+      213: -162916917105885271
+    second: RPG Tileset_265
+  - first:
+      213: -2262167115380275205
+    second: RPG Tileset_266
+  - first:
+      213: 7726563600812923536
+    second: RPG Tileset_267
+  - first:
+      213: -5125452499327202982
+    second: RPG Tileset_268
+  - first:
+      213: -8461792812348677849
+    second: RPG Tileset_269
+  - first:
+      213: 4729740925731794502
+    second: RPG Tileset_270
+  - first:
+      213: 1058901794210065936
+    second: RPG Tileset_271
+  - first:
+      213: 1974908198784619880
+    second: RPG Tileset_272
+  - first:
+      213: 2901757728678894194
+    second: RPG Tileset_273
+  - first:
+      213: -6480513070136728360
+    second: RPG Tileset_274
+  - first:
+      213: 4309201065851903355
+    second: RPG Tileset_275
+  - first:
+      213: 7314880421721521090
+    second: RPG Tileset_276
+  - first:
+      213: 3851343976980931692
+    second: RPG Tileset_277
+  - first:
+      213: 7397540659986109513
+    second: RPG Tileset_278
+  - first:
+      213: -339494413274357962
+    second: RPG Tileset_279
+  - first:
+      213: -8039575635234362073
+    second: RPG Tileset_280
+  - first:
+      213: -3461738415443331588
+    second: RPG Tileset_281
+  - first:
+      213: -3040585555590156201
+    second: RPG Tileset_282
+  - first:
+      213: -2066276532746033004
+    second: RPG Tileset_283
+  - first:
+      213: 6649364681366764690
+    second: RPG Tileset_284
+  - first:
+      213: -4383778213772710110
+    second: RPG Tileset_285
+  - first:
+      213: 2848317728940135546
+    second: RPG Tileset_286
+  - first:
+      213: -6466924829236432892
+    second: RPG Tileset_287
+  - first:
+      213: 8409217346985506064
+    second: RPG Tileset_288
+  - first:
+      213: 2572821709501134525
+    second: RPG Tileset_289
+  - first:
+      213: -3260596320104922721
+    second: RPG Tileset_290
+  - first:
+      213: 8888756427235940741
+    second: RPG Tileset_291
+  - first:
+      213: 3103548893148124470
+    second: RPG Tileset_292
+  - first:
+      213: -6852832345638113010
+    second: RPG Tileset_293
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RPG Tileset_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 664
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e1bb344f1790460800000000000000
+      internalID: 7208417972505484832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 664
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1bb27fb2bd4c180800000000000000
+      internalID: -9095904365504646735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 664
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d23242b8d82f8a10800000000000000
+      internalID: 1913793277824479961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 664
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32704d67073ad160800000000000000
+      internalID: 7051008671639171642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 664
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 356c5cb4f73caf2f0800000000000000
+      internalID: -938222620853811629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 664
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756cc50d57834bfd0800000000000000
+      internalID: -2327173028785633705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 656
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9926030fd9782e100800000000000000
+      internalID: 135820051183854233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 656
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ecc34e29697f6e0800000000000000
+      internalID: -1803807568100012509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b8df5d2c51878a0800000000000000
+      internalID: -6307267351574377693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 640
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62730d9b4ee63830800000000000000
+      internalID: 4050686923390546538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 640
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba8771e035b76df0800000000000000
+      internalID: -186981637966820685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_11
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 640
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a8c523eb8d459a0800000000000000
+      internalID: -6245128471855723996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 640
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981376b1a98beb9f0800000000000000
+      internalID: -450719940666248823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_13
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 640
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085800151e8afab70800000000000000
+      internalID: 8912527873269597568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 640
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c327cd9d413371a0800000000000000
+      internalID: -6813047601852111934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_15
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 640
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a4055b6a1ecd690800000000000000
+      internalID: -7575932367021258179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 616
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18eb5f74c1499a9a0800000000000000
+      internalID: -6221278561048347007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 616
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df70d68ac4e7baf0800000000000000
+      internalID: -380584084993179688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_18
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 616
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861df3cf8bdeb97e0800000000000000
+      internalID: -1757549850796240536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 616
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8a6302443ffbcd0800000000000000
+      internalID: -2540044190889891621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_20
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 616
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6b94a655d1e8130800000000000000
+      internalID: 3570823807244023463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_21
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 616
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b235f9d6ec9d7980800000000000000
+      internalID: -8539496803111456078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_22
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 616
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a050cddfc2eba9c20800000000000000
+      internalID: 3214090384529163530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_23
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 616
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e3bf1e0abf42970800000000000000
+      internalID: 8729378646155542112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 592
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a78a38df1b339c0800000000000000
+      internalID: -3948616745880094169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_25
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 592
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f631f158aa0abcc30800000000000000
+      internalID: 4380771716786230127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_26
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 592
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2214a17b3039d92c0800000000000000
+      internalID: -4423217614841822942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_27
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 592
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7039eea481b084e70800000000000000
+      internalID: 9099535246066356999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 592
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b048e4f380e8950800000000000000
+      internalID: 6453104384061737882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_29
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 592
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a0f8b2d59448410800000000000000
+      internalID: 1478387242195946127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_30
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 592
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08fc00afa46ea9860800000000000000
+      internalID: 7537590136054271872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_31
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 592
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c337d36fd5a2a9c20800000000000000
+      internalID: 3213927867133817660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46dd4ed9290feec0800000000000000
+      internalID: -3535597107034597810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_33
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d16884a68795cb80800000000000000
+      internalID: -8375121327483756074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_34
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 576
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: -0.09009472, y: 0.51237994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2ff2dd44b972760800000000000000
+      internalID: 7433080430069281494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_35
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e1a8ed4c14d3cca0800000000000000
+      internalID: -5997717060696104472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab3149810701fe00800000000000000
+      internalID: 1076649489097374633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_41
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1bfdc3ccdd916180800000000000000
+      internalID: -9123837798572492005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_42
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f071c3ba8cfdfe3d0800000000000000
+      internalID: -3175073159313615089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_43
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362f33361b9b62b60800000000000000
+      internalID: 7721062782697992803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_111
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 328
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ea80b2a9f5316c0800000000000000
+      internalID: -4173887313890726312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_112
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 328
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f7bcf6a83846cb0800000000000000
+      internalID: -4871624266303701105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_113
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 328
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638e25ea130676800800000000000000
+      internalID: 605558441398954038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_114
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 328
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb346369c63788520800000000000000
+      internalID: 2704538486449783743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_115
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 328
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd56b4dbd94cd8050800000000000000
+      internalID: 5804511676515182044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_116
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 328
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa9b9f6ed684a4a0800000000000000
+      internalID: -6582988465395492099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_117
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 328
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b54c0473fd0c3f140800000000000000
+      internalID: 4752354096743236699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_118
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 328
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58328489215bd6180800000000000000
+      internalID: -9120434578886483067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d9e5fe499f10a10800000000000000
+      internalID: 1874053338029268293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_120
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 304
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203bc174592319d90800000000000000
+      internalID: -7092832321407241470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_121
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 304
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cff9ed8b8c15f20800000000000000
+      internalID: 3409727089230740602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_122
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 304
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e1a88e0da03e050800000000000000
+      internalID: 5828514235118394942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_123
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 304
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c21bf79924a5a00800000000000000
+      internalID: 745981915322985616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_124
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 304
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79bde9da333a27a40800000000000000
+      internalID: 5364529548503210903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_125
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 304
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ff1eafa67a6ede0800000000000000
+      internalID: -1304170964159692911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_126
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 304
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e35f0a1cfe3bd150800000000000000
+      internalID: 5898377389461689318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_127
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564d78dbd5513f910800000000000000
+      internalID: 1869861762644825189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_128
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 280
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af302f0d38ad7f570800000000000000
+      internalID: 8500503081366193146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_129
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 280
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b05581671fa47a20800000000000000
+      internalID: 3059262561846644917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_130
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 280
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61648de40f3faadf0800000000000000
+      internalID: -168053822632475114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_131
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 280
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdec4cffa291942b0800000000000000
+      internalID: -5599916989188092196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_132
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 280
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14660ea2a2f53d50800000000000000
+      internalID: 6716541199811240991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_133
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 288
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3431f1b7e07a1f0800000000000000
+      internalID: -1033841667493117002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_135
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e29b390d32c30e0800000000000000
+      internalID: -2288915131872498142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_136
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 256
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1daf0743ab1738c80800000000000000
+      internalID: -8321682641892869423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_137
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 256
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0ae738cfe28ccc0800000000000000
+      internalID: -3690648232557371193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_138
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 256
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3628c7816afa002b0800000000000000
+      internalID: -5620299207048134045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_139
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5e454b5e91a7a30800000000000000
+      internalID: 4213708875722188223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_140
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 256
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191906d9eb5d51800800000000000000
+      internalID: 582606741475201425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_143
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcbea796b665cb10800000000000000
+      internalID: 2001118543850945777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_144
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 240
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568b7bef70c6772d0800000000000000
+      internalID: -3281035021922092955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_145
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 232
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7f4ea8cab2d2fa0800000000000000
+      internalID: -5823950723055552545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_146
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 232
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e4a742c2ddaa190800000000000000
+      internalID: -7950299010508894708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_147
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896624bcca76906f0800000000000000
+      internalID: -717928673746721128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_148
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 240
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004d1c5f244927dd0800000000000000
+      internalID: -2489764628670589952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_223
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 672
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbc1f0ac9d90cad0800000000000000
+      internalID: -2683972081872155708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_224
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 672
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef11815ebed0ea00800000000000000
+      internalID: 783871244155035617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_225
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f22627c82884f40800000000000000
+      internalID: 5712959667045543756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_226
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a19786dbae5f80c0800000000000000
+      internalID: -4571331004626136663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_227
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c9a2c8c083f0f90800000000000000
+      internalID: -6985302870485984118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_36
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9069f001ccbaf6210800000000000000
+      internalID: 1328469308028720649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_37
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76584b1521ea41f0800000000000000
+      internalID: -1059787212804565378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_38
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e44884f1f96edd0800000000000000
+      internalID: -2457101589974594019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_39
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb94073f4713e3940800000000000000
+      internalID: 5277710191694989756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_44
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6e8416245bc3130800000000000000
+      internalID: 3547909903165744825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_45
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3561310f0c33e2960800000000000000
+      internalID: 7579052126665643603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_46
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da44352529718a840800000000000000
+      internalID: 5235460484032054445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_47
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b08addb2479bce30800000000000000
+      internalID: 4524876563532644535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_48
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ece0ce17663d790800000000000000
+      internalID: -7506543514418753978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_49
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a922c4e031c7bffb0800000000000000
+      internalID: -4612956972024847718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3de969c50361d4d0800000000000000
+      internalID: -3111596991031153345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_51
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ac56012e7335200800000000000000
+      internalID: 167539055220083215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874c0260411f177c0800000000000000
+      internalID: -4075211119489137544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_53
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96bc0247f46daf20800000000000000
+      internalID: 3435513103881385627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_54
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f1a51eea2cf5070800000000000000
+      internalID: 8097404711396319079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_228
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f7ceb5327fdaa00800000000000000
+      internalID: 769542842588364547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_229
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b697892e8096300800000000000000
+      internalID: 245737423982127928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_230
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963bde03cad455460800000000000000
+      internalID: 7229770178763797353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_231
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c83c9c29cbf5bd0800000000000000
+      internalID: -2639183517979538350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_232
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502c3bf2bde426090800000000000000
+      internalID: -8042779281225170427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_233
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ff314cc576d0850800000000000000
+      internalID: 6344841098159193922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_234
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8681919392f4ed3c0800000000000000
+      internalID: -4332938753013639064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_235
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c58773dfeaf6f280800000000000000
+      internalID: -9009738096556145215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_55
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1be3b7ec9a393ea0800000000000000
+      internalID: -5892614191860946146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a9b92ec49d877d0800000000000000
+      internalID: -2920345434107176393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279a5aa763ab299e0800000000000000
+      internalID: -1616024573123909262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_58
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5db6865dafd4cc20800000000000000
+      internalID: 3225949168678124893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_59
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35871818e0f9afe80800000000000000
+      internalID: -8144022091495016365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_60
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc31c220c0183140800000000000000
+      internalID: 4699524628563967165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_61
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 512
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009ca2806dbd37fd0800000000000000
+      internalID: -2345289268623390464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_62
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 512
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: -0.20866, y: 0.48228455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7573f8a2ab88dd0800000000000000
+      internalID: -2483530502540666913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_151
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: -0.20866, y: 0.48228455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5fa6e752aa95f90800000000000000
+      internalID: -6964348270740310621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_152
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 512
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5b6695a76872690800000000000000
+      internalID: -7626979583884610056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_153
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 512
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912eae6899b3ce2a0800000000000000
+      internalID: -6706920214481935847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_154
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 512
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de7878cc4d8258f0800000000000000
+      internalID: -553224443292778799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 464
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ec49a595d34fa70800000000000000
+      internalID: 8859773820925693523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_64
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 464
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d8055addbec4c00800000000000000
+      internalID: 886342563878964587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_65
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 488
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4134e9c85d66ba60800000000000000
+      internalID: 7689453641893425485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 488
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f3772ccf2799f70800000000000000
+      internalID: 9194506544173498206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_67
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c0f343fd27192a0800000000000000
+      internalID: -6732473664962360228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_68
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc65b63df41c6550800000000000000
+      internalID: 6155317868485766384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_69
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 480
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748586a71d90d2900800000000000000
+      internalID: 661195515599804487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_70
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 488
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def7ac35b941e1fe0800000000000000
+      internalID: -1216512191985188883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_71
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 488
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a508a7cdb37b7a0800000000000000
+      internalID: -6361550130503460324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_72
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 464
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ecea6d002d61a10800000000000000
+      internalID: 1879920795517374042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_73
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 464
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af233b18e8b6f1fb0800000000000000
+      internalID: -4674899628381752582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_74
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97ec33b593fbf4c0800000000000000
+      internalID: -4252537598838511718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_75
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 480
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b56e26433f81b90800000000000000
+      internalID: -7270794192066552937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_76
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 480
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4468107b28e0df540800000000000000
+      internalID: 5043203112303691332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_77
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 480
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea8837a63f2604b0800000000000000
+      internalID: -5474636385242019102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_78
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b1e3bfd655750c0800000000000000
+      internalID: -4587103764598613106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_79
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f85fa92c7f0e330800000000000000
+      internalID: 3738260105913011981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_80
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 448
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a46ce8f010e477b0800000000000000
+      internalID: -5227306903969962842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_81
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 448
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfac360b08ead9a80800000000000000
+      internalID: -8458412657393546500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_82
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 448
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10a4948d02990fb0800000000000000
+      internalID: -4681049750918356964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_83
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 448
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eaf4d237a3723af0800000000000000
+      internalID: -418144653442483486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32acd69177ac7e620800000000000000
+      internalID: 2803431905937967651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999e4ccc110130bd0800000000000000
+      internalID: -2665268885837256295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_86
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 416
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0952b701d288d2b10800000000000000
+      internalID: 1958371140107445648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_87
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa22ccc8215a29300800000000000000
+      internalID: 257449627803722415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_88
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 416
+        width: 49
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7fdfd9da7af6c30800000000000000
+      internalID: 4354883728812406765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_89
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 401
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2894c0f3227ec4940800000000000000
+      internalID: 5281850597271423362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_90
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 384
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0363e87ad3ffeeaf0800000000000000
+      internalID: -365073879501228496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_91
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58bb4378471dbb530800000000000000
+      internalID: 3871918603069864837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_92
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c7694e03b82e1d0800000000000000
+      internalID: -3322940532936246126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_93
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3493c365f44654510800000000000000
+      internalID: 1532741540101503299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_94
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 352
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111b6ad1b38e260e0800000000000000
+      internalID: -2278003120897871599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_95
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 384
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533f762e621e16ca0800000000000000
+      internalID: -6025287269321542859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_96
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 352
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce3e4d25a45ddcb0800000000000000
+      internalID: -4837617356319605054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_97
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 352
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58fea3cc49817b1e0800000000000000
+      internalID: -2182248467077075067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_98
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 352
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8dd181f86f840a70800000000000000
+      internalID: 8792310053425241486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_99
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbe67a259ebe6780800000000000000
+      internalID: -8687797083279266890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_100
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33ebdc7dd06e74c0800000000000000
+      internalID: -4287883290811309252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_101
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d730443c3ec231590800000000000000
+      internalID: -7704765180755573891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_102
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89412e12a50db0370800000000000000
+      internalID: 8289948624639628440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_103
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea0f388090b4ee50800000000000000
+      internalID: 6837784269062867689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_104
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0da5dd04fbedfb0800000000000000
+      internalID: -4621045882323021584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_105
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b558d3d9ee3b190800000000000000
+      internalID: -7947746558269367444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_106
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d169515c0ed75c10800000000000000
+      internalID: 2042345100521595348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_107
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e3db2d293b23610800000000000000
+      internalID: 1599538260852162170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_108
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d239590ae53c480800000000000000
+      internalID: -8880149996447257286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_109
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 288
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c843c920d19b26fc0800000000000000
+      internalID: -3503034025891842932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_110
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 288
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20673ef922ef2ca30800000000000000
+      internalID: 4234226024346514946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_134
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 272
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ad1ea3c3e45f350800000000000000
+      internalID: 6049827695035013632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_141
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9683b4c6c94337690800000000000000
+      internalID: -7605677499262224279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_142
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 240
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afe89acd2e938a30800000000000000
+      internalID: 4216387595658653606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_149
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02dfa7857abc8de60800000000000000
+      internalID: 7987357858746006816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_150
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 224
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167dca6b4b80f7910800000000000000
+      internalID: 1837196745242367841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_155
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267260e73a5c55bf0800000000000000
+      internalID: -336145291184560286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_156
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 256
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f3cbde084907670800000000000000
+      internalID: 8534484575332351819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_157
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 272
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055c74d9702206090800000000000000
+      internalID: -8043391518384863920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_158
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a4a4ac397933fc0800000000000000
+      internalID: -3516300223036372457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_159
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 208
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26ba3770e5f5dbb0800000000000000
+      internalID: -4911749474155842001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_160
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 208
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438b5c8c5306c37d0800000000000000
+      internalID: -2937367072834471884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_161
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 195
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa8ee2e4e1d7aee0800000000000000
+      internalID: -1249799590581990746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_162
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 192
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c794b8c4bb369c40800000000000000
+      internalID: 5518664041036552131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_163
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 192
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c55fdc5b6e1cae0800000000000000
+      internalID: -1530688729810379667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_164
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a551b0cdf784e960800000000000000
+      internalID: 7630373192601785766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_165
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 177
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882b12dcc5a15eb20800000000000000
+      internalID: 3162963299178492552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_166
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 160
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a64a3ffbffb6450800000000000000
+      internalID: 6083236921585461833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_167
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 208
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf3f855112dc4f30800000000000000
+      internalID: 4561251494511198156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_168
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 208
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2872bb99d13ecd0800000000000000
+      internalID: -2530146019544956161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_169
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 184
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe85128ddb5854880800000000000000
+      internalID: -8627342460736939793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_170
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 184
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfb15b0e6387ab40800000000000000
+      internalID: 5451470382614822835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_171
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 160
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db90829e9dcd1bdd0800000000000000
+      internalID: -2471951891971962435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_172
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f8c28b888f3f4e0800000000000000
+      internalID: -1948940947632124050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_173
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad579a24470a8ba0800000000000000
+      internalID: -6086043957084070487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_174
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524716d79aeee12d0800000000000000
+      internalID: -3305942664722942939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_175
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecc0cc5c0bb22640800000000000000
+      internalID: 5053807393633258730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_176
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07302268a80343650800000000000000
+      internalID: 6211643157564752752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_177
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0c45a3620a20e20800000000000000
+      internalID: 3315388361745940670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_178
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39754a86cdc4e0c80800000000000000
+      internalID: -8354655749193574509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_179
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f92293720081d190800000000000000
+      internalID: -7939423920060225039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_180
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1082727aae882d3f0800000000000000
+      internalID: -877488435975739391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_181
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0b873ac95162470800000000000000
+      internalID: 8369400720016322746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_182
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e073e2b943646390800000000000000
+      internalID: -7826021084278066976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_183
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc025d2a5d6fdb890800000000000000
+      internalID: -7440519611925847857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_184
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db58ed8a286f2f1a0800000000000000
+      internalID: -6777083448199838275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_185
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4ca874e35267930800000000000000
+      internalID: 4140537856832226508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_186
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e9bbf9c618a1260800000000000000
+      internalID: 7069104868647739016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_187
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b873cc4edd97908e0800000000000000
+      internalID: -1726714988186552437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_188
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228a6984e67298570800000000000000
+      internalID: 8469343928864647202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_189
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 131
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc677d2538fe60e40800000000000000
+      internalID: 5622444532128249549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_190
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 131
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9a1aeb86c137bf0800000000000000
+      internalID: -327887111667471941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_191
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf2102a73afe8600800000000000000
+      internalID: 472590127768612788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_192
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4b07f392ba92910800000000000000
+      internalID: 1813168518639695039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_193
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc5a47d47ac604c0800000000000000
+      internalID: -4321544189238420294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_194
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 129
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23923e2e4546465f0800000000000000
+      internalID: -764375720999573198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_195
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 129
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50ddc4eff24dc920800000000000000
+      internalID: 3012137392603517021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_196
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 129
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c825158e9bdaed0800000000000000
+      internalID: -2401058618870690801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_197
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 130
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6246fe93e4908e30800000000000000
+      internalID: 4503763332715922027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_198
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 128
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dca5eb720ed12660800000000000000
+      internalID: 7359407368350051542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_199
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 128
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312f1867a2894d570800000000000000
+      internalID: 8490578505644503571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_200
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 128
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10fa72853e3139b10800000000000000
+      internalID: 1986953727758020353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_201
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed6a62c696d47ae80800000000000000
+      internalID: -8167474284031727906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_202
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c670247576f6ced0800000000000000
+      internalID: -2393955167580948792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_203
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ca08ca1c4815230800000000000000
+      internalID: 3625825142367628340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_204
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7f3b2abeb827a80800000000000000
+      internalID: -8470554104967202900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_205
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 112
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d579115bee34d00800000000000000
+      internalID: 955870007384300804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_206
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9b6afab4f499a40800000000000000
+      internalID: 5375414816731478473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_207
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a22eaf5251baab20800000000000000
+      internalID: 3146522257022395041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_208
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 114
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbb2310ef9588a90800000000000000
+      internalID: -7311495047559332934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_209
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 113
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8496f1dbb0e817f20800000000000000
+      internalID: 3418669773219653960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_210
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 114
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0449d75daae502ae0800000000000000
+      internalID: -1576155781760445376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_211
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 112
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f234229112e22a760800000000000000
+      internalID: 7467581851824177967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_212
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf32fec3c48984a0800000000000000
+      internalID: -6590590603154538531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_213
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 98
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca06b880e3b068c0800000000000000
+      internalID: -4008005891412063544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_214
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 98
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b00b112563f241b0800000000000000
+      internalID: -5673704964860739402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_215
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 98
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38fbcaa2912e4d4b0800000000000000
+      internalID: -5416455854101839997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_216
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9801de0cf3e2be7f0800000000000000
+      internalID: -582320875459768183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_217
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f72fce7510eb4350800000000000000
+      internalID: 6002137311327758323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_218
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128b530ee50040ce0800000000000000
+      internalID: -1440025573363173343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_219
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 96
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed40dc2fc2d8db30800000000000000
+      internalID: 4312428430459162087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_220
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 81
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a3a5b551b3d56d0800000000000000
+      internalID: -3000176813845890521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_221
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 81
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b740196c2fbc0b0800000000000000
+      internalID: -5707201168111535253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_222
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 80
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67fd103c44af98d0800000000000000
+      internalID: -2837368593088383124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_236
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 80
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72947827d5f08630800000000000000
+      internalID: 3927409179512574588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_237
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 80
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92c3fcbf54b40f70800000000000000
+      internalID: 9152638666008674971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_238
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c7af1d9d6dc8920800000000000000
+      internalID: 2994004083313638460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_239
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa6a11dfe13d271c0800000000000000
+      internalID: -4507308146996173137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_240
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d85f8d50fae7010800000000000000
+      internalID: 1188579791322058025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_241
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84852065894354a60800000000000000
+      internalID: 7657584570296064072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_242
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748564dd1e72134e0800000000000000
+      internalID: -2003776508169660345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_243
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 80
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94909dfc998cef310800000000000000
+      internalID: 1440809493747796297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_244
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf72d296f1504c900800000000000000
+      internalID: 703693074243332092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_245
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18fa176ffe973b2c0800000000000000
+      internalID: -4417052737981534335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_246
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9cca08471025c0d0800000000000000
+      internalID: -3403278659043537763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_247
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3166fba82be343dc0800000000000000
+      internalID: -3660231660592470509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_248
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4836d34ee3a29e8f0800000000000000
+      internalID: -510830633124273276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_249
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e798cd7c9c64d7bf0800000000000000
+      internalID: -325025765645317762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_250
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9011ca6fefd788a0800000000000000
+      internalID: -6302822934100504421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_251
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee798d803859a2900800000000000000
+      internalID: 660504685384865774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_252
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 50
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eaab606aa1d2eb70800000000000000
+      internalID: 8926927941094058724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_253
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 50
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cdb5e360220aa7d0800000000000000
+      internalID: -2906508271376024120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_254
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 50
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff7676135ca488a0800000000000000
+      internalID: -6303724105552723983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_255
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 51
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e65c6e6ed0013380800000000000000
+      internalID: -8993406025546836249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_256
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 51
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f392befde4a69d0800000000000000
+      internalID: -2780323096317837527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_257
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 48
+        width: 5
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4b6d61fad604990800000000000000
+      internalID: -7403797188627221343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_258
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 16
+        width: 5
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4311fbeb6084fb0800000000000000
+      internalID: -4663469997823019827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_259
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92001124a5464c50800000000000000
+      internalID: 6649078471090766491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_260
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f422575d182a6520800000000000000
+      internalID: 2696011433418827001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_261
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cabffd069b82b0450800000000000000
+      internalID: 6055978900589116332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_262
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c702df3aa096cef0800000000000000
+      internalID: -88224081797576759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_263
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6af0d35140f6360800000000000000
+      internalID: 7164950021435008673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_264
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae2a9bf63424f430800000000000000
+      internalID: 3815714602857672357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_265
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af70045de33dbdf0800000000000000
+      internalID: -162916917105885271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_266
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf740397efa2b90e0800000000000000
+      internalID: -2262167115380275205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_267
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09adae868a44a3b60800000000000000
+      internalID: 7726563600812923536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_268
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59c6709b1cbed8b0800000000000000
+      internalID: -5125452499327202982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_269
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 721e009054ca19a80800000000000000
+      internalID: -8461792812348677849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_270
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64eeedd005a63a140800000000000000
+      internalID: 4729740925731794502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_271
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 653
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e2aef4299f1be00800000000000000
+      internalID: 1058901794210065936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_272
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 664
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86550941b88486b10800000000000000
+      internalID: 1974908198784619880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_273
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 653
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a5622b74d154820800000000000000
+      internalID: 2901757728678894194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_274
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 640
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4693ca2b79016a0800000000000000
+      internalID: -6480513070136728360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_275
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 653
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d56dbc98b5dcb30800000000000000
+      internalID: 4309201065851903355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_276
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbbb27dcfca38560800000000000000
+      internalID: 7314880421721521090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_277
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 352
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64e9c711f8b27530800000000000000
+      internalID: 3851343976980931692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_278
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 416
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9441bf1590859a660800000000000000
+      internalID: 7397540659986109513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_279
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 384
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f5d8d31afd94bf0800000000000000
+      internalID: -339494413274357962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_280
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 476
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d68f42e80bd6090800000000000000
+      internalID: -8039575635234362073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_281
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 416
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf53d22904f65ffc0800000000000000
+      internalID: -3461738415443331588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_282
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 384
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7507dd10c8badc5d0800000000000000
+      internalID: -3040585555590156201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_283
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 416
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49862f9e07c1353e0800000000000000
+      internalID: -2066276532746033004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_284
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 384
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cf4e6a2f9474c50800000000000000
+      internalID: 6649364681366764690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_285
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 409
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f2bf9d0f0b923c0800000000000000
+      internalID: -4383778213772710110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_286
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 409
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a749ce822e1478720800000000000000
+      internalID: 2848317728940135546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_287
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 409
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400753c812ed046a0800000000000000
+      internalID: -6466924829236432892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_288
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015bf168f9a83b470800000000000000
+      internalID: 8409217346985506064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_289
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 368
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db67a31a6bf74b320800000000000000
+      internalID: 2572821709501134525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_290
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9143381ce800c2d0800000000000000
+      internalID: -3260596320104922721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_291
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 400
+        width: 16
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5895e5c30e43b5b70800000000000000
+      internalID: 8888756427235940741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_292
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 416
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63596276645021b20800000000000000
+      internalID: 3103548893148124470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG Tileset_293
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01feec1a49d5e0a0800000000000000
+      internalID: -6852832345638113010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

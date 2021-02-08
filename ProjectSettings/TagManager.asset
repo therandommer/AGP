@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Borders
+  - Construction
+  - Overworld
+  - Town
+  - Shop
+  - Village
   layers:
   - Default
   - TransparentFX
@@ -40,4 +46,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 465379001
+    locked: 0
+  - name: Middleground
+    uniqueID: 2190115925
+    locked: 0
+  - name: Foreground
+    uniqueID: 3571404969
     locked: 0
