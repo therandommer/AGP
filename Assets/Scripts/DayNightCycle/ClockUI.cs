@@ -1,0 +1,54 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ClockUI : MonoBehaviour
+{
+    [SerializeField] private TimeOfDay _TimeOfDay;
+    [SerializeField] private GameObject _GameTime;
+    [SerializeField] private GameObject _ClockBackground;
+    [SerializeField] private GameObject _MinuteHand;
+    [SerializeField] private GameObject _HourHand;
+    private Text _TimeText;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+         _TimeText = _GameTime.GetComponent<Text>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        string TimeTextHours = "";
+        string TimeTextMinutes = "";
+
+        if (_TimeOfDay.GetTimeOfDay()._Hours < 10)
+            TimeTextHours = "0" + _TimeOfDay.GetTimeOfDay()._Hours.ToString();
+        else
+            TimeTextHours = _TimeOfDay.GetTimeOfDay()._Hours.ToString();
+
+        if (_TimeOfDay.GetTimeOfDay()._Minutes < 10)
+            TimeTextMinutes = "0" + _TimeOfDay.GetTimeOfDay()._Minutes.ToString();
+        else
+            TimeTextMinutes = _TimeOfDay.GetTimeOfDay()._Minutes.ToString();
+
+
+        _TimeText.text = TimeTextHours + " : " + TimeTextMinutes;
+
+        float MinuteRotation = 6 * _TimeOfDay.GetTimeOfDay()._Minutes;
+        Quaternion FinalMinuteRot = Quaternion.Euler(0, 0, -MinuteRotation);
+        _MinuteHand.transform.rotation = FinalMinuteRot;
+
+        float HourRotation = _TimeOfDay.GetTimeOfDay()._Hours <= 12 ? 
+                            30 * _TimeOfDay.GetTimeOfDay()._Hours 
+                            : 30 * (_TimeOfDay.GetTimeOfDay()._Hours - 12);
+
+        HourRotation += (MinuteRotation / 360) * 30;
+
+        Quaternion FinalHourRot = Quaternion.Euler(0, 0, -HourRotation);
+        _HourHand.transform.rotation = FinalHourRot;
+        
+    }
+}
