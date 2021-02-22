@@ -4,23 +4,14 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-    private BattleManager battleManager;
+    public BattleManager battleManager;
     public Enemy EnemyProfile;
     Animator enemyAI;
 
+    public Player targetPlayer;
+
     private bool selected;
     GameObject selectionCircle;
-
-    IEnumerator SpinObject(GameObject target)
-    {
-        while (true)
-        {
-            target.transform.Rotate(0, 0, 180 * Time.deltaTime);
-            yield return null;
-        }
-    }
-
-
     public BattleManager BattleManager
     {
         get
@@ -33,6 +24,17 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    IEnumerator SpinObject(GameObject target)
+    {
+        while (true)
+        {
+            target.transform.Rotate(0, 0, 180 * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+
+
     public void Awake()
     {
         enemyAI = GetComponent<Animator>();
@@ -42,15 +44,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-
-    void Update()
+    public void UpdateAI()//To use with the animator/controller
     {
-        UpdateAI();
-    }
-
-    public void UpdateAI()
-    {
-        if (enemyAI != null && EnemyProfile != null)
+        if (enemyAI != null && EnemyProfile != null && battleManager.EnemyCount == 0)
         {
             enemyAI.SetInteger("EnemyHealth", EnemyProfile.Health);
             enemyAI.SetInteger("PlayerHealth", GameState.CurrentPlayer.Health);
@@ -73,5 +69,57 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void AI()
+    {
+        //Check state of play
+        //Desinate the target
+        //Depending on difficulty choose action
+        //Do said action 
+        //Move to battlestate to change UI/GameState
+
+        StartCoroutine(DoAiTurn());
+
+    }
+
+    IEnumerator DoAiTurn()
+    {
+        //Add in a variable to chance between choices, such as even if at less than half health can attack
+        /*
+        if (EnemyProfile.Health > EnemyProfile.Health/2)
+        {
+            while (UseItem()) //return false to move on || return true to do the function again
+            {
+                yield return null;
+            }
+        }
+        */
+        while (Attack())
+        {
+            yield return null;
+        }
+
+        battleManager.EndAiTurn();
+    }
+
+    bool Attack()
+    {
+        targetPlayer = GameState.CurrentPlayer;
+
+        targetPlayer.Health -= battleManager.CalculateDamage(targetPlayer, this);
+
+        Debug.Log(targetPlayer.name + " has " + targetPlayer.Health);
+
+        return false;
+    }
+
+    bool UseItem()
+    {
+        return true;
+    }
+
+    public void Die()
+    {
+        Destroy(this);
+    }
 
 }

@@ -12,8 +12,10 @@ public class BattleManager : MonoBehaviour
     public Animator battleStateManager;
     public GameObject introPanel;
     Animator introPanelAnim;
+    public Attack attack;
 
     private int enemyCount;
+    private int playerCount;
 
     public enum BattleState
     {
@@ -28,7 +30,7 @@ public class BattleManager : MonoBehaviour
     }
     private Dictionary<int, BattleState> battleStateHash = new Dictionary<int, BattleState>();
 
-    private BattleState currentBattleState;
+    public BattleState currentBattleState;
 
     private string selectedTargetName;
     private EnemyController selectedTarget;
@@ -60,6 +62,13 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    public int PlayerCount
+    {
+        get
+        {
+            return playerCount;
+        }
+    }
 
     void Awake()
     {
@@ -74,11 +83,12 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        GetAnimationStates();
         // Calculate how many enemies 
         enemyCount = Random.Range(1, EnemySpawnPoints.Length);
         // Spawn the enemies in 
         StartCoroutine(SpawnEnemies());
+        
+        GetAnimationStates();
     }
 
     IEnumerator SpawnEnemies()
@@ -87,23 +97,14 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             var newEnemy = (GameObject)Instantiate(EnemyPrefabs[0]);
+            var controller = newEnemy.GetComponent<EnemyController>();
+            controller.battleManager = this;
             newEnemy.transform.position = new Vector3(10, -1, 0);
             yield return StartCoroutine(
             MoveCharacterToPoint(EnemySpawnPoints[i], newEnemy));
             newEnemy.transform.parent = EnemySpawnPoints[i].transform;
 
-            var controller = newEnemy.GetComponent<EnemyController>();
 
-            controller.BattleManager = this;
-
-            var EnemyProfile = ScriptableObject.CreateInstance<Enemy>(); ///Move all of this to GameState with random Generation 
-            EnemyProfile.Class = EnemyClass.Dragon;
-            EnemyProfile.Level = 1;
-            EnemyProfile.Damage = 1;
-            EnemyProfile.Health = 20;
-            EnemyProfile.name = EnemyProfile.Class + " " + i.ToString();
-
-            controller.EnemyProfile = EnemyProfile;
         }
         battleStateManager.SetBool("BattleReady", true);
     }
@@ -133,8 +134,12 @@ public class BattleManager : MonoBehaviour
     IEnumerator AttackTarget()
     {
         attacking = true;
-        var damageAmount = GetComponent<Attack>().hitAmount;
-        switch (damageAmount)
+        int damageAmount = CalculateDamage(GameState.CurrentPlayer, selectedTarget);
+
+        selectedTarget.EnemyProfile.Health -= damageAmount;
+
+        Debug.Log(selectedTarget.EnemyProfile.name + " has " + selectedTarget.EnemyProfile.Health);
+        switch (damageAmount) //Spawn graphic/FX here bigger damage bigger damage effect
         {
             case 5:
                 attackParticle = (GameObject)GameObject.Instantiate(Attack1Particle);
@@ -155,15 +160,32 @@ public class BattleManager : MonoBehaviour
             attackParticle.transform.position = selectedTarget.transform.position;
         }
 
-        selectedTarget.EnemyProfile.Health -= damageAmount;
         yield return new WaitForSeconds(1f);
         attacking = false;
         GetComponent<Attack>().hitAmount = 0;
         battleStateManager.SetBool("PlayerReady", false);
+        if (selectedTarget.EnemyProfile.Health < 1)
+        {
+            selectedTarget.Die();
+        }
         Destroy(attackParticle);
     }
 
+    public int CalculateDamage(Player currentPlayer, EnemyController Target)
+    {
+        int DamageCalc = currentPlayer.Strength + attack.hitAmount - Target.EnemyProfile.Defense;
 
+        Debug.Log("Dealt " + DamageCalc + " to " + Target.name);
+        return DamageCalc;
+    }
+
+    public int CalculateDamage(EnemyController currentAI, Player TargetPlayer)
+    {
+        int DamageCalc = currentAI.EnemyProfile.Strength + attack.hitAmount - TargetPlayer.Defense;
+
+        Debug.Log("Dealt " + DamageCalc + " to " + TargetPlayer.name);
+        return DamageCalc;
+    }
 
     public void RunAway()
     {
@@ -181,20 +203,34 @@ public class BattleManager : MonoBehaviour
 
     public void SelectEnemy(EnemyController enemy, string name)
     {
+        Debug.Log("Selected" + name);
         selectedTarget = enemy;
         selectedTargetName = name;
+        currentBattleState = BattleState.Player_Attack;
     }
 
+    void DeactivateButtons() //Deactiveate the buttons, maybe change display to show enemy actions instead
+    {
+        currentBattleState = BattleState.Enemy_Attack;
+    }
+
+    public void EndAiTurn()
+    {
+
+        currentBattleState = BattleState.Player_Move; 
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        currentBattleState = battleStateHash[battleStateManager.GetCurrentAnimatorStateInfo(0).shortNameHash];
+        currentBattleState = battleStateHash[battleStateManager.GetCurrentAnimatorStateInfo(0).shortNameHash]; //Use for using animations with the battle system
 
         switch (currentBattleState)
         {
             case BattleState.Intro:
                 introPanelAnim.SetTrigger("Intro");
+                currentBattleState = BattleState.Player_Move;
                 break;
             case BattleState.Player_Move:
                 if (GetComponent<Attack>().attackSelected == true)
@@ -210,12 +246,15 @@ public class BattleManager : MonoBehaviour
                 }
                 break;
             case BattleState.Change_Control:
+                //Set buttons to inactive and change bottom pannel potencially
                 break;
-            case BattleState.Enemy_Attack:
+            case BattleState.Enemy_Attack: //Move to the Enemies controller
                 break;
             case BattleState.Battle_Result:
+                //After each enemies is defeated add to a resulting pool to gist to the player
                 break;
             case BattleState.Battle_End:
+                //Any animation and move back to Overworld
                 break;
             default:
                 break;
@@ -235,4 +274,17 @@ public class BattleManager : MonoBehaviour
             theButtons.blocksRaycasts = false;
         }
     }
+
+    void changeControl()
+    {
+        //Check whether there are no players or enemies alive, if either end the battle
+        attack.ResetRange();
+        if (enemyCount <= 0 || playerCount <= 0)
+        {
+            //End battle
+            NavigationManager.NavigateTo("Overworld");
+        }
+
+    }
+
 }

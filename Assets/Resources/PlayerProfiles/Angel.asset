@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72f7ae0ce48354b8915fab3d8631de, type: 3}
+  m_Name: Angel
+  m_EditorClassIdentifier: 
+  Name: Angel
+  Age: 16
+  Occupation: Protector
+  Level: 1
+  Health: 100
+  Strength: 10
+  Magic: 5
+  Defense: 7
+  Speed: 3
+  Damage: 10
+  Armor: 2
+  NoOfAttacks: 1
+  Weapon: 
+  Position: {x: 0, y: 0}
+  Inventory: []
+  Skills: []
+  Money: 1000

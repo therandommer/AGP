@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2687715612953870875}
   - component: {fileID: 3909186569388637952}
   - component: {fileID: 6761952495370761612}
+  - component: {fileID: 1220878380}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Wack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96.499985, y: -15}
-  m_SizeDelta: {x: 52.2, y: 30}
+  m_AnchoredPosition: {x: 140.4, y: -15}
+  m_SizeDelta: {x: 93.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2687715612953870875
 CanvasRenderer:
@@ -118,7 +119,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3909186569388637952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Wack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1220878380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284349002184473730}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1936825052909611355
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +223,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Smack
 --- !u!1 &2552534058502159222
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,8 +236,9 @@ GameObject:
   - component: {fileID: 679471063662132677}
   - component: {fileID: 473737612793161610}
   - component: {fileID: 3023787169028973638}
+  - component: {fileID: 953714194}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Chop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,8 +261,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200.9, y: -15}
-  m_SizeDelta: {x: 52.2, y: 30}
+  m_AnchoredPosition: {x: 327.59998, y: -15}
+  m_SizeDelta: {x: 93.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &679471063662132677
 CanvasRenderer:
@@ -315,7 +343,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 473737612793161610}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Chop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &953714194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552534058502159222}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3996845226452183984
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,8 +382,9 @@ GameObject:
   - component: {fileID: 259503639941751431}
   - component: {fileID: 5065753122261765938}
   - component: {fileID: 4675183998025475986}
+  - component: {fileID: 1591355117}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Kick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -352,8 +407,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 148.69998, y: -15}
-  m_SizeDelta: {x: 52.2, y: 30}
+  m_AnchoredPosition: {x: 234, y: -15}
+  m_SizeDelta: {x: 93.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &259503639941751431
 CanvasRenderer:
@@ -434,7 +489,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5065753122261765938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Kick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1591355117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3996845226452183984}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5239945389485134715
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +593,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Chop
 --- !u!1 &6350504019420896357
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +607,7 @@ GameObject:
   - component: {fileID: 986690422045364995}
   - component: {fileID: 411940169497221940}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,8 +629,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 255.7, y: -15}
-  m_SizeDelta: {x: 51.42305, y: 30}
+  m_AnchoredPosition: {x: 435.69998, y: -15}
+  m_SizeDelta: {x: 122.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5984017177787574043
 CanvasRenderer:
@@ -631,7 +712,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 986690422045364995}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 748029034}
+        m_MethodName: DisableTheMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6546284036434281043
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +801,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Kick
 --- !u!1 &7896953444601722076
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,7 +879,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Wack
 --- !u!1 &8466044104011890793
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,8 +890,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3911004963157668347}
   - component: {fileID: 8780897931820432255}
-  - component: {fileID: 5812383125877508847}
   - component: {fileID: 5009005999364169254}
+  - component: {fileID: 748029035}
+  - component: {fileID: 748029034}
   m_Layer: 5
   m_Name: ButtonMenu
   m_TagString: Untagged
@@ -852,28 +945,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &5812383125877508847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466044104011890793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
 --- !u!114 &5009005999364169254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,6 +962,31 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &748029035
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466044104011890793}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &748029034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466044104011890793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a4ef76d09fed648bdb43e146c43243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 748029035}
 --- !u!1 &8651218935394942997
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,8 +999,9 @@ GameObject:
   - component: {fileID: 1632277823461435169}
   - component: {fileID: 104311989745177555}
   - component: {fileID: 1781884268113181140}
+  - component: {fileID: 603751228}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Smack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -927,8 +1024,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.3, y: -15}
-  m_SizeDelta: {x: 52.2, y: 30}
+  m_AnchoredPosition: {x: 46.8, y: -15}
+  m_SizeDelta: {x: 93.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1632277823461435169
 CanvasRenderer:
@@ -1009,4 +1106,30 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 104311989745177555}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Smack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &603751228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8651218935394942997}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1

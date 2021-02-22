@@ -4,8 +4,9 @@ using UnityEngine;
 
 public enum EnemyClass
 {
-    Dragon,
-    Blob,
-    NastyPeiceOfWork
+
+    Warrior,
+    Mage,
+    Rouge
 }
 
