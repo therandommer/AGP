@@ -34,9 +34,30 @@ public class Attack : MonoBehaviour
     public Image Spot9;
     public Image Target;
     public Image Target1;
-
+    [Header("EnemyPopup")]
+    public CanvasGroup EnemyPopupCanvas;
+    public bool CanHoverOver = false;//Used to act as a guard for hover over UI
+    public bool EnemySelected = false;//Used to activate the selection UI
+    public EnemyController EnemyHoveredOver;
+    public Image EnemyImage;
+    public TMP_Text EnemyName;
+    public Slider EnemyHealthSlider;
+    public TMP_Text HealthText;
+    [Header("AttackSelected")]
     public bool attackSelected = false;
     public int hitAmount = 0;
+
+
+    public void ShowEnemyInfo(GameObject Enemy)
+    {
+        Enemy EnemyInfo = Enemy.GetComponent<EnemyController>().EnemyProfile;
+
+        EnemyImage.sprite = EnemyInfo.EnemySprite;
+        EnemyName.text = Enemy.name;
+        HealthText.text = EnemyInfo.Health + "/" + EnemyInfo.MaxHealth;
+        EnemyPopupCanvas.alpha = 1;
+    }
+
 
     void Start()
     {
@@ -86,15 +107,12 @@ public class Attack : MonoBehaviour
 
     void ReadRange(Abilities Attack)
     {
-        Debug.Log("Change Range");
         switch (Attack.abilityRange)
         {
             case AbilityRange.OneEnemy:
-                Debug.Log("Show one spot");
                 Spot2.enabled = true;
                 break;
             case AbilityRange.AllEnemies:
-                Debug.Log("Show all spot");
                 Spot1.enabled = true;
                 Spot2.enabled = true;
                 Spot3.enabled = true;
@@ -106,14 +124,11 @@ public class Attack : MonoBehaviour
                 Spot9.enabled = true;
                 break;
             case AbilityRange.RowOfEnemies:
-                Debug.Log("Show row spot");
-
                 Spot2.enabled = true;
                 Spot5.enabled = true;
                 Spot8.enabled = true;
                 break;
             case AbilityRange.ColumnOfEnemies:
-                Debug.Log("Show column spot");
                 Spot1.enabled = true;
                 Spot2.enabled = true;
                 Spot3.enabled = true;

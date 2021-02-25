@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Entity
 {
     public List<InventoryItem> Inventory = new List<InventoryItem>();
+    public int ActualHealth;
     public string[] Skills;
     public int Money;
 

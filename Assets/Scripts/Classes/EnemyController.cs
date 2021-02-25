@@ -33,8 +33,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-
-
     public void Awake()
     {
         enemyAI = GetComponent<Animator>();
@@ -107,9 +105,21 @@ public class EnemyController : MonoBehaviour
 
         targetPlayer.Health -= battleManager.CalculateDamage(targetPlayer, this);
 
+        battleManager.HealthBar.value = targetPlayer.Health / targetPlayer.ActualHealth;
+
         Debug.Log(targetPlayer.name + " has " + targetPlayer.Health);
 
         return false;
+    }
+
+    void OnMouseEnter()
+    {
+        battleManager.attack.ShowEnemyInfo(this.gameObject);
+    }
+
+    void OnMouseExit()
+    {
+        battleManager.attack.EnemyPopupCanvas.alpha = 0;
     }
 
     bool UseItem()

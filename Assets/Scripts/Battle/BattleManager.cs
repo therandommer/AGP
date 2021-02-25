@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
@@ -14,8 +14,15 @@ public class BattleManager : MonoBehaviour
     Animator introPanelAnim;
     public Attack attack;
 
+    public Slider HealthBar;
+    public Text HealthText;
+    public Text BattleText;
+
     private int enemyCount;
     private int playerCount;
+
+    public CanvasGroup MainButtons;
+    public CanvasGroup AttackButtons;
 
     public enum BattleState
     {
@@ -44,6 +51,9 @@ public class BattleManager : MonoBehaviour
     public GameObject Attack3Particle;
     public GameObject Attack4Particle;
     private GameObject attackParticle;
+
+    string[] Names = new string[] { "Arnita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda"};
+        
 
 
     public bool CanSelectEnemy
@@ -83,6 +93,8 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
+        GameState.CurrentPlayer.ActualHealth = GameState.CurrentPlayer.Health;
+        HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.Health;
         // Calculate how many enemies 
         enemyCount = Random.Range(1, EnemySpawnPoints.Length);
         // Spawn the enemies in 
@@ -98,17 +110,15 @@ public class BattleManager : MonoBehaviour
         {
             var newEnemy = (GameObject)Instantiate(EnemyPrefabs[0]);
             var controller = newEnemy.GetComponent<EnemyController>();
+            newEnemy.name = controller.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
             controller.battleManager = this;
             newEnemy.transform.position = new Vector3(10, -1, 0);
             yield return StartCoroutine(
             MoveCharacterToPoint(EnemySpawnPoints[i], newEnemy));
             newEnemy.transform.parent = EnemySpawnPoints[i].transform;
-
-
         }
         battleStateManager.SetBool("BattleReady", true);
     }
-
 
     IEnumerator MoveCharacterToPoint(GameObject destination, GameObject character)
     {
@@ -230,11 +240,14 @@ public class BattleManager : MonoBehaviour
         {
             case BattleState.Intro:
                 introPanelAnim.SetTrigger("Intro");
+                BattleText.text = "Choose an attack, Use an Item or run away";
                 currentBattleState = BattleState.Player_Move;
+                ShowMainButtons();
                 break;
             case BattleState.Player_Move:
                 if (GetComponent<Attack>().attackSelected == true)
                 {
+                    BattleText.text = "Now choose an enemy to attack";
                     canSelectEnemy = true;
                 }
                 break;
@@ -246,6 +259,7 @@ public class BattleManager : MonoBehaviour
                 }
                 break;
             case BattleState.Change_Control:
+                HideButtons();
                 //Set buttons to inactive and change bottom pannel potencially
                 break;
             case BattleState.Enemy_Attack: //Move to the Enemies controller
@@ -260,14 +274,14 @@ public class BattleManager : MonoBehaviour
                 break;
         }
 
-
-        if (currentBattleState == BattleState.Player_Move)
+        if(currentBattleState == BattleState.Player_Move)//If it is players turn, activate raycast
         {
-            theButtons.alpha = 1;
-            theButtons.interactable = true;
-            theButtons.blocksRaycasts = true;
+            
+            
+            
         }
-        else
+
+        if (currentBattleState != BattleState.Player_Move)
         {
             theButtons.alpha = 0;
             theButtons.interactable = false;
@@ -284,7 +298,26 @@ public class BattleManager : MonoBehaviour
             //End battle
             NavigationManager.NavigateTo("Overworld");
         }
-
     }
+
+    public void HideButtons()
+    {
+        MainButtons.alpha = 0;
+        MainButtons.interactable = false;
+        MainButtons.blocksRaycasts = false;
+
+        AttackButtons.alpha = 0;
+        AttackButtons.interactable = false;
+        AttackButtons.blocksRaycasts = false;
+    }
+
+    public void ShowMainButtons()
+    {
+        theButtons.alpha = 1;
+        theButtons.interactable = true;
+        theButtons.blocksRaycasts = true;
+    }
+
+
 
 }

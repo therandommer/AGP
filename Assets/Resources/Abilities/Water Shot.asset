@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Water Shot
   m_EditorClassIdentifier: 
   Passive: 0
+  Targetable: 1
   AbilityType: 6
   AbilityDescription: Shoot a bullet of water
   AbilityImage: {fileID: 6396760786573089163, guid: cefdeb2a13a844d4fba7043b90c76b84,

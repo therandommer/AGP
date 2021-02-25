@@ -10,6 +10,7 @@ public class Entity : ScriptableObject
     public string Occupation; //Same as above 
     public int Level = 1;
     public int Health = 2;
+    public int MaxHealth = 2;
     public int Strength = 1;
     public int Magic = 0;
     public int Defense = 0;
