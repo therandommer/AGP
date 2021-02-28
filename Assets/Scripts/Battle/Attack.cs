@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 
 
 public class Attack : MonoBehaviour
 {
+    public BattleManager battleManager;
     [Header("Abilities")]
     public Text Ability1ButtonText;
     public Abilities Ability1;
@@ -35,6 +37,7 @@ public class Attack : MonoBehaviour
     public Image Target;
     public Image Target1;
     [Header("EnemyPopup")]
+    public List<EnemyController> Enemies;
     public CanvasGroup EnemyPopupCanvas;
     public bool CanHoverOver = false;//Used to act as a guard for hover over UI
     public bool EnemySelected = false;//Used to activate the selection UI
@@ -55,6 +58,7 @@ public class Attack : MonoBehaviour
         EnemyImage.sprite = EnemyInfo.EnemySprite;
         EnemyName.text = Enemy.name;
         HealthText.text = EnemyInfo.Health + "/" + EnemyInfo.MaxHealth;
+        EnemyHealthSlider.value = EnemyInfo.Health / EnemyInfo.MaxHealth;
         EnemyPopupCanvas.alpha = 1;
     }
 
@@ -105,6 +109,66 @@ public class Attack : MonoBehaviour
         PopupCanvas.alpha = 1;
     }
 
+    void ShowHighlightSquare(GameObject SpawnPoint)
+    {
+        SpawnPoint.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    void HighlightSquare(GameObject SpawnPoint, Color HighlightColour)
+    {
+        SpawnPoint.GetComponent<SpriteRenderer>().color = HighlightColour;
+    }
+
+    void DisableHighlightSquare(GameObject SpawnPoint)
+    {
+        SpawnPoint.GetComponent<SpriteRenderer>().color = Color.white;
+        SpawnPoint.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    void HighlightEnemies(Abilities Attack)
+    {
+        /*
+         * Enemies are layed out as such
+         * 3 6 9
+         * 2 5 8
+         * 1 4 7
+         */
+        switch (Attack.abilityRange)
+        {
+            case AbilityRange.OneEnemy:
+                ShowHighlightSquare(battleManager.EnemySpawnPoints[0]);
+                HighlightSquare(battleManager.EnemySpawnPoints[0], Color.red);
+                break;
+            case AbilityRange.AllEnemies:
+                for (int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
+                {
+                    ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
+                    HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+                }
+                break;
+            case AbilityRange.RowOfEnemies:
+                for (int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
+                {
+                    Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
+                    ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
+                    HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+                    i++;
+                    i++;
+                }
+                break;
+            case AbilityRange.ColumnOfEnemies:
+                ShowHighlightSquare(battleManager.EnemySpawnPoints[0]);
+                HighlightSquare(battleManager.EnemySpawnPoints[0], Color.red);                
+                
+                ShowHighlightSquare(battleManager.EnemySpawnPoints[1]);
+                HighlightSquare(battleManager.EnemySpawnPoints[1], Color.red);
+
+                ShowHighlightSquare(battleManager.EnemySpawnPoints[2]);
+                HighlightSquare(battleManager.EnemySpawnPoints[2], Color.red);
+                break;
+        }
+    }
+
     void ReadRange(Abilities Attack)
     {
         switch (Attack.abilityRange)
@@ -139,6 +203,7 @@ public class Attack : MonoBehaviour
             Target.enabled = true;
             Target1.enabled = true;
         }
+        HighlightEnemies(Attack);
     }
 
     public void ResetRange()
@@ -156,9 +221,17 @@ public class Attack : MonoBehaviour
         Target1.enabled = false;
     }
 
+    public void ResetHighlightSquares()
+    {
+        for(int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
+        {
+            DisableHighlightSquare(battleManager.EnemySpawnPoints[i]);
+        }
+    }
     public void Attack1()
     {
         ResetRange();
+        ResetHighlightSquares();
         hitAmount = Ability1.AbilityAmount;
         ReadAbiltiesInfo(Ability1);
         AttackTheEnemy();
@@ -167,6 +240,7 @@ public class Attack : MonoBehaviour
     public void Attack2()
     {
         ResetRange();
+        ResetHighlightSquares();
         hitAmount = Ability2.AbilityAmount;
         ReadAbiltiesInfo(Ability2);
         AttackTheEnemy();
@@ -175,6 +249,7 @@ public class Attack : MonoBehaviour
     public void Attack3()
     {
         ResetRange();
+        ResetHighlightSquares();
         hitAmount = Ability3.AbilityAmount;
         ReadAbiltiesInfo(Ability3);
         AttackTheEnemy();
@@ -183,6 +258,7 @@ public class Attack : MonoBehaviour
     public void Attack4()
     {
         ResetRange();
+        ResetHighlightSquares();
         hitAmount = Ability4.AbilityAmount;
         ReadAbiltiesInfo(Ability4);
         AttackTheEnemy();

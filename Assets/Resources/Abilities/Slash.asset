@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Slash
   m_EditorClassIdentifier: 
   Passive: 0
+  Targetable: 0
   AbilityType: 1
   AbilityDescription: Slash at a row of enemies
   AbilityImage: {fileID: 4429991614695192504, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
-  abilityRange: 2
+  abilityRange: 3
   AbilityRangeImage: {fileID: 0}
   AbilityCost: 0
   AbilityAmount: 5

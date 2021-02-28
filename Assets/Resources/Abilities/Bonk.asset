@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Bonk
   m_EditorClassIdentifier: 
   Passive: 0
+  Targetable: 0
   AbilityType: 2
   AbilityDescription: Hit with a blunt elbow
   AbilityImage: {fileID: -7198109816951534908, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
-  abilityRange: 0
+  abilityRange: 1
   AbilityRangeImage: {fileID: 0}
   AbilityCost: 2
   AbilityAmount: 5

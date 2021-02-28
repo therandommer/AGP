@@ -7,11 +7,23 @@ public class EnemyController : MonoBehaviour
     public BattleManager battleManager;
     public Enemy EnemyProfile;
     Animator enemyAI;
-
     public Player targetPlayer;
-
     private bool selected;
     GameObject selectionCircle;
+
+    public int Health;
+    public int Strength;
+
+    public void Awake()
+    {
+        enemyAI = GetComponent<Animator>();
+        if (enemyAI == null)
+        {
+            Debug.LogError("No AI System Found");
+        }
+        Health = EnemyProfile.Health;
+        Strength = EnemyProfile.Strength;
+    }
     public BattleManager BattleManager
     {
         get
@@ -33,14 +45,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void Awake()
-    {
-        enemyAI = GetComponent<Animator>();
-        if (enemyAI == null)
-        {
-            Debug.LogError("No AI System Found");
-        }
-    }
 
     public void UpdateAI()//To use with the animator/controller
     {
@@ -91,19 +95,18 @@ public class EnemyController : MonoBehaviour
             }
         }
         */
-        while (Attack())
+        while (AttackPlayer())
         {
             yield return null;
         }
-
-        battleManager.EndAiTurn();
+        battleManager.attacking = false;
     }
 
-    bool Attack()
+    bool AttackPlayer()
     {
         targetPlayer = GameState.CurrentPlayer;
 
-        targetPlayer.Health -= battleManager.CalculateDamage(targetPlayer, this);
+        targetPlayer.Health -= battleManager.CalculateDamage(this, targetPlayer);
 
         battleManager.HealthBar.value = targetPlayer.Health / targetPlayer.ActualHealth;
 
@@ -129,7 +132,9 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(this);
+        battleManager.Enemies.Remove(this);
+        battleManager.enemyCount--;
+        Destroy(this.gameObject);
     }
 
 }
