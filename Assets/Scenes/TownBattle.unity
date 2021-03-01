@@ -5171,6 +5171,7 @@ MonoBehaviour:
   - {fileID: 1936690409}
   EnemyPrefabs:
   - {fileID: 5380418724147385418, guid: ede789e2cdce09a4c996a598771e93fe, type: 3}
+  Enemies: []
   SpawnAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -5202,11 +5203,13 @@ MonoBehaviour:
   HealthBar: {fileID: 1773559338}
   HealthText: {fileID: 147535126}
   BattleText: {fileID: 1202036118}
+  enemyCount: 0
   MainButtons: {fileID: 1220633747222009444}
   AttackButtons: {fileID: 1946505165}
   currentBattleState: 0
   selectionCircle: {fileID: 1151566774660212997, guid: 63e347bc52f537a40ad7e427903a19ee,
     type: 3}
+  attacking: 0
   Attack1Particle: {fileID: 8335750205670191616, guid: 799622fee3aa1dd4cb370b7f44e5e65d,
     type: 3}
   Attack2Particle: {fileID: 8335750205670191616, guid: 799622fee3aa1dd4cb370b7f44e5e65d,
@@ -7062,6 +7065,7 @@ GameObject:
   - component: {fileID: 1909376851}
   - component: {fileID: 1909376850}
   - component: {fileID: 1909376849}
+  - component: {fileID: 1909376852}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7103,7 +7107,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 65
-  orthographic: 0
+  orthographic: 1
   orthographic size: 4
   m_Depth: -1
   m_CullingMask:
@@ -7117,7 +7121,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &1909376851
@@ -7134,6 +7138,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1909376852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909376848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 100
+  m_RefResolutionX: 1024
+  m_RefResolutionY: 768
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &1936690409
 GameObject:
   m_ObjectHideFlags: 0
