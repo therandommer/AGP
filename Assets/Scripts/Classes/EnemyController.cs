@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     public Player targetPlayer;
     private bool selected;
     GameObject selectionCircle;
-
+    public GameObject TargetReticle;
     public int Health;
     public int Strength;
 
@@ -69,6 +69,10 @@ public class EnemyController : MonoBehaviour
             battleManager.GetComponent<Attack>().attackSelected = false;
             battleManager.battleStateManager.SetBool("PlayerReady", true);
         }
+        else
+        {
+            TargetReticle.SetActive(true);
+        }
     }
 
     public void AI()
@@ -123,6 +127,7 @@ public class EnemyController : MonoBehaviour
     void OnMouseExit()
     {
         battleManager.attack.EnemyPopupCanvas.alpha = 0;
+        TargetReticle.SetActive(false);
     }
 
     bool UseItem()

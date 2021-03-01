@@ -16,7 +16,8 @@ MonoBehaviour:
   Age: 16
   Occupation: Protector
   Level: 1
-  Health: 97
+  Health: 100
+  MaxHealth: 2
   Strength: 10
   Magic: 5
   Defense: 7
@@ -27,6 +28,6 @@ MonoBehaviour:
   Weapon: 
   Position: {x: 0, y: 0}
   Inventory: []
-  ActualHealth: 97
+  ActualHealth: 100
   Skills: []
   Money: 1000
