@@ -14,9 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeOfDay
   _PerDayLength:
     _Hours: 0
-    _Minutes: 5
-    _Seconds: 0
+    _Minutes: 0
+    _Seconds: 30
+  _bOnlyUpdateHandsPerMinute: 1
+  _TimeMultipliers:
+    _DefaultTime: 1
+    _Town: 1
+    _Combat: 1
+    _WorldMapMoving: 1
+    _WorldMapIdle: 1
+    _InDialogue: 1
   _StartingTime:
-    _Hours: 9
+    _Hours: 18
     _Minutes: 0
     _Seconds: 0
+  _NightTimeFadeStart:
+    _Hours: 18
+    _Minutes: 0
+    _Seconds: 0
+  _NightTimeStart:
+    _Hours: 21
+    _Minutes: 0
+    _Seconds: 0
+  _FadeToDayTimeStart:
+    _Hours: 3
+    _Minutes: 0
+    _Seconds: 0
+  _NightTimeEnd:
+    _Hours: 6
+    _Minutes: 0
+    _Seconds: 0
+  _NightTime: 0.8
+  _TimeSkipLerpAmount: 0.9
+  _NightTimeColour: {r: 0.13283195, g: 0.1348737, b: 0.14150941, a: 0}

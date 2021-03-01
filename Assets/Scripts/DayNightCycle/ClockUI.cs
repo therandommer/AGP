@@ -10,16 +10,20 @@ public class ClockUI : MonoBehaviour
     [SerializeField] private GameObject _ClockBackground;
     [SerializeField] private GameObject _MinuteHand;
     [SerializeField] private GameObject _HourHand;
+    [SerializeField] private GameObject _DaysCounter;
     private Text _TimeText;
+    private Text _DayCounterText;
 
     // Start is called before the first frame update
     void Start()
     {
-         _TimeText = _GameTime.GetComponent<Text>();
+        _TimeText = _GameTime.GetComponent<Text>();
+        _DayCounterText = _DaysCounter.GetComponent<Text>();
+        UpdateClockUI();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateClockUI()
     {
         string TimeTextHours = "";
         string TimeTextMinutes = "";
@@ -41,14 +45,15 @@ public class ClockUI : MonoBehaviour
         Quaternion FinalMinuteRot = Quaternion.Euler(0, 0, -MinuteRotation);
         _MinuteHand.transform.rotation = FinalMinuteRot;
 
-        float HourRotation = _TimeOfDay.GetTimeOfDay()._Hours <= 12 ? 
-                            30 * _TimeOfDay.GetTimeOfDay()._Hours 
+        float HourRotation = _TimeOfDay.GetTimeOfDay()._Hours <= 12 ?
+                            30 * _TimeOfDay.GetTimeOfDay()._Hours
                             : 30 * (_TimeOfDay.GetTimeOfDay()._Hours - 12);
 
         HourRotation += (MinuteRotation / 360) * 30;
 
         Quaternion FinalHourRot = Quaternion.Euler(0, 0, -HourRotation);
         _HourHand.transform.rotation = FinalHourRot;
-        
+
+        _DayCounterText.text = "Day " + _TimeOfDay.GetDayNumber();
     }
 }
