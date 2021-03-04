@@ -5,25 +5,37 @@ using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
-    public GameObject[] EnemySpawnPoints;
+    [Header("Enemy Spawn Information")]
     public GameObject[] EnemyPrefabs;
+    public GameObject[] EnemySpawnPoints;
     public List<EnemyController> Enemies;
     public AnimationCurve SpawnAnimationCurve;
-    public CanvasGroup theButtons;
+    public int enemyCount;
+    private int playerCount;
+    [Header("Intro")]
     public Animator battleStateManager;
     public GameObject introPanel;
     Animator introPanelAnim;
-    public Attack attack;
-
+    [Header("UI")]
+    public CanvasGroup theButtons;
     public Slider HealthBar;
     public Text HealthText;
     public Text BattleText;
-
-    public int enemyCount;
-    private int playerCount;
-
     public CanvasGroup MainButtons;
     public CanvasGroup AttackButtons;
+    [Header("Attack/Abilities")]
+    [Tooltip("The attack script attached to the same gameObject")]
+    public Attack attack;
+
+    public string selectedTargetName;
+    public Abilities selectedAttack;
+    public EnemyController selectedTarget;
+    public GameObject selectionCircle;
+    private bool canSelectEnemy;
+
+    public bool attacking = false;
+
+
 
     public enum BattleState
     {
@@ -40,13 +52,8 @@ public class BattleManager : MonoBehaviour
 
     public BattleState currentBattleState;
 
-    private string selectedTargetName;
-    private EnemyController selectedTarget;
-    public GameObject selectionCircle;
-    private bool canSelectEnemy;
 
-    public bool attacking = false;
-
+    [Header("AttackParticles")]
     public GameObject Attack1Particle;
     public GameObject Attack2Particle;
     public GameObject Attack3Particle;
@@ -95,8 +102,8 @@ public class BattleManager : MonoBehaviour
         GameState.CurrentPlayer.ActualHealth = GameState.CurrentPlayer.Health;
         HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.Health;
         // Calculate how many enemies 
-        enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
-        //enemyCount = Random.Range(1, 3);
+        //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
+        enemyCount = 9;
         // Spawn the enemies in 
         StartCoroutine(SpawnEnemies());
         
@@ -151,7 +158,7 @@ public class BattleManager : MonoBehaviour
         selectedTarget.Health -= damageAmount;
 
         Debug.Log(selectedTarget.name + " has " + selectedTarget.Health);
-
+        
         switch (damageAmount) //Spawn graphic/FX here bigger damage bigger damage effect
         {
             case 5:

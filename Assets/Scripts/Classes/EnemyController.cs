@@ -58,6 +58,7 @@ public class EnemyController : MonoBehaviour
 
     void OnMouseDown()
     {
+        /*
         if (battleManager.CanSelectEnemy)
         {
             selectionCircle = (GameObject)GameObject.Instantiate(battleManager.selectionCircle);
@@ -73,6 +74,13 @@ public class EnemyController : MonoBehaviour
         {
             TargetReticle.SetActive(true);
         }
+        */
+        battleManager.attack.ResetHighlightSquares();
+        battleManager.attack.ShowEnemyInfo(this.gameObject);
+        TargetReticle.SetActive(true);
+        battleManager.SelectEnemy(this, EnemyProfile.name);
+        battleManager.attack.HighlightEnemies();
+
     }
 
     public void AI()
@@ -121,7 +129,7 @@ public class EnemyController : MonoBehaviour
 
     void OnMouseEnter()
     {
-        battleManager.attack.ShowEnemyInfo(this.gameObject);
+        //battleManager.attack.ShowEnemyInfo(this.gameObject);
     }
 
     void OnMouseExit()

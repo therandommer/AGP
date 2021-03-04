@@ -1,8 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 
 public class Attack : MonoBehaviour
@@ -37,7 +35,6 @@ public class Attack : MonoBehaviour
     public Image Target;
     public Image Target1;
     [Header("EnemyPopup")]
-    public List<EnemyController> Enemies;
     public CanvasGroup EnemyPopupCanvas;
     public bool CanHoverOver = false;//Used to act as a guard for hover over UI
     public bool EnemySelected = false;//Used to activate the selection UI
@@ -124,16 +121,179 @@ public class Attack : MonoBehaviour
         SpawnPoint.GetComponent<SpriteRenderer>().color = Color.white;
         SpawnPoint.GetComponent<SpriteRenderer>().enabled = false;
     }
+    /// <summary>
+    /// Highjack these systems to add in the targeting as they get the right squares
+    /// </summary>
+    void HighlightBottomRow()///Will highlight the first row
+    {
+        for (int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
+        {
+            Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
+            ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
+            HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+            i++;
+            i++;
+        }
+    }
 
-    void HighlightEnemies(Abilities Attack)
+    void HighlightMiddleRow()///Will highlight the first row
+    {
+        for (int i = 1; i < battleManager.EnemySpawnPoints.Length; i++)
+        {
+            Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
+            ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
+            HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+            i++;
+            i++;
+        }
+    }
+
+    void HighlightTopRow()///Will highlight the first row
+    {
+        for (int i = 2; i < battleManager.EnemySpawnPoints.Length; i++)
+        {
+            Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
+            ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
+            HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+            i++;
+            i++;
+        }
+    }
+
+    void HighlightLeftColumn()
+    {
+        for (int i = 0; i < battleManager.EnemySpawnPoints.Length - 6; i++)
+        {
+            ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
+            HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+        }
+    }
+
+    void HighlightMiddleColumn()
+    {
+        for (int i = 3; i < battleManager.EnemySpawnPoints.Length - 3; i++)
+        {
+            ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
+            HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+        }
+    }
+
+    void HighlightRightColumn()
+    {
+        for (int i = 6; i < battleManager.EnemySpawnPoints.Length; i++)
+        {
+            ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
+            HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+        }
+    }
+    public void HighlightEnemies()
     {
         /*
-         * Enemies are layed out as such
-         * 3 6 9
-         * 2 5 8
-         * 1 4 7
+         * Enemies are layed out as such, the actual position vs the array position
+         * 3-2 6-5 9-8
+         * 2-1 5-4 8-7
+         * 1-0 4-3 7-6
          */
-        switch (Attack.abilityRange)
+
+        for (int i = 0; i < battleManager.enemyCount; i++)
+        {
+            if (battleManager.Enemies[i] == battleManager.selectedTarget)
+            {
+                //Found enemy
+                switch (battleManager.selectedAttack.abilityRange)
+                {
+                    case AbilityRange.OneEnemy:
+                        ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
+                        HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+                        break;
+                    case AbilityRange.AllEnemies:
+                        for (int j = 0; j < battleManager.EnemySpawnPoints.Length; j++)
+                        {
+                            ShowHighlightSquare(battleManager.EnemySpawnPoints[j]);
+                            HighlightSquare(battleManager.EnemySpawnPoints[j], Color.red);
+                        }
+                        break;
+                    case AbilityRange.RowOfEnemies:
+                        /*
+                         * Enemies are layed out as such, the actual position vs the array position
+                         * 3-2 6-5 9-8
+                         * 2-1 5-4 8-7
+                         * 1-0 4-3 7-6
+                         */
+                        switch (i)
+                        {
+                            case 0:
+                                HighlightBottomRow();
+                                break;
+                            case 1:
+                                HighlightMiddleRow();
+                                break;
+                            case 2:
+                                HighlightTopRow();
+                                break;
+                            case 3:
+                                HighlightBottomRow();
+                                break;
+                            case 4:
+                                HighlightMiddleRow();
+                                break;
+                            case 5:
+                                HighlightTopRow();
+                                break;
+                            case 6:
+                                HighlightBottomRow();
+                                break;
+                            case 7:
+                                HighlightMiddleRow();
+                                break;
+                            case 8:
+                                HighlightTopRow();
+                                break;
+                        }
+                        break;
+                    case AbilityRange.ColumnOfEnemies:
+                        /*
+                         * Enemies are layed out as such, the actual position vs the array position
+                         * 3-2 6-5 9-8
+                         * 2-1 5-4 8-7
+                         * 1-0 4-3 7-6
+                         */
+                        switch (i)
+                        {
+                            case 0:
+                                HighlightLeftColumn();
+                                break;
+                            case 1:
+                                HighlightLeftColumn();
+                                break;
+                            case 2:
+                                HighlightLeftColumn();
+                                break;
+                            case 3:
+                                HighlightMiddleColumn();
+                                break;
+                            case 4:
+                                HighlightMiddleColumn();
+                                break;
+                            case 5:
+                                HighlightMiddleColumn();
+                                break;
+                            case 6:
+                                HighlightRightColumn();
+                                break;
+                            case 7:
+                                HighlightRightColumn();
+                                break;
+                            case 8:
+                                HighlightRightColumn();
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
+        /*
+        switch (battleManager.selectedAttack.abilityRange) //Need to search enemies with the key selectedEnemy once found use the below algorithms to set the highlighted areas
         {
             case AbilityRange.OneEnemy:
                 ShowHighlightSquare(battleManager.EnemySpawnPoints[0]);
@@ -158,8 +318,8 @@ public class Attack : MonoBehaviour
                 break;
             case AbilityRange.ColumnOfEnemies:
                 ShowHighlightSquare(battleManager.EnemySpawnPoints[0]);
-                HighlightSquare(battleManager.EnemySpawnPoints[0], Color.red);                
-                
+                HighlightSquare(battleManager.EnemySpawnPoints[0], Color.red);
+
                 ShowHighlightSquare(battleManager.EnemySpawnPoints[1]);
                 HighlightSquare(battleManager.EnemySpawnPoints[1], Color.red);
 
@@ -167,6 +327,7 @@ public class Attack : MonoBehaviour
                 HighlightSquare(battleManager.EnemySpawnPoints[2], Color.red);
                 break;
         }
+        */
     }
 
     void ReadRange(Abilities Attack)
@@ -203,7 +364,7 @@ public class Attack : MonoBehaviour
             Target.enabled = true;
             Target1.enabled = true;
         }
-        HighlightEnemies(Attack);
+        //HighlightEnemies(Attack);
     }
 
     public void ResetRange()
@@ -223,7 +384,7 @@ public class Attack : MonoBehaviour
 
     public void ResetHighlightSquares()
     {
-        for(int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
+        for (int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
         {
             DisableHighlightSquare(battleManager.EnemySpawnPoints[i]);
         }
@@ -234,7 +395,7 @@ public class Attack : MonoBehaviour
         ResetHighlightSquares();
         hitAmount = Ability1.AbilityAmount;
         ReadAbiltiesInfo(Ability1);
-        AttackTheEnemy();
+        AttackTheEnemy(Ability1);
     }
 
     public void Attack2()
@@ -243,7 +404,7 @@ public class Attack : MonoBehaviour
         ResetHighlightSquares();
         hitAmount = Ability2.AbilityAmount;
         ReadAbiltiesInfo(Ability2);
-        AttackTheEnemy();
+        AttackTheEnemy(Ability2);
     }
 
     public void Attack3()
@@ -252,7 +413,7 @@ public class Attack : MonoBehaviour
         ResetHighlightSquares();
         hitAmount = Ability3.AbilityAmount;
         ReadAbiltiesInfo(Ability3);
-        AttackTheEnemy();
+        AttackTheEnemy(Ability3);
     }
 
     public void Attack4()
@@ -261,11 +422,12 @@ public class Attack : MonoBehaviour
         ResetHighlightSquares();
         hitAmount = Ability4.AbilityAmount;
         ReadAbiltiesInfo(Ability4);
-        AttackTheEnemy();
+        AttackTheEnemy(Ability4);
     }
 
-    public void AttackTheEnemy()
+    public void AttackTheEnemy(Abilities Attack)
     {
+        battleManager.selectedAttack = Attack;
         attackSelected = true;
     }
 }

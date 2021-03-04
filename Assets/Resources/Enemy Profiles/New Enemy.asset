@@ -9,25 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e72f7ae0ce48354b8915fab3d8631de, type: 3}
-  m_Name: Angel
+  m_Script: {fileID: 11500000, guid: 72fc2841b27486e4286b6c7d58108575, type: 3}
+  m_Name: New Enemy
   m_EditorClassIdentifier: 
-  Name: Angel
-  Age: 16
-  Occupation: Protector
+  Name: 
+  Age: 0
+  Occupation: 
   Level: 1
-  Health: -12413
+  Health: 2
   MaxHealth: 2
-  Strength: 10
-  Magic: 5
-  Defense: 7
-  Speed: 3
-  Damage: 10
-  Armor: 2
+  Strength: 1
+  Magic: 0
+  Defense: 0
+  Speed: 1
+  Damage: 1
+  Armor: 0
   NoOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
-  Inventory: []
-  ActualHealth: -12413
-  Skills: []
-  Money: 1000
+  Class: 0
+  EnemySprite: {fileID: 0}
