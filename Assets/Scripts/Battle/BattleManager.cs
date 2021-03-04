@@ -23,6 +23,8 @@ public class BattleManager : MonoBehaviour
     public Text BattleText;
     public CanvasGroup MainButtons;
     public CanvasGroup AttackButtons;
+    [Tooltip("Used to lock enemy popup")]
+    public bool LockEnemyPopup = false;
     [Header("Attack/Abilities")]
     [Tooltip("The attack script attached to the same gameObject")]
     public Attack attack;

@@ -76,10 +76,21 @@ public class EnemyController : MonoBehaviour
         }
         */
         battleManager.attack.ResetHighlightSquares();
+        battleManager.attack.ResetTargetRecticle();
+        if(battleManager.selectedTarget == this && battleManager.LockEnemyPopup)
+        {
+            battleManager.LockEnemyPopup = false;
+            battleManager.attack.ResetTargetRecticle();
+        }
+        else
+        {
+            battleManager.LockEnemyPopup = true;
+            TargetReticle.SetActive(true);
+        }
         battleManager.attack.ShowEnemyInfo(this.gameObject);
-        TargetReticle.SetActive(true);
         battleManager.SelectEnemy(this, EnemyProfile.name);
-        battleManager.attack.HighlightEnemies();
+        if(battleManager.selectedAttack != null)
+            battleManager.attack.HighlightEnemies();
 
     }
 
@@ -129,13 +140,19 @@ public class EnemyController : MonoBehaviour
 
     void OnMouseEnter()
     {
-        //battleManager.attack.ShowEnemyInfo(this.gameObject);
+        if(!battleManager.LockEnemyPopup)
+        {
+            battleManager.attack.ShowEnemyInfo(this.gameObject);
+        }
     }
 
     void OnMouseExit()
     {
-        battleManager.attack.EnemyPopupCanvas.alpha = 0;
-        TargetReticle.SetActive(false);
+        if (!battleManager.LockEnemyPopup)
+        {
+            battleManager.attack.EnemyPopupCanvas.alpha = 0;
+        }
+        //TargetReticle.SetActive(false);
     }
 
     bool UseItem()

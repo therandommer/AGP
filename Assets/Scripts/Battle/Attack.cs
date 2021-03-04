@@ -36,7 +36,6 @@ public class Attack : MonoBehaviour
     public Image Target1;
     [Header("EnemyPopup")]
     public CanvasGroup EnemyPopupCanvas;
-    public bool CanHoverOver = false;//Used to act as a guard for hover over UI
     public bool EnemySelected = false;//Used to activate the selection UI
     public EnemyController EnemyHoveredOver;
     public Image EnemyImage;
@@ -131,6 +130,7 @@ public class Attack : MonoBehaviour
             Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+            battleManager.Enemies[i].TargetReticle.SetActive(true);
             i++;
             i++;
         }
@@ -143,6 +143,7 @@ public class Attack : MonoBehaviour
             Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+            battleManager.Enemies[i].TargetReticle.SetActive(true);
             i++;
             i++;
         }
@@ -155,6 +156,7 @@ public class Attack : MonoBehaviour
             Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+            battleManager.Enemies[i].TargetReticle.SetActive(true);
             i++;
             i++;
         }
@@ -166,6 +168,7 @@ public class Attack : MonoBehaviour
         {
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+            battleManager.Enemies[i].TargetReticle.SetActive(true);
         }
     }
 
@@ -175,6 +178,7 @@ public class Attack : MonoBehaviour
         {
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+            battleManager.Enemies[i].TargetReticle.SetActive(true);
         }
     }
 
@@ -184,6 +188,7 @@ public class Attack : MonoBehaviour
         {
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+            battleManager.Enemies[i].TargetReticle.SetActive(true);
         }
     }
     public void HighlightEnemies()
@@ -205,12 +210,14 @@ public class Attack : MonoBehaviour
                     case AbilityRange.OneEnemy:
                         ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
                         HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
+                        battleManager.Enemies[i].TargetReticle.SetActive(true);
                         break;
                     case AbilityRange.AllEnemies:
                         for (int j = 0; j < battleManager.EnemySpawnPoints.Length; j++)
                         {
                             ShowHighlightSquare(battleManager.EnemySpawnPoints[j]);
                             HighlightSquare(battleManager.EnemySpawnPoints[j], Color.red);
+                            battleManager.Enemies[j].TargetReticle.SetActive(true);
                         }
                         break;
                     case AbilityRange.RowOfEnemies:
@@ -389,10 +396,19 @@ public class Attack : MonoBehaviour
             DisableHighlightSquare(battleManager.EnemySpawnPoints[i]);
         }
     }
+
+    public void ResetTargetRecticle()
+    {
+        for (int i = 0; i < battleManager.Enemies.Count; i++)
+        {
+            battleManager.Enemies[i].TargetReticle.SetActive(false);
+        }
+    }
     public void Attack1()
     {
         ResetRange();
         ResetHighlightSquares();
+        ResetTargetRecticle();
         hitAmount = Ability1.AbilityAmount;
         ReadAbiltiesInfo(Ability1);
         AttackTheEnemy(Ability1);
@@ -402,6 +418,7 @@ public class Attack : MonoBehaviour
     {
         ResetRange();
         ResetHighlightSquares();
+        ResetTargetRecticle();
         hitAmount = Ability2.AbilityAmount;
         ReadAbiltiesInfo(Ability2);
         AttackTheEnemy(Ability2);
@@ -411,6 +428,7 @@ public class Attack : MonoBehaviour
     {
         ResetRange();
         ResetHighlightSquares();
+        ResetTargetRecticle();
         hitAmount = Ability3.AbilityAmount;
         ReadAbiltiesInfo(Ability3);
         AttackTheEnemy(Ability3);
@@ -420,6 +438,7 @@ public class Attack : MonoBehaviour
     {
         ResetRange();
         ResetHighlightSquares();
+        ResetTargetRecticle();
         hitAmount = Ability4.AbilityAmount;
         ReadAbiltiesInfo(Ability4);
         AttackTheEnemy(Ability4);
