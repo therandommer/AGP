@@ -192,8 +192,14 @@ public class BattleManager : MonoBehaviour
             attackParticle.transform.position = selectedTarget.transform.position;
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         battleStateManager.SetBool("PlayerReady", false);
+        attack.ResetRange();
+        attack.ResetHighlightSquares();
+        attack.ResetTargetRecticle();
+        attack.ResetEnemiesToDamage();
+        attack.ResetSelectionCircle();
+        attack.EnemyPopupCanvas.alpha = 0;
         GetComponent<Attack>().hitAmount = 0;
         for (int i = 0; i < EnemiesToDamage.Count; i++)
         {
@@ -273,7 +279,6 @@ public class BattleManager : MonoBehaviour
                 BattleText.text = "Choose an attack, Use an Item or run away";
                 break;
             case BattleState.Player_Move:
-                ShowMainButtons();
                 if (GetComponent<Attack>().attackSelected == true)
                 {
                     BattleText.text = "Now choose an enemy to attack";
@@ -305,6 +310,7 @@ public class BattleManager : MonoBehaviour
 
                     if (ContinueBattle())
                     {
+                        ShowMainButtons();
                         battleStateManager.SetBool("ContinueBattle", true);
                     }
                     else
@@ -331,14 +337,13 @@ public class BattleManager : MonoBehaviour
             theButtons.interactable = false;
             theButtons.blocksRaycasts = false;
         }
-        /*
         else if (currentBattleState == BattleState.Player_Move)
         {
             theButtons.alpha = 1;
             theButtons.interactable = true;
             theButtons.blocksRaycasts = true;
         }
-        */
+        
     }
 
     bool ContinueBattle()
@@ -370,15 +375,8 @@ public class BattleManager : MonoBehaviour
 
     public void ShowMainButtons()
     {
-        theButtons.alpha = 1;
-        theButtons.interactable = true;
-        theButtons.blocksRaycasts = true;
-
         MainButtons.alpha = 1;
         MainButtons.interactable = true;
         MainButtons.blocksRaycasts = true;
     }
-
-
-
 }

@@ -59,37 +59,40 @@ public class EnemyController : MonoBehaviour
 
     void OnMouseDown()
     {
-        battleManager.attack.ResetHighlightSquares();
-        battleManager.attack.ResetTargetRecticle();
-        battleManager.attack.ResetEnemiesToDamage();
-        battleManager.attack.ResetSelectionCircle();
-
-        if (battleManager.selectedTarget == this && battleManager.LockEnemyPopup)
+        if (battleManager.CanSelectEnemy)
         {
-            battleManager.LockEnemyPopup = false;
+
+            battleManager.attack.ResetHighlightSquares();
             battleManager.attack.ResetTargetRecticle();
-            Destroy(selectionCircle);
-        }
-        else
-        {
-            battleManager.LockEnemyPopup = true;
-            TargetReticle.SetActive(true);
-            if (selectionCircle == null)
+            battleManager.attack.ResetEnemiesToDamage();
+            battleManager.attack.ResetSelectionCircle();
+
+            if (battleManager.selectedTarget == this && battleManager.LockEnemyPopup)
             {
-                selectionCircle = (GameObject)GameObject.Instantiate(battleManager.selectionCircle);
-                selectionCircle.transform.parent = transform;
-                selectionCircle.transform.localPosition = new Vector3(-0.1f, -0.2f, 0f);
-                selectionCircle.transform.localScale = new Vector3(2f, 2f, 1f);
+                battleManager.LockEnemyPopup = false;
+                battleManager.attack.ResetTargetRecticle();
+                Destroy(selectionCircle);
             }
-            //StartCoroutine("SpinObject", selectionCircle);
+            else
+            {
+                battleManager.LockEnemyPopup = true;
+                TargetReticle.SetActive(true);
+                if (selectionCircle == null)
+                {
+                    selectionCircle = (GameObject)GameObject.Instantiate(battleManager.selectionCircle);
+                    selectionCircle.transform.parent = transform;
+                    selectionCircle.transform.localPosition = new Vector3(-0.1f, -0.2f, 0f);
+                    selectionCircle.transform.localScale = new Vector3(2f, 2f, 1f);
+                }
+                //StartCoroutine("SpinObject", selectionCircle);
+            }
+            battleManager.attack.ShowEnemyInfo(this.gameObject);
+            battleManager.SelectEnemy(this, EnemyProfile.name);
+            if (battleManager.selectedAttack != null)
+                battleManager.attack.HighlightEnemies();
+
+            battleManager.ShowFinalAttackButton();
         }
-        battleManager.attack.ShowEnemyInfo(this.gameObject);
-        battleManager.SelectEnemy(this, EnemyProfile.name);
-        if (battleManager.selectedAttack != null)
-            battleManager.attack.HighlightEnemies();
-
-        battleManager.ShowFinalAttackButton();
-
 
     }
 
@@ -100,7 +103,7 @@ public class EnemyController : MonoBehaviour
         //Depending on difficulty choose action
         //Do said action 
         //Move to battlestate to change UI/GameState
-        if(!attacking)
+        if (!attacking)
         {
             StartCoroutine(DoAiTurn());
         }
