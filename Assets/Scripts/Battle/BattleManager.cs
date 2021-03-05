@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class BattleManager : MonoBehaviour
     public Text BattleText;
     public CanvasGroup MainButtons;
     public CanvasGroup AttackButtons;
+    public CanvasGroup FinalAttackButton; 
     [Tooltip("Used to lock enemy popup")]
     public bool LockEnemyPopup = false;
     [Header("Attack/Abilities")]
@@ -33,10 +35,10 @@ public class BattleManager : MonoBehaviour
     public Abilities selectedAttack;
     public EnemyController selectedTarget;
     public GameObject selectionCircle;
+    public List<EnemyController> EnemiesToDamage;
     private bool canSelectEnemy;
 
     public bool attacking = false;
-
 
 
     public enum BattleState
@@ -62,7 +64,7 @@ public class BattleManager : MonoBehaviour
     public GameObject Attack4Particle;
     private GameObject attackParticle;
 
-    string[] Names = new string[] { "Arnita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda"};
+    string[] Names = new string[] { "Arnita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda" };
 
     public bool CanSelectEnemy
     {
@@ -108,7 +110,7 @@ public class BattleManager : MonoBehaviour
         enemyCount = 9;
         // Spawn the enemies in 
         StartCoroutine(SpawnEnemies());
-        
+
         GetAnimationStates();
     }
 
@@ -154,13 +156,19 @@ public class BattleManager : MonoBehaviour
     IEnumerator AttackTarget()
     {
         attacking = true;
-        Debug.Log("Passed");
         int damageAmount = CalculateDamage(GameState.CurrentPlayer, selectedTarget);
 
-        selectedTarget.Health -= damageAmount;
+        for (int i = 0; i < EnemiesToDamage.Count; i++)
+        {
+            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " before damage");
+            EnemiesToDamage[i].Health -= damageAmount;
+            Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
+            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " health left");
+        }
 
-        Debug.Log(selectedTarget.name + " has " + selectedTarget.Health);
-        
+        //electedTarget.Health -= damageAmount;
+
+
         switch (damageAmount) //Spawn graphic/FX here bigger damage bigger damage effect
         {
             case 5:
@@ -185,9 +193,12 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         battleStateManager.SetBool("PlayerReady", false);
         GetComponent<Attack>().hitAmount = 0;
-        if (selectedTarget.Health < 1)
+        for (int i = 0; i < EnemiesToDamage.Count; i++)
         {
-            selectedTarget.Die();
+            if (EnemiesToDamage[i].Health < 1)
+            {
+                EnemiesToDamage[i].Die();
+            }
         }
         Destroy(attackParticle);
         attacking = false;
@@ -229,9 +240,23 @@ public class BattleManager : MonoBehaviour
         selectedTargetName = name;
     }
 
-    void DeactivateButtons() //Deactiveate the buttons, maybe change display to show enemy actions instead
+    public void ShowFinalAttackButton()
     {
-        //currentBattleState = BattleState.Enemy_Attack;
+        FinalAttackButton.alpha = 1;
+        FinalAttackButton.interactable = true;
+        FinalAttackButton.blocksRaycasts = true;
+    }
+    public void HideFinalAttackButton()
+    {
+        FinalAttackButton.alpha = 0;
+        FinalAttackButton.interactable = false;
+        FinalAttackButton.blocksRaycasts = false;
+    }
+
+    public void ChangeStateToAttack()//Link this to button 
+    {
+        attack.attackSelected = false; //Deselect attack to stop potencial loop later
+        battleStateManager.SetBool("PlayerReady", true); //Player is ready to attack chosen targets with chosen ability
     }
 
     // Update is called once per frame
@@ -265,15 +290,17 @@ public class BattleManager : MonoBehaviour
                 //Set buttons to inactive and change bottom pannel potencially
                 break;
             case BattleState.Enemy_Attack: //Move to the Enemies controller for turn
+                battleStateManager.SetBool("ContinueBattle", false);
                 if (!attacking)
                 {
-                    if(enemyCount > 0)
+                    if (enemyCount > 0)
                     {
                         for (int i = 0; i < enemyCount; i++)
                         {
-                            Enemies[i].AI();
+                            //Enemies[i].AI();
                         }
                     }
+
                     if (ContinueBattle())
                     {
                         battleStateManager.SetBool("ContinueBattle", true);
@@ -302,6 +329,14 @@ public class BattleManager : MonoBehaviour
             theButtons.interactable = false;
             theButtons.blocksRaycasts = false;
         }
+        /*
+        else if (currentBattleState == BattleState.Player_Move)
+        {
+            theButtons.alpha = 1;
+            theButtons.interactable = true;
+            theButtons.blocksRaycasts = true;
+        }
+        */
     }
 
     bool ContinueBattle()
@@ -309,7 +344,9 @@ public class BattleManager : MonoBehaviour
         //Check whether there are no players or enemies alive, if either end the battle
         attack.ResetRange();
         attack.ResetHighlightSquares();
-        if (enemyCount <= 0 || playerCount <= 0)
+        attack.HidePopup();
+
+        if (enemyCount == 0)
         {
             return false;
         }
@@ -332,6 +369,10 @@ public class BattleManager : MonoBehaviour
         theButtons.alpha = 1;
         theButtons.interactable = true;
         theButtons.blocksRaycasts = true;
+
+        MainButtons.alpha = 1;
+        MainButtons.interactable = true;
+        MainButtons.blocksRaycasts = true;
     }
 
 

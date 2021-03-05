@@ -103,6 +103,13 @@ public class Attack : MonoBehaviour
         }
         ReadRange(ChosenAbility);
         PopupCanvas.alpha = 1;
+        PopupCanvas.interactable = true;
+    }
+
+    public void HidePopup()
+    {
+        PopupCanvas.alpha = 0;
+        PopupCanvas.interactable = false;
     }
 
     void ShowHighlightSquare(GameObject SpawnPoint)
@@ -130,7 +137,11 @@ public class Attack : MonoBehaviour
             Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
-            battleManager.Enemies[i].TargetReticle.SetActive(true);
+            if (battleManager.Enemies[i] != null)
+            {
+                battleManager.Enemies[i].TargetReticle.SetActive(true);
+                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+            }
             i++;
             i++;
         }
@@ -143,7 +154,11 @@ public class Attack : MonoBehaviour
             Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
-            battleManager.Enemies[i].TargetReticle.SetActive(true);
+            if (battleManager.Enemies[i] != null)
+            {
+                battleManager.Enemies[i].TargetReticle.SetActive(true);
+                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+            }
             i++;
             i++;
         }
@@ -156,7 +171,11 @@ public class Attack : MonoBehaviour
             Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
-            battleManager.Enemies[i].TargetReticle.SetActive(true);
+            if (battleManager.Enemies[i] != null)
+            {
+                battleManager.Enemies[i].TargetReticle.SetActive(true);
+                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+            }
             i++;
             i++;
         }
@@ -168,7 +187,11 @@ public class Attack : MonoBehaviour
         {
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
-            battleManager.Enemies[i].TargetReticle.SetActive(true);
+            if (battleManager.Enemies[i] != null)
+            {
+                battleManager.Enemies[i].TargetReticle.SetActive(true);
+                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+            }
         }
     }
 
@@ -178,7 +201,11 @@ public class Attack : MonoBehaviour
         {
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
-            battleManager.Enemies[i].TargetReticle.SetActive(true);
+            if (battleManager.Enemies[i] != null)
+            {
+                battleManager.Enemies[i].TargetReticle.SetActive(true);
+                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+            }
         }
     }
 
@@ -188,7 +215,11 @@ public class Attack : MonoBehaviour
         {
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
-            battleManager.Enemies[i].TargetReticle.SetActive(true);
+            if (battleManager.Enemies[i] != null)
+            {
+                battleManager.Enemies[i].TargetReticle.SetActive(true);
+                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+            }
         }
     }
     public void HighlightEnemies()
@@ -200,7 +231,7 @@ public class Attack : MonoBehaviour
          * 1-0 4-3 7-6
          */
 
-        for (int i = 0; i < battleManager.enemyCount; i++)
+        for (int i = 0; i < battleManager.Enemies.Count; i++)
         {
             if (battleManager.Enemies[i] == battleManager.selectedTarget)
             {
@@ -210,14 +241,23 @@ public class Attack : MonoBehaviour
                     case AbilityRange.OneEnemy:
                         ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
                         HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
-                        battleManager.Enemies[i].TargetReticle.SetActive(true);
+                        if (battleManager.Enemies[i] != null)
+                        {
+                            battleManager.Enemies[i].TargetReticle.SetActive(true);
+                            battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+                        }
                         break;
                     case AbilityRange.AllEnemies:
                         for (int j = 0; j < battleManager.EnemySpawnPoints.Length; j++)
                         {
                             ShowHighlightSquare(battleManager.EnemySpawnPoints[j]);
                             HighlightSquare(battleManager.EnemySpawnPoints[j], Color.red);
-                            battleManager.Enemies[j].TargetReticle.SetActive(true);
+                            if (battleManager.Enemies[j] != null)
+                            {
+                                battleManager.Enemies[j].TargetReticle.SetActive(true);
+                                battleManager.EnemiesToDamage.Add(battleManager.Enemies[j]);
+                            }
+
                         }
                         break;
                     case AbilityRange.RowOfEnemies:
@@ -299,42 +339,6 @@ public class Attack : MonoBehaviour
                 }
             }
         }
-        /*
-        switch (battleManager.selectedAttack.abilityRange) //Need to search enemies with the key selectedEnemy once found use the below algorithms to set the highlighted areas
-        {
-            case AbilityRange.OneEnemy:
-                ShowHighlightSquare(battleManager.EnemySpawnPoints[0]);
-                HighlightSquare(battleManager.EnemySpawnPoints[0], Color.red);
-                break;
-            case AbilityRange.AllEnemies:
-                for (int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
-                {
-                    ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
-                    HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
-                }
-                break;
-            case AbilityRange.RowOfEnemies:
-                for (int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
-                {
-                    Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
-                    ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
-                    HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
-                    i++;
-                    i++;
-                }
-                break;
-            case AbilityRange.ColumnOfEnemies:
-                ShowHighlightSquare(battleManager.EnemySpawnPoints[0]);
-                HighlightSquare(battleManager.EnemySpawnPoints[0], Color.red);
-
-                ShowHighlightSquare(battleManager.EnemySpawnPoints[1]);
-                HighlightSquare(battleManager.EnemySpawnPoints[1], Color.red);
-
-                ShowHighlightSquare(battleManager.EnemySpawnPoints[2]);
-                HighlightSquare(battleManager.EnemySpawnPoints[2], Color.red);
-                break;
-        }
-        */
     }
 
     void ReadRange(Abilities Attack)
@@ -371,7 +375,6 @@ public class Attack : MonoBehaviour
             Target.enabled = true;
             Target1.enabled = true;
         }
-        //HighlightEnemies(Attack);
     }
 
     public void ResetRange()
@@ -401,17 +404,35 @@ public class Attack : MonoBehaviour
     {
         for (int i = 0; i < battleManager.Enemies.Count; i++)
         {
-            battleManager.Enemies[i].TargetReticle.SetActive(false);
+            if (battleManager.Enemies[i] != null)
+            {
+                battleManager.Enemies[i].TargetReticle.SetActive(false);
+            }
         }
     }
+    public void ResetEnemiesToDamage()
+    {
+        battleManager.EnemiesToDamage.Clear();
+    }
+    public void ResetSelectionCircle()
+    {
+        for(int i = 0; i < battleManager.Enemies.Count; i++)
+        {
+            Destroy(battleManager.Enemies[i].selectionCircle);
+        }
+    }
+
     public void Attack1()
     {
         ResetRange();
         ResetHighlightSquares();
         ResetTargetRecticle();
+        ResetEnemiesToDamage();
+        ResetSelectionCircle();
+
         hitAmount = Ability1.AbilityAmount;
         ReadAbiltiesInfo(Ability1);
-        AttackTheEnemy(Ability1);
+        SelectAttack(Ability1);
     }
 
     public void Attack2()
@@ -419,9 +440,12 @@ public class Attack : MonoBehaviour
         ResetRange();
         ResetHighlightSquares();
         ResetTargetRecticle();
+        ResetEnemiesToDamage();
+        ResetSelectionCircle();
+
         hitAmount = Ability2.AbilityAmount;
         ReadAbiltiesInfo(Ability2);
-        AttackTheEnemy(Ability2);
+        SelectAttack(Ability2);
     }
 
     public void Attack3()
@@ -429,9 +453,12 @@ public class Attack : MonoBehaviour
         ResetRange();
         ResetHighlightSquares();
         ResetTargetRecticle();
+        ResetEnemiesToDamage();
+        ResetSelectionCircle();
+
         hitAmount = Ability3.AbilityAmount;
         ReadAbiltiesInfo(Ability3);
-        AttackTheEnemy(Ability3);
+        SelectAttack(Ability3);
     }
 
     public void Attack4()
@@ -439,12 +466,15 @@ public class Attack : MonoBehaviour
         ResetRange();
         ResetHighlightSquares();
         ResetTargetRecticle();
+        ResetEnemiesToDamage();
+        ResetSelectionCircle();
+
         hitAmount = Ability4.AbilityAmount;
         ReadAbiltiesInfo(Ability4);
-        AttackTheEnemy(Ability4);
+        SelectAttack(Ability4);
     }
 
-    public void AttackTheEnemy(Abilities Attack)
+    public void SelectAttack(Abilities Attack)
     {
         battleManager.selectedAttack = Attack;
         attackSelected = true;

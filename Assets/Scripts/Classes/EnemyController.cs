@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     Animator enemyAI;
     public Player targetPlayer;
     private bool selected;
-    GameObject selectionCircle;
+    public GameObject selectionCircle;
     public GameObject TargetReticle;
     public int Health;
     public int Strength;
@@ -58,39 +58,37 @@ public class EnemyController : MonoBehaviour
 
     void OnMouseDown()
     {
-        /*
-        if (battleManager.CanSelectEnemy)
-        {
-            selectionCircle = (GameObject)GameObject.Instantiate(battleManager.selectionCircle);
-            selectionCircle.transform.parent = transform;
-            selectionCircle.transform.localPosition = new Vector3(0f, -0.2f, 0f);
-            selectionCircle.transform.localScale = new Vector3(4f, 4f, 1f);
-            StartCoroutine("SpinObject", selectionCircle);
-            battleManager.SelectEnemy(this, EnemyProfile.name);
-            battleManager.GetComponent<Attack>().attackSelected = false;
-            battleManager.battleStateManager.SetBool("PlayerReady", true);
-        }
-        else
-        {
-            TargetReticle.SetActive(true);
-        }
-        */
         battleManager.attack.ResetHighlightSquares();
         battleManager.attack.ResetTargetRecticle();
-        if(battleManager.selectedTarget == this && battleManager.LockEnemyPopup)
+        battleManager.attack.ResetEnemiesToDamage();
+        battleManager.attack.ResetSelectionCircle();
+
+        if (battleManager.selectedTarget == this && battleManager.LockEnemyPopup)
         {
             battleManager.LockEnemyPopup = false;
             battleManager.attack.ResetTargetRecticle();
+            Destroy(selectionCircle);
         }
         else
         {
             battleManager.LockEnemyPopup = true;
             TargetReticle.SetActive(true);
+            if (selectionCircle == null)
+            {
+                selectionCircle = (GameObject)GameObject.Instantiate(battleManager.selectionCircle);
+                selectionCircle.transform.parent = transform;
+                selectionCircle.transform.localPosition = new Vector3(-0.1f, -0.2f, 0f);
+                selectionCircle.transform.localScale = new Vector3(2f, 2f, 1f);
+            }
+            //StartCoroutine("SpinObject", selectionCircle);
         }
         battleManager.attack.ShowEnemyInfo(this.gameObject);
         battleManager.SelectEnemy(this, EnemyProfile.name);
-        if(battleManager.selectedAttack != null)
+        if (battleManager.selectedAttack != null)
             battleManager.attack.HighlightEnemies();
+
+        battleManager.ShowFinalAttackButton();
+
 
     }
 
@@ -140,7 +138,7 @@ public class EnemyController : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if(!battleManager.LockEnemyPopup)
+        if (!battleManager.LockEnemyPopup)
         {
             battleManager.attack.ShowEnemyInfo(this.gameObject);
         }
@@ -162,7 +160,7 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        battleManager.Enemies.Remove(this);
+        //battleManager.Enemies.Remove(this);
         battleManager.enemyCount--;
         Destroy(this.gameObject);
     }
