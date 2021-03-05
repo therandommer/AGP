@@ -9,10 +9,11 @@ public class EnemyController : MonoBehaviour
     Animator enemyAI;
     public Player targetPlayer;
     private bool selected;
-    GameObject selectionCircle;
+    public GameObject selectionCircle;
     public GameObject TargetReticle;
     public int Health;
     public int Strength;
+    public bool attacking = false;
 
     public void Awake()
     {
@@ -60,19 +61,39 @@ public class EnemyController : MonoBehaviour
     {
         if (battleManager.CanSelectEnemy)
         {
-            selectionCircle = (GameObject)GameObject.Instantiate(battleManager.selectionCircle);
-            selectionCircle.transform.parent = transform;
-            selectionCircle.transform.localPosition = new Vector3(0f, -0.2f, 0f);
-            selectionCircle.transform.localScale = new Vector3(4f, 4f, 1f);
-            StartCoroutine("SpinObject", selectionCircle);
+
+            battleManager.attack.ResetHighlightSquares();
+            battleManager.attack.ResetTargetRecticle();
+            battleManager.attack.ResetEnemiesToDamage();
+            battleManager.attack.ResetSelectionCircle();
+
+            if (battleManager.selectedTarget == this && battleManager.LockEnemyPopup)
+            {
+                battleManager.LockEnemyPopup = false;
+                battleManager.attack.ResetTargetRecticle();
+                Destroy(selectionCircle);
+            }
+            else
+            {
+                battleManager.LockEnemyPopup = true;
+                TargetReticle.SetActive(true);
+                if (selectionCircle == null)
+                {
+                    selectionCircle = (GameObject)GameObject.Instantiate(battleManager.selectionCircle);
+                    selectionCircle.transform.parent = transform;
+                    selectionCircle.transform.localPosition = new Vector3(-0.1f, -0.2f, 0f);
+                    selectionCircle.transform.localScale = new Vector3(2f, 2f, 1f);
+                }
+                //StartCoroutine("SpinObject", selectionCircle);
+            }
+            battleManager.attack.ShowEnemyInfo(this.gameObject);
             battleManager.SelectEnemy(this, EnemyProfile.name);
-            battleManager.GetComponent<Attack>().attackSelected = false;
-            battleManager.battleStateManager.SetBool("PlayerReady", true);
+            if (battleManager.selectedAttack != null)
+                battleManager.attack.HighlightEnemies();
+
+            battleManager.ShowFinalAttackButton();
         }
-        else
-        {
-            TargetReticle.SetActive(true);
-        }
+
     }
 
     public void AI()
@@ -82,8 +103,10 @@ public class EnemyController : MonoBehaviour
         //Depending on difficulty choose action
         //Do said action 
         //Move to battlestate to change UI/GameState
-
-        StartCoroutine(DoAiTurn());
+        if (!attacking)
+        {
+            StartCoroutine(DoAiTurn());
+        }
 
     }
 
@@ -99,11 +122,13 @@ public class EnemyController : MonoBehaviour
             }
         }
         */
+        attacking = true;
         while (AttackPlayer())
         {
             yield return null;
         }
         battleManager.attacking = false;
+        attacking = false;
     }
 
     bool AttackPlayer()
@@ -112,8 +137,11 @@ public class EnemyController : MonoBehaviour
 
         targetPlayer.Health -= battleManager.CalculateDamage(this, targetPlayer);
 
-        battleManager.HealthBar.value = targetPlayer.Health / targetPlayer.ActualHealth;
+        float HealthBarValue = targetPlayer.Health / (float)targetPlayer.MaxHealth;
+        Debug.Log(HealthBarValue);
+        battleManager.HealthBar.value = HealthBarValue;
 
+        battleManager.HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.MaxHealth;
         Debug.Log(targetPlayer.name + " has " + targetPlayer.Health);
 
         return false;
@@ -121,13 +149,19 @@ public class EnemyController : MonoBehaviour
 
     void OnMouseEnter()
     {
-        battleManager.attack.ShowEnemyInfo(this.gameObject);
+        if (!battleManager.LockEnemyPopup)
+        {
+            battleManager.attack.ShowEnemyInfo(this.gameObject);
+        }
     }
 
     void OnMouseExit()
     {
-        battleManager.attack.EnemyPopupCanvas.alpha = 0;
-        TargetReticle.SetActive(false);
+        if (!battleManager.LockEnemyPopup)
+        {
+            battleManager.attack.EnemyPopupCanvas.alpha = 0;
+        }
+        //TargetReticle.SetActive(false);
     }
 
     bool UseItem()
@@ -137,7 +171,7 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        battleManager.Enemies.Remove(this);
+        //battleManager.Enemies.Remove(this);
         battleManager.enemyCount--;
         Destroy(this.gameObject);
     }

@@ -5,15 +5,20 @@ using UnityEngine;
 public class Player : Entity
 {
     public List<InventoryItem> Inventory = new List<InventoryItem>();
-    public int ActualHealth;
-    public string[] Skills;
-    public int Money;
-
     public void AddInventoryItem(InventoryItem item)
     {
         Inventory.Add(item);
     }
 
+    public string[] Skills;
+
+    private int money;
+    public int Money
+    {
+        get { return money; }
+        set { money = value; }
+    }
+    
 }
 
 

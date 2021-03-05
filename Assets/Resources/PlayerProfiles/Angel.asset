@@ -15,19 +15,5 @@ MonoBehaviour:
   Name: Angel
   Age: 16
   Occupation: Protector
-  Level: 1
-  Health: 100
-  MaxHealth: 2
-  Strength: 10
-  Magic: 5
-  Defense: 7
-  Speed: 3
-  Damage: 10
-  Armor: 2
-  NoOfAttacks: 1
-  Weapon: 
-  Position: {x: 0, y: 0}
   Inventory: []
-  ActualHealth: 100
   Skills: []
-  Money: 1000

@@ -2,28 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
-    public GameObject[] EnemySpawnPoints;
+    [Header("Enemy Spawn Information")]
     public GameObject[] EnemyPrefabs;
+    public GameObject[] EnemySpawnPoints;
     public List<EnemyController> Enemies;
     public AnimationCurve SpawnAnimationCurve;
-    public CanvasGroup theButtons;
+    public int enemyCount;
+    private int playerCount;
+    [Header("Intro")]
     public Animator battleStateManager;
     public GameObject introPanel;
     Animator introPanelAnim;
-    public Attack attack;
-
+    [Header("UI")]
+    public CanvasGroup theButtons;
     public Slider HealthBar;
     public Text HealthText;
     public Text BattleText;
-
-    public int enemyCount;
-    private int playerCount;
-
     public CanvasGroup MainButtons;
     public CanvasGroup AttackButtons;
+    public CanvasGroup FinalAttackButton; 
+    [Tooltip("Used to lock enemy popup")]
+    public bool LockEnemyPopup = false;
+    [Header("Attack/Abilities")]
+    [Tooltip("The attack script attached to the same gameObject")]
+    public Attack attack;
+
+    public string selectedTargetName;
+    public Abilities selectedAttack;
+    public EnemyController selectedTarget;
+    public GameObject selectionCircle;
+    public List<EnemyController> EnemiesToDamage;
+    private bool canSelectEnemy;
+
+    public bool attacking = false;
+
 
     public enum BattleState
     {
@@ -40,20 +56,15 @@ public class BattleManager : MonoBehaviour
 
     public BattleState currentBattleState;
 
-    private string selectedTargetName;
-    private EnemyController selectedTarget;
-    public GameObject selectionCircle;
-    private bool canSelectEnemy;
 
-    public bool attacking = false;
-
+    [Header("AttackParticles")]
     public GameObject Attack1Particle;
     public GameObject Attack2Particle;
     public GameObject Attack3Particle;
     public GameObject Attack4Particle;
     private GameObject attackParticle;
 
-    string[] Names = new string[] { "Arnita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda"};
+    string[] Names = new string[] { "Arnita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda" };
 
     public bool CanSelectEnemy
     {
@@ -92,14 +103,15 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        GameState.CurrentPlayer.ActualHealth = GameState.CurrentPlayer.Health;
-        HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.Health;
+        GameState.CurrentPlayer.Health = 100;
+        GameState.CurrentPlayer.MaxHealth = 100;
+        HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.MaxHealth;
         // Calculate how many enemies 
-        enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
-        //enemyCount = Random.Range(1, 3);
+        //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
+        enemyCount = 9;
         // Spawn the enemies in 
         StartCoroutine(SpawnEnemies());
-        
+
         GetAnimationStates();
     }
 
@@ -145,12 +157,19 @@ public class BattleManager : MonoBehaviour
     IEnumerator AttackTarget()
     {
         attacking = true;
-        Debug.Log("Passed");
         int damageAmount = CalculateDamage(GameState.CurrentPlayer, selectedTarget);
 
-        selectedTarget.Health -= damageAmount;
-
-        Debug.Log(selectedTarget.name + " has " + selectedTarget.Health);
+        for (int i = 0; i < EnemiesToDamage.Count; i++)
+        {
+            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " before damage");
+            EnemiesToDamage[i].Health -= damageAmount;
+            Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
+            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " health left");
+        }
+        ///Add in a coroutine to slowly move the slider to the value instead of just setting it
+        attack.EnemyHealthSlider.value = selectedTarget.Health / (float)selectedTarget.EnemyProfile.MaxHealth; 
+        //Set the health text
+        attack.HealthText.text = selectedTarget.Health + "/" + selectedTarget.EnemyProfile.MaxHealth;
 
         switch (damageAmount) //Spawn graphic/FX here bigger damage bigger damage effect
         {
@@ -175,10 +194,19 @@ public class BattleManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         battleStateManager.SetBool("PlayerReady", false);
+        attack.ResetRange();
+        attack.ResetHighlightSquares();
+        attack.ResetTargetRecticle();
+        attack.ResetEnemiesToDamage();
+        attack.ResetSelectionCircle();
+        attack.EnemyPopupCanvas.alpha = 0;
         GetComponent<Attack>().hitAmount = 0;
-        if (selectedTarget.Health < 1)
+        for (int i = 0; i < EnemiesToDamage.Count; i++)
         {
-            selectedTarget.Die();
+            if (EnemiesToDamage[i].Health < 1)
+            {
+                EnemiesToDamage[i].Die();
+            }
         }
         Destroy(attackParticle);
         attacking = false;
@@ -220,9 +248,23 @@ public class BattleManager : MonoBehaviour
         selectedTargetName = name;
     }
 
-    void DeactivateButtons() //Deactiveate the buttons, maybe change display to show enemy actions instead
+    public void ShowFinalAttackButton()
     {
-        //currentBattleState = BattleState.Enemy_Attack;
+        FinalAttackButton.alpha = 1;
+        FinalAttackButton.interactable = true;
+        FinalAttackButton.blocksRaycasts = true;
+    }
+    public void HideFinalAttackButton()
+    {
+        FinalAttackButton.alpha = 0;
+        FinalAttackButton.interactable = false;
+        FinalAttackButton.blocksRaycasts = false;
+    }
+
+    public void ChangeStateToAttack()//Link this to button 
+    {
+        attack.attackSelected = false; //Deselect attack to stop potencial loop later
+        battleStateManager.SetBool("PlayerReady", true); //Player is ready to attack chosen targets with chosen ability
     }
 
     // Update is called once per frame
@@ -237,7 +279,6 @@ public class BattleManager : MonoBehaviour
                 BattleText.text = "Choose an attack, Use an Item or run away";
                 break;
             case BattleState.Player_Move:
-                ShowMainButtons();
                 if (GetComponent<Attack>().attackSelected == true)
                 {
                     BattleText.text = "Now choose an enemy to attack";
@@ -258,15 +299,18 @@ public class BattleManager : MonoBehaviour
             case BattleState.Enemy_Attack: //Move to the Enemies controller for turn
                 if (!attacking)
                 {
-                    if(enemyCount > 0)
+                    if (enemyCount > 0)
                     {
-                        for (int i = 0; i < enemyCount; i++)
+                        for (int i = 0; i < Enemies.Count; i++)
                         {
-                            Enemies[i].AI();
+                            if(Enemies[i] != null)
+                                Enemies[i].AI();
                         }
                     }
+
                     if (ContinueBattle())
                     {
+                        ShowMainButtons();
                         battleStateManager.SetBool("ContinueBattle", true);
                     }
                     else
@@ -293,14 +337,25 @@ public class BattleManager : MonoBehaviour
             theButtons.interactable = false;
             theButtons.blocksRaycasts = false;
         }
+        else if (currentBattleState == BattleState.Player_Move)
+        {
+            theButtons.alpha = 1;
+            theButtons.interactable = true;
+            theButtons.blocksRaycasts = true;
+        }
+        
     }
 
     bool ContinueBattle()
     {
         //Check whether there are no players or enemies alive, if either end the battle
+        battleStateManager.SetBool("ContinueBattle", false); //Reset bool from previous check to stop looping
+
         attack.ResetRange();
         attack.ResetHighlightSquares();
-        if (enemyCount <= 0 || playerCount <= 0)
+        attack.HidePopup();
+
+        if (enemyCount == 0)
         {
             return false;
         }
@@ -320,11 +375,8 @@ public class BattleManager : MonoBehaviour
 
     public void ShowMainButtons()
     {
-        theButtons.alpha = 1;
-        theButtons.interactable = true;
-        theButtons.blocksRaycasts = true;
+        MainButtons.alpha = 1;
+        MainButtons.interactable = true;
+        MainButtons.blocksRaycasts = true;
     }
-
-
-
 }
