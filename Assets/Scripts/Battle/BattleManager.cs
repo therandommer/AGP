@@ -166,9 +166,10 @@ public class BattleManager : MonoBehaviour
             Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
             Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " health left");
         }
-
-        //electedTarget.Health -= damageAmount;
-
+        ///Add in a coroutine to slowly move the slider to the value instead of just setting it
+        attack.EnemyHealthSlider.value = selectedTarget.Health / (float)selectedTarget.EnemyProfile.MaxHealth; 
+        //Set the health text
+        attack.HealthText.text = selectedTarget.Health + "/" + selectedTarget.EnemyProfile.MaxHealth;
 
         switch (damageAmount) //Spawn graphic/FX here bigger damage bigger damage effect
         {
@@ -191,7 +192,7 @@ public class BattleManager : MonoBehaviour
             attackParticle.transform.position = selectedTarget.transform.position;
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         battleStateManager.SetBool("PlayerReady", false);
         GetComponent<Attack>().hitAmount = 0;
         for (int i = 0; i < EnemiesToDamage.Count; i++)
