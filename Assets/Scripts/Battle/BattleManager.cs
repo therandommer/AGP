@@ -103,8 +103,9 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        GameState.CurrentPlayer.ActualHealth = GameState.CurrentPlayer.Health;
-        HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.Health;
+        GameState.CurrentPlayer.Health = 100;
+        GameState.CurrentPlayer.MaxHealth = 100;
+        HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.MaxHealth;
         // Calculate how many enemies 
         //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
         enemyCount = 9;
@@ -290,14 +291,14 @@ public class BattleManager : MonoBehaviour
                 //Set buttons to inactive and change bottom pannel potencially
                 break;
             case BattleState.Enemy_Attack: //Move to the Enemies controller for turn
-                battleStateManager.SetBool("ContinueBattle", false);
                 if (!attacking)
                 {
                     if (enemyCount > 0)
                     {
-                        for (int i = 0; i < enemyCount; i++)
+                        for (int i = 0; i < Enemies.Count; i++)
                         {
-                            //Enemies[i].AI();
+                            if(Enemies[i] != null)
+                                Enemies[i].AI();
                         }
                     }
 
@@ -342,6 +343,8 @@ public class BattleManager : MonoBehaviour
     bool ContinueBattle()
     {
         //Check whether there are no players or enemies alive, if either end the battle
+        battleStateManager.SetBool("ContinueBattle", false); //Reset bool from previous check to stop looping
+
         attack.ResetRange();
         attack.ResetHighlightSquares();
         attack.HidePopup();

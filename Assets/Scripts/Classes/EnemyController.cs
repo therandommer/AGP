@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     public GameObject TargetReticle;
     public int Health;
     public int Strength;
+    public bool attacking = false;
 
     public void Awake()
     {
@@ -99,8 +100,10 @@ public class EnemyController : MonoBehaviour
         //Depending on difficulty choose action
         //Do said action 
         //Move to battlestate to change UI/GameState
-
-        StartCoroutine(DoAiTurn());
+        if(!attacking)
+        {
+            StartCoroutine(DoAiTurn());
+        }
 
     }
 
@@ -116,11 +119,13 @@ public class EnemyController : MonoBehaviour
             }
         }
         */
+        attacking = true;
         while (AttackPlayer())
         {
             yield return null;
         }
         battleManager.attacking = false;
+        attacking = false;
     }
 
     bool AttackPlayer()
@@ -129,8 +134,11 @@ public class EnemyController : MonoBehaviour
 
         targetPlayer.Health -= battleManager.CalculateDamage(this, targetPlayer);
 
-        battleManager.HealthBar.value = targetPlayer.Health / targetPlayer.ActualHealth;
+        float HealthBarValue = targetPlayer.Health / (float)targetPlayer.MaxHealth;
+        Debug.Log(HealthBarValue);
+        battleManager.HealthBar.value = HealthBarValue;
 
+        battleManager.HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.MaxHealth;
         Debug.Log(targetPlayer.name + " has " + targetPlayer.Health);
 
         return false;
