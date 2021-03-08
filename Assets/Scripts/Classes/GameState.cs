@@ -5,8 +5,9 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     public static Player CurrentPlayer;
+    public GameObject PlayerObject; // used for message references
     public Player Player;
-    public Player[] PlayerParty;
+    public static GameObject[] PlayerParty;
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;

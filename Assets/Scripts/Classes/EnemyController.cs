@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public Enemy EnemyProfile;
     Animator enemyAI;
     public Player targetPlayer;
+    public GameObject playerObject;
     private bool selected;
     public GameObject selectionCircle;
     public GameObject TargetReticle;
@@ -134,9 +135,9 @@ public class EnemyController : MonoBehaviour
     bool AttackPlayer()
     {
         targetPlayer = GameState.CurrentPlayer;
-
-        targetPlayer.Health -= battleManager.CalculateDamage(this, targetPlayer);
-
+        playerObject = GameState.PlayerParty[0];
+        int damageAmount = battleManager.CalculateDamage(this, targetPlayer);
+        targetPlayer.Health -= damageAmount;
         float HealthBarValue = targetPlayer.Health / (float)targetPlayer.MaxHealth;
         Debug.Log(HealthBarValue);
         battleManager.HealthBar.value = HealthBarValue;
@@ -144,6 +145,8 @@ public class EnemyController : MonoBehaviour
         battleManager.HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.MaxHealth;
         Debug.Log(targetPlayer.name + " has " + targetPlayer.Health);
 
+        playerObject.SendMessage("UpdateAnimState", "isHit");
+        playerObject.SendMessage("EnableDamageValues", damageAmount);
         return false;
     }
 

@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 6275971143486845658}
   - component: {fileID: 6275971143486845659}
   - component: {fileID: 6598840636195226657}
+  - component: {fileID: 81405147259016339}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -334,7 +335,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.64, y: 0.64}
@@ -363,7 +364,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6275971143486845661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -460,6 +461,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3683364a62e25a747a21d2a93461558d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &81405147259016339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275971143486845660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e6dbabcbb36754d82ef7f6a7dc7110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageObject: {fileID: 7722317719220855986}
+  damageText: {fileID: 5855907197921290126}
+  displayTime: 3
 --- !u!1 &7722317719220855986
 GameObject:
   m_ObjectHideFlags: 0

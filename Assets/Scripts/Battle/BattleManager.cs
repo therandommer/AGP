@@ -165,6 +165,8 @@ public class BattleManager : MonoBehaviour
             EnemiesToDamage[i].Health -= damageAmount;
             Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
             Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " health left");
+            EnemiesToDamage[i].gameObject.SendMessage("UpdateAnimState", "isHit");
+            EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
         }
         ///Add in a coroutine to slowly move the slider to the value instead of just setting it
         attack.EnemyHealthSlider.value = selectedTarget.Health / (float)selectedTarget.EnemyProfile.MaxHealth; 
