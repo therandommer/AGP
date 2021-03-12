@@ -134,7 +134,7 @@ public class EnemyController : MonoBehaviour
     bool AttackPlayer()
     {
         targetPlayer = GameState.CurrentPlayer;
-
+        
         targetPlayer.Health -= battleManager.CalculateDamage(this, targetPlayer);
 
         float HealthBarValue = targetPlayer.Health / (float)targetPlayer.MaxHealth;

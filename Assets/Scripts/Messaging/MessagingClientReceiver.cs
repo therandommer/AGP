@@ -17,7 +17,6 @@ public class MessagingClientReceiver : MonoBehaviour
                var conversation = dialog.Conversations[0];
                 if (conversation != null)
                 {
-                    Debug.Log("conversation");
                     ConversationManager.Instance.StartConversation(conversation);
                 }
             }

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
+  m_Name: Test4
+  m_EditorClassIdentifier: 
+  ConversationLines:
+  - SpeakingCharacterName: Works!
+    ConversationText: Testing 4
+    DisplayPic: {fileID: 21300000, guid: 1b8077c3f7dd0554ea6a0d6b08f1ab97, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Convo: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Convo: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Convo: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Convo: {fileID: 0}

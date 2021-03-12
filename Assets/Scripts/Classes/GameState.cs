@@ -6,7 +6,7 @@ public class GameState : MonoBehaviour
 {
     public static Player CurrentPlayer;
     public Player Player;
-    public Player[] PlayerParty;
+    public Player PlayerParty;
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
@@ -16,6 +16,7 @@ public class GameState : MonoBehaviour
     void Start()
     {
         CurrentPlayer = Player;
+        
     }
 
     public static Vector3 GetLastScenePosition(string sceneName)//Check wether the the last scene position was saved

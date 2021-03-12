@@ -13,24 +13,83 @@ MonoBehaviour:
   m_Name: BrotherCheck
   m_EditorClassIdentifier: 
   ConversationLines:
-  - SpeakingCharacterName: Brother
-    ConversationText: Have you spoken to the cleric?
-    DisplayPic: {fileID: 21300000, guid: 9d207334d91a1d04188e8dc89adf7ca0, type: 3}
   - SpeakingCharacterName: Player
-    ConversationText: Cleric?
+    ConversationText: Testing1
     DisplayPic: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
-  - SpeakingCharacterName: Brother
-    ConversationText: Yes, the one we were sent to see?
-    DisplayPic: {fileID: 21300000, guid: 9d207334d91a1d04188e8dc89adf7ca0, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: Test1
+    Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Decision2: 0
+    Decision2Text: Test2
+    Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Decision3: 0
+    Decision3Text: Test3
+    Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Decision4: 0
+    Decision4Text: Test4
+    Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
   - SpeakingCharacterName: Player
-    ConversationText: ...
-    DisplayPic: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
-  - SpeakingCharacterName: Brother
-    ConversationText: '*Sigh* The old guy on the other side of town'
-    DisplayPic: {fileID: 21300000, guid: 9d207334d91a1d04188e8dc89adf7ca0, type: 3}
+    ConversationText: Testing2
+    DisplayPic: {fileID: 21300000, guid: fa549ce08b8854d44ae905e7e05bb10e, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 1
+    Decision1Text: Test1
+    Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Decision2: 1
+    Decision2Text: Test2
+    Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Decision3: 1
+    Decision3Text: Test3
+    Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Decision4: 1
+    Decision4Text: Test4
+    Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
   - SpeakingCharacterName: Player
-    ConversationText: Right on my way!
+    ConversationText: Testing3
+    DisplayPic: {fileID: 21300000, guid: f6df35b66502f5843acc07178169afd8, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 1
+    Decision1Text: Test1
+    Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Decision2: 1
+    Decision2Text: Test2
+    Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Decision3: 1
+    Decision3Text: Test3
+    Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Decision4: 1
+    Decision4Text: Test4
+    Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
+  - SpeakingCharacterName: Player
+    ConversationText: Testing4
+    DisplayPic: {fileID: 21300000, guid: 4a2bd57a20dedc54cb8c4be3290c91a8, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 1
+    Decision1Text: Test1
+    Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Decision2: 1
+    Decision2Text: Test2
+    Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Decision3: 1
+    Decision3Text: Test3
+    Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Decision4: 1
+    Decision4Text: Test4
+    Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
+  - SpeakingCharacterName: Player
+    ConversationText: Testing
     DisplayPic: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
-  - SpeakingCharacterName: Brother
-    ConversationText: Gods help me...
-    DisplayPic: {fileID: 21300000, guid: 9d207334d91a1d04188e8dc89adf7ca0, type: 3}
+    DecisionToBeMade: 1
+    Decision1: 1
+    Decision1Text: Test1
+    Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Decision2: 1
+    Decision2Text: Test2
+    Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Decision3: 1
+    Decision3Text: Test3
+    Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Decision4: 1
+    Decision4Text: Test4
+    Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
