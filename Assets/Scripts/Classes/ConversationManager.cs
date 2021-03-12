@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class ConversationManager : Singleton<ConversationManager>
@@ -8,8 +7,8 @@ public class ConversationManager : Singleton<ConversationManager>
     protected ConversationManager() { } // guarantee this will be always a singleton only - can't use the constructor!
 
     //Is there a converastion going on
-    bool talking = false;
-    bool choice; //Is there a choice to be made
+    public bool talking = false;
+    public bool choice; //Is there a choice to be made
     public bool wait = false;
     //The current line of text being displayed
     ConversationEntry currentConversationLine;
@@ -21,10 +20,7 @@ public class ConversationManager : Singleton<ConversationManager>
     public CanvasGroup choicesCanvas;
     public ChoiceManager choiceManager;
 
-    public Conversation Choice1Convo;
-    public Conversation Choice2Convo;
-    public Conversation Choice3Convo;
-    public Conversation Choice4Convo;
+
 
     public void StartConversation(Conversation conversation)
     {
@@ -33,50 +29,48 @@ public class ConversationManager : Singleton<ConversationManager>
         textHolder = GameObject.Find("Dialog Text").GetComponent<Text>();
         choicesCanvas = GameObject.Find("Choices").GetComponent<CanvasGroup>();
         choiceManager = GameObject.Find("ChoiceManager").GetComponent<ChoiceManager>();
-
+        Debug.Log("trying to start " + conversation.name);
         //Start displying the supplied conversation
         if (!talking)
         {
             talking = true;
-            foreach (var conversationLine in conversation.ConversationLines)
-            {
-                if (conversationLine.DecisionToBeMade)
-                {
-                    Choice1Convo = conversationLine.Decision1Convo;
-                    Choice2Convo = conversationLine.Decision2Convo;
-                    Choice3Convo = conversationLine.Decision3Convo;
-                    Choice4Convo = conversationLine.Decision4Convo;
-                }
-            }
+
             StartCoroutine(DisplayConversation(conversation));
         }
     }
 
     IEnumerator DisplayConversation(Conversation conversation)
     {
-        Debug.Log("Started Convo");
-        foreach (var conversationLine in conversation.ConversationLines)
+        //foreach (var conversationLine in conversation.ConversationLines)
+        for(int i = 0; i < conversation.ConversationLines.Length; i ++)
         {
-            currentConversationLine = conversationLine;
+            Debug.Log("showing line " + i);
+            currentConversationLine = conversation.ConversationLines[i];
 
             textHolder.text = currentConversationLine.ConversationText;
             imageHolder.sprite = currentConversationLine.DisplayPic;
 
-            if (conversationLine.DecisionToBeMade)
+            if (currentConversationLine.DecisionToBeMade)
             {
                 //Change button text
                 choiceManager.ChangeButtonText(currentConversationLine);
                 choice = true;
+                wait = true;
+                while (wait)
+                {
+                    yield return null;
+                }
             }
             else
             {
                 //yield return new WaitForSeconds(5);
             }
-
+            if(!wait)
+            {
                 bool done = false;
                 while (!done)
                 {
-                    if (Input.GetKeyDown(KeyCode.Space))
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         Debug.Log("Clicked");
 
@@ -84,12 +78,15 @@ public class ConversationManager : Singleton<ConversationManager>
                     }
                     yield return null;
                 }
-                //yield return StartCoroutine(Wait(KeyCode.Space));
-            
+            }
 
         }
+        if(!talking)
+        {
         talking = false;
         choice = false;
+        wait = false;
+        }
     }
 
     void OnGUI()
@@ -103,6 +100,11 @@ public class ConversationManager : Singleton<ConversationManager>
                 choicesCanvas.alpha = 1;
                 choicesCanvas.blocksRaycasts = true;
             }
+            else
+            {
+                choicesCanvas.alpha = 0;
+                choicesCanvas.blocksRaycasts = false;
+            }
         }
         else
         {
@@ -111,24 +113,6 @@ public class ConversationManager : Singleton<ConversationManager>
             choicesCanvas.alpha = 0;
             choicesCanvas.blocksRaycasts = false;
         }
-    }
-
-    public void Choice1Diagloge()
-    {
-        StartCoroutine(DisplayConversation(Choice1Convo));
-        //StartConversation(Choice1Convo);
-    }
-    public void Choice2Diagloge()
-    {
-        StartCoroutine(DisplayConversation(Choice2Convo));
-    }
-    public void Choice3Diagloge()
-    {
-        StartCoroutine(DisplayConversation(Choice3Convo));
-    }
-    public void Choice4Diagloge()
-    {
-        StartCoroutine(DisplayConversation(Choice4Convo));
     }
 }
 

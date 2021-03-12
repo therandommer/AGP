@@ -18,7 +18,9 @@ public class Player : Entity
         get { return money; }
         set { money = value; }
     }
-    
+
+    public List<Quest> QuestLog = new List<Quest>();
+
 }
 
 

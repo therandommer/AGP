@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e72f7ae0ce48354b8915fab3d8631de, type: 3}
-  m_Name: Angel
+  m_Script: {fileID: 11500000, guid: 58472016962655f48b07b203fac70cb0, type: 3}
+  m_Name: Kill Assassin
   m_EditorClassIdentifier: 
-  Name: Angel
-  Age: 16
-  Occupation: Protector
-  Inventory: []
-  Skills: []
-  QuestLog: []
+  QuestName: Kill Assassin
+  questStatus: 0
+  questType: 0
+  questAmountNeeded: 1
+  EnemyToKill: 2
+  ItemNeeded: {fileID: 0}
+  questReward: 0
+  RewardAmount: 5
