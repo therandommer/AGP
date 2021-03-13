@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    public List<InventoryItem> Inventory = new List<InventoryItem>();
+    public List<InventoryItem> StartingInventory = new List<InventoryItem>();
     public void AddInventoryItem(InventoryItem item)
     {
-        Inventory.Add(item);
+        StartingInventory.Add(item);
     }
 
-    public string[] Skills;
+    public Abilities[] StartingSkills;
 
-    private int money;
-    public int Money
-    {
-        get { return money; }
-        set { money = value; }
-    }
+    public int StartingMoney;
 
-    public List<Quest> QuestLog = new List<Quest>();
+    public List<Quest> StartingQuestLog = new List<Quest>();
 
 }
 

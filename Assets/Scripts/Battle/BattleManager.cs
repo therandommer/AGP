@@ -103,8 +103,6 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        GameState.CurrentPlayer.Health = 100;
-        GameState.CurrentPlayer.MaxHealth = 100;
         HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.MaxHealth;
         // Calculate how many enemies 
         //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
@@ -167,9 +165,9 @@ public class BattleManager : MonoBehaviour
             Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " health left");
         }
         ///Add in a coroutine to slowly move the slider to the value instead of just setting it
-        attack.EnemyHealthSlider.value = selectedTarget.Health / (float)selectedTarget.EnemyProfile.MaxHealth; 
+        attack.EnemyHealthSlider.value = selectedTarget.Health / (float)selectedTarget.EnemyProfile.maxHealth; 
         //Set the health text
-        attack.HealthText.text = selectedTarget.Health + "/" + selectedTarget.EnemyProfile.MaxHealth;
+        attack.HealthText.text = selectedTarget.Health + "/" + selectedTarget.EnemyProfile.maxHealth;
 
         switch (damageAmount) //Spawn graphic/FX here bigger damage bigger damage effect
         {
@@ -212,14 +210,14 @@ public class BattleManager : MonoBehaviour
         attacking = false;
     }
 
-    public int CalculateDamage(Player currentPlayer, EnemyController Target)
+    public int CalculateDamage(PlayerController currentPlayer, EnemyController Target)
     {
         int DamageCalc = currentPlayer.Strength + attack.hitAmount;
 
         return DamageCalc;
     }
 
-    public int CalculateDamage(EnemyController currentAI, Player TargetPlayer)
+    public int CalculateDamage(EnemyController currentAI, PlayerController TargetPlayer)
     {
         int DamageCalc = currentAI.Strength + attack.hitAmount - TargetPlayer.Defense;
 

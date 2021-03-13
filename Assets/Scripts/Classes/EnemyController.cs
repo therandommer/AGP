@@ -7,24 +7,91 @@ public class EnemyController : MonoBehaviour
     public BattleManager battleManager;
     public Enemy EnemyProfile;
     Animator enemyAI;
-    public Player targetPlayer;
+    public PlayerController targetPlayer;
     private bool selected;
     public GameObject selectionCircle;
     public GameObject TargetReticle;
-    public int Health;
-    public int Strength;
     public bool attacking = false;
+    private int level = 1;
+    public int Level
+    {
+        get { return level; }
+        set { level = value; }
+    }
+    private int health = 0;
+    public int Health
+    {
+        get { return health; }
+        set { health = value; }
+    }
+    private int maxHealth = 0;
+    public int MaxHealth
+    {
+        get { return maxHealth; }
+        set { maxHealth = value; }
+    }
+    private int strength = 1;
+    public int Strength
+    {
+        get { return strength; }
+        set { strength = value; }
+    }
+    private int magic = 0;
+    public int Magic
+    {
+        get { return magic; }
+        set { magic = value; }
+    }
+    private int defense = 0;
+    public int Defense
+    {
+        get { return defense; }
+        set { defense = value; }
+    }
+    private int speed = 1;
+    public int Speed
+    {
+        get { return speed; }
+        set { speed = value; }
+    }
+    private int damage = 1;
+    public int Damage
+    {
+        get { return damage; }
+        set { damage = value; }
+    }
+    private int armor = 0;
+    public int Armor
+    {
+        get { return armor; }
+        set { armor = value; }
+    }
+    private int noOfAttacks = 1;
 
-    public void Awake()
+    private string Weapon; //Again switch, adds in bonus damage
+
+    public Abilities[] Skills;
+
+    void Awake()
     {
         enemyAI = GetComponent<Animator>();
         if (enemyAI == null)
         {
             Debug.LogError("No AI System Found");
         }
-        Health = EnemyProfile.Health;
-        Strength = EnemyProfile.Strength;
+        ///Copy across all details, much easier to handle plus better for saving
+        Level = EnemyProfile.level;
+        Health = EnemyProfile.maxHealth;
+        MaxHealth = EnemyProfile.maxHealth;
+        Strength = EnemyProfile.strength;
+        Magic = EnemyProfile.magic;
+        Defense = EnemyProfile.defense;
+        Speed = EnemyProfile.speed;
+        Damage = EnemyProfile.BonusDamage;
+        Armor = EnemyProfile.armor;
     }
+
+
     public BattleManager BattleManager
     {
         get
@@ -46,12 +113,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-
     public void UpdateAI()//To use with the animator/controller
     {
         if (enemyAI != null && EnemyProfile != null && battleManager.EnemyCount == 0)
         {
-            enemyAI.SetInteger("EnemyHealth", EnemyProfile.Health);
+            enemyAI.SetInteger("EnemyHealth", EnemyProfile.health);
             enemyAI.SetInteger("PlayerHealth", GameState.CurrentPlayer.Health);
             enemyAI.SetInteger("EnemiesInBattle", battleManager.EnemyCount);
         }

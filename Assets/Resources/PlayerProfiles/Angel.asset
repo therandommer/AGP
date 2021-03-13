@@ -14,7 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Angel
   Age: 16
+  Faction: Angels
   Occupation: Protector
-  Inventory: []
-  Skills: []
-  QuestLog: []
+  level: 1
+  health: 100
+  maxHealth: 100
+  strength: 5
+  magic: 2
+  defense: 3
+  speed: 2
+  BonusDamage: 1
+  armor: 0
+  noOfAttacks: 1
+  Weapon: 
+  Position: {x: 0, y: 0}
+  StartingInventory: []
+  StartingSkills:
+  - {fileID: 11400000, guid: 2ec3db44f2a1cf846acd02bccda89a0d, type: 2}
+  - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
+  - {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}
+  - {fileID: 11400000, guid: b8a26cc11b5674e4c85556e05bc6beab, type: 2}
+  StartingMoney: 0
+  StartingQuestLog: []

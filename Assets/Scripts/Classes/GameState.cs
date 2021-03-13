@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    public static Player CurrentPlayer;
-    public Player Player;
+    public static PlayerController CurrentPlayer;
+    public Player PlayerProfile;
+    public PlayerController PlayerController;
     public Player PlayerParty;
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
     public static bool justExitedBattle;
@@ -15,7 +16,7 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentPlayer = Player;
+        CurrentPlayer = PlayerController;
         
     }
 

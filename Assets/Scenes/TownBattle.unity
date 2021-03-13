@@ -2372,6 +2372,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6218218275178927871, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
+        type: 3}
+      propertyPath: PlayerController
+      value: 
+      objectReference: {fileID: 1147995828}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb64f876a4e1cc41a82ad91db98d8e6, type: 3}
 --- !u!1 &601759787
@@ -5379,6 +5384,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1147995828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4576505716379105210, guid: 09fe918fd3774914d9cf3cc43a8e8e95,
+    type: 3}
+  m_PrefabInstance: {fileID: 6275971143307339804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6114c6038ae4dbe48bde6eb5162d7cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1159411134
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,7 +6025,8 @@ MonoBehaviour:
   - {fileID: 99414444}
   - {fileID: 317163980}
   - {fileID: 1936690409}
-  Enemies: []
+  Enemies:
+  - {fileID: 391042395101021155, guid: ede789e2cdce09a4c996a598771e93fe, type: 3}
   SpawnAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -6108,13 +6126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleManager: {fileID: 1273421290}
   Ability1ButtonText: {fileID: 748029037}
-  Ability1: {fileID: 11400000, guid: b8a26cc11b5674e4c85556e05bc6beab, type: 2}
   Ability2ButtonText: {fileID: 748029036}
-  Ability2: {fileID: 11400000, guid: 2ec3db44f2a1cf846acd02bccda89a0d, type: 2}
   Ability3ButtonText: {fileID: 748029035}
-  Ability3: {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
   Ability4ButtonText: {fileID: 748029033}
-  Ability4: {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}
   PopupCanvas: {fileID: 1818390583}
   Skill_Image: {fileID: 1795259162}
   Skill_Name: {fileID: 1244491307}

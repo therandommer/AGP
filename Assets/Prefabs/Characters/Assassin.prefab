@@ -235,9 +235,10 @@ MonoBehaviour:
   battleManager: {fileID: 0}
   EnemyProfile: {fileID: 11400000, guid: eedb099955bf80b4d84c01eb4406fd78, type: 2}
   targetPlayer: {fileID: 0}
+  selectionCircle: {fileID: 0}
   TargetReticle: {fileID: 1005020471502672498}
-  Health: 0
-  Strength: 0
+  attacking: 0
+  Skills: []
 --- !u!61 &8841773352790104601
 BoxCollider2D:
   m_ObjectHideFlags: 0
