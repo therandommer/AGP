@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    public static Player CurrentPlayer;
-    public GameObject PlayerObject; // used for message references
-    public Player Player;
-    public static GameObject[] PlayerParty;
+    public static PlayerController CurrentPlayer;
+    public Player PlayerProfile;
+    public PlayerController PlayerController;
+    public Player PlayerParty;
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
@@ -16,7 +16,8 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentPlayer = Player;
+        CurrentPlayer = PlayerController;
+        
     }
 
     public static Vector3 GetLastScenePosition(string sceneName)//Check wether the the last scene position was saved

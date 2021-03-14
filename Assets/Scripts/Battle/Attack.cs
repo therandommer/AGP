@@ -8,13 +8,13 @@ public class Attack : MonoBehaviour
     public BattleManager battleManager;
     [Header("Abilities")]
     public Text Ability1ButtonText;
-    public Abilities Ability1;
+    private Abilities Ability1;
     public Text Ability2ButtonText;
-    public Abilities Ability2;
+    private Abilities Ability2;
     public Text Ability3ButtonText;
-    public Abilities Ability3;
+    private Abilities Ability3;
     public Text Ability4ButtonText;
-    public Abilities Ability4;
+    private Abilities Ability4;
     [Header("Attack Pop Up")]
     public CanvasGroup PopupCanvas;
     public Image Skill_Image;
@@ -53,14 +53,18 @@ public class Attack : MonoBehaviour
 
         EnemyImage.sprite = EnemyInfo.EnemyProfile.EnemySprite;
         EnemyName.text = Enemy.name;
-        HealthText.text = EnemyInfo.Health + "/" + EnemyInfo.EnemyProfile.MaxHealth;
-        EnemyHealthSlider.value = EnemyInfo.Health / (float)EnemyInfo.EnemyProfile.MaxHealth;
+        HealthText.text = EnemyInfo.Health + "/" + EnemyInfo.EnemyProfile.maxHealth;
+        EnemyHealthSlider.value = EnemyInfo.Health / (float)EnemyInfo.EnemyProfile.maxHealth;
         EnemyPopupCanvas.alpha = 1;
     }
 
 
     void Start()
     {
+        Ability1 = GameState.CurrentPlayer.Skills[0];
+        Ability2 = GameState.CurrentPlayer.Skills[1];
+        Ability3 = GameState.CurrentPlayer.Skills[2];
+        Ability4 = GameState.CurrentPlayer.Skills[3];
         ReadAbilitiesNames();
     }
 
