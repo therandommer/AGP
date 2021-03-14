@@ -15,6 +15,8 @@ public class AnimationManager : MonoBehaviour
     int receivedDamage = 0;
     [SerializeField]
     float displayTime = 3.0f;
+    [SerializeField]
+    float hitDelay = 0.25f; //length of time character repeats their hit animation
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -38,18 +40,34 @@ public class AnimationManager : MonoBehaviour
             anim.SetBool(name, true);
             Debug.Log("Setting the state of: " + name + " to true.");
         }
-        
+        if (name == "isHit" && anim.GetBool(name))
+		{
+            Invoke("InvertHitState", hitDelay);
+		}
 	}
     public void EnableDamageValues(int damage)
 	{
+        Debug.Log("Enabling Damage Value display for " + gameObject.name);
         receivedDamage = damage;
         StartCoroutine("DamageNumbers");
-        damageObject.SetActive(false);
 	}
     IEnumerator DamageNumbers()
 	{
         damageObject.SetActive(true);
         damageText.text = "" + receivedDamage;
         yield return new WaitForSeconds(displayTime);
+        damageObject.SetActive(false);
+        Debug.Log("Disabling Damage Value display for " + gameObject.name);
+	}
+    void DisableDamageNumbers() //used to prevent overlap or enumerator weirdness
+	{
+        damageObject.SetActive(false);
+        damageText.text = "";
+        StopCoroutine(DamageNumbers());
+	}
+    void InvertHitState() //reverse after animation finished
+	{
+        UpdateAnimState("isHit");
+        Debug.Log("Inverted hit state for " + gameObject.name);
 	}
 }
