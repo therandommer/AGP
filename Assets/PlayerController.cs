@@ -78,6 +78,8 @@ public class PlayerController : MonoBehaviour
 
     public Abilities[] Skills;
 
+    public Abilities[] EquipedSkills;
+
     public int Money;
 
     public List<Quest> QuestLog = new List<Quest>();
@@ -96,6 +98,7 @@ public class PlayerController : MonoBehaviour
 
         Inventory = PlayerProfile.StartingInventory;
         Skills = PlayerProfile.StartingSkills;
+        EquipedSkills = PlayerProfile.StartingSkills;
         Money = PlayerProfile.StartingMoney;
         QuestLog = PlayerProfile.StartingQuestLog;
 

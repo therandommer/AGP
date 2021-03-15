@@ -30,7 +30,7 @@ public class BattleManager : MonoBehaviour
     [Header("Attack/Abilities")]
     [Tooltip("The attack script attached to the same gameObject")]
     public Attack attack;
-
+    [Header("Debug variables")]
     public string selectedTargetName;
     public Abilities selectedAttack;
     public EnemyController selectedTarget;
