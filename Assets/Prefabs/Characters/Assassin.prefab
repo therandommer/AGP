@@ -637,7 +637,7 @@ MonoBehaviour:
   damageObject: {fileID: 5580855473591854867}
   damageText: {fileID: 8099435603225652899}
   displayTime: 5
-  hitDelay: 0.25
+  hitDelay: 0.5
 --- !u!1 &5580855473591854867
 GameObject:
   m_ObjectHideFlags: 0
