@@ -189,6 +189,8 @@ public class BattleManager : MonoBehaviour
             }
             if(!selectedAttack.isMelee)
 			{
+                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
+                GameState.CurrentPlayer.transform.position = new Vector2(posA.x, posA.y + 0.365f);
                 attackParticle = GameObject.Instantiate(selectedAttack.CastEffect);
                 attackParticle.GetComponent<Effects>().SetPosA(posA);
                 attackParticle.GetComponent<Effects>().SetPosB(posB);
@@ -197,8 +199,9 @@ public class BattleManager : MonoBehaviour
             EnemiesToDamage[i].Health -= damageAmount;
             Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
             Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " health left");
+            EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
             EnemiesToDamage[i].gameObject.SendMessage("UpdateAnimState", "isHit");
-            yield return new WaitForSeconds(stopTime);
+            yield return new WaitForSeconds(stopTime + 0.3f);
             EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
             tmpTimer = 0.0f;
             if(selectedAttack.isMelee)
@@ -211,10 +214,10 @@ public class BattleManager : MonoBehaviour
                     tmpTimer += Time.deltaTime;
                     yield return null;
                 }
-                GameState.CurrentPlayer.transform.position = posA; //fully resets player position
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
                 GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
             }
+            GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
+            GameState.CurrentPlayer.transform.position = posA; //fully resets player position
             //might need to change this for ranged and have enemy intereaction on projectile hit?
             attackParticle = GameObject.Instantiate(selectedAttack.CastEffect, EnemiesToDamage[i].gameObject.transform); //should instantiate the correct effect which does its thing then destroys itself
         }
@@ -432,4 +435,9 @@ public class BattleManager : MonoBehaviour
         MainButtons.interactable = true;
         MainButtons.blocksRaycasts = true;
     }
+
+    public float GetStopTime()
+	{
+        return stopTime;
+	}
 }

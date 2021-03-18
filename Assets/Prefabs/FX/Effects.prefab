@@ -9555,6 +9555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usesDestroy: 1
   destroyTimer: 3
+  isHitEffect: 1
   isProjectile: 0
   projectileSpeed: 2
   hitEffect: {fileID: 0}

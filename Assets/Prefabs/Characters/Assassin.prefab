@@ -172,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6604958736385449761
 RectTransform:
   m_ObjectHideFlags: 0
@@ -589,6 +589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109ce71bf53dcae41af84f3ee3132a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sliderObject: {fileID: 783006247483390409}
+  sliderLerpTime: 0.5
   battleManager: {fileID: 0}
   EnemyProfile: {fileID: 11400000, guid: eedb099955bf80b4d84c01eb4406fd78, type: 2}
   targetPlayer: {fileID: 0}
@@ -747,7 +749,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.004000008, y: 0.96625}
   m_SizeDelta: {x: -0.168, y: -0.9125}
   m_Pivot: {x: 0.5, y: 0.5}

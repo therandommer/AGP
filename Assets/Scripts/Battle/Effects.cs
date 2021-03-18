@@ -8,16 +8,32 @@ public class Effects : MonoBehaviour
     public bool usesDestroy = true; //if false disregards below timer
     [ConditionalHide("usesDestroy")]
     public float destroyTimer = 3.0f; //time before object deletes itself
-
+    [ConditionalHide("usesDestroy")]
+    public bool isHitEffect = false; //if true will auto start a delete function
     public bool isProjectile = false; //true and then handles projectile travel here
-    [ConditionalHide("isProjectile")]
-    public float projectileSpeed = 2.0f; //time taken to go from player to enemy
+
+    float projectileSpeed = 0; //time taken to go from player to enemy
     [ConditionalHide("isProjectile")]
     public GameObject hitEffect = null; //spawn this effect on projectile hit
+    
     GameObject hitReference = null;
+    BattleManager bm = null;
     //used for travel lerp
     Vector2 posA = Vector2.zero;
     Vector2 posB = Vector2.zero;
+    void Start()
+	{
+        if(isProjectile)
+		{
+            bm = FindObjectOfType<BattleManager>();
+            projectileSpeed = bm.GetStopTime() + 0.2f;
+            Debug.Log("Projectile going to travel for: " + projectileSpeed);
+		}
+        if(isHitEffect)
+		{
+            Invoke("DestroyThis", destroyTimer);
+		}
+	}
     public void InitiateProjectile() //waits for battle manager to call
 	{
         if (usesDestroy)
@@ -32,7 +48,11 @@ public class Effects : MonoBehaviour
     void DestroyThis()
 	{
         Debug.Log("Destroying " + gameObject.name);
-        Destroy(gameObject);
+        if(gameObject.GetComponent<SpriteRenderer>())
+		{
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+        Destroy(this.gameObject);
 	}
     IEnumerator MoveThis()
 	{
@@ -45,7 +65,6 @@ public class Effects : MonoBehaviour
          }
         Debug.Log("Projectile: " + gameObject.name + " has reached destination, spawning hit now");
         hitReference = GameObject.Instantiate(hitEffect, new Vector3(posB.x, posB.y, this.transform.position.z), this.transform.rotation);
-        hitReference.GetComponent<Effects>().InitiateProjectile();
         DestroyThis();
     }
 

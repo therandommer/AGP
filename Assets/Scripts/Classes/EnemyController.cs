@@ -1,8 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
+    //UI Updates for each enemy, they all require the slider bar.
+    [SerializeField]
+    GameObject sliderObject = null;
+    Slider healthSlider = null;
+    [SerializeField]
+    float sliderLerpTime = 0.5f;
 
     public BattleManager battleManager;
     public Enemy EnemyProfile;
@@ -71,9 +78,25 @@ public class EnemyController : MonoBehaviour
     private string Weapon; //Again switch, adds in bonus damage
 
     public Abilities[] Skills;
-
+    public void UpdateUI()
+	{
+        if(healthSlider != null)
+		{
+            float startSliderValue = healthSlider.value;
+            float newSliderValue = (health / maxHealth);
+            Debug.Log("Slider max health = " + maxHealth);
+            Debug.Log("Slider current health = " + health);
+            Debug.Log("New slider value: " + newSliderValue);
+            healthSlider.value = Mathf.Lerp(startSliderValue, newSliderValue, sliderLerpTime);
+        }
+	}
     void Awake()
     {
+        if(sliderObject != null)
+		{
+            sliderObject.SetActive(true);
+            healthSlider = sliderObject.GetComponent<Slider>();
+		}
         enemyAI = GetComponent<Animator>();
         if (enemyAI == null)
         {
