@@ -123,6 +123,7 @@ public class Attack : MonoBehaviour
 
     void HighlightSquare(GameObject SpawnPoint, Color HighlightColour)
     {
+        Debug.Log("Highlighting " + SpawnPoint.name);
         SpawnPoint.GetComponent<SpriteRenderer>().color = HighlightColour;
     }
 
@@ -138,7 +139,7 @@ public class Attack : MonoBehaviour
     {
         for (int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
         {
-            Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
+            Debug.Log("Highlighting bottom row");
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
             if (battleManager.Enemies[i] != null)
@@ -155,7 +156,6 @@ public class Attack : MonoBehaviour
     {
         for (int i = 1; i < battleManager.EnemySpawnPoints.Length; i++)
         {
-            Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
             if (battleManager.Enemies[i] != null)
@@ -172,7 +172,6 @@ public class Attack : MonoBehaviour
     {
         for (int i = 2; i < battleManager.EnemySpawnPoints.Length; i++)
         {
-            Debug.Log("Highlight " + battleManager.EnemySpawnPoints[i].name);
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
             if (battleManager.Enemies[i] != null)
