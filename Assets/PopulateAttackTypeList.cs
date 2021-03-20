@@ -1,0 +1,79 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class PopulateAttackTypeList : MonoBehaviour
+{
+
+    public GameObject AttackTypePrefab;
+    public bool StrongWith;
+    public bool WeakAgainst;
+    void Start()
+    {
+        for(int i = 0; i < GameState.CurrentPlayer.PlayerProfile.StrongWith.Count; i++)
+        {
+            GameObject attackTypePrefab = Instantiate(AttackTypePrefab, Vector3.zero, Quaternion.identity);
+            attackTypePrefab.transform.parent = transform;
+            UiReferences ButtonUI = attackTypePrefab.GetComponent<UiReferences>();
+            if(StrongWith)
+            {
+                ButtonUI.AttackType.text = GameState.CurrentPlayer.PlayerProfile.StrongWith[i].ToString();
+                switch (GameState.CurrentPlayer.PlayerProfile.StrongWith[i])
+                {
+                    case AbilityTypes.Normal:
+                        break;
+                    case AbilityTypes.Slashing:
+                        ButtonUI.AttackTypeBackground.color = Color.gray;
+                        break;
+                    case AbilityTypes.Blunt:
+                        ButtonUI.AttackTypeBackground.color = Color.cyan;
+                        break;
+                    case AbilityTypes.Holy:
+                        ButtonUI.AttackTypeBackground.color = Color.yellow;
+                        break;
+                    case AbilityTypes.Dark:
+                        ButtonUI.AttackTypeBackground.color = Color.magenta;
+                        break;
+                    case AbilityTypes.Fire:
+                        ButtonUI.AttackTypeBackground.color = Color.red;
+                        break;
+                    case AbilityTypes.Water:
+                        ButtonUI.AttackTypeBackground.color = Color.blue;
+                        break;
+                }
+            }
+            else if(WeakAgainst)
+            {
+                ButtonUI.AttackType.text = GameState.CurrentPlayer.PlayerProfile.WeakAgainst[i].ToString();
+                switch (GameState.CurrentPlayer.PlayerProfile.WeakAgainst[i])
+                {
+                    case AbilityTypes.Normal:
+                        break;
+                    case AbilityTypes.Slashing:
+                        ButtonUI.AttackTypeBackground.color = Color.gray;
+                        break;
+                    case AbilityTypes.Blunt:
+                        ButtonUI.AttackTypeBackground.color = Color.cyan;
+                        break;
+                    case AbilityTypes.Holy:
+                        ButtonUI.AttackTypeBackground.color = Color.yellow;
+                        break;
+                    case AbilityTypes.Dark:
+                        ButtonUI.AttackTypeBackground.color = Color.magenta;
+                        break;
+                    case AbilityTypes.Fire:
+                        ButtonUI.AttackTypeBackground.color = Color.red;
+                        break;
+                    case AbilityTypes.Water:
+                        ButtonUI.AttackTypeBackground.color = Color.blue;
+                        break;
+                }
+            }
+            else
+            {
+                Debug.LogError("Populate Attack List not setup correctly");
+            }
+        }
+    }
+}

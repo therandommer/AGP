@@ -4854,8 +4854,7 @@ MonoBehaviour:
   - {fileID: 99414444}
   - {fileID: 317163980}
   - {fileID: 1936690409}
-  Enemies:
-  - {fileID: 391042395101021155, guid: ede789e2cdce09a4c996a598771e93fe, type: 3}
+  Enemies: []
   SpawnAnimationCurve:
     serializedVersion: 2
     m_Curve:

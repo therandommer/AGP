@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Entity
 {
+    public Sprite PlayerImage;
+
     public List<InventoryItem> StartingInventory = new List<InventoryItem>();
     public void AddInventoryItem(InventoryItem item)
     {
@@ -15,6 +18,10 @@ public class Player : Entity
     public int StartingMoney;
 
     public List<Quest> StartingQuestLog = new List<Quest>();
+
+    public List<AbilityTypes> StrongWith = new List<AbilityTypes>();
+
+    public List<AbilityTypes> WeakAgainst = new List<AbilityTypes>();
 
 }
 

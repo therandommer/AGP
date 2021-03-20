@@ -28,6 +28,7 @@ MonoBehaviour:
   noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
+  PlayerImage: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
   StartingInventory: []
   StartingSkills:
   - {fileID: 11400000, guid: 2ec3db44f2a1cf846acd02bccda89a0d, type: 2}
@@ -36,3 +37,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8a26cc11b5674e4c85556e05bc6beab, type: 2}
   StartingMoney: 0
   StartingQuestLog: []
+  StrongWith: 030000000600000000000000
+  WeakAgainst: 020000000400000005000000

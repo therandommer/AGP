@@ -10,5 +10,6 @@ public enum AbilityTypes
     Holy,
     Dark,
     Fire,
-    Water
+    Water,
+    Electricity
 }

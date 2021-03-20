@@ -139,7 +139,6 @@ public class Attack : MonoBehaviour
     {
         for (int i = 0; i < battleManager.EnemySpawnPoints.Length; i++)
         {
-            Debug.Log("Highlighting bottom row");
             ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
             HighlightSquare(battleManager.EnemySpawnPoints[i], Color.red);
             if (battleManager.Enemies[i] != null)
