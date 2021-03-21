@@ -14,7 +14,7 @@ public class PopulateStatList : MonoBehaviour
     public TMP_Text Armour;
     public Image PlayerImage;
 
-    void Start()
+    public void populateStat()
     {
         PlayerController PC = GameState.CurrentPlayer;
         Level.text = "Level: " + PC.Level.ToString();

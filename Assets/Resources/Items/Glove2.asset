@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ff2fa9a75d16c4cb735406cf4b0eea, type: 3}
   m_Name: Glove2
   m_EditorClassIdentifier: 
+  ItemLevel: 0
+  isArmour: 1
+  armourItem: 2
+  isWeapon: 0
+  weaponItem: 0
+  rarity: 0
   itemImage: {fileID: 21300000, guid: f874a2d8f9ee8804494db304100cafe3, type: 3}
   itemName: Gauntlet2
-  cost: 15
-  strength: 20
+  shopCost: 0
+  InitialEffect: 7
+  InitialEffectAmount: 30

@@ -5,13 +5,16 @@ using TMPro;
 
 public class PopulateAttackTypeList : MonoBehaviour
 {
-
     public GameObject AttackTypePrefab;
     public bool StrongWith;
     public bool WeakAgainst;
-    void Start()
+    public void PopAttackTypeList()
     {
-        for(int i = 0; i < GameState.CurrentPlayer.PlayerProfile.StrongWith.Count; i++)
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        for (int i = 0; i < GameState.CurrentPlayer.PlayerProfile.StrongWith.Count; i++)
         {
             GameObject attackTypePrefab = Instantiate(AttackTypePrefab, Vector3.zero, Quaternion.identity);
             attackTypePrefab.transform.parent = transform;
@@ -75,5 +78,10 @@ public class PopulateAttackTypeList : MonoBehaviour
                 Debug.LogError("Populate Attack List not setup correctly");
             }
         }
+    }
+
+    public void ClearAttackTypeList()
+    {
+
     }
 }

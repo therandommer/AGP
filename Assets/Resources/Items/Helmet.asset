@@ -10,16 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46ff2fa9a75d16c4cb735406cf4b0eea, type: 3}
-  m_Name: Glove3
+  m_Name: Helmet
   m_EditorClassIdentifier: 
-  ItemLevel: 0
+  ItemLevel: 1
   isArmour: 1
-  armourItem: 2
+  armourItem: 1
   isWeapon: 0
   weaponItem: 0
   rarity: 0
-  itemImage: {fileID: 21300000, guid: dafc9ed963adb374d8949eaeef21e949, type: 3}
-  itemName: Boots
-  shopCost: 0
+  itemImage: {fileID: 21300000, guid: 0c14b7c403778f246abc26f0d0065f3f, type: 3}
+  itemName: Helmet
+  shopCost: 30
   InitialEffect: 7
-  InitialEffectAmount: 30
+  InitialEffectAmount: 45
+  AdditionalItemEffects:
+  - itemEffect: 1
+    EffectAmount: 5
+    AbilityImmunity: 0
+  - itemEffect: 8
+    EffectAmount: 3
+    AbilityImmunity: 0

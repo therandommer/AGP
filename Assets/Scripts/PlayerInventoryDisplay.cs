@@ -10,12 +10,11 @@ public class PlayerInventoryDisplay : MonoBehaviour
 
     void Start()
     {
-
-        foreach (var item in GameState.CurrentPlayer.Inventory)
+        //foreach (var item in GameState.CurrentPlayer.Inventory)
         {
-            Button inventoryChild = (Button)Instantiate(invPrefab, Vector3.zero, Quaternion.identity);
-            inventoryChild.transform.parent = transform;
-            inventoryChild.GetComponent<Image>().sprite = item.itemImage;
+            //Button inventoryChild = (Button)Instantiate(invPrefab, Vector3.zero, Quaternion.identity);
+            //inventoryChild.transform.parent = transform;
+            //inventoryChild.GetComponent<Image>().sprite = item.itemImage;
         }
     }
 }  

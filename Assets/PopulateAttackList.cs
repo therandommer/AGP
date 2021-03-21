@@ -12,6 +12,10 @@ public class PopulateAttackList : MonoBehaviour
     public SelectAndReplaceAttack selectAndReplaceAttack;
     public void PopulateList()
     {
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
         foreach (var Abilities in GameState.CurrentPlayer.Skills)//Need Image, Title, Desc and Show off range
         {
             Debug.Log("Spawn in " + Abilities.name);

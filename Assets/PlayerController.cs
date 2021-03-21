@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
@@ -61,9 +61,9 @@ public class PlayerController : MonoBehaviour
         set { armor = value; }
     }
     private int noOfAttacks = 1;
-    
+
     private string Weapon; //Again switch, adds in bonus damage
-    
+
     private Vector2 Position; //Spawn
 
 
@@ -74,6 +74,61 @@ public class PlayerController : MonoBehaviour
     public void AddInventoryItem(InventoryItem item)
     {
         Inventory.Add(item);
+    }
+
+
+    public List<InventoryItem> GetItems(bool ShowCardsPlayerDoesNotOwn = false, bool IncludeAllRarities = false, bool IncludeAllArmour = false, bool IncludeAllWeapons = false,
+        RarityOptions rarity = RarityOptions.Basic, ArmourItems Armour = ArmourItems.None, WeaponItem Weapon = WeaponItem.None)          
+    {
+        InventoryItem[] itemArray = Inventory.ToArray();
+
+        Debug.Log("Debug1 " + itemArray.Length);
+
+        var items = from item in itemArray select item;
+
+        if (!ShowCardsPlayerDoesNotOwn)
+            items = items.Where(item => ItemCollection.Instance.QuantityOfEachItem[item] > 0);
+
+        if (!IncludeAllRarities)
+            items = items.Where(item => item.rarity == rarity);
+
+        if (!IncludeAllArmour)
+            items = items.Where(item => item.armourItem == Armour);
+
+        if (!IncludeAllWeapons)
+            items = items.Where(item => item.weaponItem == Weapon);
+
+        if (IncludeAllArmour)
+            items = items.Where(item => item.armourItem != ArmourItems.None);
+
+        if (IncludeAllWeapons)
+            items = items.Where(item => item.weaponItem != WeaponItem.None);
+
+        var returnList = items.ToList<InventoryItem>();
+        Debug.Log("Debug1 " + returnList.Count);
+
+        returnList.Sort();
+
+        return returnList;
+    }
+
+
+    public List<InventoryItem> GetItemsWithRarity(RarityOptions rarity)
+    {
+        return GetItems(true, false, false, false, rarity);
+    }
+
+    public List<InventoryItem> GetAllArmourItems()
+    {
+        return GetItems(false, true, true);
+    }
+    public List<InventoryItem> GetArmourItemsOfType(ArmourItems ArmourPiece)
+    {
+        return GetItems(false, true, false, false, RarityOptions.Basic, ArmourPiece);
+    }
+    public List<InventoryItem> GetAllWeaponItems()
+    {
+        return GetItems(false, true, false, true);
     }
 
     public Abilities[] Skills;
