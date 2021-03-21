@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5925db01cc472b34c8e7e49eba87c5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usesDestroy: 0
+  usesDestroy: 1
   destroyTimer: 2.1
+  isHitEffect: 0
   isProjectile: 1
-  projectileSpeed: 1.3
   hitEffect: {fileID: 7672817113307296492, guid: 746ee8e9de4054842a22be65bec1add1,
     type: 3}
 --- !u!212 &3368161728993667260

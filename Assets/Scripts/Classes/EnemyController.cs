@@ -82,26 +82,16 @@ public class EnemyController : MonoBehaviour
 	{
         if(healthSlider != null)
 		{
-            float startSliderValue = healthSlider.value;
-            float newSliderValue = (health / maxHealth);
-            Debug.Log("Slider max health = " + maxHealth);
-            Debug.Log("Slider current health = " + health);
-            Debug.Log("New slider value: " + newSliderValue);
-            healthSlider.value = Mathf.Lerp(startSliderValue, newSliderValue, sliderLerpTime);
+            //float startSliderValue = healthSlider.value;
+            //float newSliderValue = Health;
+            Debug.Log("Slider max health = " + MaxHealth);
+            Debug.Log("Slider current health = " + Health);
+            //Debug.Log("New slider value: " + newSliderValue);
+            healthSlider.value = Health;
         }
 	}
     void Awake()
     {
-        if(sliderObject != null)
-		{
-            sliderObject.SetActive(true);
-            healthSlider = sliderObject.GetComponent<Slider>();
-		}
-        enemyAI = GetComponent<Animator>();
-        if (enemyAI == null)
-        {
-            Debug.LogError("No AI System Found");
-        }
         ///Copy across all details, much easier to handle plus better for saving
         Level = EnemyProfile.level;
         Health = EnemyProfile.maxHealth;
@@ -112,6 +102,18 @@ public class EnemyController : MonoBehaviour
         Speed = EnemyProfile.speed;
         Damage = EnemyProfile.BonusDamage;
         Armor = EnemyProfile.armor;
+        if (sliderObject != null)
+        {
+            sliderObject.SetActive(true);
+            healthSlider = sliderObject.GetComponent<Slider>();
+            healthSlider.maxValue = MaxHealth;
+            healthSlider.value = healthSlider.maxValue;
+        }
+        enemyAI = GetComponent<Animator>();
+        if (enemyAI == null)
+        {
+            Debug.LogError("No AI System Found");
+        }
     }
 
 

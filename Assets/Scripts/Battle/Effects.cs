@@ -42,7 +42,7 @@ public class Effects : MonoBehaviour
         }
         if (isProjectile)
         {
-            StartCoroutine("MoveThis");
+            StartCoroutine(MoveThis());
         }
     }
     void DestroyThis()
@@ -66,6 +66,7 @@ public class Effects : MonoBehaviour
         Debug.Log("Projectile: " + gameObject.name + " has reached destination, spawning hit now");
         hitReference = GameObject.Instantiate(hitEffect, new Vector3(posB.x, posB.y, this.transform.position.z), this.transform.rotation);
         DestroyThis();
+        Destroy(hitReference, 1.0f);
     }
 
     public void SetPosA(Vector2 a)

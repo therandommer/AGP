@@ -219,7 +219,7 @@ public class BattleManager : MonoBehaviour
             GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
             GameState.CurrentPlayer.transform.position = posA; //fully resets player position
             //might need to change this for ranged and have enemy intereaction on projectile hit?
-            attackParticle = GameObject.Instantiate(selectedAttack.CastEffect, EnemiesToDamage[i].gameObject.transform); //should instantiate the correct effect which does its thing then destroys itself
+            attackParticle = GameObject.Instantiate(selectedAttack.CastEffect, EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
         }
         ///Add in a coroutine to slowly move the slider to the value instead of just setting it
         attack.EnemyHealthSlider.value = selectedTarget.Health / (float)selectedTarget.EnemyProfile.maxHealth; 
