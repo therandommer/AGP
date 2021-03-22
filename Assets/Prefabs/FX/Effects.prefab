@@ -9517,6 +9517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6981324004915559367}
+  - component: {fileID: 7963221217077881189}
   m_Layer: 0
   m_Name: Effects
   m_TagString: Untagged
@@ -9540,3 +9541,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7963221217077881189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335750205670191616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5925db01cc472b34c8e7e49eba87c5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usesDestroy: 1
+  destroyTimer: 3
+  isHitEffect: 1
+  isProjectile: 0
+  projectileSpeed: 2
+  hitEffect: {fileID: 0}

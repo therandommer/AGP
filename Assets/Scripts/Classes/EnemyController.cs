@@ -1,8 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
+    //UI Updates for each enemy, they all require the slider bar.
+    [SerializeField]
+    GameObject sliderObject = null;
+    Slider healthSlider = null;
+    [SerializeField]
+    float sliderLerpTime = 0.5f;
 
     public BattleManager battleManager;
     public Enemy EnemyProfile;
@@ -71,14 +78,20 @@ public class EnemyController : MonoBehaviour
     private string Weapon; //Again switch, adds in bonus damage
 
     public Abilities[] Skills;
-
+    public void UpdateUI()
+	{
+        if(healthSlider != null)
+		{
+            //float startSliderValue = healthSlider.value;
+            //float newSliderValue = Health;
+            Debug.Log("Slider max health = " + MaxHealth);
+            Debug.Log("Slider current health = " + Health);
+            //Debug.Log("New slider value: " + newSliderValue);
+            healthSlider.value = Health;
+        }
+	}
     void Awake()
     {
-        enemyAI = GetComponent<Animator>();
-        if (enemyAI == null)
-        {
-            Debug.LogError("No AI System Found");
-        }
         ///Copy across all details, much easier to handle plus better for saving
         Level = EnemyProfile.level;
         Health = EnemyProfile.maxHealth;
@@ -89,6 +102,18 @@ public class EnemyController : MonoBehaviour
         Speed = EnemyProfile.speed;
         Damage = EnemyProfile.BonusDamage;
         Armor = EnemyProfile.armor;
+        if (sliderObject != null)
+        {
+            sliderObject.SetActive(true);
+            healthSlider = sliderObject.GetComponent<Slider>();
+            healthSlider.maxValue = MaxHealth;
+            healthSlider.value = healthSlider.maxValue;
+        }
+        enemyAI = GetComponent<Animator>();
+        if (enemyAI == null)
+        {
+            Debug.LogError("No AI System Found");
+        }
     }
 
 

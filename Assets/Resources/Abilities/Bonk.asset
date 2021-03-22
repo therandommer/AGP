@@ -18,7 +18,9 @@ MonoBehaviour:
   AbilityDescription: Hit with a blunt elbow
   AbilityImage: {fileID: -7198109816951534908, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
+  CastEffect: {fileID: 8335750205670191616, guid: 799622fee3aa1dd4cb370b7f44e5e65d,
+    type: 3}
+  isMelee: 1
   abilityRange: 1
-  AbilityRangeImage: {fileID: 0}
   AbilityCost: 2
   AbilityAmount: 5
