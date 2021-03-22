@@ -172,6 +172,52 @@ public class PlayerController : MonoBehaviour
         foreach (InventoryItem item in PlayerProfile.StartingEquipment)
         {
             EquippedItems.Add(item);
+            ApplyEquipedStats(item);
+        }
+    }
+
+    public void ApplyEquipedStats(InventoryItem ItemToEquip)
+    {
+        switch (ItemToEquip.InitialEffect)
+        {
+            case InitialEffect.AddArmour:
+                Armor += ItemToEquip.InitialEffectAmount;
+                break;
+            case InitialEffect.AddDamage:
+                Damage += ItemToEquip.InitialEffectAmount;
+                break;
+        }
+
+        for (int i = 0; i < ItemToEquip.AdditionalItemEffects.Length; i++)
+        {
+            switch (ItemToEquip.AdditionalItemEffects[i].itemEffect)
+            {
+                case Effect.BuffHealth:
+                    Health += ItemToEquip.AdditionalItemEffects[i].EffectAmount;
+                    break;
+                case Effect.BuffStrength:
+                    Strength += ItemToEquip.AdditionalItemEffects[i].EffectAmount;
+                    break;
+                case Effect.BuffMagic:
+                    Magic += ItemToEquip.AdditionalItemEffects[i].EffectAmount;
+                    break;
+                case Effect.BuffDefense:
+                    Defense += ItemToEquip.AdditionalItemEffects[i].EffectAmount;
+                    break;
+                case Effect.BuffSpeed:
+                    Speed += ItemToEquip.AdditionalItemEffects[i].EffectAmount;
+                    break;
+                case Effect.GiveImmunity:
+                    break;
+                case Effect.GiveWeakness:
+                    break;
+                case Effect.AddArmour:
+                    Armor += ItemToEquip.AdditionalItemEffects[i].EffectAmount;
+                    break;
+                case Effect.AddDamage:
+                    Damage += ItemToEquip.AdditionalItemEffects[i].EffectAmount;
+                    break;
+            }
         }
     }
 
