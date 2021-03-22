@@ -133,9 +133,9 @@ public class PlayerController : MonoBehaviour
         return GetItems(false, true, false, true);
     }
 
-    public Abilities[] Skills;
+    public List<Abilities> Skills;
 
-    public Abilities[] EquipedSkills;
+    public List<Abilities> EquipedSkills;
 
     public int Money;
 
@@ -153,12 +153,26 @@ public class PlayerController : MonoBehaviour
         Damage = PlayerProfile.BonusDamage;
         Armor = PlayerProfile.armor;
 
-        Inventory = PlayerProfile.StartingInventory;
-        Skills = PlayerProfile.StartingSkills;
-        EquipedSkills = PlayerProfile.StartingSkills;
+        foreach (Abilities abilities in PlayerProfile.StartingSkills)
+        {
+            Skills.Add(abilities);
+        }
+        foreach (Abilities abilities in PlayerProfile.StartingSkills)
+        {
+            EquipedSkills.Add(abilities);
+        }
         Money = PlayerProfile.StartingMoney;
+
         QuestLog = PlayerProfile.StartingQuestLog;
-        EquippedItems = PlayerProfile.StartingEquipment;
+        foreach (InventoryItem item in PlayerProfile.StartingInventory)
+        {
+            Inventory.Add(item);
+        }
+        
+        foreach (InventoryItem item in PlayerProfile.StartingEquipment)
+        {
+            EquippedItems.Add(item);
+        }
     }
 
     public void TakeDamage(int Amount)

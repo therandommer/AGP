@@ -36,7 +36,7 @@ public class SkillPage : MonoBehaviour
 
     public void PopulateSkillList()
     {
-        for (int i = 0; i < GameState.CurrentPlayer.Skills.Length; i++)
+        for (int i = 0; i < GameState.CurrentPlayer.Skills.Count; i++)
         {
             ///For as many skills in the list, instantiate the prefab and add to the list
         }
