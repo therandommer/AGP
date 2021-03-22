@@ -18,7 +18,9 @@ MonoBehaviour:
   AbilityDescription: Slash at a row of enemies
   AbilityImage: {fileID: 4429991614695192504, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
+  CastEffect: {fileID: 8335750205670191616, guid: 799622fee3aa1dd4cb370b7f44e5e65d,
+    type: 3}
+  isMelee: 0
   abilityRange: 3
-  AbilityRangeImage: {fileID: 0}
   AbilityCost: 0
   AbilityAmount: 5

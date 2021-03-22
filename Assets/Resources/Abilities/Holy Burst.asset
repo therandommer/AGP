@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Holy Burst
   m_EditorClassIdentifier: 
   Passive: 0
+  Targetable: 0
   AbilityType: 3
   AbilityDescription: Hit with a holy burst of light
   AbilityImage: {fileID: 9164951061357751311, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
+  CastEffect: {fileID: 8335750205670191616, guid: 799622fee3aa1dd4cb370b7f44e5e65d,
+    type: 3}
+  isMelee: 0
   abilityRange: 2
-  AbilityRangeImage: {fileID: 0}
   AbilityCost: 10
   AbilityAmount: 15
