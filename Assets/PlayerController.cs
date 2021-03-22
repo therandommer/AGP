@@ -83,16 +83,14 @@ public class PlayerController : MonoBehaviour
         RarityOptions rarity = RarityOptions.Basic, ArmourItems Armour = ArmourItems.None, WeaponItem Weapon = WeaponItem.None)          
     {
         InventoryItem[] itemArray = Inventory.ToArray();
-
-        Debug.Log("Debug1 " + itemArray.Length);
-
+        Debug.Log("IA " + itemArray.Length);
         var items = from item in itemArray select item;
 
-        if (!ShowCardsPlayerDoesNotOwn)
-            items = items.Where(item => ItemCollection.Instance.QuantityOfEachItem[item] > 0);
+        //if (!ShowCardsPlayerDoesNotOwn)
+            //items = items.Where(item => ItemCollection.Instance.QuantityOfEachItem[item] > 0);
 
-        if (!IncludeAllRarities)
-            items = items.Where(item => item.rarity == rarity);
+        //if (!IncludeAllRarities)
+            //items = items.Where(item => item.rarity == rarity);
 
         if (!IncludeAllArmour)
             items = items.Where(item => item.armourItem == Armour);
@@ -101,13 +99,13 @@ public class PlayerController : MonoBehaviour
             items = items.Where(item => item.weaponItem == Weapon);
 
         if (IncludeAllArmour)
-            items = items.Where(item => item.armourItem != ArmourItems.None);
+            items = items.Where(item => item.isArmour);
 
         if (IncludeAllWeapons)
-            items = items.Where(item => item.weaponItem != WeaponItem.None);
+            items = items.Where(item => item.isWeapon);
 
         var returnList = items.ToList<InventoryItem>();
-        Debug.Log("Debug1 " + returnList.Count);
+        Debug.Log("RL " + returnList.Count);
 
         returnList.Sort();
 
@@ -133,6 +131,11 @@ public class PlayerController : MonoBehaviour
         return GetItems(false, true, false, true);
     }
 
+    public List<InventoryItem> GetWeaponItemsOfType(WeaponItem Weapon)
+    {
+        return GetItems(false, true, false, false, RarityOptions.Basic, ArmourItems.None, Weapon);
+    }
+
     public List<Abilities> Skills;
 
     public List<Abilities> EquipedSkills;
@@ -152,6 +155,8 @@ public class PlayerController : MonoBehaviour
         Speed = PlayerProfile.speed;
         Damage = PlayerProfile.BonusDamage;
         Armor = PlayerProfile.armor;
+
+        DontDestroyOnLoad(gameObject);
 
         foreach (Abilities abilities in PlayerProfile.StartingSkills)
         {

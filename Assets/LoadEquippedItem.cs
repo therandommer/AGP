@@ -107,7 +107,7 @@ public class LoadEquippedItem : MonoBehaviour
         for (int i = 0; i < GameState.CurrentPlayer.EquippedItems.Count; i++)
         {
             InventoryItem EquippedItem = GameState.CurrentPlayer.EquippedItems[i];
-            if (SelectedItem.armourItem == EquippedItem.armourItem)
+            if (SelectedItem.armourItem == EquippedItem.armourItem || SelectedItem.isWeapon && EquippedItem.isWeapon)
             {
                 EquippedItemTypeImage.sprite = EquippedItem.ItemUiImage;
                 EquippedItemImage.sprite = EquippedItem.itemImage;

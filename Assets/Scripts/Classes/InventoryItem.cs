@@ -17,12 +17,11 @@ public enum ArmourItems
 public enum WeaponItem
 {
     None,
-    LongSword,
-    ShortSword,
-    UltraSword,
+    Axe,
+    Dagger,
     Hammer,
-    Knife,
-    Wand
+    Staff,
+    Sword
 }
 [System.Serializable]
 public class InventoryItem : ScriptableObject, IComparable<InventoryItem>

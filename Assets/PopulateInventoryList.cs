@@ -15,6 +15,12 @@ public class PopulateInventoryList : MonoBehaviour
     public List<InventoryItem> ItemsToShow = new List<InventoryItem>();
 
     public LoadEquippedItem Load;
+
+    [Header("Colors")]
+    public Color32 LegendaryColor;
+    public Color32 EpicColor;
+    public Color32 RareColor;
+    public Color32 CommonColor;
     void Start()
     {
         ItemsToShow = GameState.CurrentPlayer.GetAllArmourItems();
@@ -30,13 +36,29 @@ public class PopulateInventoryList : MonoBehaviour
         }
         foreach (InventoryItem items in ItemsToShow)
         {
+
+            Button item = Instantiate(ArmourItemPrefab, Vector3.zero, Quaternion.identity);
+            item.transform.parent = transform;
+            ItemUIManager ItemUI = item.GetComponent<ItemUIManager>();
+            ItemUI.ItemProfile = items;
+            item.onClick.AddListener(() => Load.SelectItem(ItemUI.ItemProfile));
+            switch (items.rarity)
+            {
+                case RarityOptions.Common:
+                    ItemUI.Title.color = CommonColor;
+                    break;
+                case RarityOptions.Rare:
+                    ItemUI.Title.color = RareColor;
+                    break;
+                case RarityOptions.Epic:
+                    ItemUI.Title.color = EpicColor;
+                    break;
+                case RarityOptions.Legendary:
+                    ItemUI.Title.color = LegendaryColor;
+                    break;
+            }
             if (items.isArmour)
             {
-                Button item = Instantiate(ArmourItemPrefab, Vector3.zero, Quaternion.identity);
-                item.transform.parent = transform;
-                ItemUIManager ItemUI = item.GetComponent<ItemUIManager>();
-                ItemUI.ItemProfile = items;
-                item.onClick.AddListener(() => Load.SelectItem(ItemUI.ItemProfile));
                 switch (items.armourItem)
                 {
                     case ArmourItems.Helmet:
@@ -56,8 +78,29 @@ public class PopulateInventoryList : MonoBehaviour
                         items.ItemUiImage = BootsTypeImage;
                         break;
                 }
-                ItemUI.ReadInfoFromProfile();
             }
+            else
+            {
+                switch (items.weaponItem)///Need sprites for this
+                {
+                    case WeaponItem.Axe:
+
+                        break;
+                    case WeaponItem.Dagger:
+
+                        break;
+                    case WeaponItem.Hammer:
+
+                        break;
+                    case WeaponItem.Staff:
+
+                        break;
+                    case WeaponItem.Sword:
+
+                        break;
+                }
+            }
+            ItemUI.ReadInfoFromProfile();
         }
     }
 
@@ -90,6 +133,44 @@ public class PopulateInventoryList : MonoBehaviour
     public void ShowOnlyBoots()
     {
         ItemsToShow = GameState.CurrentPlayer.GetArmourItemsOfType(ArmourItems.Boots);
+
+        ShowItems(ItemsToShow);
+    }
+
+    public void ShowAllWeapons()
+    {
+        ItemsToShow = GameState.CurrentPlayer.GetAllWeaponItems();
+        Debug.Log("System found " + ItemsToShow.Count);
+        ShowItems(ItemsToShow);
+    }
+
+    public void ShowOnlyAxe()
+    {
+        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Axe);
+
+        ShowItems(ItemsToShow);
+    }
+    public void ShowOnlyDaggers()
+    {
+        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Dagger);
+
+        ShowItems(ItemsToShow);
+    }
+    public void ShowOnlyHammers()
+    {
+        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Hammer);
+
+        ShowItems(ItemsToShow);
+    }
+    public void ShowOnlyStaves()
+    {
+        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Staff);
+
+        ShowItems(ItemsToShow);
+    }
+    public void ShowOnlySwords()
+    {
+        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Sword);
 
         ShowItems(ItemsToShow);
     }

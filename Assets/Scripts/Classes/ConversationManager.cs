@@ -42,7 +42,7 @@ public class ConversationManager : Singleton<ConversationManager>
     IEnumerator DisplayConversation(Conversation conversation)
     {
         //foreach (var conversationLine in conversation.ConversationLines)
-        for(int i = 0; i < conversation.ConversationLines.Length; i ++)
+        for (int i = 0; i < conversation.ConversationLines.Length; i++)
         {
             Debug.Log("showing line " + i);
             currentConversationLine = conversation.ConversationLines[i];
@@ -65,7 +65,7 @@ public class ConversationManager : Singleton<ConversationManager>
             {
                 //yield return new WaitForSeconds(5);
             }
-            if(!wait)
+            if (!wait)
             {
                 bool done = false;
                 while (!done)
@@ -81,37 +81,40 @@ public class ConversationManager : Singleton<ConversationManager>
             }
 
         }
-        if(!talking)
+        if (!talking)
         {
-        talking = false;
-        choice = false;
-        wait = false;
+            talking = false;
+            choice = false;
+            wait = false;
         }
     }
 
     void OnGUI()
     {
-        if (talking)
+        if (dialogBox != null)
         {
-            dialogBox.alpha = 1;
-            dialogBox.blocksRaycasts = true;
-            if (choice)
+            if (talking)
             {
-                choicesCanvas.alpha = 1;
-                choicesCanvas.blocksRaycasts = true;
+                dialogBox.alpha = 1;
+                dialogBox.blocksRaycasts = true;
+                if (choice)
+                {
+                    choicesCanvas.alpha = 1;
+                    choicesCanvas.blocksRaycasts = true;
+                }
+                else
+                {
+                    choicesCanvas.alpha = 0;
+                    choicesCanvas.blocksRaycasts = false;
+                }
             }
             else
             {
+                dialogBox.alpha = 0;
+                dialogBox.blocksRaycasts = false;
                 choicesCanvas.alpha = 0;
                 choicesCanvas.blocksRaycasts = false;
             }
-        }
-        else
-        {
-            dialogBox.alpha = 0;
-            dialogBox.blocksRaycasts = false;
-            choicesCanvas.alpha = 0;
-            choicesCanvas.blocksRaycasts = false;
         }
     }
 }

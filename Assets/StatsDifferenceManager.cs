@@ -248,7 +248,7 @@ public class StatsDifferenceManager : MonoBehaviour
                 ArmourStatDifference += ItemToEquip.InitialEffectAmount;
                 break;
             case InitialEffect.AddDamage:
-                ArmourStatDifference += ItemToEquip.InitialEffectAmount;
+                DamageStatDifference += ItemToEquip.InitialEffectAmount;
                 break;
         }
 

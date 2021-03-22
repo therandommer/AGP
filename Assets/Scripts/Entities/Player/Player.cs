@@ -12,6 +12,7 @@ public class Player : Entity
     {
         StartingInventory.Add(item);
     }
+    public List<InventoryItem> StartingEquipment = new List<InventoryItem>();
 
     public Abilities[] StartingSkills;
 
@@ -19,7 +20,6 @@ public class Player : Entity
 
     public List<Quest> StartingQuestLog = new List<Quest>();
 
-    public List<InventoryItem> StartingEquipment = new List<InventoryItem>();
 
     public List<AbilityTypes> StrongWith = new List<AbilityTypes>();
 
