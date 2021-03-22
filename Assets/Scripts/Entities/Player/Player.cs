@@ -19,6 +19,8 @@ public class Player : Entity
 
     public List<Quest> StartingQuestLog = new List<Quest>();
 
+    public List<InventoryItem> StartingEquipment = new List<InventoryItem>();
+
     public List<AbilityTypes> StrongWith = new List<AbilityTypes>();
 
     public List<AbilityTypes> WeakAgainst = new List<AbilityTypes>();

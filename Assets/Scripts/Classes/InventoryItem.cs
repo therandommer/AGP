@@ -43,10 +43,12 @@ public class InventoryItem : ScriptableObject, IComparable<InventoryItem>
     public string itemName;
     public int shopCost;
     [Header("Inital effect for Armour or Weapons should be AddArmour or AddDamage respectivly")]
-    public Effect InitialEffect;
+    public InitialEffect InitialEffect;
     public int InitialEffectAmount;
     [Header("Additonal Effects")]
     public ItemEffect[] AdditionalItemEffects;
+    [Header("Don't touch this, gets set automatically")]
+    public Sprite ItemUiImage;
 
     public int CompareTo(InventoryItem other)
     {

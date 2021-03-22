@@ -17,10 +17,10 @@ public class ItemUIManager : MonoBehaviour
         Title.text = ItemProfile.itemName;
         switch (ItemProfile.InitialEffect)
         {
-            case Effect.AddArmour:
+            case InitialEffect.AddArmour:
                 Amount.text = "Armour: " + ItemProfile.InitialEffectAmount;
                 break;
-            case Effect.AddDamage:
+            case InitialEffect.AddDamage:
                 Amount.text = "Attack: " + ItemProfile.InitialEffectAmount;
                 break;
         }

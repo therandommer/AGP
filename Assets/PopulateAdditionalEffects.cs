@@ -6,13 +6,22 @@ using TMPro;
 public class PopulateAdditionalEffects : MonoBehaviour
 {
     public TMP_Text AdditionalEffectsTextPrefab;
-
+    public void ClearEffectsText()
+    {
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
     public void ReadAdditionalEffectsFromItem(InventoryItem Item)
     {
         if (Item.AdditionalItemEffects.Length <= 0)
             return;
-
-        for(int i = 0; i < Item.AdditionalItemEffects.Length; i++)
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        for (int i = 0; i < Item.AdditionalItemEffects.Length; i++)
         {
             TMP_Text text = Instantiate(AdditionalEffectsTextPrefab, Vector3.zero, Quaternion.identity);
             text.transform.SetParent(transform);

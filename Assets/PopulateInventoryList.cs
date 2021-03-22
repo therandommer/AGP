@@ -14,6 +14,7 @@ public class PopulateInventoryList : MonoBehaviour
 
     public List<InventoryItem> ItemsToShow = new List<InventoryItem>();
 
+    public LoadEquippedItem Load;
     void Start()
     {
         ItemsToShow = GameState.CurrentPlayer.GetAllArmourItems();
@@ -35,19 +36,24 @@ public class PopulateInventoryList : MonoBehaviour
                 item.transform.parent = transform;
                 ItemUIManager ItemUI = item.GetComponent<ItemUIManager>();
                 ItemUI.ItemProfile = items;
+                item.onClick.AddListener(() => Load.SelectItem(ItemUI.ItemProfile));
                 switch (items.armourItem)
                 {
                     case ArmourItems.Helmet:
                         ItemUI.ItemTypeImage.sprite = HelmetTypeImage;
+                        items.ItemUiImage = HelmetTypeImage;
                         break;
                     case ArmourItems.Arms:
                         ItemUI.ItemTypeImage.sprite = ArmsTypeImage;
+                        items.ItemUiImage = ArmsTypeImage;
                         break;
                     case ArmourItems.Chest:
                         ItemUI.ItemTypeImage.sprite = ChestTypeImage;
+                        items.ItemUiImage = ChestTypeImage;
                         break;
                     case ArmourItems.Boots:
                         ItemUI.ItemTypeImage.sprite = BootsTypeImage;
+                        items.ItemUiImage = BootsTypeImage;
                         break;
                 }
                 ItemUI.ReadInfoFromProfile();

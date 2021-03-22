@@ -11,6 +11,11 @@ public enum Effect
     AddArmour,
     AddDamage
 }
+public enum InitialEffect
+{
+    AddArmour,
+    AddDamage
+}
 [System.Serializable]
 public class ItemEffect
 {

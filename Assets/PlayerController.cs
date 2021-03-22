@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
     [Header("Profile Details")]
     public List<InventoryItem> Inventory = new List<InventoryItem>();
 
+    public List<InventoryItem> EquippedItems = new List<InventoryItem>();
+
     public void AddInventoryItem(InventoryItem item)
     {
         Inventory.Add(item);
@@ -156,7 +158,7 @@ public class PlayerController : MonoBehaviour
         EquipedSkills = PlayerProfile.StartingSkills;
         Money = PlayerProfile.StartingMoney;
         QuestLog = PlayerProfile.StartingQuestLog;
-
+        EquippedItems = PlayerProfile.StartingEquipment;
     }
 
     public void TakeDamage(int Amount)

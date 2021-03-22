@@ -34,6 +34,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 635291a23a0cd524189949de2962167e, type: 2}
   - {fileID: 11400000, guid: d6b8beb3800111a408d706d17e3fcd96, type: 2}
   - {fileID: 11400000, guid: bd4e99b2fd8c921479ea97dc414ac674, type: 2}
+  - {fileID: 11400000, guid: 71b8e91ddf06ee745a6af727c5bd18e9, type: 2}
   StartingSkills:
   - {fileID: 11400000, guid: 2ec3db44f2a1cf846acd02bccda89a0d, type: 2}
   - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
@@ -41,5 +42,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8a26cc11b5674e4c85556e05bc6beab, type: 2}
   StartingMoney: 0
   StartingQuestLog: []
+  StartingEquipment:
+  - {fileID: 11400000, guid: 59d2d8d8673ca9e4f9ae4d9c0f688fb3, type: 2}
   StrongWith: 030000000600000000000000
   WeakAgainst: 020000000400000005000000
