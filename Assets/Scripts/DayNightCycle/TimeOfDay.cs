@@ -12,6 +12,17 @@ enum eTimeMultipliers
     ETM_InDialogue, 
 };
 
+public enum eDayOfTheWeek
+{
+    EDOTW_Monday = 0,
+    EDOTW_Tuesday = 1,
+    EDOTW_Wednesday = 2,
+    EDOTW_Thirsday = 3,
+    EDOTW_Friday = 4,
+    EDOTW_Saturday = 5,
+    EDOTW_Sunday = 6,
+}
+
 [System.Serializable]
 struct fTimeMultipliers
 {
@@ -59,11 +70,16 @@ public class TimeOfDay : ScriptableObject
 
     private uint _DayNumber = 0;
     private bool _TimePaused;
+    private eDayOfTheWeek _CurrentDay = eDayOfTheWeek.EDOTW_Monday;
 
     public void PauseTime(bool Pause) => _TimePaused = Pause;
     public bool IsTimePaused() => _TimePaused;
     public void SetInGameTime(sTime Time) => _InGameTime = Time;
     public sTime GetTimeOfDay() => _InGameTime;
+
+    public eDayOfTheWeek GetDayOfTheWeek() => _CurrentDay;
+
+    public void SetDayOfTheWeek(eDayOfTheWeek Day) => _CurrentDay = Day;
 
     public void SkipTime(sTime SkipTillWhen)
     {

@@ -28,8 +28,8 @@ public class SleepingBed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_bCanSleepOnBed)
-            CheckForInput();       
+        //if(_bCanSleepOnBed)
+           //CheckForInput();       
     }
 
     void CheckForInput()
@@ -72,22 +72,22 @@ public class SleepingBed : MonoBehaviour
 
         if (_SkipTimeTextObject.activeInHierarchy)
         {
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
-            {
-                _bIsChangingHours = true ? !_bIsChangingHours : _bIsChangingHours;
-
-                if(_bIsChangingHours)
-                {
-                    _HourBorderObject.SetActive(true);
-                    _MinuteBorderObject.SetActive(false);
-                }
-                else
-                {
-                    _HourBorderObject.SetActive(false);
-                    _MinuteBorderObject.SetActive(true);
-                }
-
-            }
+            //if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+            //{
+            //    _bIsChangingHours = true ? !_bIsChangingHours : _bIsChangingHours;
+            //
+            //    if(_bIsChangingHours)
+            //    {
+            //        _HourBorderObject.SetActive(true);
+            //        _MinuteBorderObject.SetActive(false);
+            //    }
+            //    else
+            //    {
+            //        _HourBorderObject.SetActive(false);
+            //        _MinuteBorderObject.SetActive(true);
+            //    }
+            //
+            //}
 
             if (Input.GetKeyDown(KeyCode.W))
             {
@@ -181,6 +181,63 @@ public class SleepingBed : MonoBehaviour
             Debug.Log("Player is near the bed!");
             _bCanSleepOnBed = true;
             _PlayerEnteringBed = collision.transform.gameObject;
+
+            if (_bIsChangingHours)
+            {
+                _HourBorderObject.SetActive(true);
+                _MinuteBorderObject.SetActive(false);
+            }
+            else
+            {
+                _HourBorderObject.SetActive(false);
+                _MinuteBorderObject.SetActive(true);
+            }
+
+            _TimeToSkipTo = _TimeOfDay.GetTimeOfDay();
+            _SkipTimeTextObject.transform.parent.gameObject.SetActive(true);
+            _TimeOfDay.PauseTime(true);
+            if (_PlayerEnteringBed != null)
+            {
+                //_PlayerEnteringBed.GetComponent<PlayerMovement>().enabled = false;
+            }
+
+            string HoursText;
+            string MinutesText;
+
+            if(_TimeToSkipTo._Minutes % 10 != 0)
+            {
+                int MinsLeftOver = _TimeToSkipTo._Minutes % 10;
+                _TimeToSkipTo._Minutes -= MinsLeftOver;
+
+                if (MinsLeftOver >= 5)
+                    MinsLeftOver = 10;
+                else
+                    MinsLeftOver = 0;
+
+                _TimeToSkipTo._Minutes += MinsLeftOver;
+
+                if (MinsLeftOver >= 60)
+                {
+                    _TimeToSkipTo._Minutes = 0;
+                    _TimeToSkipTo._Hours += 1;
+
+                    if (_TimeToSkipTo._Hours > 23)
+                        _TimeToSkipTo._Hours = 0;
+                }
+            }
+
+
+            if (_TimeToSkipTo._Hours < 10)
+                HoursText = "0" + _TimeToSkipTo._Hours;
+            else
+                HoursText = _TimeToSkipTo._Hours.ToString();
+
+            if (_TimeToSkipTo._Minutes < 10)
+                MinutesText = "0" + _TimeToSkipTo._Minutes;
+            else
+                MinutesText = _TimeToSkipTo._Minutes.ToString();
+
+            _SkipToTimeText.text = HoursText + " : " + MinutesText;
         }
     }
 
@@ -191,6 +248,83 @@ public class SleepingBed : MonoBehaviour
             Debug.Log("player is no longer near the bed!");
             _bCanSleepOnBed = false;
             _PlayerEnteringBed = null;
+
+            _SkipTimeTextObject.transform.parent.gameObject.SetActive(false);
+            _bIsChangingHours = true;
+            _TimeOfDay.PauseTime(false);
+
+            if (_PlayerEnteringBed != null)
+            {
+                //_PlayerEnteringBed.GetComponent<PlayerMovement>().enabled = true;
+            }
         }
+    }
+
+    public void PressedHourSelectButton(bool bPressedHours)
+    {
+        if (bPressedHours)
+        {
+            _HourBorderObject.SetActive(true);
+            _MinuteBorderObject.SetActive(false);
+            _bIsChangingHours = true;
+        }
+        else
+        {
+            _HourBorderObject.SetActive(false);
+            _MinuteBorderObject.SetActive(true);
+            _bIsChangingHours = false;
+        }
+    }
+
+    public void SkipTime()
+    {
+        _TimeOfDay.SkipTime(_TimeToSkipTo);
+    }
+
+    public void IncrementTime(int Amount)
+    {
+        if(_bIsChangingHours)
+        {
+            _TimeToSkipTo._Hours += Amount;
+        }
+        else
+        {
+            _TimeToSkipTo._Minutes += Amount;
+        }
+
+        if (_TimeToSkipTo._Minutes > 59)
+        {
+            _TimeToSkipTo._Minutes = _TimeToSkipTo._Minutes % 60;
+            _TimeToSkipTo._Hours += 1;
+        }
+        else if (_TimeToSkipTo._Minutes < 0)
+        {
+            _TimeToSkipTo._Minutes = 60 + _TimeToSkipTo._Minutes;
+            _TimeToSkipTo._Hours -= 1;
+        }
+
+        if (_TimeToSkipTo._Hours > 23)
+        {
+            _TimeToSkipTo._Hours = _TimeToSkipTo._Hours % 24;
+        }
+        else if (_TimeToSkipTo._Hours < 0)
+        {
+            _TimeToSkipTo._Hours = 24 + _TimeToSkipTo._Hours;
+        }
+
+        string HoursText;
+        string MinutesText;
+
+        if (_TimeToSkipTo._Hours < 10)
+            HoursText = "0" + _TimeToSkipTo._Hours;
+        else
+            HoursText = _TimeToSkipTo._Hours.ToString();
+
+        if (_TimeToSkipTo._Minutes < 10)
+            MinutesText = "0" + _TimeToSkipTo._Minutes;
+        else
+            MinutesText = _TimeToSkipTo._Minutes.ToString();
+
+        _SkipToTimeText.text = HoursText + " : " + MinutesText;
     }
 }

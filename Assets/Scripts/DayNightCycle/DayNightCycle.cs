@@ -25,6 +25,7 @@ public class DayNightCycle : MonoBehaviour
     private sTime _TimeSkipped;
     private int _LastHour;
     private uint _DayNumber = 1;
+    private eDayOfTheWeek _CurrentDayOfWeek = eDayOfTheWeek.EDOTW_Monday;
 
     /*===
     Time Skip Variables 
@@ -47,6 +48,7 @@ public class DayNightCycle : MonoBehaviour
         _LastHour = _TimeOfDay.GetTimeOfDay()._Hours;
         _TimeOfDay.SetDayNumber(_DayNumber);
         _TimeOfDay.PauseTime(false);
+        _TimeOfDay.SetDayOfTheWeek(_CurrentDayOfWeek);
     }
 
     // Update is called once per frame
@@ -80,6 +82,18 @@ public class DayNightCycle : MonoBehaviour
         {
             _DayNumber++;
             _TimeOfDay.SetDayNumber(_DayNumber);
+
+            if (_CurrentDayOfWeek == eDayOfTheWeek.EDOTW_Sunday)
+            {
+                _CurrentDayOfWeek = eDayOfTheWeek.EDOTW_Monday;
+                _TimeOfDay.SetDayOfTheWeek(_CurrentDayOfWeek);
+            }
+            else
+            {
+                _CurrentDayOfWeek++;
+                _TimeOfDay.SetDayOfTheWeek(_CurrentDayOfWeek);
+            }
+
             _LastHour = _TimeOfDay.GetTimeOfDay()._Hours;
         }
         else
@@ -122,15 +136,16 @@ public class DayNightCycle : MonoBehaviour
             }
 
             if (_InGameTime._Hours >= 24)
-        {
-            _InGameTime._Hours = 0;
-            _CurrentDay += 1;
-            //Debug.Log("Hours: " + _InGameTime._Hours + ", Minutes: " + _InGameTime._Minutes + ", Seconds: " + _InGameTime._Seconds);
-            Debug.Log("Days Increased!");
-            Debug.Log("Day " + _CurrentDay);
-            Debug.Log("Time Took: " + TimerCheck);
-            TimerCheck = 0;
-        }
+            {
+                _InGameTime._Hours = 0;
+                _CurrentDay += 1;
+
+                //Debug.Log("Hours: " + _InGameTime._Hours + ", Minutes: " + _InGameTime._Minutes + ", Seconds: " + _InGameTime._Seconds);
+                Debug.Log("Days Increased!");
+                Debug.Log("Day " + _CurrentDay);
+                Debug.Log("Time Took: " + TimerCheck);
+                TimerCheck = 0;
+            }
 
             _TimeOfDay.SetInGameTime(_InGameTime);
         }
@@ -196,6 +211,7 @@ public class DayNightCycle : MonoBehaviour
 
         if (_CurrentSkipTimeInMins < _SkipTimeToInMins)
         {
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
             _CurrentSkipTimeInMins = Mathf.Lerp(_CurrentSkipTimeInMins, _SkipTimeToInMins,
                                                 _TimeOfDay._TimeSkipLerpAmount * Time.deltaTime);
             sTime NewTime = new sTime();
@@ -222,6 +238,7 @@ public class DayNightCycle : MonoBehaviour
         else
         {
             _bTimeSkipping = false;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         }
     }
 

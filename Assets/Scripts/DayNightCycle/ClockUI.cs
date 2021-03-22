@@ -54,6 +54,31 @@ public class ClockUI : MonoBehaviour
         Quaternion FinalHourRot = Quaternion.Euler(0, 0, -HourRotation);
         _HourHand.transform.rotation = FinalHourRot;
 
-        _DayCounterText.text = "Day " + _TimeOfDay.GetDayNumber();
+        _DayCounterText.text = GetDayString();//"Day " + _TimeOfDay.GetDayNumber();
+    }
+
+    string GetDayString()
+    {
+        eDayOfTheWeek Day = _TimeOfDay.GetDayOfTheWeek();
+
+        switch(Day)
+        {
+            case eDayOfTheWeek.EDOTW_Monday:
+                return "Monday";
+            case eDayOfTheWeek.EDOTW_Tuesday:
+                return "Tuesday";
+            case eDayOfTheWeek.EDOTW_Wednesday:
+                return "Wednesday";
+            case eDayOfTheWeek.EDOTW_Thirsday:
+                return "Thursday";
+            case eDayOfTheWeek.EDOTW_Friday:
+                return "Friday";
+            case eDayOfTheWeek.EDOTW_Saturday:
+                return "Saturday";
+            case eDayOfTheWeek.EDOTW_Sunday:
+                return "Sunday";
+            default:
+                return "Unkown";
+        }
     }
 }
