@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+public enum AbilityBaseType
+{
+    Physical,
+    Magical
+}
+
 public class Abilities : ScriptableObject
 {
     public bool Passive;
     public bool Targetable;
+    public AbilityBaseType BaseType;
     public AbilityTypes AbilityType;
     public string AbilityDescription;
     public Sprite AbilityImage;
