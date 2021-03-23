@@ -14,16 +14,7 @@ public class ShopManager : MonoBehaviour
 
     void Start()
     {
-        if (ItemSlots.Length > 0 && ShopItems.Length > 0)
-        {
-            for (int i = 0; i < ShopItems.Length; i++)
-            {
-                if (nextSlotIndex > ItemSlots.Length) break;
-                ItemSlots[nextSlotIndex].AddShopItem(ShopItems[i]);
-                ItemSlots[nextSlotIndex].Manager = this;
-                nextSlotIndex++;
-            }
-        }
+
     }
 
     public void SetShopSelectedItem(ShopSlot slot)
