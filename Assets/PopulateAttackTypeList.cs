@@ -14,15 +14,15 @@ public class PopulateAttackTypeList : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-        for (int i = 0; i < GameState.CurrentPlayer.PlayerProfile.StrongWith.Count; i++)
+        for (int i = 0; i < GameState.CurrentPlayer.stats.PlayerProfile.StrongWith.Count; i++)
         {
             GameObject attackTypePrefab = Instantiate(AttackTypePrefab, Vector3.zero, Quaternion.identity);
             attackTypePrefab.transform.parent = transform;
             UiReferences ButtonUI = attackTypePrefab.GetComponent<UiReferences>();
             if(StrongWith)
             {
-                ButtonUI.AttackType.text = GameState.CurrentPlayer.PlayerProfile.StrongWith[i].ToString();
-                switch (GameState.CurrentPlayer.PlayerProfile.StrongWith[i])
+                ButtonUI.AttackType.text = GameState.CurrentPlayer.stats.PlayerProfile.StrongWith[i].ToString();
+                switch (GameState.CurrentPlayer.stats.PlayerProfile.StrongWith[i])
                 {
                     case AbilityTypes.Normal:
                         break;
@@ -48,8 +48,8 @@ public class PopulateAttackTypeList : MonoBehaviour
             }
             else if(WeakAgainst)
             {
-                ButtonUI.AttackType.text = GameState.CurrentPlayer.PlayerProfile.WeakAgainst[i].ToString();
-                switch (GameState.CurrentPlayer.PlayerProfile.WeakAgainst[i])
+                ButtonUI.AttackType.text = GameState.CurrentPlayer.stats.PlayerProfile.WeakAgainst[i].ToString();
+                switch (GameState.CurrentPlayer.stats.PlayerProfile.WeakAgainst[i])
                 {
                     case AbilityTypes.Normal:
                         break;

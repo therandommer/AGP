@@ -56,13 +56,13 @@ public class StatsDifferenceManager : MonoBehaviour
     {
         PlayerController player = GameState.CurrentPlayer;
 
-        player.Health += HealthStatDifference;
-        player.Strength += StrengthStatDifference;
-        player.Magic += MagicStatDifference;
-        player.Defense += DefenseStatDifference;
-        player.Speed += SpeedStatDifference;
-        player.Armor += ArmourStatDifference;
-        player.Damage += DamageStatDifference;
+        player.stats.Health += HealthStatDifference;
+        player.stats.Strength += StrengthStatDifference;
+        player.stats.Magic += MagicStatDifference;
+        player.stats.Defense += DefenseStatDifference;
+        player.stats.Speed += SpeedStatDifference;
+        player.stats.Armor += ArmourStatDifference;
+        player.stats.Damage += DamageStatDifference;
         StatList.populateStat();
     }
 

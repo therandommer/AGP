@@ -53,8 +53,8 @@ public class Attack : MonoBehaviour
 
         EnemyImage.sprite = EnemyInfo.EnemyProfile.EnemySprite;
         EnemyName.text = Enemy.name;
-        HealthText.text = EnemyInfo.Health + "/" + EnemyInfo.EnemyProfile.maxHealth;
-        EnemyHealthSlider.value = EnemyInfo.Health / (float)EnemyInfo.EnemyProfile.maxHealth;
+        HealthText.text = EnemyInfo.stats.Health + "/" + EnemyInfo.EnemyProfile.maxHealth;
+        EnemyHealthSlider.value = EnemyInfo.stats.Health / (float)EnemyInfo.EnemyProfile.maxHealth;
         EnemyPopupCanvas.alpha = 1;
     }
 

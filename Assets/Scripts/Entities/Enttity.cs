@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System;
 
 public class Entity : ScriptableObject
 {
@@ -35,4 +36,5 @@ public class Entity : ScriptableObject
     public string Weapon; //Again switch, adds in bonus damage
     
     public Vector2 Position; //Spawn
+
 }

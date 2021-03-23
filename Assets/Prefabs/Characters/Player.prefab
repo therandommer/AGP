@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 6275971143486845657}
   - component: {fileID: 6275971143486845658}
   - component: {fileID: 6598840636195226657}
+  - component: {fileID: 4397276913126792908}
   - component: {fileID: 4576505716379105210}
   - component: {fileID: 3455524703360200762}
   m_Layer: 0
@@ -638,6 +639,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3683364a62e25a747a21d2a93461558d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4397276913126792908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275971143486845660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da936d0d30442b4abcd4fbf092b40ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  PlayerProfile: {fileID: 11400000, guid: ec8da291a58a0dd49bdede9d79236f7e, type: 2}
+  isEnemy: 0
+  EnemyProfile: {fileID: 0}
 --- !u!114 &4576505716379105210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,9 +667,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6114c6038ae4dbe48bde6eb5162d7cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerProfile: {fileID: 11400000, guid: ec8da291a58a0dd49bdede9d79236f7e, type: 2}
+  stats: {fileID: 4397276913126792908}
   Inventory: []
+  EquippedItems: []
   Skills: []
+  EquipedSkills: []
   Money: 0
   QuestLog: []
 --- !u!114 &3455524703360200762

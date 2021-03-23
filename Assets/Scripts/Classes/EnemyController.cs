@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class EnemyController : MonoBehaviour
 {
@@ -19,63 +20,10 @@ public class EnemyController : MonoBehaviour
     public GameObject selectionCircle;
     public GameObject TargetReticle;
     public bool attacking = false;
-    private int level = 1;
-    public int Level
-    {
-        get { return level; }
-        set { level = value; }
-    }
-    private int health = 0;
-    public int Health
-    {
-        get { return health; }
-        set { health = value; }
-    }
-    private int maxHealth = 0;
-    public int MaxHealth
-    {
-        get { return maxHealth; }
-        set { maxHealth = value; }
-    }
-    private int strength = 1;
-    public int Strength
-    {
-        get { return strength; }
-        set { strength = value; }
-    }
-    private int magic = 0;
-    public int Magic
-    {
-        get { return magic; }
-        set { magic = value; }
-    }
-    private int defense = 0;
-    public int Defense
-    {
-        get { return defense; }
-        set { defense = value; }
-    }
-    private int speed = 1;
-    public int Speed
-    {
-        get { return speed; }
-        set { speed = value; }
-    }
-    private int damage = 1;
-    public int Damage
-    {
-        get { return damage; }
-        set { damage = value; }
-    }
-    private int armor = 0;
-    public int Armor
-    {
-        get { return armor; }
-        set { armor = value; }
-    }
-    private int noOfAttacks = 1;
 
-    private string Weapon; //Again switch, adds in bonus damage
+    [Header("Stats Holder")]
+    public StatsHolder stats;
+
 
     public Abilities[] Skills;
     public void UpdateUI()
@@ -84,14 +32,15 @@ public class EnemyController : MonoBehaviour
 		{
             //float startSliderValue = healthSlider.value;
             //float newSliderValue = Health;
-            Debug.Log("Slider max health = " + MaxHealth);
-            Debug.Log("Slider current health = " + Health);
+            Debug.Log("Slider max health = " + stats.MaxHealth);
+            Debug.Log("Slider current health = " + stats.Health);
             //Debug.Log("New slider value: " + newSliderValue);
-            healthSlider.value = Health;
+            healthSlider.value = stats.Health;
         }
 	}
     void Awake()
     {
+        /*
         ///Copy across all details, much easier to handle plus better for saving
         Level = EnemyProfile.level;
         Health = EnemyProfile.maxHealth;
@@ -102,11 +51,12 @@ public class EnemyController : MonoBehaviour
         Speed = EnemyProfile.speed;
         Damage = EnemyProfile.BonusDamage;
         Armor = EnemyProfile.armor;
+        */
         if (sliderObject != null)
         {
             sliderObject.SetActive(true);
             healthSlider = sliderObject.GetComponent<Slider>();
-            healthSlider.maxValue = MaxHealth;
+            healthSlider.maxValue = stats.MaxHealth;
             healthSlider.value = healthSlider.maxValue;
         }
         enemyAI = GetComponent<Animator>();
@@ -143,7 +93,7 @@ public class EnemyController : MonoBehaviour
         if (enemyAI != null && EnemyProfile != null && battleManager.EnemyCount == 0)
         {
             enemyAI.SetInteger("EnemyHealth", EnemyProfile.health);
-            enemyAI.SetInteger("PlayerHealth", GameState.CurrentPlayer.Health);
+            enemyAI.SetInteger("PlayerHealth", GameState.CurrentPlayer.stats.Health);
             enemyAI.SetInteger("EnemiesInBattle", battleManager.EnemyCount);
         }
     }
@@ -226,14 +176,15 @@ public class EnemyController : MonoBehaviour
     {
         targetPlayer = GameState.CurrentPlayer;
         
-        targetPlayer.Health -= battleManager.CalculateDamage(this, targetPlayer);
+        targetPlayer.stats.Health -= battleManager.CalculateDamage(this, targetPlayer);
 
-        float HealthBarValue = targetPlayer.Health / (float)targetPlayer.MaxHealth;
-        Debug.Log(HealthBarValue);
+        float HealthBarValue = targetPlayer.stats.Health / (float)targetPlayer.stats.MaxHealth;
+
         battleManager.HealthBar.value = HealthBarValue;
 
-        battleManager.HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.MaxHealth;
-        Debug.Log(targetPlayer.name + " has " + targetPlayer.Health);
+        battleManager.HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
+
+        Debug.Log(gameObject.name + " hit " + targetPlayer.name + " for " + battleManager.CalculateDamage(this, targetPlayer) + "\n" + targetPlayer.name + " has " + targetPlayer.stats.Health);
 
         return false;
     }

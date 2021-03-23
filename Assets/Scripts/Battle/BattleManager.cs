@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
@@ -24,7 +23,7 @@ public class BattleManager : MonoBehaviour
     public Text BattleText;
     public CanvasGroup MainButtons;
     public CanvasGroup AttackButtons;
-    public CanvasGroup FinalAttackButton; 
+    public CanvasGroup FinalAttackButton;
     [Tooltip("Used to lock enemy popup")]
     public bool LockEnemyPopup = false;
     [Header("Attack/Abilities")]
@@ -39,6 +38,8 @@ public class BattleManager : MonoBehaviour
     private bool canSelectEnemy;
 
     public bool attacking = false;
+    [Tooltip("Use if you want to have player go first in the fight")]
+    public bool DebugPlayerAttack = false;
 
     //used for attack movement lerps
     Vector2 posA = Vector2.zero;
@@ -57,7 +58,7 @@ public class BattleManager : MonoBehaviour
         Player_Move,
         Player_Attack,
         Change_Control,
-        Enemy_Attack,
+        Resolve_Attacks,
         Battle_Result,
         Battle_End
     }
@@ -65,6 +66,8 @@ public class BattleManager : MonoBehaviour
 
     public BattleState currentBattleState;
 
+
+    public List<GameObject> ListOfEntities = new List<GameObject>();
 
     [Header("AttackParticles")]
     public GameObject Attack1Particle;
@@ -112,7 +115,7 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        HealthText.text = GameState.CurrentPlayer.Health + "/" + GameState.CurrentPlayer.MaxHealth;
+        HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
         // Calculate how many enemies 
         //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
         enemyCount = 9;
@@ -120,6 +123,7 @@ public class BattleManager : MonoBehaviour
         StartCoroutine(SpawnEnemies());
 
         GetAnimationStates();
+
     }
 
     IEnumerator SpawnEnemies()
@@ -128,7 +132,10 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             var newEnemy = (GameObject)Instantiate(EnemyPrefabs[0]);
+            ListOfEntities.Add(newEnemy);
+
             var controller = newEnemy.GetComponent<EnemyController>();
+            controller.stats.Speed = Random.Range(5, 30);
             newEnemy.name = controller.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
             controller.battleManager = this;
             newEnemy.transform.position = new Vector3(10, -1, 0);
@@ -138,6 +145,21 @@ public class BattleManager : MonoBehaviour
             Enemies.Add(controller);
         }
         battleStateManager.SetBool("BattleReady", true);
+
+        ListOfEntities.Add(GameState.PlayerObject);
+
+        ListOfEntities.Sort(delegate (GameObject a, GameObject b)
+        {
+
+            return (a.GetComponent<StatsHolder>().CompareTo(b.GetComponent<StatsHolder>()));
+
+        });
+
+        foreach (GameObject entity in ListOfEntities)
+        {
+            Debug.Log(entity.name + " has " + entity.GetComponent<StatsHolder>().Speed + " Speed");
+        }
+
     }
 
     IEnumerator MoveCharacterToPoint(GameObject destination, GameObject character)
@@ -165,16 +187,16 @@ public class BattleManager : MonoBehaviour
     {
         attacking = true;
         int damageAmount = CalculateDamage(GameState.CurrentPlayer, selectedTarget);
-        
+
         for (int i = 0; i < EnemiesToDamage.Count; i++)
         {
-            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " before damage");
+            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " before damage");
             //GameState.CurrentPlayer.transform.position = new Vector2(Mathf.PingPong(Time.deltaTime / 50, EnemiesToDamage[i].gameObject.transform.position.x - GameState.CurrentPlayer.transform.position.x), Mathf.PingPong(Time.time, EnemiesToDamage[i].gameObject.transform.position.y - GameState.CurrentPlayer.transform.position.y));
             posA = GameState.CurrentPlayer.transform.position;
             posB = EnemiesToDamage[i].gameObject.transform.position;
             float tmpTimer = 0.0f;
-            if(selectedAttack.isMelee)
-			{
+            if (selectedAttack.isMelee)
+            {
                 posB = new Vector2(posB.x - attackGap, posB.y); //adds attack gap to currently selected attack
                 GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
                 GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
@@ -187,25 +209,25 @@ public class BattleManager : MonoBehaviour
                 GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y + 0.365f); //ensures player is actually at the position required
                 GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
             }
-            if(!selectedAttack.isMelee)
-			{
+            if (!selectedAttack.isMelee)
+            {
                 GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
                 GameState.CurrentPlayer.transform.position = new Vector2(posA.x, posA.y + 0.365f);
                 attackParticle = GameObject.Instantiate(selectedAttack.CastEffect);
                 attackParticle.GetComponent<Effects>().SetPosA(posA);
                 attackParticle.GetComponent<Effects>().SetPosB(posB);
                 attackParticle.GetComponent<Effects>().InitiateProjectile();
-			}
-            EnemiesToDamage[i].Health -= damageAmount;
+            }
+            EnemiesToDamage[i].stats.Health -= damageAmount;
             Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
-            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].Health + " health left");
+            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " health left");
             EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
             EnemiesToDamage[i].gameObject.SendMessage("UpdateAnimState", "isHit");
             yield return new WaitForSeconds(stopTime + 0.3f);
             EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
             tmpTimer = 0.0f;
-            if(selectedAttack.isMelee)
-			{
+            if (selectedAttack.isMelee)
+            {
                 GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y); //resetting player position to adjust for animation offset
                 GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
                 while (tmpTimer < moveSpeed)
@@ -222,9 +244,9 @@ public class BattleManager : MonoBehaviour
             attackParticle = GameObject.Instantiate(selectedAttack.CastEffect, EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
         }
         ///Add in a coroutine to slowly move the slider to the value instead of just setting it
-        attack.EnemyHealthSlider.value = selectedTarget.Health / (float)selectedTarget.EnemyProfile.maxHealth; 
+        attack.EnemyHealthSlider.value = selectedTarget.stats.Health / (float)selectedTarget.EnemyProfile.maxHealth;
         //Set the health text
-        attack.HealthText.text = selectedTarget.Health + "/" + selectedTarget.EnemyProfile.maxHealth;
+        attack.HealthText.text = selectedTarget.stats.Health + "/" + selectedTarget.EnemyProfile.maxHealth;
 
         /*
         switch (damageAmount) //Spawn graphic/FX here bigger damage bigger damage effect
@@ -259,7 +281,7 @@ public class BattleManager : MonoBehaviour
         GetComponent<Attack>().hitAmount = 0;
         for (int i = 0; i < EnemiesToDamage.Count; i++)
         {
-            if (EnemiesToDamage[i].Health < 1)
+            if (EnemiesToDamage[i].stats.Health < 1)
             {
                 EnemiesToDamage[i].Die();
             }
@@ -270,14 +292,14 @@ public class BattleManager : MonoBehaviour
 
     public int CalculateDamage(PlayerController currentPlayer, EnemyController Target)
     {
-        int DamageCalc = currentPlayer.Strength + attack.hitAmount;
+        int DamageCalc = currentPlayer.stats.Strength + attack.hitAmount;
 
         return DamageCalc;
     }
 
     public int CalculateDamage(EnemyController currentAI, PlayerController TargetPlayer)
     {
-        int DamageCalc = currentAI.Strength + attack.hitAmount - TargetPlayer.Defense;
+        int DamageCalc = currentAI.stats.Strength + attack.hitAmount - TargetPlayer.stats.Defense;
 
         Debug.Log("Dealt " + DamageCalc + " to " + TargetPlayer.name);
         return DamageCalc;
@@ -343,27 +365,48 @@ public class BattleManager : MonoBehaviour
                 break;
             case BattleState.Player_Attack:
                 canSelectEnemy = false;
-                if (!attacking)
+                if (DebugPlayerAttack)
                 {
-                    StartCoroutine(AttackTarget());
+                    if (!attacking)
+                    {
+                        StartCoroutine(AttackTarget());
+                    }
+                }
+                else
+                {
+                    battleStateManager.SetBool("PlayerReady", false);
                 }
                 break;
             case BattleState.Change_Control:
                 HideButtons();
                 //Set buttons to inactive and change bottom pannel potencially
                 break;
-            case BattleState.Enemy_Attack: //Move to the Enemies controller for turn
+            case BattleState.Resolve_Attacks: //Move to the Enemies controller for turn
                 if (!attacking)
                 {
+
+                    foreach (GameObject Entity in ListOfEntities)
+                    {
+                        if(Entity.GetComponent<StatsHolder>().isPlayer)
+                        {
+                            StartCoroutine(AttackTarget());
+                        }
+                        else if (Entity.GetComponent<StatsHolder>().isEnemy)
+                        {
+                            Entity.GetComponent<EnemyController>().AI();
+                        }
+                    }
+
+                    /*
                     if (enemyCount > 0)
                     {
                         for (int i = 0; i < Enemies.Count; i++)
                         {
-                            if(Enemies[i] != null)
+                            if (Enemies[i] != null)
                                 Enemies[i].AI();
                         }
                     }
-
+                    */
                     if (ContinueBattle())
                     {
                         ShowMainButtons();
@@ -399,7 +442,7 @@ public class BattleManager : MonoBehaviour
             theButtons.interactable = true;
             theButtons.blocksRaycasts = true;
         }
-        
+
     }
 
     bool ContinueBattle()
@@ -437,7 +480,7 @@ public class BattleManager : MonoBehaviour
     }
 
     public float GetStopTime()
-	{
+    {
         return stopTime;
-	}
+    }
 }

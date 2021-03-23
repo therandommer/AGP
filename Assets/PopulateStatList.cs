@@ -27,33 +27,33 @@ public class PopulateStatList : MonoBehaviour
         {
             if (Level != null)
             {
-                Level.text = "Level:\n" + PC.Level.ToString();
+                Level.text = "Level:\n" + PC.stats.Level.ToString();
             }
             if (Health != null)
-                Health.text = "Health:\n" + PC.Health.ToString();
+                Health.text = "Health:\n" + PC.stats.Health.ToString();
             if (Strength != null)
-                Strength.text = "Strength:\n" + PC.Strength.ToString();
+                Strength.text = "Strength:\n" + PC.stats.Strength.ToString();
             if (Magic != null)
-                Magic.text = "Magic:\n" + PC.Magic.ToString();
+                Magic.text = "Magic:\n" + PC.stats.Magic.ToString();
             if (Defense != null)
-                Defense.text = "Defense:\n" + PC.Defense.ToString();
+                Defense.text = "Defense:\n" + PC.stats.Defense.ToString();
             if (Speed != null)
-                Speed.text = "Speed:\n" + PC.Speed.ToString();
+                Speed.text = "Speed:\n" + PC.stats.Speed.ToString();
             if (Armour != null)
-                Armour.text = "Armour:\n" + PC.Armor.ToString();
+                Armour.text = "Armour:\n" + PC.stats.Armor.ToString();
             if (PlayerImage != null)
-                PlayerImage.sprite = PC.PlayerProfile.PlayerImage;
+                PlayerImage.sprite = PC.stats.PlayerProfile.PlayerImage;
         }
         else
         {
             //Level.text = PC.Level.ToString();
-            Health.text = PC.Health.ToString();
-            Strength.text = PC.Strength.ToString();
-            Magic.text = PC.Magic.ToString();
-            Defense.text = PC.Defense.ToString();
-            Speed.text = PC.Speed.ToString();
-            Armour.text = PC.Armor.ToString();
-            Damage.text = PC.Damage.ToString();
+            Health.text = PC.stats.Health.ToString();
+            Strength.text = PC.stats.Strength.ToString();
+            Magic.text = PC.stats.Magic.ToString();
+            Defense.text = PC.stats.Defense.ToString();
+            Speed.text = PC.stats.Speed.ToString();
+            Armour.text = PC.stats.Armor.ToString();
+            Damage.text = PC.stats.Damage.ToString();
         }
     }
 
