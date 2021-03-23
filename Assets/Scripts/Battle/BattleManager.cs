@@ -16,6 +16,7 @@ public class BattleManager : MonoBehaviour
     public Animator battleStateManager;
     public GameObject introPanel;
     Animator introPanelAnim;
+    public GameObject PlayerSpawnPoint;
     [Header("UI")]
     public CanvasGroup theButtons;
     public Slider HealthBar;
@@ -110,11 +111,16 @@ public class BattleManager : MonoBehaviour
             Debug.LogError("No battleStateMachine Animator found.");
         }
         introPanelAnim = introPanel.GetComponent<Animator>();
-
     }
 
     void Start()
     {
+        GameObject.Find("Player").transform.SetParent(PlayerSpawnPoint.transform);
+        GameObject.Find("Player").transform.position = PlayerSpawnPoint.transform.position;
+        GameObject.Find("Player").GetComponent<PlayerMovement>().CantMove = true;
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+
         HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
         // Calculate how many enemies 
         //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
@@ -135,7 +141,7 @@ public class BattleManager : MonoBehaviour
             ListOfEntities.Add(newEnemy);
 
             var controller = newEnemy.GetComponent<EnemyController>();
-            controller.stats.Speed = Random.Range(5, 30);
+            controller.stats.Speed = Random.Range(5, 10);
             newEnemy.name = controller.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
             controller.battleManager = this;
             newEnemy.transform.position = new Vector3(10, -1, 0);

@@ -15,12 +15,30 @@ public class GameState : MonoBehaviour
     public static bool saveLastPosition = true;
 
     public bool CanHaveConvo;
-
+    [Header("BattleScene Info")]
+    public static GameObject PlayerSpawn;
     // Start is called before the first frame update
     void Start()
     {
         CurrentPlayer = PlayerController;
         PlayerObject = player;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Update()
+    {
+        if(PlayerObject == null)
+        {
+            if(player == null)
+            {
+                player = GameObject.Find("Player");
+                PlayerObject = player;
+            }
+            else
+            {
+                PlayerObject = player;
+            }    
+        }
     }
 
     public static Vector3 GetLastScenePosition(string sceneName)//Check wether the the last scene position was saved

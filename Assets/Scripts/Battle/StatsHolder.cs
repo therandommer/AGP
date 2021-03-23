@@ -107,6 +107,19 @@ public class StatsHolder : MonoBehaviour, IComparable<StatsHolder>
         }
     }
 
+    public void LoadStats(StatsHolder StatsToHold)
+    {
+        Level = StatsToHold.Level;
+        Health = StatsToHold.MaxHealth;
+        MaxHealth = StatsToHold.MaxHealth;
+        Strength = StatsToHold.Strength;
+        Magic = StatsToHold.Magic;
+        Defense = StatsToHold.Defense;
+        Speed = StatsToHold.Speed;
+        Damage = StatsToHold.Damage;
+        Armor = StatsToHold.Armor;
+    }
+
     public int CompareTo(StatsHolder other)
     {
         if (other.Speed < this.Speed)

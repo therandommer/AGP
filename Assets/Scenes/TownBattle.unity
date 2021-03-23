@@ -4239,6 +4239,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 863890645}
+    - target: {fileID: 6218218275178927871, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
+        type: 3}
+      propertyPath: PlayerSpawn
+      value: 
+      objectReference: {fileID: 843606597}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb64f876a4e1cc41a82ad91db98d8e6, type: 3}
 --- !u!1 &588575075
@@ -6871,6 +6876,36 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &843606597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843606598}
+  m_Layer: 0
+  m_Name: SpawnPlayerHere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &843606598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843606597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5, y: -0.5, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858482812
 GameObject:
   m_ObjectHideFlags: 0
@@ -6941,7 +6976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &876573298
 Transform:
   m_ObjectHideFlags: 0
@@ -6950,7 +6985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876573297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4463696, y: -0.44973463, z: 1.4765447}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 555343746}
@@ -9346,6 +9381,7 @@ MonoBehaviour:
   enemyCount: 0
   battleStateManager: {fileID: 0}
   introPanel: {fileID: 1575815343}
+  PlayerSpawnPoint: {fileID: 843606597}
   theButtons: {fileID: 1478316539}
   HealthBar: {fileID: 1773559338}
   HealthText: {fileID: 147535126}
@@ -9362,6 +9398,7 @@ MonoBehaviour:
     type: 3}
   EnemiesToDamage: []
   attacking: 0
+  DebugPlayerAttack: 0
   moveSpeed: 1
   stopTime: 1
   attackGap: 0.35
@@ -13204,17 +13241,17 @@ PrefabInstance:
     - target: {fileID: 6275971143486845656, guid: 09fe918fd3774914d9cf3cc43a8e8e95,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.90463036
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6275971143486845656, guid: 09fe918fd3774914d9cf3cc43a8e8e95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12773463
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6275971143486845656, guid: 09fe918fd3774914d9cf3cc43a8e8e95,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4765447
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6275971143486845656, guid: 09fe918fd3774914d9cf3cc43a8e8e95,
         type: 3}

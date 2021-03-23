@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Stats Holder")]
     public StatsHolder stats;
-
+    [Header("GameState stas holder")]
+    [Tooltip("Needed to hold the stats between scenes")]
+    public StatsHolder GameStateStats;
     private Vector2 Position; //Spawn
-
-
 
     [Header("Profile Details")]
     public List<InventoryItem> Inventory = new List<InventoryItem>();
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour
     public List<Quest> QuestLog = new List<Quest>();
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
 
         foreach (Abilities abilities in stats.PlayerProfile.StartingSkills)
         {

@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     // Speed modifier for player movement 
     public float speed = 4.0f;
 
+    public bool CantMove = false;
+
     //Initialize any component references 
     void Awake()
     {
@@ -29,38 +31,41 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
-        movePlayerHorizontal = Input.GetAxis("Horizontal");
-        movePlayerVertical = Input.GetAxis("Vertical");
-        movement = new Vector2(movePlayerHorizontal, movePlayerVertical);
-
-        playerRigidBody2D.velocity = movement * speed;
-
-        //playerAnim.SetInteger("yMove", 0);
-
-        if (movePlayerHorizontal < 0)
+        if (!CantMove)
         {
-            playerAnim.SetBool("xMove", true);
-            playerSpriteImage.flipX = false;
+            movePlayerHorizontal = Input.GetAxis("Horizontal");
+            movePlayerVertical = Input.GetAxis("Vertical");
+            movement = new Vector2(movePlayerHorizontal, movePlayerVertical);
 
-        }
-        else if (movePlayerHorizontal > 0)
-        {
-            playerAnim.SetBool("xMove", true);
-            playerSpriteImage.flipX = true;
+            playerRigidBody2D.velocity = movement * speed;
 
-        }
-        else
-        {
-            playerAnim.SetBool("xMove", false);
-        }
+            //playerAnim.SetInteger("yMove", 0);
 
-        if (movePlayerVertical == 0 && movePlayerHorizontal == 0)
-        {
-            playerAnim.SetBool("moving", false);
-        }
-        else
-        {
-            playerAnim.SetBool("moving", true);
+            if (movePlayerHorizontal < 0)
+            {
+                playerAnim.SetBool("xMove", true);
+                playerSpriteImage.flipX = false;
+
+            }
+            else if (movePlayerHorizontal > 0)
+            {
+                playerAnim.SetBool("xMove", true);
+                playerSpriteImage.flipX = true;
+
+            }
+            else
+            {
+                playerAnim.SetBool("xMove", false);
+            }
+
+            if (movePlayerVertical == 0 && movePlayerHorizontal == 0)
+            {
+                playerAnim.SetBool("moving", false);
+            }
+            else
+            {
+                playerAnim.SetBool("moving", true);
+            }
         }
     }
 }
