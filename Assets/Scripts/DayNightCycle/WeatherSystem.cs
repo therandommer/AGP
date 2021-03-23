@@ -15,11 +15,21 @@ public enum EWeatherTypes
 
 public class WeatherSystem : MonoBehaviour
 {
+
     [SerializeField] private WeatherSO _WeatherSO;
+    [SerializeField] private WeatherDamageMultipliers _WDM;
     [SerializeField] private TimeOfDay _TimeOfDay;
     [SerializeField] private float _WeatherChangeRangeMin = 60;
     [SerializeField] private float _WeatherChangeRangeMax = 120;
     [SerializeField, Range(1, 100)] private int _ChanceForWeatherToChange = 25;
+
+    [Header("Particles & Sprites")]
+    [SerializeField] private GameObject _DrizzlePS;
+    [SerializeField] private GameObject _RainingPS;
+    [SerializeField] private GameObject _SnowPS;
+    [SerializeField] private GameObject _SnowStormPS;
+    [SerializeField] private GameObject _CloudsSprites;
+    [SerializeField] private GameObject _LightningSprite;
 
     /** In Celsius */
     private int _Temperature = 0;
@@ -50,6 +60,8 @@ public class WeatherSystem : MonoBehaviour
 
     void CheckForWeatherChange()
     {
+        HideAllSystems();
+
         if (Random.Range(0, 100) <= _ChanceForWeatherToChange)
         {
             int Hours = _TimeOfDay.GetTimeOfDay()._Hours;
@@ -68,6 +80,38 @@ public class WeatherSystem : MonoBehaviour
         _WeatherSO._CurrentWeather = _CurrentWeather;
         _WeatherSO._Temperature = _Temperature;
         _WeatherCheckTimer = Random.Range(_WeatherChangeRangeMin, _WeatherChangeRangeMax);
+
+        switch(_CurrentWeather)
+        {
+            case EWeatherTypes.EWT_Sunny:
+                HideAllSystems();
+                break;
+            case EWeatherTypes.EWT_Cloudy:
+                _CloudsSprites.SetActive(true);
+                break;
+            case EWeatherTypes.EWT_Drizzle:
+                _CloudsSprites.SetActive(true);
+                _DrizzlePS.SetActive(true);
+                break;
+            case EWeatherTypes.EWT_Raining:
+                _CloudsSprites.SetActive(true);
+                _RainingPS.SetActive(true);
+                break;
+            case EWeatherTypes.EWT_Snowing:
+                _CloudsSprites.SetActive(true);
+                _SnowPS.SetActive(true);
+                break;
+            case EWeatherTypes.EWT_ThunderStorm:
+                _CloudsSprites.SetActive(true);
+                _RainingPS.SetActive(true);
+                break;
+            case EWeatherTypes.EWT_SnowStorm:
+                _CloudsSprites.SetActive(true);
+                _SnowStormPS.SetActive(true);
+                break;
+        }
+
+        _WDM.UpdateDamages(_CurrentWeather, _Temperature);
     }
 
     void MorningWeatherCheck()
@@ -224,4 +268,13 @@ public class WeatherSystem : MonoBehaviour
         Debug.Log("Weather_System: Weather Changed To " + _CurrentWeather + "  " + _Temperature + "C");
     }
 
+    void HideAllSystems()
+    {
+        _DrizzlePS.SetActive(false);
+        _RainingPS.SetActive(false);
+        _SnowPS.SetActive(false);
+        _SnowStormPS.SetActive(false);
+        _CloudsSprites.SetActive(false);
+        _LightningSprite.SetActive(false);
+    }
 }
