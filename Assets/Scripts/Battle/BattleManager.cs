@@ -119,6 +119,7 @@ public class BattleManager : MonoBehaviour
         GameObject.Find("Player").transform.position = PlayerSpawnPoint.transform.position;
         GameObject.Find("Player").GetComponent<PlayerMovement>().CantMove = true;
         GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX = true;
 
 
         HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
