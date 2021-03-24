@@ -1,9 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System;
+﻿using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,17 +23,17 @@ public class PlayerController : MonoBehaviour
 
 
     public List<InventoryItem> GetItems(bool ShowItemsPlayerDoesNotOwn = false, bool IncludeAllRarities = false, bool IncludeAllArmour = false, bool IncludeAllWeapons = false,
-        RarityOptions rarity = RarityOptions.Basic, ArmourItems Armour = ArmourItems.None, WeaponItem Weapon = WeaponItem.None)          
+        RarityOptions rarity = RarityOptions.Basic, ArmourItems Armour = ArmourItems.None, WeaponItem Weapon = WeaponItem.None)
     {
         InventoryItem[] itemArray = Inventory.ToArray();
         Debug.Log("IA " + itemArray.Length);
         var items = from item in itemArray select item;
 
         //if (!ShowItemsPlayerDoesNotOwn)
-            //items = items.Where(item => ItemCollection.Instance.QuantityOfEachItem[item] > 0);
+        //items = items.Where(item => ItemCollection.Instance.QuantityOfEachItem[item] > 0);
 
         //if (!IncludeAllRarities)
-            //items = items.Where(item => item.rarity == rarity);
+        //items = items.Where(item => item.rarity == rarity);
 
         if (!IncludeAllArmour)
             items = items.Where(item => item.armourItem == Armour);
@@ -53,7 +50,8 @@ public class PlayerController : MonoBehaviour
         var returnList = items.ToList<InventoryItem>();
         Debug.Log("RL " + returnList.Count);
 
-        returnList.Sort();
+        //returnList.Sort();
+        //returnList.OrderByDescending(a => a.isArmour).ThenBy(a => a.InitialEffectAmount);
 
         return returnList;
     }
@@ -108,7 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             Inventory.Add(item);
         }
-        
+
         foreach (InventoryItem item in stats.PlayerProfile.StartingEquipment)
         {
             EquippedItems.Add(item);

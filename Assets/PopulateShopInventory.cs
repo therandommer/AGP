@@ -1,20 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopulateInventoryList : MonoBehaviour
+public class PopulateShopInventory : MonoBehaviour
 {
     public Button ArmourItemPrefab;
     public Button WeaponItemPrefab;
-
+    [Header("Armour Type Sprites")]
     public Sprite HelmetTypeImage;
     public Sprite ChestTypeImage;
     public Sprite ArmsTypeImage;
     public Sprite BootsTypeImage;
+    [Header("Weapon Type Sprites")]
+    public Sprite AxeTypeImage;
+    public Sprite DaggerTypeImage;
+    public Sprite MaceTypeImage;
+    public Sprite StaffTypeImage;
+    public Sprite SwordTypeImage;
 
     public List<InventoryItem> ItemsToShow = new List<InventoryItem>();
 
     public LoadEquippedItem Load;
+
+    public Items ShopInventory;
 
     [Header("Colors")]
     public Color32 LegendaryColor;
@@ -23,9 +32,7 @@ public class PopulateInventoryList : MonoBehaviour
     public Color32 CommonColor;
     void Start()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetAllArmourItems();
-
-        ShowItems(ItemsToShow);
+        ShowAllArmour();
     }
 
     public void ShowItems(List<InventoryItem> ItemsToShowList)
@@ -84,19 +91,24 @@ public class PopulateInventoryList : MonoBehaviour
                 switch (items.weaponItem)///Need sprites for this
                 {
                     case WeaponItem.Axe:
-
+                        ItemUI.ItemTypeImage.sprite = AxeTypeImage;
+                        items.ItemUiImage = AxeTypeImage;
                         break;
                     case WeaponItem.Dagger:
-
+                        ItemUI.ItemTypeImage.sprite = DaggerTypeImage;
+                        items.ItemUiImage = DaggerTypeImage;
                         break;
                     case WeaponItem.Hammer:
-
+                        ItemUI.ItemTypeImage.sprite = MaceTypeImage;
+                        items.ItemUiImage = MaceTypeImage;
                         break;
                     case WeaponItem.Staff:
-
+                        ItemUI.ItemTypeImage.sprite = StaffTypeImage;
+                        items.ItemUiImage = StaffTypeImage;
                         break;
                     case WeaponItem.Sword:
-
+                        ItemUI.ItemTypeImage.sprite = SwordTypeImage;
+                        items.ItemUiImage = SwordTypeImage;
                         break;
                 }
             }
@@ -106,71 +118,70 @@ public class PopulateInventoryList : MonoBehaviour
 
     public void ShowAllArmour()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetAllArmourItems();
+        ItemsToShow = ShopInventory.GetAllArmourItems();
 
         ShowItems(ItemsToShow);
     }
 
     public void ShowOnlyHelmets()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetArmourItemsOfType(ArmourItems.Helmet);
+        ItemsToShow = ShopInventory.GetArmourItemsOfType(ArmourItems.Helmet);
 
         ShowItems(ItemsToShow);
     }
 
     public void ShowOnlyChests()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetArmourItemsOfType(ArmourItems.Chest);
+        ItemsToShow = ShopInventory.GetArmourItemsOfType(ArmourItems.Chest);
 
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyArms()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetArmourItemsOfType(ArmourItems.Arms);
+        ItemsToShow = ShopInventory.GetArmourItemsOfType(ArmourItems.Arms);
 
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyBoots()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetArmourItemsOfType(ArmourItems.Boots);
+        ItemsToShow = ShopInventory.GetArmourItemsOfType(ArmourItems.Boots);
 
         ShowItems(ItemsToShow);
     }
 
     public void ShowAllWeapons()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetAllWeaponItems();
-        Debug.Log("System found " + ItemsToShow.Count);
+        ItemsToShow = ShopInventory.GetAllWeaponItems();
         ShowItems(ItemsToShow);
     }
 
     public void ShowOnlyAxe()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Axe);
+        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Axe);
 
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyDaggers()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Dagger);
+        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Dagger);
 
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyHammers()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Hammer);
+        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Hammer);
 
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyStaves()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Staff);
+        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Staff);
 
         ShowItems(ItemsToShow);
     }
     public void ShowOnlySwords()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetWeaponItemsOfType(WeaponItem.Sword);
+        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Sword);
 
         ShowItems(ItemsToShow);
     }
