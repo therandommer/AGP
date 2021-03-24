@@ -46,6 +46,7 @@ public class InventoryItem : ScriptableObject, IComparable<InventoryItem>
     public int InitialEffectAmount;
     [Header("Additonal Effects")]
     public ItemEffect[] AdditionalItemEffects;
+    //public List<ItemEffect[] AdditionalItemEffects;
     [Header("Don't touch this, gets set automatically")]
     public Sprite ItemUiImage;
 

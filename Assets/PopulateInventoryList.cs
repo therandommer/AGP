@@ -23,9 +23,9 @@ public class PopulateInventoryList : MonoBehaviour
     public Color32 CommonColor;
     void Start()
     {
-        ItemsToShow = GameState.CurrentPlayer.GetAllArmourItems();
+        //ItemsToShow = GameState.CurrentPlayer.GetAllArmourItems();
 
-        ShowItems(ItemsToShow);
+        //ShowItems(ItemsToShow);
     }
 
     public void ShowItems(List<InventoryItem> ItemsToShowList)

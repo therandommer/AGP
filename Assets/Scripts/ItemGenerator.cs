@@ -11,9 +11,9 @@ public class ItemGenerator : MonoBehaviour
 {
     //sprites for armour randomisation
     [SerializeField]
-    List<Sprite> headSprites;
+    List<Sprite> helmetSprites;
     [SerializeField]
-    List<Sprite> bodySprites;
+    List<Sprite> chestSprites;
     [SerializeField]
     List<Sprite> gloveSprites;
     [SerializeField]
@@ -37,7 +37,8 @@ public class ItemGenerator : MonoBehaviour
     WeaponItem weapon;
     ArmourItems armour;
     InitialEffect initialEffect;
-    List<ItemEffect> AdditionalItemEffects;
+    int initialEffectAmount;
+    ItemEffect[] AdditionalItemEffects;
     Effect effect;
     //time for some bools and modifiers
     bool isWeapon = false; //weapon will have a 1/5 chance of dropping
@@ -58,14 +59,19 @@ public class ItemGenerator : MonoBehaviour
     float rarityModifier = 1.0f;
 
     bool canGenerate = true; //set to false if error detected
+
+    public InventoryItem Item;
+
+
+
     void Start()
     {
         canGenerate = true;
-        if(headSprites == null)
+        if(helmetSprites == null)
 		{
             Debug.LogError("No Head Sprites Assigned");
 		}
-        if (bodySprites == null)
+        if (chestSprites == null)
         {
             Debug.LogError("No Body Sprites Assigned");
         }
@@ -98,6 +104,60 @@ public class ItemGenerator : MonoBehaviour
             Debug.LogError("No Hammer Sprites Assigned");
         }
     }
+
+    public void GenerateItemImage(bool isArmour = false, bool isWeapon = false)
+    {
+        int SpriteNumber = 0;
+        if (isArmour)
+        {
+            switch (armour)
+            {
+                case ArmourItems.Helmet:
+                    SpriteNumber = Random.Range(0, helmetSprites.Count);
+                    Item.itemImage = helmetSprites[SpriteNumber];
+                    break;
+                case ArmourItems.Arms:
+                    SpriteNumber = Random.Range(0, gloveSprites.Count);
+                    Item.itemImage = gloveSprites[SpriteNumber];
+                    break;
+                case ArmourItems.Chest:
+                    SpriteNumber = Random.Range(0, chestSprites.Count);
+                    Item.itemImage = chestSprites[SpriteNumber];
+                    break;
+                case ArmourItems.Boots:
+                    SpriteNumber = Random.Range(0, bootSprites.Count);
+                    Item.itemImage = bootSprites[SpriteNumber];
+                    break;
+            }
+        }
+        else if(isWeapon)
+        {
+            switch (weapon)
+            {
+                case WeaponItem.Axe:
+                    SpriteNumber = Random.Range(0, axeSprites.Count);
+                    Item.itemImage = axeSprites[SpriteNumber];
+                    break;
+                case WeaponItem.Dagger:
+                    SpriteNumber = Random.Range(0, daggerSprites.Count);
+                    Item.itemImage = daggerSprites[SpriteNumber];
+                    break;
+                case WeaponItem.Hammer:
+                    SpriteNumber = Random.Range(0, hammerSprites.Count);
+                    Item.itemImage = hammerSprites[SpriteNumber];
+                    break;
+                case WeaponItem.Staff:
+                    SpriteNumber = Random.Range(0, staffSprites.Count);
+                    Item.itemImage = staffSprites[SpriteNumber];
+                    break;
+                case WeaponItem.Sword:
+                    SpriteNumber = Random.Range(0, swordSprites.Count);
+                    Item.itemImage = swordSprites[SpriteNumber];
+                    break;
+            }
+        }
+    }
+
     //if both armour and weapon are false, will be completely random.
     public void GenerateRandom(int _itemLevel, bool _isArmour, bool _isWeapon)
 	{
@@ -117,10 +177,72 @@ public class ItemGenerator : MonoBehaviour
             SetBaseStats();
         }
         //maybe use a switch to determine some unique item qualities on higher rarities?
+        if(_isArmour)
+        {
+            Item.isArmour = true;
+            Item.armourItem = armour;
+            GenerateItemImage(_isArmour);
+        }
+        else if(_isWeapon)
+        {
+            Item.isWeapon = true;
+            Item.weaponItem = weapon;
+            GenerateItemImage(_isWeapon);
+        }
+        Item.rarity = rarity;
+        Item.InitialEffect = initialEffect;
+        Item.InitialEffectAmount = initialEffectAmount;
+    }
+
+    public void GenerateSpecificItem(bool isArmour = false, ArmourItems armourItem = ArmourItems.None, bool isWeapon = false, WeaponItem weaponItem = WeaponItem.None)
+    {
+        if(isArmour)
+        {
+            switch (armourItem)
+            {
+                case ArmourItems.None:
+                    break;
+                case ArmourItems.Helmet:
+                    armour = ArmourItems.Helmet;
+                    break;
+                case ArmourItems.Arms:
+                    armour = ArmourItems.Arms;
+                    break;
+                case ArmourItems.Chest:
+                    armour = ArmourItems.Chest;
+                    break;
+                case ArmourItems.Boots:
+                    armour = ArmourItems.Boots;
+                    break;
+            }
+        }
+        else if(isWeapon)
+        {
+            switch (weaponItem)
+            {
+                case WeaponItem.None:
+                    break;
+                case WeaponItem.Axe:
+                    weapon = WeaponItem.Axe;
+                    break;
+                case WeaponItem.Dagger:
+                    weapon = WeaponItem.Dagger;
+                    break;
+                case WeaponItem.Hammer:
+                    weapon = WeaponItem.Hammer;
+                    break;
+                case WeaponItem.Staff:
+                    weapon = WeaponItem.Staff;
+                    break;
+                case WeaponItem.Sword:
+                    weapon = WeaponItem.Sword;
+                    break;
+            }
+        }
     }
     //Item Stats = Flat Damage, Strength, Magic, Defence, Speed
     //GenerateSpecific not yet implemented
-   void GenerateSpecific(RarityOptions _rarity, WeaponItem _weapon, ArmourItems _armour, int _itemLevel, int[] ItemStats)
+    void GenerateSpecific(RarityOptions _rarity, WeaponItem _weapon, ArmourItems _armour, int _itemLevel, int[] ItemStats)
 	{
         if(_weapon == WeaponItem.None)
 		{
@@ -146,105 +268,106 @@ public class ItemGenerator : MonoBehaviour
 	{
         if (isWeapon && !isArmour)
 		{
+            
             switch(weapon)
 			{
                 case WeaponItem.Axe:
-                    AdditionalItemEffects[0].itemEffect = Effect.AddDamage;
+                    initialEffect = InitialEffect.AddDamage;
                     if(rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[1].itemEffect = Effect.BuffStrength;
+                        Item.AdditionalItemEffects[0].itemEffect = Effect.BuffStrength;
                     }
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[2].itemEffect = Effect.BuffMagic;
+                        Item.AdditionalItemEffects[1].itemEffect = Effect.BuffMagic;
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[3].itemEffect = Effect.BuffSpeed;
+                        Item.AdditionalItemEffects[2].itemEffect = Effect.BuffSpeed;
                     }
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[4].itemEffect = Effect.BuffDefense;
+                        Item.AdditionalItemEffects[3].itemEffect = Effect.BuffDefense;
                     }
                     CalculateItemValues(true, 1);
                     break;
                 case WeaponItem.Dagger:
-                    AdditionalItemEffects[0].itemEffect = Effect.AddDamage;
-                    if(rarity >= RarityOptions.Common)
+                    initialEffect = InitialEffect.AddDamage;
+                    if (rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[1].itemEffect = Effect.BuffStrength;
+                        Item.AdditionalItemEffects[0].itemEffect = Effect.BuffStrength;
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[2].itemEffect = Effect.BuffMagic;
+                        Item.AdditionalItemEffects[1].itemEffect = Effect.BuffMagic;
                     }
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[3].itemEffect = Effect.BuffSpeed;
+                        Item.AdditionalItemEffects[2].itemEffect = Effect.BuffSpeed;
                     }
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[4].itemEffect = Effect.BuffDefense;
+                        Item.AdditionalItemEffects[3].itemEffect = Effect.BuffDefense;
                     }
                     CalculateItemValues(true, 2);
                     break;
                 case WeaponItem.Hammer:
-                    AdditionalItemEffects[0].itemEffect = Effect.AddDamage;
-                    if(rarity >= RarityOptions.Rare)
+                    initialEffect = InitialEffect.AddDamage;
+                    if (rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[1].itemEffect = Effect.BuffStrength;
+                        Item.AdditionalItemEffects[0].itemEffect = Effect.BuffStrength;
                     }
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[2].itemEffect = Effect.BuffMagic;
+                        Item.AdditionalItemEffects[1].itemEffect = Effect.BuffMagic;
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[3].itemEffect = Effect.BuffSpeed;
+                        Item.AdditionalItemEffects[2].itemEffect = Effect.BuffSpeed;
                     }
                     if (rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[4].itemEffect = Effect.BuffDefense;
+                        Item.AdditionalItemEffects[3].itemEffect = Effect.BuffDefense;
                     }
                     CalculateItemValues(true, 3);
                     break;
                 case WeaponItem.Staff:
-                    AdditionalItemEffects[0].itemEffect = Effect.AddDamage;
-                    if(rarity == RarityOptions.Legendary)
+                    initialEffect = InitialEffect.AddDamage;
+                    if (rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[1].itemEffect = Effect.BuffStrength;
+                        Item.AdditionalItemEffects[0].itemEffect = Effect.BuffStrength;
                     }
                     if(rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[2].itemEffect = Effect.BuffMagic;
+                        Item.AdditionalItemEffects[1].itemEffect = Effect.BuffMagic;
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[3].itemEffect = Effect.BuffSpeed;
+                        Item.AdditionalItemEffects[2].itemEffect = Effect.BuffSpeed;
                     }
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[4].itemEffect = Effect.BuffDefense;
+                        Item.AdditionalItemEffects[3].itemEffect = Effect.BuffDefense;
                     }
                     CalculateItemValues(true, 4);
                     break;
                 case WeaponItem.Sword:
-                    AdditionalItemEffects[0].itemEffect = Effect.AddDamage;
-                    if(rarity >= RarityOptions.Common)
+                    initialEffect = InitialEffect.AddDamage;
+                    if (rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[1].itemEffect = Effect.BuffStrength;
+                        Item.AdditionalItemEffects[0].itemEffect = Effect.BuffStrength;
                     }
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[2].itemEffect = Effect.BuffMagic;
+                        Item.AdditionalItemEffects[1].itemEffect = Effect.BuffMagic;
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[3].itemEffect = Effect.BuffSpeed;
+                        Item.AdditionalItemEffects[2].itemEffect = Effect.BuffSpeed;
                     }                        
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[4].itemEffect = Effect.BuffDefense;
+                        Item.AdditionalItemEffects[3].itemEffect = Effect.BuffDefense;
                     }
                     CalculateItemValues(true, 5);
                     break;
@@ -252,25 +375,27 @@ public class ItemGenerator : MonoBehaviour
                     Debug.LogError("Invalid Weapon Type");
                     break;
 			}
+            
 		}
         if(isArmour && !isWeapon)
 		{
-            AdditionalItemEffects[0].itemEffect = Effect.AddArmour;
+            
+            initialEffect = InitialEffect.AddArmour;
             if(rarity >= RarityOptions.Common)
 			{
-                AdditionalItemEffects[1].itemEffect = Effect.BuffDefense;
+                Item.AdditionalItemEffects[0].itemEffect = Effect.BuffDefense;
             }
             if(rarity >= RarityOptions.Rare)
 			{
-                AdditionalItemEffects[2].itemEffect = Effect.BuffStrength;
+                Item.AdditionalItemEffects[1].itemEffect = Effect.BuffStrength;
             }
             if(rarity >= RarityOptions.Epic)
 			{
-                AdditionalItemEffects[3].itemEffect = Effect.BuffMagic;
+                Item.AdditionalItemEffects[2].itemEffect = Effect.BuffMagic;
             }
             if(rarity >= RarityOptions.Legendary)
 			{
-                AdditionalItemEffects[4].itemEffect = Effect.BuffSpeed;
+                Item.AdditionalItemEffects[3].itemEffect = Effect.BuffSpeed;
             }
             switch (armour)
 			{
@@ -290,6 +415,7 @@ public class ItemGenerator : MonoBehaviour
                     Debug.LogError("Invalid Armour Type");
                     break;
 			}
+            
 		}
 	}
     //calculates stats based on ilvl ranges
@@ -300,98 +426,98 @@ public class ItemGenerator : MonoBehaviour
             switch(_itemType) //can adjust calcs soon(tm)
 			{
                 case 1: //axe
-                    AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt( 8 + (iLevel * axeWeights[0]));
+                    initialEffectAmount = Mathf.RoundToInt( 8 + (iLevel * axeWeights[0]));
                     if(rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(10 + (iLevel * axeWeights[1]));
+                        Item.AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(10 + (iLevel * axeWeights[1]));
                     }
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(6 + (iLevel * axeWeights[2]));
+                        Item.AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(6 + (iLevel * axeWeights[2]));
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(5 + (iLevel * axeWeights[3]));
+                        Item.AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(5 + (iLevel * axeWeights[3]));
                     }
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[4].EffectAmount = Mathf.RoundToInt(7 + (iLevel * axeWeights[4]));
+                        Item.AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(7 + (iLevel * axeWeights[4]));
                     }
                     break;
                 case 2: //dagger
-                    AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(6 + (iLevel * daggerWeights[0]));
+                    initialEffectAmount = Mathf.RoundToInt(6 + (iLevel * daggerWeights[0]));
                     if(rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(6 + (iLevel * daggerWeights[1]));
+                        Item.AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(6 + (iLevel * daggerWeights[1]));
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(6 + (iLevel * daggerWeights[2]));
+                        Item.AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(6 + (iLevel * daggerWeights[2]));
                     }
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(10 + (iLevel * daggerWeights[3]));
+                        Item.AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(10 + (iLevel * daggerWeights[3]));
                     }
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[4].EffectAmount = Mathf.RoundToInt(8 + (iLevel * daggerWeights[4]));
+                        Item.AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(8 + (iLevel * daggerWeights[4]));
                     }
                     break;
                 case 3: //hammer
-                    AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(12 + (iLevel * hammerWeights[0]));
+                    initialEffectAmount = Mathf.RoundToInt(12 + (iLevel * hammerWeights[0]));
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(11 + (iLevel * hammerWeights[1]));
+                        Item.AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(11 + (iLevel * hammerWeights[1]));
                     }
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(3 + (iLevel * hammerWeights[2]));
+                        Item.AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(3 + (iLevel * hammerWeights[2]));
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(5 + (iLevel * hammerWeights[3]));
+                        Item.AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(5 + (iLevel * hammerWeights[3]));
                     }
                     if(rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[4].EffectAmount = Mathf.RoundToInt(7 + (iLevel * hammerWeights[4]));
+                        Item.AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(7 + (iLevel * hammerWeights[4]));
                     }
                     break;
                 case 4: //staff
-                    AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(8 + (iLevel * staffWeights[0]));
+                    initialEffectAmount = Mathf.RoundToInt(8 + (iLevel * staffWeights[0]));
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(7 + (iLevel * staffWeights[1]));
+                        Item.AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(7 + (iLevel * staffWeights[1]));
                     }
                     if(rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(14 + (iLevel * staffWeights[2]));
+                        Item.AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(14 + (iLevel * staffWeights[2]));
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(8 + (iLevel * staffWeights[3]));
+                        Item.AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(8 + (iLevel * staffWeights[3]));
                     }
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[4].EffectAmount = Mathf.RoundToInt(10 + (iLevel * staffWeights[4]));
+                        Item.AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(10 + (iLevel * staffWeights[4]));
                     }
                     break;
                 case 5: //sword
-                    AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(10 + (iLevel * swordWeights[0]));
+                    initialEffectAmount = Mathf.RoundToInt(10 + (iLevel * swordWeights[0]));
                     if(rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(11 + (iLevel * swordWeights[1]));
+                        Item.AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(11 + (iLevel * swordWeights[1]));
                     }
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(6 + (iLevel * swordWeights[2]));
+                        Item.AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(6 + (iLevel * swordWeights[2]));
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(7 + (iLevel * swordWeights[3]));
+                        Item.AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(7 + (iLevel * swordWeights[3]));
                     }
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[4].EffectAmount = Mathf.RoundToInt(6 + (iLevel * swordWeights[4]));
+                        Item.AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(6 + (iLevel * swordWeights[4]));
                     }
                     break;
                 default:
@@ -404,79 +530,87 @@ public class ItemGenerator : MonoBehaviour
             switch(_itemType)
 			{
                 case 1:
-                    AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(6 + (iLevel * headWeights[0]));
+                    initialEffectAmount = Mathf.RoundToInt(6 + (iLevel * headWeights[0]));
                     if(rarity >= RarityOptions.Common)
 					{
-                        AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(6 + (iLevel * headWeights[1]));
+
+
+                        Item.AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(6 + (iLevel * headWeights[1]));
                     }
                     if(rarity >= RarityOptions.Rare)
 					{
-                        AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(7 + (iLevel * headWeights[2]));
+                        Item.AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(7 + (iLevel * headWeights[2]));
                     }
                     if(rarity >= RarityOptions.Epic)
 					{
-                        AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(9 + (iLevel * headWeights[3]));
+                        Item.AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(9 + (iLevel * headWeights[3]));
                     }
                     if(rarity == RarityOptions.Legendary)
 					{
-                        AdditionalItemEffects[4].EffectAmount = Mathf.RoundToInt(7 + (iLevel * headWeights[4]));
+                        Item.AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(7 + (iLevel * headWeights[4]));
                     }
                     break;
                 case 2:
-                    AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(9 + (iLevel * bodyWeights[0]));
+                    initialEffectAmount = Mathf.RoundToInt(9 + (iLevel * bodyWeights[0]));
                     if (rarity >= RarityOptions.Common)
                     {
-                        AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(9 + (iLevel * bodyWeights[1]));
+
+
+                        Item.AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(9 + (iLevel * bodyWeights[1]));
                     }
                     if (rarity >= RarityOptions.Rare)
                     {
-                        AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(9 + (iLevel * bodyWeights[2]));
+                        Item.AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(9 + (iLevel * bodyWeights[2]));
                     }
                     if (rarity >= RarityOptions.Epic)
                     {
-                        AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(4 + (iLevel * bodyWeights[3]));
+                        Item.AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(4 + (iLevel * bodyWeights[3]));
                     }
                     if (rarity == RarityOptions.Legendary)
                     {
-                        AdditionalItemEffects[4].EffectAmount = Mathf.RoundToInt(4 + (iLevel * bodyWeights[4]));
+                        Item.AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(4 + (iLevel * bodyWeights[4]));
                     }
                     break;
                 case 3:
-                    AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(9 + (iLevel * armWeights[0]));
+                    initialEffectAmount = Mathf.RoundToInt(9 + (iLevel * armWeights[0]));
                     if (rarity >= RarityOptions.Common)
                     {
-                        AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(9 + (iLevel * armWeights[1]));
+
+
+                        Item.AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(9 + (iLevel * armWeights[1]));
                     }
                     if (rarity >= RarityOptions.Rare)
                     {
-                        AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(4 + (iLevel * armWeights[2]));
+                        Item.AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(4 + (iLevel * armWeights[2]));
                     }
                     if (rarity >= RarityOptions.Epic)
                     {
-                        AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(9 + (iLevel * armWeights[3]));
+                        Item.AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(9 + (iLevel * armWeights[3]));
                     }
                     if (rarity == RarityOptions.Legendary)
                     {
-                        AdditionalItemEffects[4].EffectAmount = Mathf.RoundToInt(4 + (iLevel * armWeights[4]));
+                        Item.AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(4 + (iLevel * armWeights[4]));
                     }
                     break;
                 case 4:
-                    AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(5 + (iLevel * headWeights[0]));
+                    initialEffectAmount = Mathf.RoundToInt(5 + (iLevel * headWeights[0]));
                     if (rarity >= RarityOptions.Common)
                     {
-                        AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(5 + (iLevel * headWeights[1]));
+                        Debug.Log(Item.AdditionalItemEffects.Length + " " + Item.AdditionalItemEffects[0].itemEffect);
+
+                        Item.AdditionalItemEffects[0].EffectAmount = Mathf.RoundToInt(5 + (iLevel * headWeights[1]));
                     }
                     if (rarity >= RarityOptions.Rare)
                     {
-                        AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(8 + (iLevel * headWeights[2]));
+                        Item.AdditionalItemEffects[1].EffectAmount = Mathf.RoundToInt(8 + (iLevel * headWeights[2]));
                     }
                     if (rarity >= RarityOptions.Epic)
                     {
-                        AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(7 + (iLevel * headWeights[3]));
+                        Item.AdditionalItemEffects[2].EffectAmount = Mathf.RoundToInt(7 + (iLevel * headWeights[3]));
                     }
                     if (rarity == RarityOptions.Legendary)
                     {
-                        AdditionalItemEffects[4].EffectAmount = Mathf.RoundToInt(10 + (iLevel * headWeights[4]));
+                        Item.AdditionalItemEffects[3].EffectAmount = Mathf.RoundToInt(10 + (iLevel * headWeights[4]));
                     }
                     break;
                 default:
@@ -553,19 +687,39 @@ public class ItemGenerator : MonoBehaviour
         }
         if (tmpRarity > rarityChance[0] && tmpRarity <= rarityChance[1])
         {
-            rarity = RarityOptions.Common;            
+            rarity = RarityOptions.Common;
+            Item.AdditionalItemEffects = new ItemEffect[1];
+            for (int i = 0; i < Item.AdditionalItemEffects.Length; i++)
+            {
+                Item.AdditionalItemEffects[i] = new ItemEffect();
+            }
         }
         if (tmpRarity > rarityChance[1] && tmpRarity <= rarityChance[2])
         {
-            rarity = RarityOptions.Rare;            
+            rarity = RarityOptions.Rare;
+            Item.AdditionalItemEffects = new ItemEffect[2];
+            for (int i = 0; i < Item.AdditionalItemEffects.Length; i++)
+            {
+                Item.AdditionalItemEffects[i] = new ItemEffect();
+            }
         }
         if (tmpRarity > rarityChance[2] && tmpRarity <= rarityChance[3])
         {
-            rarity = RarityOptions.Epic;  
+            rarity = RarityOptions.Epic;
+            Item.AdditionalItemEffects = new ItemEffect[3];
+            for (int i = 0; i < Item.AdditionalItemEffects.Length; i++)
+            {
+                Item.AdditionalItemEffects[i] = new ItemEffect();
+            }
         }
         if (tmpRarity > rarityChance[3] && tmpRarity <= rarityChance[4])
         {
             rarity = RarityOptions.Legendary;
+            Item.AdditionalItemEffects = new ItemEffect[4];
+            for (int i = 0; i < Item.AdditionalItemEffects.Length; i++)
+            {
+                Item.AdditionalItemEffects[i] = new ItemEffect();
+            }
         }
         SetRarityModifier(rarity);
     }
