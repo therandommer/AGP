@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
@@ -14,15 +15,32 @@ public class GameState : MonoBehaviour
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
 
+    public bool PlayerSpawned = false;
+
     public bool CanHaveConvo;
     [Header("BattleScene Info")]
     public static GameObject PlayerSpawn;
     // Start is called before the first frame update
     void Start()
     {
-        CurrentPlayer = PlayerController;
-        PlayerObject = player;
+
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void SetUpGameState()
+    {
+        PlayerObject = player;
+        if (!PlayerSpawned)
+        {
+            if (SceneManager.GetActiveScene().name == "Village")
+            {
+                GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
+                Player.transform.position = transform.position;
+                PlayerController = Player.GetComponent<PlayerController>();
+                CurrentPlayer = Player.GetComponent<PlayerController>();
+            }
+            PlayerSpawned = true;
+        }
     }
 
     void Update()

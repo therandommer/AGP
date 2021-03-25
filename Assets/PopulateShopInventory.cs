@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -115,6 +114,30 @@ public class PopulateShopInventory : MonoBehaviour
             ItemUI.ReadInfoFromProfile();
         }
     }
+
+    public void BuyAndEquipFromShop()
+    {
+        ShopInventory.ShopInventoryList.Remove(Load.SelectedItem);
+        ItemsToShow.Remove(Load.SelectedItem);
+
+        Load.EquipItem();
+    }
+
+    public void BuyFromShop()
+    {
+        ShopInventory.ShopInventoryList.Remove(Load.SelectedItem);
+        ItemsToShow.Remove(Load.SelectedItem);
+
+        GameState.CurrentPlayer.Inventory.Add(Load.SelectedItem);
+
+    }
+
+
+    public void LeaveTheShop()
+    {
+        NavigationManager.NavigateTo("Village");
+    }
+
 
     public void ShowAllArmour()
     {

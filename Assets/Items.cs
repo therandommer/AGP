@@ -9,6 +9,7 @@ public class Items : MonoBehaviour
     int ArmourItemsToMake = 12;
     int WeaponItemsToMake = 15;
     public ItemGenerator ItemGen;
+    public LoadEquippedItem Load;
 
     public InventoryItem ItemTemplate;
     public List<InventoryItem> ItemsToShow = new List<InventoryItem>();
@@ -16,16 +17,6 @@ public class Items : MonoBehaviour
     public List<InventoryItem> ShopInventoryList = new List<InventoryItem>();
     string[] Names = new string[] { "Arnita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda" };
 
-    int CounterForHelmet = 0;
-    int CounterForChest =0;
-    int CounterForArms = 0;
-    int CounterForBoots = 0;
-
-    int CounterForAxe = 0;
-    int CounterForDagger = 0;
-    int CounterForMace = 0;
-    int CounterForStaff = 0;
-    int CounterForSword = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -43,6 +34,7 @@ public class Items : MonoBehaviour
         {
             InventoryItem newItem = Instantiate(ItemTemplate);
             newItem.name = Names[Random.Range(0, Names.Length)];
+            newItem.itemName = newItem.name;
             ItemGen.Item = newItem;
             ShopInventoryList.Add(newItem);
             ItemGen.GenerateRandom(i, false, true);
@@ -78,7 +70,7 @@ public class Items : MonoBehaviour
         var returnList = items.ToList<InventoryItem>();
         Debug.Log("RL " + returnList.Count);
 
-        //returnList.Sort();
+        returnList.Sort();
         //returnList.OrderByDescending(a => a.isArmour).ThenBy(a => a.InitialEffectAmount);
 
         return returnList;

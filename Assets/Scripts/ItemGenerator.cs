@@ -180,14 +180,12 @@ public class ItemGenerator : MonoBehaviour
         if (_isArmour)
         {
             Item.isArmour = true;
-            //Item.armourItem = armour;
-            GenerateItemImage(_isArmour);
+            GenerateItemImage(Item.isArmour);
         }
         else if (_isWeapon)
         {
             Item.isWeapon = true;
-            //Item.weaponItem = weapon;
-            GenerateItemImage(_isWeapon);
+            GenerateItemImage(Item.isArmour, Item.isWeapon);
         }
     }
 
