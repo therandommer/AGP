@@ -3808,6 +3808,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &468125455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 649623377, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 580299088}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da936d0d30442b4abcd4fbf092b40ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &492969853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,7 +4235,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerController
       value: 
-      objectReference: {fileID: 1529825731}
+      objectReference: {fileID: 0}
     - target: {fileID: 6218218275178927871, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
       propertyPath: PlayerObject
@@ -4244,6 +4256,11 @@ PrefabInstance:
       propertyPath: PlayerSpawn
       value: 
       objectReference: {fileID: 843606597}
+    - target: {fileID: 6218218275178927871, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
+        type: 3}
+      propertyPath: BattleSceneTest
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb64f876a4e1cc41a82ad91db98d8e6, type: 3}
 --- !u!1 &588575075
@@ -10698,18 +10715,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1529825731 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4576505716379105210, guid: 09fe918fd3774914d9cf3cc43a8e8e95,
-    type: 3}
-  m_PrefabInstance: {fileID: 2003328176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863890645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6114c6038ae4dbe48bde6eb5162d7cc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1539115688
 GameObject:
   m_ObjectHideFlags: 0
@@ -12261,7 +12266,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818390579}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -13238,6 +13243,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4576505716379105210, guid: 09fe918fd3774914d9cf3cc43a8e8e95,
+        type: 3}
+      propertyPath: GameStateStats
+      value: 
+      objectReference: {fileID: 468125455}
     - target: {fileID: 6275971143486845656, guid: 09fe918fd3774914d9cf3cc43a8e8e95,
         type: 3}
       propertyPath: m_LocalPosition.x

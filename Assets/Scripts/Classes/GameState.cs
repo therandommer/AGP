@@ -18,12 +18,19 @@ public class GameState : MonoBehaviour
     public bool PlayerSpawned = false;
 
     public bool CanHaveConvo;
+    [Header("Use this is testing battlescene")]
+    public bool BattleSceneTest;
     [Header("BattleScene Info")]
     public static GameObject PlayerSpawn;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        if(BattleSceneTest)
+        {
+            PlayerObject = player;
+            PlayerController = PlayerObject.GetComponent<PlayerController>();
+            CurrentPlayer = PlayerObject.GetComponent<PlayerController>();
+        }
         DontDestroyOnLoad(gameObject);
     }
 

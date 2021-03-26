@@ -214,6 +214,9 @@ public class EnemyController : MonoBehaviour
     public void Die()
     {
         //battleManager.Enemies.Remove(this);
+
+        GameState.CurrentPlayer.PingKillQuests(EnemyProfile.Class);
+
         battleManager.enemyCount--;
         Destroy(this.gameObject);
     }

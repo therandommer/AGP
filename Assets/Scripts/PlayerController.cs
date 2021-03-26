@@ -86,6 +86,8 @@ public class PlayerController : MonoBehaviour
 
     public int Money;
 
+    public int Experience;
+
     public List<Quest> QuestLog = new List<Quest>();
     void Awake()
     {
@@ -162,6 +164,53 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int Amount)
     {
         stats.Health -= Mathf.Clamp((Amount - stats.Armor), 0, int.MaxValue); //Stops the values goes crazy
+    }
+
+    public void PingKillQuests(EnemyClass enemyKilled)
+    {
+        foreach (Quest quest in QuestLog)
+        {
+            if (quest.questType == QuestType.KillQuest && quest.EnemyToKill == enemyKilled)
+            {
+                quest.increaseAmount();
+            }
+        }
+    }
+
+    public void PingFetchQuest(InventoryItem itemPickedUp)
+    {
+        foreach (Quest quest in QuestLog)
+        {
+            if (quest.questType == QuestType.FetchQuest && quest.ItemNeeded == itemPickedUp)
+            {
+                quest.increaseAmount();
+            }
+        }
+    }
+
+    public void ClaimReward()//Tie to a button on the quest tab
+    {
+        foreach (Quest quest in QuestLog)
+        {
+            foreach (QuestReward reward in quest.Reward)
+            {
+                switch (reward.questReward)
+                {
+                    case Reward.Money:
+                        GameState.CurrentPlayer.Money += reward.RewardAmount;
+                        break;
+                    case Reward.Exp:
+                        GameState.CurrentPlayer.Experience += reward.RewardAmount;
+                        break;
+                    case Reward.Item:
+                        GameState.CurrentPlayer.Inventory.Add(reward.RewardItem);
+                        break;
+                    case Reward.Ability:
+                        GameState.CurrentPlayer.Skills.Add(reward.RewardAbility);
+                        break;
+                }
+            }
+        }
     }
 
 }

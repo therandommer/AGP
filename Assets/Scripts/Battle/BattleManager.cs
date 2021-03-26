@@ -125,7 +125,7 @@ public class BattleManager : MonoBehaviour
         HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
         // Calculate how many enemies 
         //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
-        enemyCount = 9;
+        enemyCount = 2;
         // Spawn the enemies in 
         StartCoroutine(SpawnEnemies());
 
@@ -188,6 +188,12 @@ public class BattleManager : MonoBehaviour
         {
             character.transform.position = destination.transform.position;
         }
+    }
+
+    IEnumerator ShowResults()//Add in wait for click then end the scene
+    {
+        yield return new WaitForSeconds(2);
+        battleStateManager.SetBool("EndBattle", true);
     }
 
     IEnumerator AttackTarget()
@@ -278,14 +284,6 @@ public class BattleManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1f);
-        battleStateManager.SetBool("PlayerReady", false);
-        attack.ResetRange();
-        attack.ResetHighlightSquares();
-        attack.ResetTargetRecticle();
-        attack.ResetEnemiesToDamage();
-        attack.ResetSelectionCircle();
-        attack.EnemyPopupCanvas.alpha = 0;
-        GetComponent<Attack>().hitAmount = 0;
         for (int i = 0; i < EnemiesToDamage.Count; i++)
         {
             if (EnemiesToDamage[i].stats.Health < 1)
@@ -293,8 +291,16 @@ public class BattleManager : MonoBehaviour
                 EnemiesToDamage[i].Die();
             }
         }
-        //Destroy(attackParticle);
+        attack.ResetRange();
+        attack.ResetHighlightSquares();
+        attack.ResetTargetRecticle();
+        attack.ResetEnemiesToDamage();
+        attack.ResetSelectionCircle();
+        attack.EnemyPopupCanvas.alpha = 0;
+        GetComponent<Attack>().hitAmount = 0;
+        Destroy(attackParticle);
         attacking = false;
+        battleStateManager.SetBool("PlayerReady", false);
     }
 
     public int CalculateDamage(PlayerController currentPlayer, EnemyController Target)
@@ -364,6 +370,7 @@ public class BattleManager : MonoBehaviour
                 BattleText.text = "Choose an attack, Use an Item or run away";
                 break;
             case BattleState.Player_Move:
+                battleStateManager.SetBool("ContinueBattle", false); //Reset bool from previous check to stop looping
                 if (GetComponent<Attack>().attackSelected == true)
                 {
                     BattleText.text = "Now choose an enemy to attack";
@@ -404,16 +411,6 @@ public class BattleManager : MonoBehaviour
                         }
                     }
 
-                    /*
-                    if (enemyCount > 0)
-                    {
-                        for (int i = 0; i < Enemies.Count; i++)
-                        {
-                            if (Enemies[i] != null)
-                                Enemies[i].AI();
-                        }
-                    }
-                    */
                     if (ContinueBattle())
                     {
                         ShowMainButtons();
@@ -428,6 +425,7 @@ public class BattleManager : MonoBehaviour
                 break;
             case BattleState.Battle_Result:
                 //After each enemies is defeated add to a resulting pool to give to the player
+                StartCoroutine(ShowResults());
                 break;
             case BattleState.Battle_End:
                 NavigationManager.NavigateTo("Overworld");
@@ -455,7 +453,6 @@ public class BattleManager : MonoBehaviour
     bool ContinueBattle()
     {
         //Check whether there are no players or enemies alive, if either end the battle
-        battleStateManager.SetBool("ContinueBattle", false); //Reset bool from previous check to stop looping
 
         attack.ResetRange();
         attack.ResetHighlightSquares();

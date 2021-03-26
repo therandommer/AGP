@@ -14,17 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Assassin
   Age: 18
+  Faction: 
   Occupation: Thief
-  Level: 1
-  Health: 10
-  MaxHealth: 10
-  Strength: 10
-  Magic: 0
-  Defense: 5
-  Speed: 3
-  Damage: 1
-  Armor: 0
-  NoOfAttacks: 1
+  level: 1
+  health: 50
+  maxHealth: 10
+  strength: 1
+  magic: 0
+  defense: 0
+  speed: 1
+  BonusDamage: 1
+  armor: 0
+  noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
   Class: 2

@@ -12,11 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58472016962655f48b07b203fac70cb0, type: 3}
   m_Name: Kill Assassin
   m_EditorClassIdentifier: 
+  Status: 2
   QuestName: Kill Assassin
-  questStatus: 0
   questType: 0
   questAmountNeeded: 1
+  actualAmount: 0
   EnemyToKill: 2
   ItemNeeded: {fileID: 0}
-  questReward: 0
-  RewardAmount: 5
+  Reward:
+  - questReward: 0
+    RewardAmount: 25
+    RewardItem: {fileID: 0}
+    RewardAbility: {fileID: 0}
+  - questReward: 1
+    RewardAmount: 25
+    RewardItem: {fileID: 0}
+    RewardAbility: {fileID: 0}
+  - questReward: 2
+    RewardAmount: 0
+    RewardItem: {fileID: 11400000, guid: 55d3b8d0841f805468b08673633b885d, type: 2}
+    RewardAbility: {fileID: 0}
+  - questReward: 3
+    RewardAmount: 0
+    RewardItem: {fileID: 0}
+    RewardAbility: {fileID: 11400000, guid: d93be53e91bc4e44b9e04085187d4476, type: 2}

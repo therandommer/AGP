@@ -1,16 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Quest : ScriptableObject
-{
-    public string QuestName;
     public enum QuestStatus
     {
         NotAccepted,
         Accepted,
         Complete
     }
-    public QuestStatus questStatus;
 
     public enum QuestType
     {
@@ -18,20 +14,34 @@ public class Quest : ScriptableObject
         FetchQuest,
         TalkingQuest
     }
+[System.Serializable]
+public class Quest : ScriptableObject
+{
+    public QuestStatus Status;
+    public string QuestName;
     public QuestType questType;
 
     public int questAmountNeeded;
+    public int actualAmount;
     [Tooltip("Use only if questType is KillQuest")]
     public EnemyClass EnemyToKill;
     [Tooltip("Use only if questType is FetchQuest")]
     public InventoryItem ItemNeeded;
 
-    public enum QuestReward
+
+    public QuestReward[] Reward;
+
+    public void increaseAmount()
     {
-        Money,
-        Exp,
-        MoneyAndExp
+        actualAmount++;
+        if(actualAmount >= questAmountNeeded)
+        {
+            if(Status != QuestStatus.Complete)
+            {
+                Status = QuestStatus.Complete;
+                Debug.Log(QuestName + " has been completed");
+            }
+        }
     }
-    public QuestReward questReward;
-    public int RewardAmount;
+
 }
