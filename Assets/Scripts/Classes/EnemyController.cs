@@ -185,6 +185,7 @@ public class EnemyController : MonoBehaviour
         battleManager.HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
 
         Debug.Log(gameObject.name + " hit " + targetPlayer.name + " for " + battleManager.CalculateDamage(this, targetPlayer) + "\n" + targetPlayer.name + " has " + targetPlayer.stats.Health);
+        battleManager.CombatText.text = gameObject.name + " dealt " + battleManager.CalculateDamage(this, targetPlayer) + " damage to " + targetPlayer.name;
 
         return false;
     }

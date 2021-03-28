@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,8 @@ public class BattleManager : MonoBehaviour
     public Slider HealthBar;
     public Text HealthText;
     public Text BattleText;
+    public CanvasGroup CombatTextCanvas;
+    public TMP_Text CombatText;
     public CanvasGroup MainButtons;
     public CanvasGroup AttackButtons;
     public CanvasGroup FinalAttackButton;
@@ -60,6 +63,7 @@ public class BattleManager : MonoBehaviour
         Player_Attack,
         Change_Control,
         Resolve_Attacks,
+        WaitForAttacks,
         Battle_Result,
         Battle_End
     }
@@ -125,7 +129,7 @@ public class BattleManager : MonoBehaviour
         HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
         // Calculate how many enemies 
         //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
-        enemyCount = 2;
+        enemyCount = 9;
         // Spawn the enemies in 
         StartCoroutine(SpawnEnemies());
 
@@ -196,6 +200,37 @@ public class BattleManager : MonoBehaviour
         battleStateManager.SetBool("EndBattle", true);
     }
 
+    IEnumerator ResolvesAttacks()
+    {
+        Debug.Log("Resolving attacks");
+        attacking = true;
+        foreach (GameObject Entity in ListOfEntities)
+        {
+            if (Entity.GetComponent<StatsHolder>().isPlayer)
+            {
+                StartCoroutine(AttackTarget());
+            }
+            else if (Entity.GetComponent<StatsHolder>().isEnemy)
+            {
+                Entity.GetComponent<EnemyController>().AI();
+            }
+
+            bool done = false;
+            while (!done)
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+
+                    done = true;
+                }
+                yield return null;
+            }
+        }
+        battleStateManager.SetBool("FinishedAllAttacks", true);
+        CombatTextCanvas.alpha = 0;
+        ShowMainButtons();
+    }
+
     IEnumerator AttackTarget()
     {
         attacking = true;
@@ -232,6 +267,7 @@ public class BattleManager : MonoBehaviour
                 attackParticle.GetComponent<Effects>().InitiateProjectile();
             }
             EnemiesToDamage[i].stats.Health -= damageAmount;
+            CombatText.text = "The Player attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage";
             Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
             Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " health left");
             EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
@@ -368,8 +404,10 @@ public class BattleManager : MonoBehaviour
             case BattleState.Intro:
                 introPanelAnim.SetTrigger("Intro");
                 BattleText.text = "Choose an attack, Use an Item or run away";
+                ShowMainButtons();
                 break;
             case BattleState.Player_Move:
+                battleStateManager.SetBool("FinishedAllAttacks", false);
                 battleStateManager.SetBool("ContinueBattle", false); //Reset bool from previous check to stop looping
                 if (GetComponent<Attack>().attackSelected == true)
                 {
@@ -393,35 +431,27 @@ public class BattleManager : MonoBehaviour
                 break;
             case BattleState.Change_Control:
                 HideButtons();
+                CombatTextCanvas.alpha = 1;
                 //Set buttons to inactive and change bottom pannel potencially
                 break;
             case BattleState.Resolve_Attacks: //Move to the Enemies controller for turn
                 if (!attacking)
                 {
-
-                    foreach (GameObject Entity in ListOfEntities)
-                    {
-                        if(Entity.GetComponent<StatsHolder>().isPlayer)
-                        {
-                            StartCoroutine(AttackTarget());
-                        }
-                        else if (Entity.GetComponent<StatsHolder>().isEnemy)
-                        {
-                            Entity.GetComponent<EnemyController>().AI();
-                        }
-                    }
-
-                    if (ContinueBattle())
-                    {
-                        ShowMainButtons();
-                        battleStateManager.SetBool("ContinueBattle", true);
-                    }
-                    else
-                    {
-                        battleStateManager.SetBool("EndBattle", true);
-                    }
-
+                    StartCoroutine(ResolvesAttacks());
                 }
+
+                if (ContinueBattle())
+                {
+                    attacking = false;
+                    battleStateManager.SetBool("ContinueBattle", true);
+                }
+                else
+                {
+                    attacking = false;
+                    battleStateManager.SetBool("EndBattle", true);
+                }
+                break;
+            case BattleState.WaitForAttacks:
                 break;
             case BattleState.Battle_Result:
                 //After each enemies is defeated add to a resulting pool to give to the player
@@ -434,7 +464,7 @@ public class BattleManager : MonoBehaviour
             default:
                 break;
         }
-
+        /*
         if (currentBattleState != BattleState.Player_Move)
         {
             theButtons.alpha = 0;
@@ -447,7 +477,7 @@ public class BattleManager : MonoBehaviour
             theButtons.interactable = true;
             theButtons.blocksRaycasts = true;
         }
-
+        */
     }
 
     bool ContinueBattle()
@@ -467,6 +497,10 @@ public class BattleManager : MonoBehaviour
 
     public void HideButtons()
     {
+        theButtons.alpha = 0;
+        theButtons.interactable = false;
+        theButtons.blocksRaycasts = false;
+
         MainButtons.alpha = 0;
         MainButtons.interactable = false;
         MainButtons.blocksRaycasts = false;
@@ -478,6 +512,10 @@ public class BattleManager : MonoBehaviour
 
     public void ShowMainButtons()
     {
+        theButtons.alpha = 1;
+        theButtons.interactable = true;
+        theButtons.blocksRaycasts = true;
+
         MainButtons.alpha = 1;
         MainButtons.interactable = true;
         MainButtons.blocksRaycasts = true;

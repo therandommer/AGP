@@ -65,6 +65,7 @@ public class ConversationManager : Singleton<ConversationManager>
             {
                 //yield return new WaitForSeconds(5);
             }
+
             if (!wait)
             {
                 bool done = false;
