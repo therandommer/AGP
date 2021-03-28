@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SelectDeselectTab : MonoBehaviour
 {
@@ -8,11 +6,11 @@ public class SelectDeselectTab : MonoBehaviour
     private float scaleMultiplier = 1.2f;
     public void Select()
     {
-            transform.localScale = initialScale * scaleMultiplier;
+        transform.localScale = initialScale * scaleMultiplier;
     }
 
     public void Deselect()
     {
-            transform.localScale = initialScale;
+        transform.localScale = initialScale;
     }
 }
