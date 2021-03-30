@@ -50,16 +50,27 @@ public class AnimationManager : MonoBehaviour
             anim.SetInteger("AttackType", rnd);
 		}
 	}
-    public void EnableDamageValues(int damage)
+    public void EnableDamageValues(int damage, bool isEffective, bool isNotEffective)
 	{
         Debug.Log("Enabling Damage Value display for " + gameObject.name);
         receivedDamage = damage;
-        StartCoroutine("DamageNumbers");
+        StartCoroutine(DamageNumbers(isEffective, isNotEffective));
 	}
-    IEnumerator DamageNumbers()
+    IEnumerator DamageNumbers(bool isEffective, bool isNotEffective)
 	{
         damageObject.SetActive(true);
-        damageText.text = "" + receivedDamage;
+        if(isEffective && !isNotEffective)
+		{
+            damageText.text = "" + receivedDamage + "!!";
+		}
+        else if(!isEffective && isNotEffective)
+		{
+            damageText.text = "" + receivedDamage + "...";
+		}
+        else
+		{
+            damageText.text = "" + receivedDamage;
+        }
         if(receivedDamage == 0)
 		{
             damageText.text = "Miss";
@@ -72,7 +83,7 @@ public class AnimationManager : MonoBehaviour
 	{
         damageObject.SetActive(false);
         damageText.text = "";
-        StopCoroutine(DamageNumbers());
+        StopAllCoroutines();
 	}
     void InvertHitState() //reverse after animation finished
 	{

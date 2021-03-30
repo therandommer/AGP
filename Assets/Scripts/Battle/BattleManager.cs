@@ -55,9 +55,15 @@ public class BattleManager : MonoBehaviour
     [SerializeField]
     float attackGap = 0.35f; //distance in X axis between player and enemy
     [SerializeField]
-    float superEffective = 1.25f; //multiplier if move effective
+    float superEffective = 2f; //multiplier if move effective
     [SerializeField]
-    float notEffective = 0.75f; //multiplier if move not effective
+    float notEffective = 0.5f; //multiplier if move not effective
+    [SerializeField]
+    float stabBonus = 1.5f;
+
+    //used to determine damage number outputs
+    bool isEffective = false;
+    bool isNotEffective = false;
 
     public enum BattleState
     {
@@ -250,8 +256,8 @@ public class BattleManager : MonoBehaviour
             if (selectedAttack.isMelee)
             {
                 posB = new Vector2(posB.x - attackGap, posB.y); //adds attack gap to currently selected attack
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
+                GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isMoving");
+                GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isAttacking");
                 while (tmpTimer < moveSpeed)
                 {
                     GameState.CurrentPlayer.transform.position = Vector2.Lerp(posA, posB, tmpTimer / moveSpeed);
@@ -259,7 +265,7 @@ public class BattleManager : MonoBehaviour
                     yield return null;
                 }
                 GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y + 0.365f); //ensures player is actually at the position required
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
+                GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isMoving");
             }
             if (!selectedAttack.isMelee)
             {
@@ -275,22 +281,22 @@ public class BattleManager : MonoBehaviour
             Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
             Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " health left");
             EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
-            EnemiesToDamage[i].gameObject.SendMessage("UpdateAnimState", "isHit");
+            EnemiesToDamage[i].GetComponent<AnimationManager>().UpdateAnimState("isHit");
             yield return new WaitForSeconds(stopTime + 0.3f);
-            EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
+            EnemiesToDamage[i].GetComponent<AnimationManager>().EnableDamageValues(damageAmount, isEffective, isNotEffective);
             tmpTimer = 0.0f;
             if (selectedAttack.isMelee)
             {
                 GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y); //resetting player position to adjust for animation offset
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
+                GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isMoving");
                 while (tmpTimer < moveSpeed)
                 {
                     GameState.CurrentPlayer.transform.position = Vector2.Lerp(posB, posA, tmpTimer / moveSpeed);
                     tmpTimer += Time.deltaTime;
                 }
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
+                GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isMoving");
             }
-            GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
+            GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isAttacking");
             GameState.CurrentPlayer.transform.position = posA; //fully resets player position
             //might need to change this for ranged and have enemy intereaction on projectile hit?
             attackParticle = GameObject.Instantiate(selectedAttack.CastEffect, EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
@@ -346,9 +352,11 @@ public class BattleManager : MonoBehaviour
     public int CalculateDamage(PlayerController currentPlayer, EnemyController Target)
     {
         int tmpRnd = 0; // used for dodge chance and crit chance
-        int speedDif = currentPlayer.stats.Speed - Target.stats.Speed;
+        int speedDif = currentPlayer.stats.PlayerProfile.speed - Target.stats.EnemyProfile.speed;
         bool canHit = true;
-        if (speedDif <= Target.stats.Speed * 0.1) //if player speed greater than or within 10% of enemy speed, can miss
+        isEffective = false;
+        isNotEffective = false;
+        if (speedDif <= Target.stats.EnemyProfile.speed * 0.1) //if player speed greater than or within 10% of enemy speed, can miss
         {
             tmpRnd = Random.Range(1, 100);
             if (tmpRnd <= 10) //10% chance to miss
@@ -366,23 +374,54 @@ public class BattleManager : MonoBehaviour
         }
         if(canHit)
 		{
-            int DamageCalc = 0;
+            float DamageCalc = 0;
+            float DamageModifier = 1.0f;
+            for(int i = 0; i < Target.EnemyProfile.Elements.Count; ++i)
+			{
+                DamageModifier *= ElementalModifier(selectedAttack.AbilityType, Target.EnemyProfile.Elements[i]);
+            }
+            for(int i = 0; i < currentPlayer.stats.PlayerProfile.Elements.Count; ++i)
+			{
+                if (selectedAttack.AbilityType == currentPlayer.stats.PlayerProfile.Elements[i])
+				{
+                    DamageModifier *= stabBonus;
+				}
+            }
             if (selectedAttack.BaseType == AbilityBaseType.Physical)
 			{
-                DamageCalc = (currentPlayer.stats.Strength + attack.hitAmount) - (Target.stats.Defense);
+                DamageCalc = (currentPlayer.stats.PlayerProfile.strength + attack.hitAmount) - (Target.stats.EnemyProfile.defense);
             }
             else if(selectedAttack.BaseType == AbilityBaseType.Magical)
 			{
-                DamageCalc = currentPlayer.stats.Magic + attack.hitAmount - (Target.stats.Defense);
+                DamageCalc = currentPlayer.stats.PlayerProfile.magic + attack.hitAmount - (Target.stats.EnemyProfile.defense);
+			}
+            
+            if(DamageModifier > 1)
+			{
+                isEffective = true;
+                isNotEffective = false;
+			}
+            else if(DamageModifier < 1)
+			{
+                isNotEffective = true;
+                isEffective = false;
+			}
+            else
+			{
+                isNotEffective = false;
+                isEffective = false;
 			}
             if(DamageCalc <= 0)
 			{
                 DamageCalc = 1;
 			}
-            return DamageCalc;
+
+            Target.gameObject.GetComponent<AnimationManager>().EnableDamageValues(Mathf.RoundToInt(DamageCalc), isEffective, isNotEffective);
+            return Mathf.RoundToInt(DamageCalc);
         }
         else
 		{
+            Target.gameObject.GetComponent<AnimationManager>().EnableDamageValues(0, isEffective, isNotEffective);
             return 0;
 		}
     }
@@ -392,8 +431,8 @@ public class BattleManager : MonoBehaviour
         int tmpRnd = 0; // used for dodge chance and crit chance
         int speedDif = currentAI.stats.Speed - TargetPlayer.stats.Speed;
         bool canHit = true;
-        
-        if (speedDif <= TargetPlayer.stats.Speed * 0.1) //if player speed greater than or within 10% of player speed, can miss
+       
+        if (speedDif <= TargetPlayer.stats.PlayerProfile.speed * 0.1) //if player speed greater than or within 10% of player speed, can miss
 		{
             tmpRnd = Random.Range(1, 100);
             if(tmpRnd <= 10) //10% chance to miss
@@ -411,7 +450,19 @@ public class BattleManager : MonoBehaviour
 		}
         if(canHit)
 		{
-            int DamageCalc = 0;
+            float DamageCalc = 0;
+            float DamageModifier = 1.0f;
+            for (int i = 0; i < TargetPlayer.stats.PlayerProfile.StrongWith.Count; ++i)
+            {
+                DamageModifier *= ElementalModifier(selectedAttack.AbilityType, TargetPlayer.stats.PlayerProfile.Elements[i]);
+            }
+            for (int i = 0; i < currentAI.stats.EnemyProfile.Elements.Count; ++i)
+            {
+                if (selectedAttack.AbilityType == currentAI.stats.EnemyProfile.Elements[i])
+                {
+                    DamageModifier *= stabBonus;
+                }
+            }
             if (selectedAttack.BaseType == AbilityBaseType.Physical)
             {
                 DamageCalc = (currentAI.stats.Strength + attack.hitAmount) - (TargetPlayer.stats.Defense);
@@ -420,19 +471,34 @@ public class BattleManager : MonoBehaviour
             {
                 DamageCalc = (currentAI.stats.Magic + attack.hitAmount) - (TargetPlayer.stats.Defense);
             }
-            if(DamageCalc <= 0)
-			{
+            if (DamageModifier > 1)
+            {
+                isEffective = true;
+                isNotEffective = false;
+            }
+            else if (DamageModifier < 1)
+            {
+                isNotEffective = true;
+                isEffective = false;
+            }
+            else
+            {
+                isNotEffective = false;
+                isEffective = false;
+            }
+            if (DamageCalc <= 0)
+            {
                 DamageCalc = 1;
-			}
+            }
             //int DamageCalc = currentAI.stats.Strength + attack.hitAmount - TargetPlayer.stats.Defense;
             //Debug.Log("Dealt " + DamageCalc + " to " + TargetPlayer.name);
             //TargetPlayer.GetComponent<AnimationManager>().EnableDamageValues()
-            TargetPlayer.gameObject.SendMessage("EnableDamageValues", DamageCalc);
-            return DamageCalc;
+            TargetPlayer.gameObject.GetComponent<AnimationManager>().EnableDamageValues(Mathf.RoundToInt(DamageCalc), isEffective, isNotEffective);
+            return Mathf.RoundToInt(DamageCalc);
         }
         else
 		{
-            TargetPlayer.gameObject.SendMessage("EnableDamageValues", 0);
+            TargetPlayer.gameObject.GetComponent<AnimationManager>().EnableDamageValues(0, isEffective, isNotEffective);
             return 0;
 		}
         
