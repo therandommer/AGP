@@ -30,6 +30,7 @@ public class GameState : MonoBehaviour
             PlayerObject = player;
             PlayerController = PlayerObject.GetComponent<PlayerController>();
             CurrentPlayer = PlayerObject.GetComponent<PlayerController>();
+            SetUpGameState();
         }
         DontDestroyOnLoad(gameObject);
     }
@@ -42,6 +43,7 @@ public class GameState : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "Village")
             {
                 GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
+                Player.name = "Player";
                 Player.transform.position = transform.position;
                 PlayerController = Player.GetComponent<PlayerController>();
                 CurrentPlayer = Player.GetComponent<PlayerController>();

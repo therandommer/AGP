@@ -17,11 +17,11 @@ public class ReadEquippedAbilities : MonoBehaviour
                 UiReferences CurrentButton = EquipedAbilitiesButtons[i].GetComponent<UiReferences>();
 
                 Debug.Log("Reading " + GameState.CurrentPlayer.Skills[i].name);
-                EquipedAbilitiesButtons[i].GetComponent<UiReferences>().AttackTitle.text = GameState.CurrentPlayer.Skills[i].name;
-                EquipedAbilitiesButtons[i].GetComponent<UiReferences>().AttackType.text = GameState.CurrentPlayer.Skills[i].AbilityType.ToString();
-                EquipedAbilitiesButtons[i].GetComponent<UiReferences>().DamageNumber.text = "DMG: " + GameState.CurrentPlayer.Skills[i].AbilityAmount.ToString();
-                EquipedAbilitiesButtons[i].GetComponent<UiReferences>().StaminaCost.text = "Stamina Cost: " + GameState.CurrentPlayer.Skills[i].AbilityCost.ToString();
-                switch (GameState.CurrentPlayer.Skills[i].AbilityType)
+                EquipedAbilitiesButtons[i].GetComponent<UiReferences>().AttackTitle.text = GameState.CurrentPlayer.EquipedSkills[i].name;
+                EquipedAbilitiesButtons[i].GetComponent<UiReferences>().AttackType.text = GameState.CurrentPlayer.EquipedSkills[i].AbilityType.ToString();
+                EquipedAbilitiesButtons[i].GetComponent<UiReferences>().DamageNumber.text = "DMG: " + GameState.CurrentPlayer.EquipedSkills[i].AbilityAmount.ToString();
+                EquipedAbilitiesButtons[i].GetComponent<UiReferences>().StaminaCost.text = "Stamina Cost: " + GameState.CurrentPlayer.EquipedSkills[i].AbilityCost.ToString();
+                switch (GameState.CurrentPlayer.EquipedSkills[i].AbilityType)
                 {
                     case AbilityTypes.Normal:
                         break;
