@@ -283,7 +283,6 @@ public class BattleManager : MonoBehaviour
                 {
                     GameState.CurrentPlayer.transform.position = Vector2.Lerp(posB, posA, tmpTimer / moveSpeed);
                     tmpTimer += Time.deltaTime;
-                    yield return null;
                 }
                 GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
             }
@@ -337,21 +336,93 @@ public class BattleManager : MonoBehaviour
         Destroy(attackParticle);
         attacking = false;
         battleStateManager.SetBool("PlayerReady", false);
+        yield return null;
     }
 
     public int CalculateDamage(PlayerController currentPlayer, EnemyController Target)
     {
-        int DamageCalc = currentPlayer.stats.Strength + attack.hitAmount;
+        int tmpRnd = 0; // used for dodge chance and crit chance
+        int speedDif = currentPlayer.stats.Speed - Target.stats.Speed;
+        bool canHit = true;
+        if (speedDif <= Target.stats.Speed * 0.1) //if player speed greater than or within 10% of enemy speed, can miss
+        {
+            tmpRnd = Random.Range(1, 100);
+            if (tmpRnd <= 10) //10% chance to miss
+            {
+                canHit = false;
+            }
+            else
+            {
+                canHit = true;
+            }
+        }
+        else
+        {
+            canHit = true;
+        }
+        if(canHit)
+		{
+            int DamageCalc = 0;
+            if (selectedAttack.BaseType == AbilityBaseType.Physical)
+			{
+                DamageCalc = currentPlayer.stats.Strength + attack.hitAmount;
+            }
+            else if(selectedAttack.BaseType == AbilityBaseType.Magical)
+			{
+                DamageCalc = currentPlayer.stats.Magic + attack.hitAmount;
+			}
 
-        return DamageCalc;
+            return DamageCalc;
+        }
+        else
+		{
+            return 0;
+		}
     }
 
     public int CalculateDamage(EnemyController currentAI, PlayerController TargetPlayer)
     {
-        int DamageCalc = currentAI.stats.Strength + attack.hitAmount - TargetPlayer.stats.Defense;
-
-        Debug.Log("Dealt " + DamageCalc + " to " + TargetPlayer.name);
-        return DamageCalc;
+        int tmpRnd = 0; // used for dodge chance and crit chance
+        int speedDif = currentAI.stats.Speed - TargetPlayer.stats.Speed;
+        bool canHit = true;
+        
+        if (speedDif <= TargetPlayer.stats.Speed * 0.1) //if player speed greater than or within 10% of player speed, can miss
+		{
+            tmpRnd = Random.Range(1, 100);
+            if(tmpRnd <= 10) //10% chance to miss
+			{
+                canHit = false;
+			}
+            else
+			{
+                canHit = true;
+			}
+		}
+        else
+		{
+            canHit = true;
+		}
+        if(canHit)
+		{
+            int DamageCalc = 0;
+            if (selectedAttack.BaseType == AbilityBaseType.Physical)
+            {
+                DamageCalc = currentAI.stats.Strength + attack.hitAmount;
+            }
+            else if (selectedAttack.BaseType == AbilityBaseType.Magical)
+            {
+                DamageCalc = currentAI.stats.Magic + attack.hitAmount;
+            }
+            //int DamageCalc = currentAI.stats.Strength + attack.hitAmount - TargetPlayer.stats.Defense;
+            //Debug.Log("Dealt " + DamageCalc + " to " + TargetPlayer.name);
+            TargetPlayer.gameObject.SendMessage("EnableDamageValues", DamageCalc);
+            return DamageCalc;
+        }
+        else
+		{
+            return 0;
+		}
+        
     }
 
     public void RunAway()
@@ -525,4 +596,12 @@ public class BattleManager : MonoBehaviour
     {
         return stopTime;
     }
+    public void SetMoveSpeed(float newSpeed)
+	{
+        moveSpeed = newSpeed; //lower values makes player and enemies move faster on melee attacks
+	}
+    public float GetMoveSpeed()
+	{
+        return moveSpeed;
+	}
 }

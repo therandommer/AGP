@@ -44,6 +44,11 @@ public class AnimationManager : MonoBehaviour
 		{
             Invoke("InvertHitState", hitDelay);
 		}
+        if (name == "AttackType")
+		{
+            int rnd = Random.Range(1, 3);
+            anim.SetInteger("AttackType", rnd);
+		}
 	}
     public void EnableDamageValues(int damage)
 	{
@@ -55,6 +60,10 @@ public class AnimationManager : MonoBehaviour
 	{
         damageObject.SetActive(true);
         damageText.text = "" + receivedDamage;
+        if(receivedDamage == 0)
+		{
+            damageText.text = "Miss";
+		}
         yield return new WaitForSeconds(displayTime);
         damageObject.SetActive(false);
         Debug.Log("Disabling Damage Value display for " + gameObject.name);
