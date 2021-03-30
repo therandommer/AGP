@@ -54,6 +54,10 @@ public class BattleManager : MonoBehaviour
     float stopTime = 1.0f; //time taken before moving back
     [SerializeField]
     float attackGap = 0.35f; //distance in X axis between player and enemy
+    [SerializeField]
+    float superEffective = 1.25f; //multiplier if move effective
+    [SerializeField]
+    float notEffective = 0.75f; //multiplier if move not effective
 
     public enum BattleState
     {
@@ -365,13 +369,16 @@ public class BattleManager : MonoBehaviour
             int DamageCalc = 0;
             if (selectedAttack.BaseType == AbilityBaseType.Physical)
 			{
-                DamageCalc = currentPlayer.stats.Strength + attack.hitAmount;
+                DamageCalc = (currentPlayer.stats.Strength + attack.hitAmount) - (Target.stats.Defense);
             }
             else if(selectedAttack.BaseType == AbilityBaseType.Magical)
 			{
-                DamageCalc = currentPlayer.stats.Magic + attack.hitAmount;
+                DamageCalc = currentPlayer.stats.Magic + attack.hitAmount - (Target.stats.Defense);
 			}
-
+            if(DamageCalc <= 0)
+			{
+                DamageCalc = 1;
+			}
             return DamageCalc;
         }
         else
@@ -407,24 +414,134 @@ public class BattleManager : MonoBehaviour
             int DamageCalc = 0;
             if (selectedAttack.BaseType == AbilityBaseType.Physical)
             {
-                DamageCalc = currentAI.stats.Strength + attack.hitAmount;
+                DamageCalc = (currentAI.stats.Strength + attack.hitAmount) - (TargetPlayer.stats.Defense);
             }
             else if (selectedAttack.BaseType == AbilityBaseType.Magical)
             {
-                DamageCalc = currentAI.stats.Magic + attack.hitAmount;
+                DamageCalc = (currentAI.stats.Magic + attack.hitAmount) - (TargetPlayer.stats.Defense);
             }
+            if(DamageCalc <= 0)
+			{
+                DamageCalc = 1;
+			}
             //int DamageCalc = currentAI.stats.Strength + attack.hitAmount - TargetPlayer.stats.Defense;
             //Debug.Log("Dealt " + DamageCalc + " to " + TargetPlayer.name);
+            //TargetPlayer.GetComponent<AnimationManager>().EnableDamageValues()
             TargetPlayer.gameObject.SendMessage("EnableDamageValues", DamageCalc);
             return DamageCalc;
         }
         else
 		{
+            TargetPlayer.gameObject.SendMessage("EnableDamageValues", 0);
             return 0;
 		}
         
     }
 
+    float ElementalModifier(AbilityTypes attackType, AbilityTypes defenceType)
+	{
+        //Blunt>Slashing>Normal>Blunt
+        //Fire>Electricity>Water>Fire
+        //Holy>Dark>Holy
+        switch(attackType)
+		{
+            case AbilityTypes.Blunt:
+                switch(defenceType)
+				{
+                    case AbilityTypes.Blunt:
+                        return notEffective;
+                    case AbilityTypes.Slashing:
+                        return superEffective;
+                    case AbilityTypes.Normal:
+                        return notEffective;
+                    default:
+                        return 1.0f;
+				}
+            case AbilityTypes.Slashing:
+                switch(defenceType)
+				{
+                    case AbilityTypes.Slashing:
+                        return notEffective;
+                    case AbilityTypes.Blunt:
+                        return notEffective;
+                    case AbilityTypes.Normal:
+                        return superEffective;
+                    default:
+                        return 1.0f;
+				}
+            case AbilityTypes.Normal:
+                switch(defenceType)
+				{
+                    case AbilityTypes.Normal:
+                        return notEffective;
+                    case AbilityTypes.Blunt:
+                        return superEffective;
+                    case AbilityTypes.Slashing:
+                        return notEffective;
+                    default:
+                        return 1.0f;
+				}
+            case AbilityTypes.Fire:
+                switch(defenceType)
+				{
+                    case AbilityTypes.Fire:
+                        return notEffective;
+                    case AbilityTypes.Water:
+                        return notEffective;
+                    case AbilityTypes.Electricity:
+                        return superEffective;
+                    default:
+                        return 1.0f;
+				}
+            case AbilityTypes.Water:
+                switch (defenceType)
+                {
+                    case AbilityTypes.Fire:
+                        return superEffective;
+                    case AbilityTypes.Water:
+                        return notEffective;
+                    case AbilityTypes.Electricity:
+                        return notEffective;
+                    default:
+                        return 1.0f;
+                }
+            case AbilityTypes.Electricity:
+                switch (defenceType)
+                {
+                    case AbilityTypes.Fire:
+                        return notEffective;
+                    case AbilityTypes.Water:
+                        return superEffective;
+                    case AbilityTypes.Electricity:
+                        return notEffective;
+                    default:
+                        return 1.0f;
+                }
+            case AbilityTypes.Dark:
+                switch(defenceType)
+				{
+                    case AbilityTypes.Dark:
+                        return notEffective;
+                    case AbilityTypes.Holy:
+                        return superEffective;
+                    default:
+                        return 1.0f;
+				}
+            case AbilityTypes.Holy:
+                switch(defenceType)
+				{
+                    case AbilityTypes.Holy:
+                        return notEffective;
+                    case AbilityTypes.Dark:
+                        return superEffective;
+                    default:
+                        return 1.0f;
+				}
+            default:
+                Debug.LogWarning("No valid attack type for skill");
+                return 1.0f;
+		}
+	}
     public void RunAway()
     {
         GameState.justExitedBattle = true;
