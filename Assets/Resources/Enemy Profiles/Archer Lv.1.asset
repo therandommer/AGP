@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72fc2841b27486e4286b6c7d58108575, type: 3}
-  m_Name: Assassin
+  m_Name: Archer Lv.1
   m_EditorClassIdentifier: 
-  Name: Assassin
-  Age: 18
+  Name: Archer
+  Age: 24
   Faction: 
-  Occupation: Thief
+  Occupation: Archer
   level: 1
-  health: 50
-  maxHealth: 10
-  strength: 1
-  magic: 0
-  defense: 0
-  speed: 1
+  health: 20
+  maxHealth: 20
+  strength: 5
+  magic: 3
+  defense: 6
+  speed: 10
   BonusDamage: 1
   armor: 0
   noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
   Class: 2
-  EnemySprite: {fileID: 21300000, guid: 6e90e5c1d015cfe4db410f6857dd5b09, type: 3}
-  Element: 00000000
+  EnemySprite: {fileID: 21300000, guid: 9fabec2ee38771b4d8ea4adca009a594, type: 3}
+  Elements: 00000000
