@@ -5,6 +5,7 @@ using UnityEngine;
 public class SelectAndReplaceAttack : MonoBehaviour
 {
     public Abilities SelectedAttack;
+
     public void SelectAttack(AttackReference attackReference)
     {
         SelectedAttack = attackReference.AbilityReference;
@@ -12,7 +13,9 @@ public class SelectAndReplaceAttack : MonoBehaviour
 
     public void ReplaceEquippedAttack1()
     {
+        Debug.Log("Ability 1 was " + GameState.CurrentPlayer.EquipedSkills[0].name);
         GameState.CurrentPlayer.EquipedSkills[0] = SelectedAttack;
+        Debug.Log("Ability 1 is " + GameState.CurrentPlayer.EquipedSkills[0].name);
     }
     public void ReplaceEquippedAttack2()
     {

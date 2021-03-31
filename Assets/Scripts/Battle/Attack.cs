@@ -61,10 +61,10 @@ public class Attack : MonoBehaviour
 
     void Start()
     {
-        Ability1 = GameState.CurrentPlayer.Skills[0];
-        Ability2 = GameState.CurrentPlayer.Skills[1];
-        Ability3 = GameState.CurrentPlayer.Skills[2];
-        Ability4 = GameState.CurrentPlayer.Skills[3];
+        Ability1 = GameState.CurrentPlayer.EquipedSkills[0];
+        Ability2 = GameState.CurrentPlayer.EquipedSkills[1];
+        Ability3 = GameState.CurrentPlayer.EquipedSkills[2];
+        Ability4 = GameState.CurrentPlayer.EquipedSkills[3];
         ReadAbilitiesNames();
     }
 
