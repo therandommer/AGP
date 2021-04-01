@@ -10,22 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72fc2841b27486e4286b6c7d58108575, type: 3}
-  m_Name: New Enemy
+  m_Name: Mage Lv.1
   m_EditorClassIdentifier: 
-  Name: 
-  Age: 0
-  Occupation: 
-  Level: 1
-  Health: 2
-  MaxHealth: 2
-  Strength: 1
-  Magic: 0
-  Defense: 0
-  Speed: 1
-  Damage: 1
-  Armor: 0
-  NoOfAttacks: 1
+  Name: Mage
+  Age: 45
+  Faction: 
+  Occupation: Mage
+  level: 1
+  health: 15
+  maxHealth: 15
+  strength: 3
+  magic: 10
+  defense: 5
+  speed: 14
+  BonusDamage: 3
+  armor: 0
+  noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
-  Class: 0
-  EnemySprite: {fileID: 0}
+  Class: 1
+  EnemySprite: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+  Elements: 06000000
