@@ -393,7 +393,7 @@ public class BattleManager : MonoBehaviour
             }
             else if(selectedAttack.BaseType == AbilityBaseType.Magical)
 			{
-                DamageCalc = currentPlayer.stats.PlayerProfile.magic + attack.hitAmount - (Target.stats.EnemyProfile.defense);
+                DamageCalc = currentPlayer.stats.PlayerProfile.magic + attack.hitAmount - (Target.stats.EnemyProfile.magic);
 			}
             
             if(DamageModifier > 1)
@@ -469,7 +469,7 @@ public class BattleManager : MonoBehaviour
             }
             else if (selectedAttack.BaseType == AbilityBaseType.Magical)
             {
-                DamageCalc = (currentAI.stats.Magic + attack.hitAmount) - (TargetPlayer.stats.Defense);
+                DamageCalc = (currentAI.stats.Magic + attack.hitAmount) - (TargetPlayer.stats.Magic);
             }
             if (DamageModifier > 1)
             {
