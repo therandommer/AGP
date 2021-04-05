@@ -188,29 +188,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ClaimReward()//Tie to a button on the quest tab
+    public void ClaimQuest(Quest QuestToComplete)//Tie to a button on the quest tab
     {
-        foreach (Quest quest in QuestLog)
+        foreach (QuestReward reward in QuestToComplete.Reward)
         {
-            foreach (QuestReward reward in quest.Reward)
+            switch (reward.questReward)
             {
-                switch (reward.questReward)
-                {
-                    case Reward.Money:
-                        GameState.CurrentPlayer.Money += reward.RewardAmount;
-                        break;
-                    case Reward.Exp:
-                        GameState.CurrentPlayer.Experience += reward.RewardAmount;
-                        break;
-                    case Reward.Item:
-                        GameState.CurrentPlayer.Inventory.Add(reward.RewardItem);
-                        break;
-                    case Reward.Ability:
-                        GameState.CurrentPlayer.Skills.Add(reward.RewardAbility);
-                        break;
-                }
+                case Reward.Money:
+                    GameState.CurrentPlayer.Money += reward.RewardAmount;
+                    break;
+                case Reward.Exp:
+                    GameState.CurrentPlayer.Experience += reward.RewardAmount;
+                    break;
+                case Reward.Item:
+                    GameState.CurrentPlayer.Inventory.Add(reward.RewardItem);
+                    break;
+                case Reward.Ability:
+                    GameState.CurrentPlayer.Skills.Add(reward.RewardAbility);
+                    break;
             }
         }
     }
-
 }

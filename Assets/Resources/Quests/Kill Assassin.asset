@@ -19,6 +19,12 @@ MonoBehaviour:
   actualAmount: 0
   EnemyToKill: 2
   ItemNeeded: {fileID: 0}
+  NpcToTalkTo: {fileID: 0}
+  TargetSprite: {fileID: 0}
+  ExperienceReward: 0
+  QuestDescription: 'Can be found nearby in the woods (Quel Forrest)
+
+'
   Reward:
   - questReward: 0
     RewardAmount: 25

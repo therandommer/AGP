@@ -67,23 +67,6 @@ public class InventoryItem : ScriptableObject, IComparable<InventoryItem>
         }
     }
 
-    public int CompareTo(bool isOtherArmour)
-    {
-        if (!isOtherArmour && this.isArmour)//If Other bool is not true, 
-        {
-            return -1;
-        }
-        else if (isOtherArmour && !this.isArmour)
-        {
-            return 1;
-        }
-        else
-        {
-            // if costs are equal sort in alphabetical order
-            return 0;
-        }
-    }
-
     // Define the is greater than operator.
     public static bool operator >(InventoryItem operand1, InventoryItem operand2)
     {
