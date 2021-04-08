@@ -59,7 +59,7 @@ public class Attack : MonoBehaviour
     }
 
 
-    void Start()
+    public void ReadPlayersSkills()
     {
         Ability1 = GameState.CurrentPlayer.EquipedSkills[0];
         Ability2 = GameState.CurrentPlayer.EquipedSkills[1];
@@ -123,7 +123,6 @@ public class Attack : MonoBehaviour
 
     void HighlightSquare(GameObject SpawnPoint, Color HighlightColour)
     {
-        Debug.Log("Highlighting " + SpawnPoint.name);
         SpawnPoint.GetComponent<SpriteRenderer>().color = HighlightColour;
     }
 
@@ -235,10 +234,10 @@ public class Attack : MonoBehaviour
 
         for (int i = 0; i < battleManager.Enemies.Count; i++)
         {
-            if (battleManager.Enemies[i] == battleManager.selectedTarget)
+            if (battleManager.Enemies[i] == GameState.CurrentPlayer.selectedTarget)
             {
                 //Found enemy
-                switch (battleManager.selectedAttack.abilityRange)
+                switch (GameState.CurrentPlayer.selectedAttack.abilityRange)
                 {
                     case AbilityRange.OneEnemy:
                         ShowHighlightSquare(battleManager.EnemySpawnPoints[i]);
@@ -478,7 +477,7 @@ public class Attack : MonoBehaviour
 
     public void SelectAttack(Abilities Attack)
     {
-        battleManager.selectedAttack = Attack;
+        GameState.CurrentPlayer.selectedAttack = Attack;
         attackSelected = true;
     }
 }

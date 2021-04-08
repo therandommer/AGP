@@ -10,7 +10,8 @@ public class GameState : MonoBehaviour
     public GameObject player;
     public Player PlayerProfile;
     public PlayerController PlayerController;
-    public Player[] PlayerParty;
+    public static GameObject[] PlayerParty;
+    public GameObject[] playerParty;
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
@@ -25,6 +26,7 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        PlayerParty = playerParty;
         if(BattleSceneTest)
         {
             PlayerObject = player;
@@ -33,6 +35,34 @@ public class GameState : MonoBehaviour
             SetUpGameState();
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public static void ChangeCurrentPlayer()
+    {
+        for (int i = 0; i < PlayerParty.Length; i++)
+        {
+            if(PlayerParty[i] == PlayerObject)
+            {
+                if((i+1) <= PlayerParty.Length)
+                {
+                    Debug.Log("Go to next player");
+                    Debug.Log("Player was " + CurrentPlayer.name);
+                    PlayerObject = PlayerParty[i + 1];
+                    CurrentPlayer = PlayerParty[i+1].GetComponent<PlayerController>();
+                    Debug.Log("Player is now " + CurrentPlayer.name);
+                    return;
+                }
+                else
+                {
+                    Debug.Log("Go back to first " + (i+1));
+                    Debug.Log("Player was " + CurrentPlayer.name);
+                    PlayerObject = PlayerParty[0];
+                    CurrentPlayer = PlayerParty[0].GetComponent<PlayerController>();
+                    Debug.Log("Player is now " + CurrentPlayer.name);
+                    return;
+                }
+            }
+        }
     }
 
     public void SetUpGameState()

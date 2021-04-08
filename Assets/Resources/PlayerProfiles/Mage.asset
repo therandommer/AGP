@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e72f7ae0ce48354b8915fab3d8631de, type: 3}
-  m_Name: Angel
+  m_Name: Mage
   m_EditorClassIdentifier: 
   Name: Angel
   Age: 16
@@ -29,21 +29,14 @@ MonoBehaviour:
   Weapon: 
   Position: {x: 0, y: 0}
   PlayerImage: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
-  StartingInventory:
-  - {fileID: 11400000, guid: 59d2d8d8673ca9e4f9ae4d9c0f688fb3, type: 2}
-  - {fileID: 11400000, guid: 635291a23a0cd524189949de2962167e, type: 2}
-  - {fileID: 11400000, guid: d6b8beb3800111a408d706d17e3fcd96, type: 2}
-  - {fileID: 11400000, guid: bd4e99b2fd8c921479ea97dc414ac674, type: 2}
-  - {fileID: 11400000, guid: 71b8e91ddf06ee745a6af727c5bd18e9, type: 2}
-  StartingEquipment:
-  - {fileID: 11400000, guid: 59d2d8d8673ca9e4f9ae4d9c0f688fb3, type: 2}
+  StartingInventory: []
+  StartingEquipment: []
   StartingSkills:
+  - {fileID: 11400000, guid: d93be53e91bc4e44b9e04085187d4476, type: 2}
   - {fileID: 11400000, guid: 2ec3db44f2a1cf846acd02bccda89a0d, type: 2}
-  - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
   - {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}
-  - {fileID: 11400000, guid: b8a26cc11b5674e4c85556e05bc6beab, type: 2}
+  - {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}
   StartingMoney: 0
-  StartingQuestLog:
-  - {fileID: 11400000, guid: c5040b995a2f822478377e6231dbe813, type: 2}
+  StartingQuestLog: []
   StrongWith: 030000000600000001000000
   WeakAgainst: 020000000400000005000000

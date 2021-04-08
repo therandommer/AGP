@@ -6,15 +6,18 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Stats Holder")]
     public StatsHolder stats;
-    [Header("GameState stas holder")]
-    [Tooltip("Needed to hold the stats between scenes")]
-    public StatsHolder GameStateStats;
-    private Vector2 Position; //Spawn
+
+    [Header("Is the character attacking")]
+    public bool Attacking = false;
 
     [Header("Profile Details")]
     public List<InventoryItem> Inventory = new List<InventoryItem>();
 
     public List<InventoryItem> EquippedItems = new List<InventoryItem>();
+
+    [Header("BattleScene stuff")]
+    public Abilities selectedAttack;
+    public EnemyController selectedTarget;
 
     public void AddInventoryItem(InventoryItem item)
     {
@@ -87,6 +90,19 @@ public class PlayerController : MonoBehaviour
     public int Money;
 
     public int Experience;
+
+    public double ExperienceNeededToLevel;
+
+    public void AddExperience(int experienceAmount)
+    {
+        Experience += experienceAmount;
+        if(Experience >= ExperienceNeededToLevel)
+        {
+            stats.LevelUp();
+            ExperienceNeededToLevel *= 1.5;
+        }
+    }
+
 
     public List<Quest> QuestLog = new List<Quest>();
     void Awake()
@@ -209,4 +225,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
 }

@@ -35,11 +35,10 @@ public class BattleManager : MonoBehaviour
     public Attack attack;
     [Header("Debug variables")]
     public string selectedTargetName;
-    public Abilities selectedAttack;
-    public EnemyController selectedTarget;
     public GameObject selectionCircle;
     public List<EnemyController> EnemiesToDamage;
     private bool canSelectEnemy;
+    private bool HideUI = false;
 
     public bool attacking = false;
     [Tooltip("Use if you want to have player go first in the fight")]
@@ -157,7 +156,11 @@ public class BattleManager : MonoBehaviour
         }
         battleStateManager.SetBool("BattleReady", true);
 
-        ListOfEntities.Add(GameState.PlayerObject);
+        for(int i = 0; i < GameState.PlayerParty.Length; i++)
+        {
+            ListOfEntities.Add(GameState.PlayerParty[i]);
+        }
+
 
         ListOfEntities.Sort(delegate (GameObject a, GameObject b)
         {
@@ -234,89 +237,75 @@ public class BattleManager : MonoBehaviour
     IEnumerator AttackTarget()
     {
         attacking = true;
-        int damageAmount = CalculateDamage(GameState.CurrentPlayer, selectedTarget);
-
-        for (int i = 0; i < EnemiesToDamage.Count; i++)
+        foreach (GameObject players in GameState.PlayerParty)
         {
-            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " before damage");
-            //GameState.CurrentPlayer.transform.position = new Vector2(Mathf.PingPong(Time.deltaTime / 50, EnemiesToDamage[i].gameObject.transform.position.x - GameState.CurrentPlayer.transform.position.x), Mathf.PingPong(Time.time, EnemiesToDamage[i].gameObject.transform.position.y - GameState.CurrentPlayer.transform.position.y));
-            posA = GameState.CurrentPlayer.transform.position;
-            posB = EnemiesToDamage[i].gameObject.transform.position;
-            float tmpTimer = 0.0f;
-            if (selectedAttack.isMelee)
+            PlayerController CurrentPlayer = players.GetComponent<PlayerController>();
+            for (int i = 0; i < EnemiesToDamage.Count; i++)
             {
-                posB = new Vector2(posB.x - attackGap, posB.y); //adds attack gap to currently selected attack
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
-                while (tmpTimer < moveSpeed)
+                int damageAmount = CalculateDamage(CurrentPlayer, CurrentPlayer.selectedTarget);
+                Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " before damage");
+                //GameState.CurrentPlayer.transform.position = new Vector2(Mathf.PingPong(Time.deltaTime / 50, EnemiesToDamage[i].gameObject.transform.position.x - GameState.CurrentPlayer.transform.position.x), Mathf.PingPong(Time.time, EnemiesToDamage[i].gameObject.transform.position.y - GameState.CurrentPlayer.transform.position.y));
+                posA = CurrentPlayer.transform.position;
+                posB = EnemiesToDamage[i].gameObject.transform.position;
+                float tmpTimer = 0.0f;
+                if (CurrentPlayer.selectedAttack.isMelee)
                 {
-                    GameState.CurrentPlayer.transform.position = Vector2.Lerp(posA, posB, tmpTimer / moveSpeed);
-                    tmpTimer += Time.deltaTime;
-                    yield return null;
+                    posB = new Vector2(posB.x - attackGap, posB.y); //adds attack gap to currently selected attack
+                    CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
+                    CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
+                    while (tmpTimer < moveSpeed)
+                    {
+                        CurrentPlayer.transform.position = Vector2.Lerp(posA, posB, tmpTimer / moveSpeed);
+                        tmpTimer += Time.deltaTime;
+                        yield return null;
+                    }
+                    CurrentPlayer.transform.position = new Vector2(posB.x, posB.y + 0.365f); //ensures player is actually at the position required
+                    CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
                 }
-                GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y + 0.365f); //ensures player is actually at the position required
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
-            }
-            if (!selectedAttack.isMelee)
-            {
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
-                GameState.CurrentPlayer.transform.position = new Vector2(posA.x, posA.y + 0.365f);
-                attackParticle = GameObject.Instantiate(selectedAttack.CastEffect);
-                attackParticle.GetComponent<Effects>().SetPosA(posA);
-                attackParticle.GetComponent<Effects>().SetPosB(posB);
-                attackParticle.GetComponent<Effects>().InitiateProjectile();
-            }
-            EnemiesToDamage[i].stats.Health -= damageAmount;
-            CombatText.text = "The Player attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage";
-            Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
-            Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " health left");
-            EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
-            EnemiesToDamage[i].gameObject.SendMessage("UpdateAnimState", "isHit");
-            yield return new WaitForSeconds(stopTime + 0.3f);
-            EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
-            tmpTimer = 0.0f;
-            if (selectedAttack.isMelee)
-            {
-                GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y); //resetting player position to adjust for animation offset
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
-                while (tmpTimer < moveSpeed)
+                if (!CurrentPlayer.selectedAttack.isMelee)
                 {
-                    GameState.CurrentPlayer.transform.position = Vector2.Lerp(posB, posA, tmpTimer / moveSpeed);
-                    tmpTimer += Time.deltaTime;
-                    yield return null;
+                    CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
+                    CurrentPlayer.transform.position = new Vector2(posA.x, posA.y + 0.365f);
+                    attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect);
+                    attackParticle.GetComponent<Effects>().SetPosA(posA);
+                    attackParticle.GetComponent<Effects>().SetPosB(posB);
+                    attackParticle.GetComponent<Effects>().InitiateProjectile();
                 }
-                GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
+                EnemiesToDamage[i].stats.Health -= damageAmount;
+                CombatText.text = "The Player attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage";
+                Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
+                Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " health left");
+                EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
+                EnemiesToDamage[i].gameObject.SendMessage("UpdateAnimState", "isHit");
+                yield return new WaitForSeconds(stopTime + 0.3f);
+                EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
+                tmpTimer = 0.0f;
+                if (CurrentPlayer.selectedAttack.isMelee)
+                {
+                    CurrentPlayer.transform.position = new Vector2(posB.x, posB.y); //resetting player position to adjust for animation offset
+                    CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
+                    while (tmpTimer < moveSpeed)
+                    {
+                        CurrentPlayer.transform.position = Vector2.Lerp(posB, posA, tmpTimer / moveSpeed);
+                        tmpTimer += Time.deltaTime;
+                        yield return null;
+                    }
+                    CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
+                }
+                CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
+                CurrentPlayer.transform.position = posA; //fully resets player position
+                                                                   //might need to change this for ranged and have enemy intereaction on projectile hit?
+                attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect, EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
             }
-            GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
-            GameState.CurrentPlayer.transform.position = posA; //fully resets player position
-            //might need to change this for ranged and have enemy intereaction on projectile hit?
-            attackParticle = GameObject.Instantiate(selectedAttack.CastEffect, EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
-        }
-        ///Add in a coroutine to slowly move the slider to the value instead of just setting it
-        attack.EnemyHealthSlider.value = selectedTarget.stats.Health / (float)selectedTarget.EnemyProfile.maxHealth;
-        //Set the health text
-        attack.HealthText.text = selectedTarget.stats.Health + "/" + selectedTarget.EnemyProfile.maxHealth;
+            ///Add in a coroutine to slowly move the slider to the value instead of just setting it
+            attack.EnemyHealthSlider.value = CurrentPlayer.selectedTarget.stats.Health / (float)CurrentPlayer.selectedTarget.EnemyProfile.maxHealth;
+            //Set the health text
+            attack.HealthText.text = CurrentPlayer.selectedTarget.stats.Health + "/" + CurrentPlayer.selectedTarget.EnemyProfile.maxHealth;
 
-        /*
-        switch (damageAmount) //Spawn graphic/FX here bigger damage bigger damage effect
-        {
-            case 5:
-                attackParticle = (GameObject)GameObject.Instantiate(Attack1Particle);
-                break;
-            case 10:
-                attackParticle = (GameObject)GameObject.Instantiate(Attack2Particle);
-                break;
-            case 15:
-                attackParticle = (GameObject)GameObject.Instantiate(Attack3Particle);
-                break;
-            case 20:
-                attackParticle = (GameObject)GameObject.Instantiate(Attack4Particle);
-                break;
-        }*/
-
-        if (attackParticle != null)
-        {
-            attackParticle.transform.position = selectedTarget.transform.position;
+            if (attackParticle != null)
+            {
+                attackParticle.transform.position = CurrentPlayer.selectedTarget.transform.position;
+            }
         }
 
         yield return new WaitForSeconds(1f);
@@ -333,7 +322,6 @@ public class BattleManager : MonoBehaviour
         attack.ResetEnemiesToDamage();
         attack.ResetSelectionCircle();
         attack.EnemyPopupCanvas.alpha = 0;
-        GetComponent<Attack>().hitAmount = 0;
         Destroy(attackParticle);
         attacking = false;
         battleStateManager.SetBool("PlayerReady", false);
@@ -371,7 +359,7 @@ public class BattleManager : MonoBehaviour
     public void SelectEnemy(EnemyController enemy, string name)
     {
         Debug.Log("Selected" + name);
-        selectedTarget = enemy;
+        GameState.CurrentPlayer.selectedTarget = enemy;
         selectedTargetName = name;
     }
 
@@ -407,8 +395,11 @@ public class BattleManager : MonoBehaviour
                 ShowMainButtons();
                 break;
             case BattleState.Player_Move:
+                attack.ReadPlayersSkills();
                 battleStateManager.SetBool("FinishedAllAttacks", false);
+                battleStateManager.SetBool("AllPlayersReady", false);
                 battleStateManager.SetBool("ContinueBattle", false); //Reset bool from previous check to stop looping
+                HideUI = true;
                 if (GetComponent<Attack>().attackSelected == true)
                 {
                     BattleText.text = "Now choose an enemy to attack";
@@ -426,12 +417,31 @@ public class BattleManager : MonoBehaviour
                 }
                 else
                 {
+                    GameState.CurrentPlayer.Attacking = true;
                     battleStateManager.SetBool("PlayerReady", false);
                 }
                 break;
             case BattleState.Change_Control:
-                HideButtons();
-                CombatTextCanvas.alpha = 1;
+
+                for (int i = 0; i < GameState.PlayerParty.Length; i++)
+                {
+                    if (!GameState.PlayerParty[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet
+                    {
+                        Debug.Log("Changing player");
+                        GameState.ChangeCurrentPlayer();
+                        HideUI = false;
+                        battleStateManager.SetBool("PlayerReady", false);
+                        battleStateManager.SetBool("AllPlayersReady", false);
+                        return;
+                    }
+                }
+
+                if (HideUI)
+                {
+                    HideButtons();
+                    CombatTextCanvas.alpha = 1;
+                    battleStateManager.SetBool("AllPlayersReady", true);
+                }
                 //Set buttons to inactive and change bottom pannel potencially
                 break;
             case BattleState.Resolve_Attacks: //Move to the Enemies controller for turn
@@ -464,20 +474,6 @@ public class BattleManager : MonoBehaviour
             default:
                 break;
         }
-        /*
-        if (currentBattleState != BattleState.Player_Move)
-        {
-            theButtons.alpha = 0;
-            theButtons.interactable = false;
-            theButtons.blocksRaycasts = false;
-        }
-        else if (currentBattleState == BattleState.Player_Move)
-        {
-            theButtons.alpha = 1;
-            theButtons.interactable = true;
-            theButtons.blocksRaycasts = true;
-        }
-        */
     }
 
     bool ContinueBattle()

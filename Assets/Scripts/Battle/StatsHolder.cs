@@ -120,6 +120,29 @@ public class StatsHolder : MonoBehaviour, IComparable<StatsHolder>
         Armor = StatsToHold.Armor;
     }
 
+    public void LevelUp()
+    {
+        Level ++;
+        int HealthLevelUpAmount = UnityEngine.Random.Range(1, 4);
+        Health += HealthLevelUpAmount;
+        MaxHealth = HealthLevelUpAmount;
+
+        int StrengthLevelUpAmount = UnityEngine.Random.Range(1, 4);
+        Strength = StrengthLevelUpAmount;
+
+        int MagicLevelUpAmount = UnityEngine.Random.Range(1, 4);
+        Magic = MagicLevelUpAmount;
+
+        int DefenseLevelUpAmount = UnityEngine.Random.Range(1, 4);
+        Defense = DefenseLevelUpAmount;
+
+        int SpeedLevelUpAmount = UnityEngine.Random.Range(1, 4);
+        Speed = SpeedLevelUpAmount;
+
+        int DamageLevelUpAmount = UnityEngine.Random.Range(1, 4);
+        Damage = DamageLevelUpAmount;
+    }
+
     public int CompareTo(StatsHolder other)
     {
         if (other.Speed < this.Speed)

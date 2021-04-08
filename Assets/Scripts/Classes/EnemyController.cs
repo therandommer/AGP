@@ -23,7 +23,8 @@ public class EnemyController : MonoBehaviour
 
     [Header("Stats Holder")]
     public StatsHolder stats;
-
+    [Header("Experience given on kill, Total experience = Exp*Level*5")]
+    int ExperienceToGive;
 
     public Abilities[] Skills;
     public void UpdateUI()
@@ -38,6 +39,12 @@ public class EnemyController : MonoBehaviour
             healthSlider.value = stats.Health;
         }
 	}
+
+    public int ExperienceOnKill()
+    {
+        return ExperienceToGive * stats.Level * 5; 
+    }
+
     void Awake()
     {
         /*
@@ -108,7 +115,7 @@ public class EnemyController : MonoBehaviour
             battleManager.attack.ResetEnemiesToDamage();
             battleManager.attack.ResetSelectionCircle();
 
-            if (battleManager.selectedTarget == this && battleManager.LockEnemyPopup)
+            if (GameState.CurrentPlayer.selectedTarget == this && battleManager.LockEnemyPopup)
             {
                 battleManager.LockEnemyPopup = false;
                 battleManager.attack.ResetTargetRecticle();
@@ -129,7 +136,7 @@ public class EnemyController : MonoBehaviour
             }
             battleManager.attack.ShowEnemyInfo(this.gameObject);
             battleManager.SelectEnemy(this, EnemyProfile.name);
-            if (battleManager.selectedAttack != null)
+            if (GameState.CurrentPlayer.selectedAttack != null)
                 battleManager.attack.HighlightEnemies();
 
             battleManager.ShowFinalAttackButton();
@@ -217,6 +224,7 @@ public class EnemyController : MonoBehaviour
         //battleManager.Enemies.Remove(this);
 
         GameState.CurrentPlayer.PingKillQuests(EnemyProfile.Class);
+        GameState.CurrentPlayer.AddExperience(ExperienceOnKill());
 
         battleManager.enemyCount--;
         Destroy(this.gameObject);
