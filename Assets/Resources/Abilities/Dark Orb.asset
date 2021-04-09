@@ -19,7 +19,8 @@ MonoBehaviour:
   AbilityDescription: 
   AbilityImage: {fileID: -3808112592595356675, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
-  CastEffect: {fileID: 0}
+  CastEffect: {fileID: 7678159497909189357, guid: 36d3f5ff1bafd1340b46d5c8ee8e50a0,
+    type: 3}
   isMelee: 0
   abilityRange: 3
   AbilityCost: 7

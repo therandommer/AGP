@@ -17,7 +17,7 @@ public class BattleManager : MonoBehaviour
     public Animator battleStateManager;
     public GameObject introPanel;
     Animator introPanelAnim;
-    public GameObject PlayerSpawnPoint;
+    public GameObject[] PlayerSpawnPoints;
     [Header("UI")]
     public CanvasGroup theButtons;
     public Slider HealthBar;
@@ -36,7 +36,6 @@ public class BattleManager : MonoBehaviour
     [Header("Debug variables")]
     public string selectedTargetName;
     public GameObject selectionCircle;
-    public List<EnemyController> EnemiesToDamage;
     private bool canSelectEnemy;
     private bool HideUI = false;
 
@@ -53,6 +52,7 @@ public class BattleManager : MonoBehaviour
     float stopTime = 1.0f; //time taken before moving back
     [SerializeField]
     float attackGap = 0.35f; //distance in X axis between player and enemy
+    public List<GameObject> playerParty;
 
     public enum BattleState
     {
@@ -118,13 +118,26 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        GameObject.Find("Player").transform.SetParent(PlayerSpawnPoint.transform);
-        GameObject.Find("Player").transform.position = PlayerSpawnPoint.transform.position;
-        GameObject.Find("Player").GetComponent<PlayerMovement>().CantMove = true;
-        GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX = true;
+        //GameObject.Find("Player").transform.SetParent(PlayerSpawnPoint.transform);
+        //GameObject.Find("Player").transform.position = PlayerSpawnPoint.transform.position;
+        //GameObject.Find("Player").GetComponent<PlayerMovement>().CantMove = true;
+        //GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        //GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX = true;
+        for (int i = 0; i < GameState.PlayersToSpawn.Length; i++)
+        {
+            GameObject SpawnPlayer = Instantiate(GameState.PlayersToSpawn[i], Vector3.zero, Quaternion.identity);
+            SpawnPlayer.name = GameState.PlayersToSpawn[i].name;
+            SpawnPlayer.transform.SetParent(PlayerSpawnPoints[i].transform);
+            SpawnPlayer.transform.position = PlayerSpawnPoints[i].transform.position;
+            SpawnPlayer.GetComponent<PlayerMovement>().CantMove = true;
+            SpawnPlayer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            SpawnPlayer.GetComponent<SpriteRenderer>().flipX = true;
 
-
+            ListOfEntities.Add(SpawnPlayer);
+            playerParty.Add(SpawnPlayer);
+        }
+        GameState.CurrentPlayer = GameObject.Find("Player").GetComponent<PlayerController>();
+        GameState.PlayerParty = playerParty;
         HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
         // Calculate how many enemies 
         //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
@@ -155,12 +168,6 @@ public class BattleManager : MonoBehaviour
             Enemies.Add(controller);
         }
         battleStateManager.SetBool("BattleReady", true);
-
-        for(int i = 0; i < GameState.PlayerParty.Length; i++)
-        {
-            ListOfEntities.Add(GameState.PlayerParty[i]);
-        }
-
 
         ListOfEntities.Sort(delegate (GameObject a, GameObject b)
         {
@@ -209,44 +216,62 @@ public class BattleManager : MonoBehaviour
         attacking = true;
         foreach (GameObject Entity in ListOfEntities)
         {
-            if (Entity.GetComponent<StatsHolder>().isPlayer)
+            if (Entity != null)
             {
-                StartCoroutine(AttackTarget());
-            }
-            else if (Entity.GetComponent<StatsHolder>().isEnemy)
-            {
-                Entity.GetComponent<EnemyController>().AI();
-            }
-
-            bool done = false;
-            while (!done)
-            {
-                if (Input.GetKeyDown(KeyCode.Mouse0))
+                if (Entity.GetComponent<StatsHolder>().isPlayer)
                 {
-
-                    done = true;
+                    StartCoroutine(AttackTarget(Entity));
                 }
-                yield return null;
+                else if (Entity.GetComponent<StatsHolder>().isEnemy)
+                {
+                    Entity.GetComponent<EnemyController>().AI();
+                }
+
+                bool done = false;
+                while (!done)
+                {
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+
+                        done = true;
+                    }
+                    yield return null;
+                }
             }
         }
+
         battleStateManager.SetBool("FinishedAllAttacks", true);
-        CombatTextCanvas.alpha = 0;
-        ShowMainButtons();
+
+        yield return new WaitForSeconds(1f);
+
+        if (ContinueBattle())
+        {
+            attacking = false;
+            battleStateManager.SetBool("ContinueBattle", true);
+            CombatTextCanvas.alpha = 0;
+            ShowMainButtons();
+        }
+        else
+        {
+            attacking = false;
+            battleStateManager.SetBool("EndBattle", true);
+        }
     }
 
-    IEnumerator AttackTarget()
+    IEnumerator AttackTarget(GameObject PlayerToAttack)
     {
         attacking = true;
-        foreach (GameObject players in GameState.PlayerParty)
+
+        PlayerController CurrentPlayer = PlayerToAttack.GetComponent<PlayerController>();
+        for (int i = 0; i < CurrentPlayer.EnemiesToDamage.Count; i++)
         {
-            PlayerController CurrentPlayer = players.GetComponent<PlayerController>();
-            for (int i = 0; i < EnemiesToDamage.Count; i++)
+            if (CurrentPlayer.EnemiesToDamage[i] != null)
             {
                 int damageAmount = CalculateDamage(CurrentPlayer, CurrentPlayer.selectedTarget);
-                Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " before damage");
+                Debug.Log(CurrentPlayer.EnemiesToDamage[i].gameObject.name + " has " + CurrentPlayer.EnemiesToDamage[i].stats.Health + " before damage");
                 //GameState.CurrentPlayer.transform.position = new Vector2(Mathf.PingPong(Time.deltaTime / 50, EnemiesToDamage[i].gameObject.transform.position.x - GameState.CurrentPlayer.transform.position.x), Mathf.PingPong(Time.time, EnemiesToDamage[i].gameObject.transform.position.y - GameState.CurrentPlayer.transform.position.y));
                 posA = CurrentPlayer.transform.position;
-                posB = EnemiesToDamage[i].gameObject.transform.position;
+                posB = CurrentPlayer.EnemiesToDamage[i].gameObject.transform.position;
                 float tmpTimer = 0.0f;
                 if (CurrentPlayer.selectedAttack.isMelee)
                 {
@@ -271,14 +296,14 @@ public class BattleManager : MonoBehaviour
                     attackParticle.GetComponent<Effects>().SetPosB(posB);
                     attackParticle.GetComponent<Effects>().InitiateProjectile();
                 }
-                EnemiesToDamage[i].stats.Health -= damageAmount;
-                CombatText.text = "The Player attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage";
-                Debug.Log("Attacked " + EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
-                Debug.Log(EnemiesToDamage[i].gameObject.name + " has " + EnemiesToDamage[i].stats.Health + " health left");
-                EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
-                EnemiesToDamage[i].gameObject.SendMessage("UpdateAnimState", "isHit");
+                CurrentPlayer.EnemiesToDamage[i].stats.Health -= damageAmount;
+                CombatText.text = "The Player attacked " + CurrentPlayer.EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage";
+                Debug.Log("Attacked " + CurrentPlayer.EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
+                Debug.Log(CurrentPlayer.EnemiesToDamage[i].gameObject.name + " has " + CurrentPlayer.EnemiesToDamage[i].stats.Health + " health left");
+                CurrentPlayer.EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
+                CurrentPlayer.EnemiesToDamage[i].gameObject.SendMessage("UpdateAnimState", "isHit");
                 yield return new WaitForSeconds(stopTime + 0.3f);
-                EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
+                CurrentPlayer.EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
                 tmpTimer = 0.0f;
                 if (CurrentPlayer.selectedAttack.isMelee)
                 {
@@ -294,8 +319,8 @@ public class BattleManager : MonoBehaviour
                 }
                 CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
                 CurrentPlayer.transform.position = posA; //fully resets player position
-                                                                   //might need to change this for ranged and have enemy intereaction on projectile hit?
-                attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect, EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
+                                                         //might need to change this for ranged and have enemy intereaction on projectile hit?
+                attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect, CurrentPlayer.EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
             }
             ///Add in a coroutine to slowly move the slider to the value instead of just setting it
             attack.EnemyHealthSlider.value = CurrentPlayer.selectedTarget.stats.Health / (float)CurrentPlayer.selectedTarget.EnemyProfile.maxHealth;
@@ -308,12 +333,13 @@ public class BattleManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(1f);
-        for (int i = 0; i < EnemiesToDamage.Count; i++)
+
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < CurrentPlayer.EnemiesToDamage.Count; i++)
         {
-            if (EnemiesToDamage[i].stats.Health < 1)
+            if (CurrentPlayer.EnemiesToDamage[i].stats.Health < 1)
             {
-                EnemiesToDamage[i].Die();
+                CurrentPlayer.EnemiesToDamage[i].Die();
             }
         }
         attack.ResetRange();
@@ -412,7 +438,7 @@ public class BattleManager : MonoBehaviour
                 {
                     if (!attacking)
                     {
-                        StartCoroutine(AttackTarget());
+                        //StartCoroutine(AttackTarget());
                     }
                 }
                 else
@@ -423,7 +449,7 @@ public class BattleManager : MonoBehaviour
                 break;
             case BattleState.Change_Control:
 
-                for (int i = 0; i < GameState.PlayerParty.Length; i++)
+                for (int i = 0; i < GameState.PlayersToSpawn.Length; i++)
                 {
                     if (!GameState.PlayerParty[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet
                     {
@@ -448,17 +474,6 @@ public class BattleManager : MonoBehaviour
                 if (!attacking)
                 {
                     StartCoroutine(ResolvesAttacks());
-                }
-
-                if (ContinueBattle())
-                {
-                    attacking = false;
-                    battleStateManager.SetBool("ContinueBattle", true);
-                }
-                else
-                {
-                    attacking = false;
-                    battleStateManager.SetBool("EndBattle", true);
                 }
                 break;
             case BattleState.WaitForAttacks:

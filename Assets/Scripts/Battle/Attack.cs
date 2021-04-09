@@ -143,7 +143,7 @@ public class Attack : MonoBehaviour
             if (battleManager.Enemies[i] != null)
             {
                 battleManager.Enemies[i].TargetReticle.SetActive(true);
-                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+                GameState.CurrentPlayer.EnemiesToDamage.Add(battleManager.Enemies[i]);
             }
             i++;
             i++;
@@ -159,7 +159,7 @@ public class Attack : MonoBehaviour
             if (battleManager.Enemies[i] != null)
             {
                 battleManager.Enemies[i].TargetReticle.SetActive(true);
-                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+                GameState.CurrentPlayer.EnemiesToDamage.Add(battleManager.Enemies[i]);
             }
             i++;
             i++;
@@ -175,7 +175,7 @@ public class Attack : MonoBehaviour
             if (battleManager.Enemies[i] != null)
             {
                 battleManager.Enemies[i].TargetReticle.SetActive(true);
-                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+                GameState.CurrentPlayer.EnemiesToDamage.Add(battleManager.Enemies[i]);
             }
             i++;
             i++;
@@ -191,7 +191,7 @@ public class Attack : MonoBehaviour
             if (battleManager.Enemies[i] != null)
             {
                 battleManager.Enemies[i].TargetReticle.SetActive(true);
-                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+                GameState.CurrentPlayer.EnemiesToDamage.Add(battleManager.Enemies[i]);
             }
         }
     }
@@ -205,7 +205,7 @@ public class Attack : MonoBehaviour
             if (battleManager.Enemies[i] != null)
             {
                 battleManager.Enemies[i].TargetReticle.SetActive(true);
-                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+                GameState.CurrentPlayer.EnemiesToDamage.Add(battleManager.Enemies[i]);
             }
         }
     }
@@ -219,7 +219,7 @@ public class Attack : MonoBehaviour
             if (battleManager.Enemies[i] != null)
             {
                 battleManager.Enemies[i].TargetReticle.SetActive(true);
-                battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+                GameState.CurrentPlayer.EnemiesToDamage.Add(battleManager.Enemies[i]);
             }
         }
     }
@@ -245,7 +245,7 @@ public class Attack : MonoBehaviour
                         if (battleManager.Enemies[i] != null)
                         {
                             battleManager.Enemies[i].TargetReticle.SetActive(true);
-                            battleManager.EnemiesToDamage.Add(battleManager.Enemies[i]);
+                            GameState.CurrentPlayer.EnemiesToDamage.Add(battleManager.Enemies[i]);
                         }
                         break;
                     case AbilityRange.AllEnemies:
@@ -256,7 +256,7 @@ public class Attack : MonoBehaviour
                             if (battleManager.Enemies[j] != null)
                             {
                                 battleManager.Enemies[j].TargetReticle.SetActive(true);
-                                battleManager.EnemiesToDamage.Add(battleManager.Enemies[j]);
+                                GameState.CurrentPlayer.EnemiesToDamage.Add(battleManager.Enemies[i]);
                             }
 
                         }
@@ -413,7 +413,7 @@ public class Attack : MonoBehaviour
     }
     public void ResetEnemiesToDamage()
     {
-        battleManager.EnemiesToDamage.Clear();
+        GameState.CurrentPlayer.EnemiesToDamage.Clear();
     }
     public void ResetSelectionCircle()
     {

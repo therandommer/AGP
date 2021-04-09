@@ -221,7 +221,7 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        //battleManager.Enemies.Remove(this);
+        //battleManager.ListOfEntities.Remove(this.gameObject);
 
         GameState.CurrentPlayer.PingKillQuests(EnemyProfile.Class);
         GameState.CurrentPlayer.AddExperience(ExperienceOnKill());

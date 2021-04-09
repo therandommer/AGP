@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("BattleScene stuff")]
     public Abilities selectedAttack;
     public EnemyController selectedTarget;
+    public List<EnemyController> EnemiesToDamage;
 
     public void AddInventoryItem(InventoryItem item)
     {
