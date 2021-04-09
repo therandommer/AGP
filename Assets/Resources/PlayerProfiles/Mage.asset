@@ -28,7 +28,7 @@ MonoBehaviour:
   noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
-  PlayerImage: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
+  PlayerImage: {fileID: 21300000, guid: 5a6bc7bbf32e55a43898b4ee531a23bd, type: 3}
   StartingInventory: []
   StartingEquipment: []
   StartingSkills:

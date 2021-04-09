@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class PopulateStatList : MonoBehaviour
 {
     public Player Profile;
+    public TMP_Text Name;
     public TMP_Text Level;
     public TMP_Text Health;
     public TMP_Text Strength;
@@ -23,6 +24,8 @@ public class PopulateStatList : MonoBehaviour
             PlayerController PC = GameState.CurrentPlayer;
             if (!OnlyNumbers)
             {
+                if (Name != null)
+                    Name.text = PC.name;
                 if (Level != null)
                 {
                     Level.text = "Level:\n" + PC.stats.Level.ToString();
@@ -44,6 +47,7 @@ public class PopulateStatList : MonoBehaviour
             }
             else
             {
+                Name.text = PC.name;
                 //Level.text = PC.Level.ToString();
                 Health.text = PC.stats.Health.ToString();
                 Strength.text = PC.stats.Strength.ToString();
@@ -58,6 +62,8 @@ public class PopulateStatList : MonoBehaviour
         {
             if (!OnlyNumbers)
             {
+                if (Name != null)
+                    Name.text = Profile.Name;
                 if (Level != null)
                 {
                     Level.text = "Level:\n" + Profile.level.ToString();
