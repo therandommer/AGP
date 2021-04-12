@@ -18,6 +18,7 @@ public class NavigationPrompt : MonoBehaviour
 			GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, startingPosition);
 		}
 	}
+
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if (NavigationManager.CanNavigate(this.tag))

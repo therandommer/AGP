@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class GameState : MonoBehaviour
     public PlayerController PlayerController;
     public static List<GameObject> PlayerParty;
     public static GameObject[] PlayersToSpawn;
-    public GameObject[] playerParty;
+    public List<GameObject> playerParty;
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
@@ -27,8 +25,8 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        PlayersToSpawn = playerParty;
-        if(BattleSceneTest)
+        PlayersToSpawn = playerParty.ToArray();
+        if (BattleSceneTest)
         {
             PlayerObject = player;
             PlayerController = PlayerObject.GetComponent<PlayerController>();
@@ -42,20 +40,20 @@ public class GameState : MonoBehaviour
     {
         for (int i = 0; i < PlayerParty.Count; i++)
         {
-            if(PlayerParty[i] == PlayerObject)
+            if (PlayerParty[i] == PlayerObject)
             {
-                if((i+1) <= PlayerParty.Count)
+                if ((i + 1) <= PlayerParty.Count)
                 {
                     Debug.Log("Go to next player");
                     Debug.Log("Player was " + CurrentPlayer.name);
                     PlayerObject = PlayerParty[i + 1];
-                    CurrentPlayer = PlayerParty[i+1].GetComponent<PlayerController>();
+                    CurrentPlayer = PlayerParty[i + 1].GetComponent<PlayerController>();
                     Debug.Log("Player is now " + CurrentPlayer.name);
                     return;
                 }
                 else
                 {
-                    Debug.Log("Go back to first " + (i+1));
+                    Debug.Log("Go back to first " + (i + 1));
                     Debug.Log("Player was " + CurrentPlayer.name);
                     PlayerObject = PlayerParty[0];
                     CurrentPlayer = PlayerParty[0].GetComponent<PlayerController>();
@@ -71,23 +69,22 @@ public class GameState : MonoBehaviour
         PlayerObject = player;
         if (!PlayerSpawned)
         {
-            if (SceneManager.GetActiveScene().name == "Village")
-            {
-                GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
-                Player.name = "Player";
-                Player.transform.position = transform.position;
-                PlayerController = Player.GetComponent<PlayerController>();
-                CurrentPlayer = Player.GetComponent<PlayerController>();
-            }
+            GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
+            Player.name = "Player";
+            playerParty.Add(Player);
+            PlayersToSpawn = playerParty.ToArray();
+            Player.transform.position = transform.position;
+            PlayerController = Player.GetComponent<PlayerController>();
+            CurrentPlayer = Player.GetComponent<PlayerController>();
             PlayerSpawned = true;
         }
     }
 
     void Update()
     {
-        if(PlayerObject == null)
+        if (PlayerObject == null)
         {
-            if(player == null)
+            if (player == null)
             {
                 player = GameObject.Find("Player");
                 PlayerObject = player;
@@ -95,7 +92,7 @@ public class GameState : MonoBehaviour
             else
             {
                 PlayerObject = player;
-            }    
+            }
         }
     }
 

@@ -2,14 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+public enum EntityType
+{
+    Angel,
+    Demon,
+    Human,
+    Mage
+}
 
 public class Entity : ScriptableObject
 {
     public string Name;
 
     public int Age;
-    
-    public string Faction; //Replace to a list later 
+    [Header("Used to set initial spawning lcation for player characters")]
+    public EntityType Type;
     
     public string Occupation; //Same as above 
     

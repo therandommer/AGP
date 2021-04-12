@@ -9531,6 +9531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Profile: {fileID: 0}
+  Name: {fileID: 0}
   Level: {fileID: 417008936}
   Health: {fileID: 477336512}
   Strength: {fileID: 1500933679}
@@ -16559,6 +16560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameState
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218218275178927864, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}

@@ -6,20 +6,35 @@ using UnityEngine.SceneManagement;
 public class StartOfGameManager : MonoBehaviour
 {
 
-    public GameState gameState;
-
-    public Player Character1Profile;
-    public Player Character2Profile;
-    public Player Character3Profile;
-    public Player Character4Profile;
+    public GameObject gameState;
 
     public GameObject selectedCharacterProfile;
 
+    public void SelectCharacter(GameObject SelectCharacter)
+    {
+        selectedCharacterProfile = SelectCharacter;
+    }
+
     public void StartGame()
     {
-        GameState GS = Instantiate(gameState);
-        GS.player = selectedCharacterProfile;
-        GS.SetUpGameState();
+        GameObject GS = Instantiate(gameState);
+        GS.GetComponent<GameState>().player = selectedCharacterProfile;
+        GS.GetComponent<GameState>().SetUpGameState();
+        switch (GameState.CurrentPlayer.stats.PlayerProfile.Type)
+        {
+            case EntityType.Angel:
+                NavigationManager.NavigateTo("Village");
+                break;
+            case EntityType.Demon:
+                NavigationManager.NavigateTo("Village");
+                break;
+            case EntityType.Human:
+                NavigationManager.NavigateTo("Village");
+                break;
+            case EntityType.Mage:
+                NavigationManager.NavigateTo("Village");
+                break;
+        }
     }
 
 
