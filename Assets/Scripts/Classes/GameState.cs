@@ -70,10 +70,11 @@ public class GameState : MonoBehaviour
         if (!PlayerSpawned)
         {
             GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
+            Player.transform.position = new Vector3(0,0,1);
             Player.name = "Player";
             playerParty.Add(Player);
             PlayersToSpawn = playerParty.ToArray();
-            Player.transform.position = transform.position;
+            //Player.transform.position = transform.position;
             PlayerController = Player.GetComponent<PlayerController>();
             CurrentPlayer = Player.GetComponent<PlayerController>();
             PlayerSpawned = true;
