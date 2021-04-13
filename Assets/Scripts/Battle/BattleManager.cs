@@ -451,7 +451,7 @@ public class BattleManager : MonoBehaviour
                     if (!GameState.PlayerParty[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet
                     {
                         Debug.Log("Changing player");
-                        GameState.ChangeCurrentPlayer();
+                        GameState.ChangeCurrentPlayerBattle();
                         HideUI = false;
                         battleStateManager.SetBool("PlayerReady", false);
                         battleStateManager.SetBool("AllPlayersReady", false);

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e72f7ae0ce48354b8915fab3d8631de, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  Name: Angel
+  Name: Knight
   Age: 16
-  Faction: Angels
+  Type: 0
   Occupation: Protector
   level: 1
   health: 100

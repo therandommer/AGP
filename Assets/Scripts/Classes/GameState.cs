@@ -27,6 +27,7 @@ public class GameState : MonoBehaviour
     void Awake()
     {
         PlayersToSpawn = playerParty.ToArray();
+        PlayerParty = playerParty;
         if (BattleSceneTest)
         {
             PlayerObject = player;
@@ -37,7 +38,7 @@ public class GameState : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public static void ChangeCurrentPlayer()
+    public static void ChangeCurrentPlayerBattle()
     {
         for (int i = 0; i < PlayerParty.Count; i++)
         {
@@ -71,6 +72,7 @@ public class GameState : MonoBehaviour
         if (!PlayerSpawned)
         {
             GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
+            PlayerObject = Player;
             Player.transform.position = new Vector3(0,0,1);
             Player.name = "Player";
             playerParty.Add(Player);
@@ -84,14 +86,12 @@ public class GameState : MonoBehaviour
 
     public void AddToParty(GameObject PlayerToAdd)
     {
-        GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
+        GameObject Player = Instantiate(PlayerToAdd, Vector3.zero, Quaternion.identity);
         Player.transform.position = new Vector3(40, 0, 1);
         Player.GetComponent<PlayerMovement>().CantMove = true;
         Player.name = Player.GetComponent<PlayerController>().stats.PlayerProfile.name;
         playerParty.Add(Player);
         PlayersToSpawn = playerParty.ToArray();
-        PlayerController = Player.GetComponent<PlayerController>();
-        CurrentPlayer = Player.GetComponent<PlayerController>();
         PlayerSpawned = true;
     }
 
@@ -106,6 +106,49 @@ public class GameState : MonoBehaviour
                 PlayersToSpawn = PlayerParty.ToArray();
             }
         }
+    }
+
+    public static void ChangeCurrentPlayer()
+    {
+        Debug.Log(PlayerParty.Count);
+        for (int i = 0; i < PlayerParty.Count; i++)
+        {
+            if (PlayerParty[i] == PlayerObject)
+            {
+                if ((i + 1) <= PlayerParty.Count)
+                {
+                    Debug.Log("Go to next player");
+                    Debug.Log("Player was " + CurrentPlayer.name);
+
+                    PlayerParty[i + 1].transform.position = PlayerParty[i].transform.position;
+                    PlayerParty[i].transform.position = new Vector3(40,0,1);
+                    PlayerParty[i].GetComponent<PlayerMovement>().CantMove = true;
+
+                    PlayerParty[i + 1].GetComponent<PlayerMovement>().CantMove = false;
+                    PlayerObject = PlayerParty[i + 1];
+                    CurrentPlayer = PlayerParty[i + 1].GetComponent<PlayerController>();
+                    Debug.Log("Player is now " + CurrentPlayer.name);
+                    return;
+                }
+                else
+                {
+                    Debug.Log("Go back to first ");
+                    Debug.Log("Player was " + CurrentPlayer.name);
+
+                    PlayerParty[0].transform.position = PlayerParty[i].transform.position;
+                    PlayerParty[i].transform.position = new Vector3(40, 0, 1);
+                    PlayerParty[i].GetComponent<PlayerMovement>().CantMove = true;
+
+                    PlayerParty[0].GetComponent<PlayerMovement>().CantMove = false;
+
+                    PlayerObject = PlayerParty[0];
+                    CurrentPlayer = PlayerParty[0].GetComponent<PlayerController>();
+                    Debug.Log("Player is now " + CurrentPlayer.name);
+                    return;
+                }
+            }
+        }
+
     }
 
     void Update()
