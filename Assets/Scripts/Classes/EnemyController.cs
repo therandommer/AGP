@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
@@ -21,6 +22,11 @@ public class EnemyController : MonoBehaviour
     public GameObject selectionCircle;
     public GameObject TargetReticle;
     public bool attacking = false;
+
+    [Header("BattleScene stuff")]
+    public Abilities selectedAttack;
+    public EnemyController selectedTarget;
+    public List<EnemyController> EnemiesToDamage;
 
     Vector2 posA = Vector2.zero; //default enemy position
     [SerializeField]
