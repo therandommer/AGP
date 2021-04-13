@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72fc2841b27486e4286b6c7d58108575, type: 3}
+  m_Name: Assassin Lv.1
+  m_EditorClassIdentifier: 
+  Name: Assassin
+  Age: 18
+  Faction: 
+  Occupation: Thief
+  level: 1
+  health: 15
+  maxHealth: 15
+  strength: 4
+  magic: 4
+  defense: 8
+  speed: 15
+  BonusDamage: 1
+  armor: 0
+  noOfAttacks: 1
+  Weapon: 
+  Position: {x: 0, y: 0}
+  Class: 2
+  EnemySprite: {fileID: 21300000, guid: 6e90e5c1d015cfe4db410f6857dd5b09, type: 3}
+  Elements: 

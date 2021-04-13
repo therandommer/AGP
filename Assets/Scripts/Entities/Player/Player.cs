@@ -26,6 +26,7 @@ public class Player : Entity
 
     public List<AbilityTypes> WeakAgainst = new List<AbilityTypes>();
 
+    public List<AbilityTypes> Elements = new List<AbilityTypes>();
 }
 
 

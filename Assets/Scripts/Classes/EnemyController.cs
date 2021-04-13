@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     float sliderLerpTime = 0.5f;
 
+    AnimationManager anim;
     public BattleManager battleManager;
     public Enemy EnemyProfile;
     Animator enemyAI;
@@ -21,12 +22,18 @@ public class EnemyController : MonoBehaviour
     public GameObject TargetReticle;
     public bool attacking = false;
 
+    Vector2 posA = Vector2.zero; //default enemy position
+    [SerializeField]
+    float attackGap = 0.35f; //distance in X axis between player and enemy
+    private GameObject attackParticle = null;
+
     [Header("Stats Holder")]
     public StatsHolder stats;
     [Header("Experience given on kill, Total experience = Exp*Level*5")]
     int ExperienceToGive;
 
     public Abilities[] Skills;
+    Abilities selectedSkill = null;
     public void UpdateUI()
 	{
         if(healthSlider != null)
@@ -47,6 +54,7 @@ public class EnemyController : MonoBehaviour
 
     void Awake()
     {
+        anim = GetComponent<AnimationManager>();
         /*
         ///Copy across all details, much easier to handle plus better for saving
         Level = EnemyProfile.level;
@@ -181,7 +189,10 @@ public class EnemyController : MonoBehaviour
 
     bool AttackPlayer()
     {
+        int rnd = UnityEngine.Random.Range(0, Skills.Length);
+        selectedSkill = Skills[rnd];
         targetPlayer = GameState.CurrentPlayer;
+        StartCoroutine(AttackDelay());
         
         targetPlayer.stats.Health -= battleManager.CalculateDamage(this, targetPlayer);
 
@@ -190,13 +201,49 @@ public class EnemyController : MonoBehaviour
         battleManager.HealthBar.value = HealthBarValue;
 
         battleManager.HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
-
         Debug.Log(gameObject.name + " hit " + targetPlayer.name + " for " + battleManager.CalculateDamage(this, targetPlayer) + "\n" + targetPlayer.name + " has " + targetPlayer.stats.Health);
         battleManager.CombatText.text = gameObject.name + " dealt " + battleManager.CalculateDamage(this, targetPlayer) + " damage to " + targetPlayer.name;
-
+        
         return false;
     }
 
+    IEnumerator AttackDelay()
+	{
+        bool hasAttacked = false;
+        Vector2 posB = Vector2.zero;
+        posB = new Vector2(targetPlayer.gameObject.transform.position.x, targetPlayer.gameObject.transform.position.y); //base target position
+        if(!hasAttacked)
+		{
+            if (selectedSkill.isMelee && !hasAttacked)
+            {
+                posB = new Vector2(posB.x - attackGap, posB.y); //adds attack gap to currently selected attack
+                //this.gameObject.SendMessage("UpdateAnimState", "isMoving");
+                anim.UpdateAnimState("isAttacking");
+                anim.UpdateAnimState("AttackType");
+                Debug.Log("Melee attack anim");
+                //float tmpTimer = 0.0f;
+                float moveSpeed = battleManager.GetMoveSpeed();
+            }
+            if (!selectedSkill.isMelee)
+            {
+                anim.UpdateAnimState("isAttacking");
+                anim.UpdateAnimState("AttackType");
+                //this.gameObject.transform.position = new Vector2(posA.x, posA.y);
+                attackParticle = GameObject.Instantiate(selectedSkill.CastEffect);
+                attackParticle.GetComponent<Effects>().SetPosA(posA);
+                attackParticle.GetComponent<Effects>().SetPosB(posB);
+                attackParticle.GetComponent<Effects>().InitiateProjectile();
+            }
+            hasAttacked = true;
+        }
+        yield return new WaitForSeconds(battleManager.GetStopTime());
+        if(hasAttacked)
+		{
+            Debug.Log("Returning");
+            anim.UpdateAnimState("isAttacking");
+        }
+        yield return null;
+    }
     void OnMouseEnter()
     {
         if (!battleManager.LockEnemyPopup)

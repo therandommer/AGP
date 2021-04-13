@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72fc2841b27486e4286b6c7d58108575, type: 3}
-  m_Name: Assassin
+  m_Name: Mage Lv.1
   m_EditorClassIdentifier: 
-  Name: Assassin
-  Age: 18
+  Name: Mage
+  Age: 45
   Faction: 
-  Occupation: Thief
+  Occupation: Mage
   level: 1
-  health: 50
-  maxHealth: 10
-  strength: 1
-  magic: 0
-  defense: 0
-  speed: 1
-  BonusDamage: 1
+  health: 15
+  maxHealth: 15
+  strength: 3
+  magic: 10
+  defense: 5
+  speed: 14
+  BonusDamage: 3
   armor: 0
   noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
-  Class: 2
-  EnemySprite: {fileID: 21300000, guid: 6e90e5c1d015cfe4db410f6857dd5b09, type: 3}
+  Class: 1
+  EnemySprite: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+  Elements: 06000000
