@@ -669,9 +669,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 4397276913126792908}
-  GameStateStats: {fileID: 0}
+  Attacking: 0
   Inventory: []
   EquippedItems: []
+  selectedAttack: {fileID: 0}
+  selectedTarget: {fileID: 0}
+  EnemiesToDamage: []
   Skills: []
   EquipedSkills: []
   Money: 0

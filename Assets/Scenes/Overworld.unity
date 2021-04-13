@@ -848,6 +848,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 585873978080826499, guid: 3fa9cd893d24a7744b4652b5d4741abd,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.44136322
+      objectReference: {fileID: 0}
+    - target: {fileID: 585873978080826499, guid: 3fa9cd893d24a7744b4652b5d4741abd,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.8795407
+      objectReference: {fileID: 0}
+    - target: {fileID: 585873978080826499, guid: 3fa9cd893d24a7744b4652b5d4741abd,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.31662023
+      objectReference: {fileID: 0}
+    - target: {fileID: 585873978080826499, guid: 3fa9cd893d24a7744b4652b5d4741abd,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.6332405
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
+        type: 3}
+      propertyPath: battleProbability
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
+        type: 3}
+      propertyPath: secondsBetweenBattles
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8611133692562251503, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}
       propertyPath: m_Name

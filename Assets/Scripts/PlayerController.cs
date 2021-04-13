@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public EnemyController selectedTarget;
     public List<EnemyController> EnemiesToDamage;
 
+    public Vector3 LastScenePosition;
+
     public void AddInventoryItem(InventoryItem item)
     {
         Inventory.Add(item);

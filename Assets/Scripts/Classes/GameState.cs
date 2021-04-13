@@ -6,6 +6,7 @@ public class GameState : MonoBehaviour
     public static PlayerController CurrentPlayer;
     public static GameObject PlayerObject;
     public GameObject player;
+    public GameObject partymembertoSpawn;
     public Player PlayerProfile;
     public PlayerController PlayerController;
     public static List<GameObject> PlayerParty;
@@ -74,10 +75,36 @@ public class GameState : MonoBehaviour
             Player.name = "Player";
             playerParty.Add(Player);
             PlayersToSpawn = playerParty.ToArray();
-            //Player.transform.position = transform.position;
             PlayerController = Player.GetComponent<PlayerController>();
             CurrentPlayer = Player.GetComponent<PlayerController>();
             PlayerSpawned = true;
+            AddToParty(partymembertoSpawn);
+        }
+    }
+
+    public void AddToParty(GameObject PlayerToAdd)
+    {
+        GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
+        Player.transform.position = new Vector3(40, 0, 1);
+        Player.GetComponent<PlayerMovement>().CantMove = true;
+        Player.name = Player.GetComponent<PlayerController>().stats.PlayerProfile.name;
+        playerParty.Add(Player);
+        PlayersToSpawn = playerParty.ToArray();
+        PlayerController = Player.GetComponent<PlayerController>();
+        CurrentPlayer = Player.GetComponent<PlayerController>();
+        PlayerSpawned = true;
+    }
+
+    public static void MovePartyMembersOffScreen()
+    {
+        for (int i = 0; i < PlayerParty.Count; i++)
+        {
+            if(PlayerParty[i].GetComponent<PlayerController>() != CurrentPlayer)
+            {
+                PlayerParty[i].transform.position = new Vector3(40, 0, 1);
+                PlayerParty[i].GetComponent<PlayerMovement>().CantMove = true;
+                PlayersToSpawn = PlayerParty.ToArray();
+            }
         }
     }
 

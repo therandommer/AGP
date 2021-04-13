@@ -41,6 +41,7 @@ public class RandomBattle : MonoBehaviour
         if (encounterChance <= battleProbability)
         {
             Debug.Log("Battle");
+            GameObject.Find("Player").GetComponent<PlayerController>().LastScenePosition = GameObject.Find("Player").transform.position;
             SceneManager.LoadScene(battleSceneName);
         }
     }

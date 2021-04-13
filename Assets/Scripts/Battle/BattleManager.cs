@@ -120,28 +120,14 @@ public class BattleManager : MonoBehaviour
     {
         for (int i = 0; i < GameState.PlayersToSpawn.Length; i++)
         {
-            if (GameState.PlayersToSpawn[i].GetComponent<PlayerController>().stats.PlayerProfile == GameState.PlayerObject.GetComponent<PlayerController>().stats.PlayerProfile)
-            {
-                Debug.Log("Just moving player");
-                GameObject.Find("Player").transform.SetParent(PlayerSpawnPoints[0].transform);
-                GameObject.Find("Player").transform.position = PlayerSpawnPoints[0].transform.position;
-                GameObject.Find("Player").GetComponent<PlayerMovement>().CantMove = true;
-                GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX = true;
-            }
-            else
-            {
-                Debug.Log(GameState.PlayersToSpawn[i].name + " is not the same as " + GameState.PlayersToSpawn[i].name);
-                GameObject SpawnPlayer = Instantiate(GameState.PlayersToSpawn[i], Vector3.zero, Quaternion.identity);
-                SpawnPlayer.name = GameState.PlayersToSpawn[i].name;
-                SpawnPlayer.transform.SetParent(PlayerSpawnPoints[i].transform);
-                SpawnPlayer.transform.position = PlayerSpawnPoints[i].transform.position;
-                SpawnPlayer.GetComponent<PlayerMovement>().CantMove = true;
-                SpawnPlayer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                SpawnPlayer.GetComponent<SpriteRenderer>().flipX = true;
-                ListOfEntities.Add(SpawnPlayer);
-                playerParty.Add(SpawnPlayer);
-            }
+            GameState.PlayersToSpawn[i].transform.position = PlayerSpawnPoints[i].transform.position;
+
+            GameState.PlayersToSpawn[i].GetComponent<PlayerMovement>().CantMove = true;
+            GameState.PlayersToSpawn[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GameState.PlayersToSpawn[i].GetComponent<SpriteRenderer>().flipX = true;
+
+            ListOfEntities.Add(GameState.PlayersToSpawn[i]);
+            playerParty.Add(GameState.PlayersToSpawn[i]);
 
         }
         GameState.CurrentPlayer = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -379,6 +365,9 @@ public class BattleManager : MonoBehaviour
     public void RunAway()
     {
         GameState.justExitedBattle = true;
+        GameState.MovePartyMembersOffScreen();
+        GameState.PlayerParty[0].GetComponent<PlayerMovement>().CantMove = false;
+        GameState.CurrentPlayer.gameObject.transform.position = GameState.CurrentPlayer.LastScenePosition;
         NavigationManager.NavigateTo("Overworld");
     }
 
