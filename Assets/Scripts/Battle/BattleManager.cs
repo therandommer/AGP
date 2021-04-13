@@ -507,10 +507,11 @@ public class BattleManager : MonoBehaviour
         {
             float DamageCalc = 0;
             float DamageModifier = 1.0f;
-            for (int i = 0; i < TargetPlayer.stats.PlayerProfile.StrongWith.Count; ++i)
+            for (int i = 0; i < TargetPlayer.stats.PlayerProfile.Elements.Count; ++i)
             {
                 DamageModifier *= ElementalModifier(currentAI.selectedAttack.AbilityType, TargetPlayer.stats.PlayerProfile.Elements[i]);
             }
+
             for (int i = 0; i < currentAI.stats.EnemyProfile.Elements.Count; ++i)
             {
                 if (currentAI.selectedAttack.AbilityType == currentAI.stats.EnemyProfile.Elements[i])
@@ -518,6 +519,7 @@ public class BattleManager : MonoBehaviour
                     DamageModifier *= stabBonus;
                 }
             }
+
             if (currentAI.selectedAttack.BaseType == AbilityBaseType.Physical)
             {
                 DamageCalc = (currentAI.stats.Strength + attack.hitAmount) - (TargetPlayer.stats.Defense);

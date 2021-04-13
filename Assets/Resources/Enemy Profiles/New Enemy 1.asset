@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Age: 0
-  Faction: 
+  Type: 0
   Occupation: 
   level: 1
   health: 50
@@ -31,3 +31,5 @@ MonoBehaviour:
   Class: 0
   EnemySprite: {fileID: 0}
   Elements: 
+  StartingSkills:
+  - {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}

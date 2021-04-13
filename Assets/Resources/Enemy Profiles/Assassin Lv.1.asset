@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Assassin
   Age: 18
-  Faction: 
+  Type: 0
   Occupation: Thief
   level: 1
   health: 15
@@ -31,3 +31,5 @@ MonoBehaviour:
   Class: 2
   EnemySprite: {fileID: 21300000, guid: 6e90e5c1d015cfe4db410f6857dd5b09, type: 3}
   Elements: 
+  StartingSkills:
+  - {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}

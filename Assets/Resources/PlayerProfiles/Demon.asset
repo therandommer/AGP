@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Demon
   Age: 16
-  Faction: Angels
+  Type: 0
   Occupation: Protector
   level: 1
   health: 150
@@ -40,3 +40,4 @@ MonoBehaviour:
   StartingQuestLog: []
   StrongWith: 030000000600000001000000
   WeakAgainst: 020000000400000005000000
+  Elements: 00000000

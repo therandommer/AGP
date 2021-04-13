@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Angel
   Age: 16
-  Faction: Angels
+  Type: 0
   Occupation: Protector
   level: 1
   health: 100
@@ -47,3 +47,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5040b995a2f822478377e6231dbe813, type: 2}
   StrongWith: 030000000600000001000000
   WeakAgainst: 020000000400000005000000
+  Elements: 00000000

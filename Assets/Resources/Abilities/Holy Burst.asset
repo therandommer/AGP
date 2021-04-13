@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Passive: 0
   Targetable: 0
+  BaseType: 0
   AbilityType: 3
   AbilityDescription: Hit with a holy burst of light
   AbilityImage: {fileID: 9164951061357751311, guid: cefdeb2a13a844d4fba7043b90c76b84,

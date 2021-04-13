@@ -8,4 +8,7 @@ public class Enemy : Entity
     public EnemyClass Class;
     public Sprite EnemySprite;
     public List<AbilityTypes> Elements = new List<AbilityTypes>();
+
+    public Abilities[] StartingSkills;
+
 }

@@ -17,7 +17,6 @@ public class EnemyController : MonoBehaviour
     public BattleManager battleManager;
     public Enemy EnemyProfile;
     Animator enemyAI;
-    public PlayerController targetPlayer;
     private bool selected;
     public GameObject selectionCircle;
     public GameObject TargetReticle;
@@ -25,8 +24,11 @@ public class EnemyController : MonoBehaviour
 
     [Header("BattleScene stuff")]
     public Abilities selectedAttack;
-    public EnemyController selectedTarget;
+    public PlayerController selectedTarget;
     public List<EnemyController> EnemiesToDamage;
+
+    [Header("Battle ABilities - NEEDED FOR BATTLESCENE")]
+    public List<Abilities> AbilitiesList;
 
     Vector2 posA = Vector2.zero; //default enemy position
     [SerializeField]
@@ -38,8 +40,6 @@ public class EnemyController : MonoBehaviour
     [Header("Experience given on kill, Total experience = Exp*Level*5")]
     int ExperienceToGive;
 
-    public Abilities[] Skills;
-    Abilities selectedSkill = null;
     public void UpdateUI()
 	{
         if(healthSlider != null)
@@ -80,13 +80,19 @@ public class EnemyController : MonoBehaviour
             healthSlider.maxValue = stats.MaxHealth;
             healthSlider.value = healthSlider.maxValue;
         }
+
         enemyAI = GetComponent<Animator>();
+
         if (enemyAI == null)
         {
             Debug.LogError("No AI System Found");
         }
-    }
 
+        for(int i = 0; i < stats.EnemyProfile.StartingSkills.Length; i++)
+        {
+            AbilitiesList.Add(stats.EnemyProfile.StartingSkills[i]);
+        }
+    }
 
     public BattleManager BattleManager
     {
@@ -195,20 +201,22 @@ public class EnemyController : MonoBehaviour
 
     bool AttackPlayer()
     {
-        int rnd = UnityEngine.Random.Range(0, Skills.Length);
-        selectedSkill = Skills[rnd];
-        targetPlayer = GameState.CurrentPlayer;
-        StartCoroutine(AttackDelay());
-        
-        targetPlayer.stats.Health -= battleManager.CalculateDamage(this, targetPlayer);
+        int rnd = UnityEngine.Random.Range(0, AbilitiesList.Count);
+        selectedAttack = AbilitiesList[rnd];
+        int rndPlayer = UnityEngine.Random.Range(0, GameState.PlayerParty.Count);
+        selectedTarget = GameState.PlayerParty[rndPlayer].GetComponent<PlayerController>();
 
-        float HealthBarValue = targetPlayer.stats.Health / (float)targetPlayer.stats.MaxHealth;
+        StartCoroutine(AttackDelay());
+
+        selectedTarget.stats.Health -= battleManager.CalculateDamage(this, selectedTarget);
+
+        float HealthBarValue = selectedTarget.stats.Health / (float)selectedTarget.stats.MaxHealth;
 
         battleManager.HealthBar.value = HealthBarValue;
 
         battleManager.HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
-        Debug.Log(gameObject.name + " hit " + targetPlayer.name + " for " + battleManager.CalculateDamage(this, targetPlayer) + "\n" + targetPlayer.name + " has " + targetPlayer.stats.Health);
-        battleManager.CombatText.text = gameObject.name + " dealt " + battleManager.CalculateDamage(this, targetPlayer) + " damage to " + targetPlayer.name;
+        Debug.Log(gameObject.name + " hit " + selectedTarget.name + " for " + battleManager.CalculateDamage(this, selectedTarget) + "\n" + selectedTarget.name + " has " + selectedTarget.stats.Health);
+        battleManager.CombatText.text = gameObject.name + " dealt " + battleManager.CalculateDamage(this, selectedTarget) + " damage to " + selectedTarget.name;
         
         return false;
     }
@@ -217,10 +225,10 @@ public class EnemyController : MonoBehaviour
 	{
         bool hasAttacked = false;
         Vector2 posB = Vector2.zero;
-        posB = new Vector2(targetPlayer.gameObject.transform.position.x, targetPlayer.gameObject.transform.position.y); //base target position
+        posB = new Vector2(selectedTarget.gameObject.transform.position.x, selectedTarget.gameObject.transform.position.y); //base target position
         if(!hasAttacked)
 		{
-            if (selectedSkill.isMelee && !hasAttacked)
+            if (selectedAttack.isMelee && !hasAttacked)
             {
                 posB = new Vector2(posB.x - attackGap, posB.y); //adds attack gap to currently selected attack
                 //this.gameObject.SendMessage("UpdateAnimState", "isMoving");
@@ -230,12 +238,12 @@ public class EnemyController : MonoBehaviour
                 //float tmpTimer = 0.0f;
                 float moveSpeed = battleManager.GetMoveSpeed();
             }
-            if (!selectedSkill.isMelee)
+            if (!selectedAttack.isMelee)
             {
                 anim.UpdateAnimState("isAttacking");
                 anim.UpdateAnimState("AttackType");
                 //this.gameObject.transform.position = new Vector2(posA.x, posA.y);
-                attackParticle = GameObject.Instantiate(selectedSkill.CastEffect);
+                attackParticle = GameObject.Instantiate(selectedAttack.CastEffect);
                 attackParticle.GetComponent<Effects>().SetPosA(posA);
                 attackParticle.GetComponent<Effects>().SetPosB(posB);
                 attackParticle.GetComponent<Effects>().InitiateProjectile();
