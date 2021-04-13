@@ -50,6 +50,20 @@ public class AnimationManager : MonoBehaviour
             anim.SetInteger("AttackType", rnd);
 		}
 	}
+    //forces player to be in the default animation
+    public void IdleThis()
+	{
+        anim.SetBool("isBattle", true);
+        anim.SetBool("isIdle", true);
+        anim.SetBool("isAttacking", false);
+        anim.SetBool("hasSword", false);
+        anim.SetBool("isDead", false);
+        anim.SetBool("isMoving", false);
+        anim.SetBool("isHit", false);
+        anim.SetInteger("yMove", 0);
+        anim.SetBool("xMove", false);
+
+	}
     public void EnableDamageValues(int damage, bool isEffective, bool isNotEffective)
 	{
         Debug.Log("Enabling Damage Value display for " + gameObject.name);

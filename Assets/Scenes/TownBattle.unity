@@ -9562,7 +9562,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   enemyCount: 0
-  battleStateManager: {fileID: 0}
+  battleStateManager: {fileID: 1273421292}
   introPanel: {fileID: 1575815343}
   PlayerSpawnPoints:
   - {fileID: 843606597}
@@ -9586,7 +9586,7 @@ MonoBehaviour:
   attacking: 0
   DebugPlayerAttack: 0
   moveSpeed: 1
-  stopTime: 1
+  stopTime: 0.15
   attackGap: 0.35
   playerParty: []
   superEffective: 2

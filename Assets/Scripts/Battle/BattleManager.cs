@@ -236,7 +236,6 @@ public class BattleManager : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
-
                         done = true;
                     }
                     yield return null;
@@ -253,6 +252,7 @@ public class BattleManager : MonoBehaviour
             attacking = false;
             battleStateManager.SetBool("ContinueBattle", true);
             CombatTextCanvas.alpha = 0;
+            IdlePlayers();
             ShowMainButtons();
         }
         else
@@ -286,19 +286,15 @@ public class BattleManager : MonoBehaviour
                     posB = new Vector2(posB.x - attackGap, posB.y); //adds attack gap to currently selected attack
                     CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
                     CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
-                    while (tmpTimer < moveSpeed)
-                    {
-                        CurrentPlayer.transform.position = Vector2.Lerp(posA, posB, tmpTimer / moveSpeed);
-                        tmpTimer += Time.deltaTime;
-                        yield return null;
-                    }
-                    CurrentPlayer.transform.position = new Vector2(posB.x, posB.y + 0.365f); //ensures player is actually at the position required
+                    //CurrentPlayer.transform.position = Vector2.Lerp(posA, posB, tmpTimer / moveSpeed);
+                    tmpTimer += Time.deltaTime;
+                    //CurrentPlayer.transform.position = new Vector2(posB.x, posB.y + 0.365f); //ensures player is actually at the position required
                     CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
                 }
                 if (!CurrentPlayer.selectedAttack.isMelee)
                 {
                     CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
-                    CurrentPlayer.transform.position = new Vector2(posA.x, posA.y + 0.365f);
+                    //CurrentPlayer.transform.position = new Vector2(posA.x, posA.y + 0.365f);
                     attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect);
                     attackParticle.GetComponent<Effects>().SetPosA(posA);
                     attackParticle.GetComponent<Effects>().SetPosB(posB);
@@ -310,23 +306,24 @@ public class BattleManager : MonoBehaviour
                 Debug.Log(CurrentPlayer.EnemiesToDamage[i].gameObject.name + " has " + CurrentPlayer.EnemiesToDamage[i].stats.Health + " health left");
                 CurrentPlayer.EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
                 CurrentPlayer.EnemiesToDamage[i].gameObject.SendMessage("UpdateAnimState", "isHit");
-                yield return new WaitForSeconds(stopTime + 0.3f);
-                CurrentPlayer.EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
+                yield return new WaitForSeconds(stopTime);
+                CurrentPlayer.EnemiesToDamage[i].gameObject.GetComponent<AnimationManager>().EnableDamageValues(damageAmount, isEffective, isNotEffective);
+                //CurrentPlayer.EnemiesToDamage[i].gameObject.SendMessage("EnableDamageValues", damageAmount);
                 tmpTimer = 0.0f;
                 if (CurrentPlayer.selectedAttack.isMelee)
                 {
-                    CurrentPlayer.transform.position = new Vector2(posB.x, posB.y); //resetting player position to adjust for animation offset
-                    CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
+                    //CurrentPlayer.transform.position = new Vector2(posB.x, posB.y); //resetting player position to adjust for animation offset
+                    /*CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
                     while (tmpTimer < moveSpeed)
                     {
                         CurrentPlayer.transform.position = Vector2.Lerp(posB, posA, tmpTimer / moveSpeed);
                         tmpTimer += Time.deltaTime;
                         yield return null;
-                    }
+                    }*/
                     CurrentPlayer.SendMessage("UpdateAnimState", "isMoving");
                 }
                 CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
-                CurrentPlayer.transform.position = posA; //fully resets player position
+                //CurrentPlayer.transform.position = posA; //fully resets player position
                                                          //might need to change this for ranged and have enemy intereaction on projectile hit?
                 attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect, CurrentPlayer.EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
 
@@ -334,13 +331,13 @@ public class BattleManager : MonoBehaviour
                 attack.EnemyHealthSlider.value = CurrentPlayer.selectedTarget.stats.Health / (float)CurrentPlayer.selectedTarget.EnemyProfile.maxHealth;
                 //Set the health text
                 attack.HealthText.text = CurrentPlayer.selectedTarget.stats.Health + "/" + CurrentPlayer.selectedTarget.EnemyProfile.maxHealth;
-                GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y + 0.365f); //ensures player is actually at the position required
+                //GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y + 0.365f); //ensures player is actually at the position required
                 GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isMoving");
 
                 if (!CurrentPlayer.selectedAttack.isMelee)
                 {
                     GameState.CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
-                    GameState.CurrentPlayer.transform.position = new Vector2(posA.x, posA.y + 0.365f);
+                    //GameState.CurrentPlayer.transform.position = new Vector2(posA.x, posA.y + 0.365f);
                     attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect);
                     attackParticle.GetComponent<Effects>().SetPosA(posA);
                     attackParticle.GetComponent<Effects>().SetPosB(posB);
@@ -352,22 +349,22 @@ public class BattleManager : MonoBehaviour
                 Debug.Log(CurrentPlayer.EnemiesToDamage[i].gameObject.name + " has " + CurrentPlayer.EnemiesToDamage[i].stats.Health + " health left");
                 CurrentPlayer.EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
                 CurrentPlayer.EnemiesToDamage[i].GetComponent<AnimationManager>().UpdateAnimState("isHit");
-                yield return new WaitForSeconds(stopTime + 0.3f);
+                yield return new WaitForSeconds(stopTime);
                 CurrentPlayer.EnemiesToDamage[i].GetComponent<AnimationManager>().EnableDamageValues(damageAmount, isEffective, isNotEffective);
                 tmpTimer = 0.0f;
                 if (CurrentPlayer.selectedAttack.isMelee)
                 {
-                    GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y); //resetting player position to adjust for animation offset
+                    //GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y); //resetting player position to adjust for animation offset
                     GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isMoving");
-                    while (tmpTimer < moveSpeed)
+                    /*while (tmpTimer < moveSpeed)
                     {
                         GameState.CurrentPlayer.transform.position = Vector2.Lerp(posB, posA, tmpTimer / moveSpeed);
                         tmpTimer += Time.deltaTime;
-                    }
+                    }*/
                     GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isMoving");
                 }
                 GameState.CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isAttacking");
-                GameState.CurrentPlayer.transform.position = posA; //fully resets player position
+                //GameState.CurrentPlayer.transform.position = posA; //fully resets player position
                 //might need to change this for ranged and have enemy intereaction on projectile hit?
                 attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect, CurrentPlayer.EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
             }
@@ -832,6 +829,16 @@ public class BattleManager : MonoBehaviour
         MainButtons.blocksRaycasts = true;
     }
 
+    public void IdlePlayers()
+	{
+        for (int i = 0; i < playerParty.Count; ++i)
+        {
+            if (playerParty[i].GetComponent<PlayerController>().stats.Health > 0)
+            {
+                playerParty[i].GetComponent<AnimationManager>().IdleThis();
+            }
+        }
+    }
     public float GetStopTime()
     {
         return stopTime;
