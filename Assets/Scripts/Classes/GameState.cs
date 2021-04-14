@@ -49,16 +49,17 @@ public class GameState : MonoBehaviour
 
     public static void ChangeCurrentPlayerBattle()
     {
-        for (int i = 0; i < PlayerParty.Count; i++)
+        for (int i = 0; i < BattleParty.Count; i++)
         {
-            if (PlayerParty[i] == PlayerObject)
+            if (BattleParty[i] == PlayerObject)
             {
-                if ((i + 1) <= PlayerParty.Count)
+                if ((i + 1) <= (BattleParty.Count - 1))
                 {
                     Debug.Log("Go to next player");
                     Debug.Log("Player was " + CurrentPlayer.name);
-                    PlayerObject = PlayerParty[i + 1];
-                    CurrentPlayer = PlayerParty[i + 1].GetComponent<PlayerController>();
+                    Debug.Log((i + 1) + " " + BattleParty.Count);
+                    PlayerObject = BattleParty[i + 1];
+                    CurrentPlayer = BattleParty[i + 1].GetComponent<PlayerController>();
                     Debug.Log("Player is now " + CurrentPlayer.name);
                     return;
                 }
@@ -66,8 +67,8 @@ public class GameState : MonoBehaviour
                 {
                     Debug.Log("Go back to first " + (i + 1));
                     Debug.Log("Player was " + CurrentPlayer.name);
-                    PlayerObject = PlayerParty[0];
-                    CurrentPlayer = PlayerParty[0].GetComponent<PlayerController>();
+                    PlayerObject = BattleParty[0];
+                    CurrentPlayer = BattleParty[0].GetComponent<PlayerController>();
                     Debug.Log("Player is now " + CurrentPlayer.name);
                     return;
                 }

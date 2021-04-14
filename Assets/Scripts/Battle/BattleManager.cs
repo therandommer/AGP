@@ -323,7 +323,7 @@ public class BattleManager : MonoBehaviour
                 }
                 CurrentPlayer.SendMessage("UpdateAnimState", "isAttacking");
                 //CurrentPlayer.transform.position = posA; //fully resets player position
-                                                         //might need to change this for ranged and have enemy intereaction on projectile hit?
+                //might need to change this for ranged and have enemy intereaction on projectile hit?
                 attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect, CurrentPlayer.EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
 
                 ///Add in a coroutine to slowly move the slider to the value instead of just setting it
@@ -395,6 +395,7 @@ public class BattleManager : MonoBehaviour
         attack.EnemyPopupCanvas.alpha = 0;
         Destroy(attackParticle);
         attacking = false;
+        CurrentPlayer.Attacking = false;
         yield return null;
     }
 
@@ -749,9 +750,9 @@ public class BattleManager : MonoBehaviour
                 attack.ResetSelectionCircle();
                 attack.HidePopup();
                 attack.EnemyPopupCanvas.alpha = 0;
-                for (int i = 0; i < GameState.PlayersToSpawn.Length; i++)
+                for (int i = 0; i < GameState.BattleParty.Count; i++)
                 {
-                    if (!GameState.PlayerParty[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet
+                    if (!GameState.BattleParty[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet
                     {
                         Debug.Log("Changing player");
                         GameState.ChangeCurrentPlayerBattle();
@@ -833,7 +834,7 @@ public class BattleManager : MonoBehaviour
     }
 
     public void IdlePlayers()
-	{
+    {
         for (int i = 0; i < playerParty.Count; ++i)
         {
             if (playerParty[i].GetComponent<PlayerController>().stats.Health > 0)
