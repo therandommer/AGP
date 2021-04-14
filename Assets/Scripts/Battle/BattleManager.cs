@@ -128,6 +128,8 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
+        GameState.SetBattleParty();
+
         for (int i = 0; i < GameState.PlayersToSpawn.Length; i++)
         {
             GameState.PlayersToSpawn[i].transform.position = PlayerSpawnPoints[i].transform.position;
@@ -741,7 +743,12 @@ public class BattleManager : MonoBehaviour
                 }
                 break;
             case BattleState.Change_Control:
-
+                attack.ResetRange();
+                attack.ResetHighlightSquares();
+                attack.ResetTargetRecticle();
+                attack.ResetSelectionCircle();
+                attack.HidePopup();
+                attack.EnemyPopupCanvas.alpha = 0;
                 for (int i = 0; i < GameState.PlayersToSpawn.Length; i++)
                 {
                     if (!GameState.PlayerParty[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet

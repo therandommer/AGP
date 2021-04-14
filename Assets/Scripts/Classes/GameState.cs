@@ -9,7 +9,8 @@ public class GameState : MonoBehaviour
     public GameObject partymembertoSpawn;
     public Player PlayerProfile;
     public PlayerController PlayerController;
-    public static List<GameObject> PlayerParty;
+    public static List<GameObject> PlayerParty = new List<GameObject>();
+    public static List<GameObject> BattleParty = new List<GameObject>();
     public static GameObject[] PlayersToSpawn;
     public List<GameObject> playerParty;
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
@@ -36,6 +37,14 @@ public class GameState : MonoBehaviour
             SetUpGameState();
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public static void SetBattleParty()
+    {
+        for(int i = 0; i < PlayerParty.Count; i++)
+        {
+            BattleParty.Add(PlayerParty[i]);
+        }
     }
 
     public static void ChangeCurrentPlayerBattle()

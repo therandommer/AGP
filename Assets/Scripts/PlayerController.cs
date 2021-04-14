@@ -20,11 +20,22 @@ public class PlayerController : MonoBehaviour
     public EnemyController selectedTarget;
     public List<EnemyController> EnemiesToDamage;
 
+    public bool Dead = false;
+
     public Vector3 LastScenePosition;
 
     public void AddInventoryItem(InventoryItem item)
     {
         Inventory.Add(item);
+    }
+
+    public void KillPlayer()
+    {
+        gameObject.transform.position = new Vector3(40, 0, 1);
+        Dead = true;
+        Debug.Log("Check deletion before " + GameState.BattleParty.Count);
+        GameState.BattleParty.Remove(gameObject);
+        Debug.Log("Check deletion after " + GameState.BattleParty.Count);
     }
 
 
