@@ -675,6 +675,7 @@ MonoBehaviour:
   selectedAttack: {fileID: 0}
   selectedTarget: {fileID: 0}
   EnemiesToDamage: []
+  LastScenePosition: {x: 0, y: 0, z: 0}
   Skills: []
   EquipedSkills: []
   Money: 0

@@ -132,7 +132,7 @@ public class EnemyController : MonoBehaviour
 
             battleManager.attack.ResetHighlightSquares();
             battleManager.attack.ResetTargetRecticle();
-            battleManager.attack.ResetEnemiesToDamage();
+            battleManager.attack.ResetEnemiesToDamage(GameState.CurrentPlayer);
             battleManager.attack.ResetSelectionCircle();
 
             if (GameState.CurrentPlayer.selectedTarget == this && battleManager.LockEnemyPopup)

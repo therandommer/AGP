@@ -411,9 +411,9 @@ public class Attack : MonoBehaviour
             }
         }
     }
-    public void ResetEnemiesToDamage()
+    public void ResetEnemiesToDamage(PlayerController CurrentPlayer)
     {
-        GameState.CurrentPlayer.EnemiesToDamage.Clear();
+        CurrentPlayer.EnemiesToDamage.Clear();
     }
     public void ResetSelectionCircle()
     {
@@ -428,7 +428,7 @@ public class Attack : MonoBehaviour
         ResetRange();
         ResetHighlightSquares();
         ResetTargetRecticle();
-        ResetEnemiesToDamage();
+        ResetEnemiesToDamage(GameState.CurrentPlayer);
         ResetSelectionCircle();
 
         hitAmount = Ability1.AbilityAmount;
@@ -441,7 +441,7 @@ public class Attack : MonoBehaviour
         ResetRange();
         ResetHighlightSquares();
         ResetTargetRecticle();
-        ResetEnemiesToDamage();
+        ResetEnemiesToDamage(GameState.CurrentPlayer);
         ResetSelectionCircle();
 
         hitAmount = Ability2.AbilityAmount;
@@ -454,7 +454,7 @@ public class Attack : MonoBehaviour
         ResetRange();
         ResetHighlightSquares();
         ResetTargetRecticle();
-        ResetEnemiesToDamage();
+        ResetEnemiesToDamage(GameState.CurrentPlayer);
         ResetSelectionCircle();
 
         hitAmount = Ability3.AbilityAmount;
@@ -467,7 +467,7 @@ public class Attack : MonoBehaviour
         ResetRange();
         ResetHighlightSquares();
         ResetTargetRecticle();
-        ResetEnemiesToDamage();
+        ResetEnemiesToDamage(GameState.CurrentPlayer);
         ResetSelectionCircle();
 
         hitAmount = Ability4.AbilityAmount;
