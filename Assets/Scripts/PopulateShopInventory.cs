@@ -121,6 +121,7 @@ public class PopulateShopInventory : MonoBehaviour
         ItemsToShow.Remove(Load.SelectedItem);
 
         Load.EquipItem();
+        ShowItems(ItemsToShow);
     }
 
     public void BuyFromShop()
@@ -129,7 +130,7 @@ public class PopulateShopInventory : MonoBehaviour
         ItemsToShow.Remove(Load.SelectedItem);
 
         GameState.CurrentPlayer.Inventory.Add(Load.SelectedItem);
-
+        ShowItems(ItemsToShow);
     }
 
 

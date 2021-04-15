@@ -47,6 +47,7 @@ public class LoadEquippedItem : MonoBehaviour
         ReadEquippedItemInSlot();
         statsDifference.PreviewStatChange(selectedItem);
     }
+
     public void EquipItem()
     {
         for (int i = 0; i < GameState.CurrentPlayer.EquippedItems.Count; i++)
@@ -54,10 +55,12 @@ public class LoadEquippedItem : MonoBehaviour
             InventoryItem EquippedItem = GameState.CurrentPlayer.EquippedItems[i];
             if (SelectedItem.armourItem == EquippedItem.armourItem)
             {
+                GameState.CurrentPlayer.Inventory.Add(EquippedItem);
                 GameState.CurrentPlayer.EquippedItems.Remove(EquippedItem);
             }
         }
         GameState.CurrentPlayer.EquippedItems.Add(SelectedItem);
+        GameState.CurrentPlayer.Inventory.Remove(SelectedItem);
         statsDifference.ApplyStats();
         ReadEquippedItemInSlot();
         statsDifference.PreviewStatChange(SelectedItem);
