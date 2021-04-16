@@ -8,6 +8,7 @@ public class Effects : MonoBehaviour
     public bool usesDestroy = true; //if false disregards below timer
     [ConditionalHide("usesDestroy")]
     public float destroyTimer = 3.0f; //time before object deletes itself
+    bool isDestroying = false;
     [ConditionalHide("usesDestroy")]
     public bool isHitEffect = false; //if true will auto start a delete function
     public bool isProjectile = false; //true and then handles projectile travel here
@@ -28,12 +29,14 @@ public class Effects : MonoBehaviour
             bm = FindObjectOfType<BattleManager>();
             projectileSpeed = bm.GetStopTime() + 0.2f;
             Debug.Log("Projectile going to travel for: " + projectileSpeed);
-		}
+            InitiateProjectile();
+        }
         if(isHitEffect)
 		{
             Invoke("DestroyThis", destroyTimer);
 		}
 	}
+
     public void InitiateProjectile() //waits for battle manager to call
 	{
         if (usesDestroy)
@@ -52,7 +55,7 @@ public class Effects : MonoBehaviour
 		{
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
-        Destroy(this.gameObject);
+        Destroy(gameObject);
 	}
     IEnumerator MoveThis()
 	{

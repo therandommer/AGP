@@ -56,7 +56,6 @@ public class AnimationManager : MonoBehaviour
         anim.SetBool("isBattle", true);
         anim.SetBool("isIdle", true);
         anim.SetBool("isAttacking", false);
-        anim.SetBool("hasSword", false);
         anim.SetBool("isDead", false);
         anim.SetBool("isMoving", false);
         anim.SetBool("isHit", false);
