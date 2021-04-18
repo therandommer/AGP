@@ -619,7 +619,7 @@ Animator:
   m_GameObject: {fileID: 6275971143486845660}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e983443d12181b94f9405ece42e66d34, type: 2}
+  m_Controller: {fileID: 9100000, guid: cf79608eb1fec4140b9682f5c3a1a239, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -675,6 +675,8 @@ MonoBehaviour:
   selectedAttack: {fileID: 0}
   selectedTarget: {fileID: 0}
   EnemiesToDamage: []
+  Dead: 0
+  LastScenePosition: {x: 0, y: 0, z: 0}
   Skills: []
   EquipedSkills: []
   Money: 0
