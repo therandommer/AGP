@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
     [Header("Enemy Spawn Information")]
-    public GameObject[] EnemyPrefabs;
+    //public GameObject[] EnemyPrefabs;
     public GameObject[] EnemySpawnPoints;
     public List<EnemyController> Enemies;
     public AnimationCurve SpawnAnimationCurve;
@@ -130,6 +130,8 @@ public class BattleManager : MonoBehaviour
     {
         GameState.SetBattleParty();
 
+        //EnemyPrefabs = GameState.EnemyPrefabsForBattle;
+
         for (int i = 0; i < GameState.PlayersToSpawn.Length; i++)
         {
             GameState.PlayersToSpawn[i].transform.position = PlayerSpawnPoints[i].transform.position;
@@ -149,18 +151,18 @@ public class BattleManager : MonoBehaviour
         //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
         enemyCount = 9;
         // Spawn the enemies in 
-        StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnEnemies(GameState.EnemyPrefabsForBattle));
 
         GetAnimationStates();
 
     }
 
-    IEnumerator SpawnEnemies()
+    IEnumerator SpawnEnemies(GameObject[] EnemyPrefabs)
     {
         //Spawn enemies in over time 
         for (int i = 0; i < enemyCount; i++)
         {
-            var newEnemy = (GameObject)Instantiate(EnemyPrefabs[0]);
+            var newEnemy = (GameObject)Instantiate(EnemyPrefabs[i]);
             ListOfEntities.Add(newEnemy);
 
             var controller = newEnemy.GetComponent<EnemyController>();

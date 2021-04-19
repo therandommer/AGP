@@ -10,6 +10,11 @@ public class RandomBattle : MonoBehaviour
     public int secondsBetweenBattles;
     public string battleSceneName;
 
+    List<GameObject> EnemyList;
+    public GameObject[] DayTimeEnemyPrefabs;
+    public GameObject[] NightTimeEnemyPrefabs;
+
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (!GameState.justExitedBattle)
@@ -42,6 +47,24 @@ public class RandomBattle : MonoBehaviour
         {
             Debug.Log("Battle");
             GameObject.Find("Player").GetComponent<PlayerController>().LastScenePosition = GameObject.Find("Player").transform.position;
+
+            int NumOfEnemies = Random.Range(1, 9);
+
+            for (int i = 0; i < NumOfEnemies; i++)
+            {
+                int RandomEnemy = Random.Range(1, 9);
+
+                if (GameState.Time.GetTimeOfDay()._Hours > 6 && GameState.Time.GetTimeOfDay()._Hours < 18)
+                {
+                    EnemyList.Add(DayTimeEnemyPrefabs[RandomEnemy]);
+                }
+                else
+                {
+                    EnemyList.Add(NightTimeEnemyPrefabs[RandomEnemy]);
+                }
+            }
+            GameState.EnemyPrefabsForBattle = EnemyList.ToArray();
+
             SceneManager.LoadScene(battleSceneName);
         }
     }

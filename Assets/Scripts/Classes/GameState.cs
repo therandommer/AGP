@@ -17,6 +17,10 @@ public class GameState : MonoBehaviour
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
 
+    public static TimeOfDay Time;
+
+    public static GameObject[] EnemyPrefabsForBattle;
+
     public bool PlayerSpawned = false;
 
     public bool CanHaveConvo;
@@ -37,6 +41,11 @@ public class GameState : MonoBehaviour
             SetUpGameState();
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public static void LoadEnemyPrefabs(GameObject[] EnemyArray)
+    {
+        EnemyPrefabsForBattle = EnemyArray;
     }
 
     public static void SetBattleParty()
@@ -175,6 +184,7 @@ public class GameState : MonoBehaviour
                 PlayerObject = player;
             }
         }
+
     }
 
     public static Vector3 GetLastScenePosition(string sceneName)//Check wether the the last scene position was saved
