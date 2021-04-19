@@ -165,9 +165,17 @@ public class PlayerController : MonoBehaviour
         {
             EquipedSkills.Add(abilities);
         }
-        Money = stats.PlayerProfile.StartingMoney;
+        for(int i = 0; i < stats.PlayerProfile.StartingMoney; i++)
+        {
+            Money++;
+        }
 
-        QuestLog = stats.PlayerProfile.StartingQuestLog;
+        foreach(Quest quest in stats.PlayerProfile.StartingQuestLog)
+        {
+            quest.Status = QuestStatus.Accepted;
+            QuestLog.Add(quest);
+        }
+
         foreach (InventoryItem item in stats.PlayerProfile.StartingInventory)
         {
             Inventory.Add(item);

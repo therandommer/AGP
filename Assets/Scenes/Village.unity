@@ -259,7 +259,7 @@ RectTransform:
   - {fileID: 240977810}
   - {fileID: 866763648}
   m_Father: {fileID: 2372390168526756192}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1893,7 +1893,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 240977812}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1708349490}
+        m_MethodName: GetAllKillQuests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &240977812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3089,7 +3100,7 @@ RectTransform:
   - {fileID: 794214853}
   - {fileID: 314498443}
   m_Father: {fileID: 2020725913}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.033333335, y: 0.033333335}
   m_AnchorMax: {x: 0.9666667, y: 0.90000004}
@@ -4488,7 +4499,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 558180662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1708349490}
+        m_MethodName: GetAllFetchQuests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &558180662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6194,7 +6216,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 805106183}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1708349490}
+        m_MethodName: GetAllActiveQuests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &805106183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6695,7 +6728,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 866763650}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1708349490}
+        m_MethodName: GetAllTalkQuests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &866763650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6891,7 +6935,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1708349490}
-        m_MethodName: populateQuestList
+        m_MethodName: GetAllActiveQuests
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9645,13 +9689,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2020725913}
+  m_Father: {fileID: 2372390168526756192}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -143.5, y: 204}
-  m_SizeDelta: {x: 613, y: 41}
+  m_AnchoredPosition: {x: 108.598114, y: -46.90277}
+  m_SizeDelta: {x: 498.8037, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360255445
 MonoBehaviour:
@@ -11432,7 +11476,7 @@ RectTransform:
   m_Children:
   - {fileID: 343158931}
   m_Father: {fileID: 2020725913}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12089,12 +12133,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2020725913}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -133.32, y: -24.05}
-  m_SizeDelta: {x: 445.03265, y: 528.9428}
+  m_AnchoredPosition: {x: -133.32, y: -38.1}
+  m_SizeDelta: {x: 445.03265, y: 500.84235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1708349488
 MonoBehaviour:
@@ -12163,6 +12207,7 @@ MonoBehaviour:
   SelectedQuestType: {fileID: 364820987}
   TargetImage: {fileID: 1674681107}
   TargetTypeName: {fileID: 43050327}
+  AmountNeededToKill: {fileID: 1640441702}
   QuestDescription: {fileID: 161507187}
   ExpReward: {fileID: 540034520}
   MoneyReward: {fileID: 2119614047}
@@ -12184,6 +12229,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4281545523
   SelectedQuest: {fileID: 0}
+  QuestListToShow: []
 --- !u!1 &1739267088
 GameObject:
   m_ObjectHideFlags: 0
@@ -14159,7 +14205,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1252612422}
-  - {fileID: 1360255444}
   - {fileID: 1708349487}
   - {fileID: 372792486}
   - {fileID: 1648519339}
@@ -15686,7 +15731,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2372390166895514617}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1708349490}
+        m_MethodName: GetAllCompletedQuests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2372390166895514617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15768,7 +15824,7 @@ RectTransform:
   - {fileID: 2372390168526756192}
   - {fileID: 2372390166895514599}
   m_Father: {fileID: 2020725913}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16124,6 +16180,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2372390167406347585}
+  - {fileID: 1360255444}
   - {fileID: 12021949}
   m_Father: {fileID: 2372390166926552209}
   m_RootOrder: 0
@@ -16175,7 +16232,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2372390168526756194}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1708349490}
+        m_MethodName: GetAllActiveQuests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2372390168526756194
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,6 +32,7 @@ public class PopulateQuestList : MonoBehaviour
     public TMP_Text SelectedQuestType;
     public Image TargetImage;
     public TMP_Text TargetTypeName;
+    public TMP_Text AmountNeededToKill;
     public TMP_Text QuestDescription;
     public TMP_Text ExpReward;
     public TMP_Text MoneyReward;
@@ -51,6 +52,7 @@ public class PopulateQuestList : MonoBehaviour
     public Color32 CommonColor;
 
     public Quest SelectedQuest;
+    public List<Quest> QuestListToShow;
     public void SelectQuest(Quest QuestSelected)
     {
         SelectedQuest = QuestSelected;
@@ -59,11 +61,12 @@ public class PopulateQuestList : MonoBehaviour
 
     public void populateQuestList(List<Quest> ListOfQuests)
     {
+        QuestListToShow = ListOfQuests;
         foreach (Transform child in transform)
         {
             GameObject.Destroy(child.gameObject);
         }
-        foreach (Quest quest in ListOfQuests)
+        foreach (Quest quest in QuestListToShow)
         {
             Button NewQuest = Instantiate(QuestTabPrefab, Vector3.zero, Quaternion.identity);
             NewQuest.onClick.AddListener(() => SelectQuest(quest));
@@ -106,22 +109,27 @@ public class PopulateQuestList : MonoBehaviour
                 SelectedQuestTypeImage.sprite = TalkQuestSprite;
                 break;
         }
+
         TargetImage.sprite = SelQ.TargetSprite;
 
         SelectedQuestType.text = SelQ.questType.ToString();
         QuestDescription.text = SelQ.QuestDescription;
+
+        AmountNeededToKill.text = "Amount needed to kill: " + SelQ.questAmountNeeded + "/" + SelQ.actualAmount + "\n (" + (SelQ.questAmountNeeded - SelQ.actualAmount) + " left)";
 
         foreach (QuestReward reward in SelQ.Reward)
         {
             switch (reward.questReward)
             {
                 case Reward.Money:
+                    TotalRewardMoney = 0;
                     TotalRewardMoney += reward.RewardAmount;
-                    ExpReward.text = "+ " + TotalRewardMoney + " Exp";
+                    ExpReward.text = "+ " + TotalRewardMoney + " Money";
                     break;
                 case Reward.Exp:
+                    TotalRewardExperience = 0;
                     TotalRewardExperience += reward.RewardAmount;
-                    ExpReward.text = "+ " + TotalRewardExperience + " Money";
+                    ExpReward.text = "+ " + TotalRewardExperience + " Exp";
                     break;
                 case Reward.Item:
                     ItemReward.text = reward.RewardItem.itemName;
@@ -207,7 +215,7 @@ public class PopulateQuestList : MonoBehaviour
                     break;
             }
         }
-        if (SelQ.Status == QuestStatus.Accepted)
+        if (SelQ.questAmountNeeded <= SelQ.actualAmount && SelQ.Status == QuestStatus.Accepted)
         {
             CompleteQuestButton.interactable = true;
         }
@@ -219,9 +227,11 @@ public class PopulateQuestList : MonoBehaviour
 
     public void CheckIfQuestCompleted()
     {
-        if (SelectedQuest.Status == QuestStatus.Complete)
+        if (SelectedQuest.questAmountNeeded <= SelectedQuest.actualAmount)
         {
             GameState.CurrentPlayer.ClaimQuest(SelectedQuest);
+            QuestListToShow.Remove(SelectedQuest);
+            populateQuestList(QuestListToShow);
             ReadSelectedQuest(SelectedQuest);
         }
         else
