@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d839d7e4fdf214f9c5a9194def65b4, type: 3}
   m_Name: WeatherSO
   m_EditorClassIdentifier: 
-  _CurrentWeather: 0
-  _Temperature: 0
+  _CurrentWeather: 3
+  _Temperature: 3
