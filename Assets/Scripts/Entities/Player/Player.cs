@@ -27,6 +27,8 @@ public class Player : Entity
     public List<AbilityTypes> WeakAgainst = new List<AbilityTypes>();
 
     public List<AbilityTypes> Elements = new List<AbilityTypes>();
+    [Header("Rewards for levels ups, -1 level = Element")]
+    public Abilities[] LevelRewards;
 }
 
 
