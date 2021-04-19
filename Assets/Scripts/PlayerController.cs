@@ -67,12 +67,10 @@ public class PlayerController : MonoBehaviour
         var returnList = items.ToList<InventoryItem>();
         Debug.Log("RL " + returnList.Count);
 
-        //returnList.Sort();
-        //returnList.OrderByDescending(a => a.isArmour).ThenBy(a => a.InitialEffectAmount);
+        returnList.Sort();
 
         return returnList;
     }
-
 
     public List<InventoryItem> GetItemsWithRarity(RarityOptions rarity)
     {
@@ -119,6 +117,42 @@ public class PlayerController : MonoBehaviour
 
 
     public List<Quest> QuestLog = new List<Quest>();
+
+    public List<Quest> GetQuests(bool GetAllQuestsOfStatus = true, QuestStatus questStatus = QuestStatus.Accepted, bool GetAllQuestsOfType = true, QuestType questType = QuestType.KillQuest)
+    {
+        Quest[] QuestArray = QuestLog.ToArray();
+
+        var quests = from quest in QuestArray select quest;
+
+        if (!GetAllQuestsOfStatus)
+            quests = quests.Where(item => item.Status == questStatus);
+
+        if (!GetAllQuestsOfType)
+            quests = quests.Where(item => item.questType == questType);
+
+        var returnList = quests.ToList<Quest>();
+        Debug.Log("RL " + returnList.Count);
+
+        returnList.Sort();
+
+        return returnList;
+    }
+
+    public List<Quest> GetAllQuests()
+    {
+        return GetQuests();
+    }
+
+    public List<Quest> GetQuestsOfStatus(QuestStatus questStatus)
+    {
+        return GetQuests(false, questStatus);
+    }
+
+    public List<Quest> GetQuestsOfType(QuestType questType)
+    {
+        return GetQuests(true, QuestStatus.Accepted, false, questType);
+    }
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -238,6 +272,7 @@ public class PlayerController : MonoBehaviour
                     break;
             }
         }
+        QuestToComplete.Status = QuestStatus.Complete;
     }
 
 

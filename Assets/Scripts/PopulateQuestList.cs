@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,13 +57,13 @@ public class PopulateQuestList : MonoBehaviour
         ReadSelectedQuest(SelectedQuest);
     }
 
-    public void populateQuestList()
+    public void populateQuestList(List<Quest> ListOfQuests)
     {
         foreach (Transform child in transform)
         {
             GameObject.Destroy(child.gameObject);
         }
-        foreach (Quest quest in GameState.CurrentPlayer.QuestLog)
+        foreach (Quest quest in ListOfQuests)
         {
             Button NewQuest = Instantiate(QuestTabPrefab, Vector3.zero, Quaternion.identity);
             NewQuest.onClick.AddListener(() => SelectQuest(quest));
@@ -206,14 +207,22 @@ public class PopulateQuestList : MonoBehaviour
                     break;
             }
         }
-        CompleteQuestButton.interactable = true;
+        if (SelQ.Status == QuestStatus.Accepted)
+        {
+            CompleteQuestButton.interactable = true;
+        }
+        else
+        {
+            CompleteQuestButton.interactable = false;
+        }
     }
 
     public void CheckIfQuestCompleted()
     {
-        if(SelectedQuest.Status == QuestStatus.Complete)
+        if (SelectedQuest.Status == QuestStatus.Complete)
         {
             GameState.CurrentPlayer.ClaimQuest(SelectedQuest);
+            ReadSelectedQuest(SelectedQuest);
         }
         else
         {
@@ -221,5 +230,27 @@ public class PopulateQuestList : MonoBehaviour
         }
     }
 
+    public void GetAllFetchQuests()
+    {
+        populateQuestList(GameState.CurrentPlayer.GetQuestsOfType(QuestType.FetchQuest));
+    }
 
+    public void GetAllKillQuests()
+    {
+        populateQuestList(GameState.CurrentPlayer.GetQuestsOfType(QuestType.KillQuest));
+    }
+
+    public void GetAllTalkQuests()
+    {
+        populateQuestList(GameState.CurrentPlayer.GetQuestsOfType(QuestType.TalkingQuest));
+    }
+
+    public void GetAllActiveQuests()
+    {
+        populateQuestList(GameState.CurrentPlayer.GetQuestsOfStatus(QuestStatus.Accepted));
+    }
+    public void GetAllCompletedQuests()
+    {
+        populateQuestList(GameState.CurrentPlayer.GetQuestsOfStatus(QuestStatus.Complete));
+    }
 }
