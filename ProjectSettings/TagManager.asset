@@ -11,6 +11,8 @@ TagManager:
   - Shop
   - Village
   - Enemy
+  - WeatherSystem
+  - DayNightCycle
   layers:
   - Default
   - TransparentFX

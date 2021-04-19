@@ -42,6 +42,19 @@ public class WeatherSystem : MonoBehaviour
     {
         _WeatherCheckTimer = Random.Range(_WeatherChangeRangeMin, _WeatherChangeRangeMax);
         CheckForWeatherChange();
+
+        
+    }
+
+    private void Awake()
+    {
+        GameObject[] WSs = GameObject.FindGameObjectsWithTag("WeatherSystem");
+        if (WSs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame

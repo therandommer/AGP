@@ -50,6 +50,16 @@ public class DayNightCycle : MonoBehaviour
         _TimeOfDay.PauseTime(false);
         _TimeOfDay.SetDayOfTheWeek(_CurrentDayOfWeek);
     }
+    private void Awake()
+    {
+        GameObject[] DNCs = GameObject.FindGameObjectsWithTag("DayNightCycle");
+        if (DNCs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(transform.gameObject);
+    }
 
     // Update is called once per frame
     void Update()
