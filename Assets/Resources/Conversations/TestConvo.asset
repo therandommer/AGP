@@ -10,22 +10,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
-  m_Name: Test2
+  m_Name: TestConvo
   m_EditorClassIdentifier: 
+  Repeatable: 0
+  Skip: 0
   ConversationLines:
-  - SpeakingCharacterName: Works!
-    ConversationText: Testing 2
-    DisplayPic: {fileID: 21300000, guid: 3f2970f152c549f43b9dd600a84c22b1, type: 3}
+  - SpeakingCharacterName: Demon
+    ConversationText: Has this worked?
+    DisplayPic: {fileID: 21300000, guid: 57e8ad2535033bc448a2ee37e0ab8a31, type: 3}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
+    Decision1Repeatable: 0
     Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
     Decision2: 0
     Decision2Text: 
+    Decision2Repeatable: 0
     Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
     Decision3: 0
     Decision3Text: 
+    Decision3Repeatable: 0
     Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
     Decision4: 0
     Decision4Text: 
+    Decision4Repeatable: 0
     Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}

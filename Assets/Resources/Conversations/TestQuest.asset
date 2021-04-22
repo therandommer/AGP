@@ -10,22 +10,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
-  m_Name: Test3
+  m_Name: TestQuest
   m_EditorClassIdentifier: 
+  Repeatable: 0
+  Skip: 0
   ConversationLines:
   - SpeakingCharacterName: Works!
     ConversationText: Testing 3
     DisplayPic: {fileID: 21300000, guid: f288916bb74689844b2e4b79fbe2681d, type: 3}
-    DecisionToBeMade: 0
-    Decision1: 0
-    Decision1Text: 
+    DecisionToBeMade: 1
+    Decision1: 1
+    Decision1Text: Go Kill !
+    Decision1Repeatable: 0
     Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 11400000, guid: c5040b995a2f822478377e6231dbe813, type: 2}
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
     Decision2: 0
     Decision2Text: 
+    Decision2Repeatable: 0
     Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
     Decision3: 0
     Decision3Text: 
+    Decision3Repeatable: 0
     Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
     Decision4: 0
     Decision4Text: 
+    Decision4Repeatable: 0
     Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}

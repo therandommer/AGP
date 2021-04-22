@@ -82,7 +82,7 @@ public class ConversationManager : Singleton<ConversationManager>
             }
 
         }
-        if (!talking)
+        if (talking)
         {
             talking = false;
             choice = false;

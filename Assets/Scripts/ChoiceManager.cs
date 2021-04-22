@@ -154,7 +154,6 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.StartConversation(Choice1Convo);
         }
         ResetChoices();
-
     }
     public void Choice2Diagloge()
     {

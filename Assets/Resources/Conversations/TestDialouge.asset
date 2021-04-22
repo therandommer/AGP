@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
+  m_Name: TestDialouge
+  m_EditorClassIdentifier: 
+  Repeatable: 0
+  Skip: 0
+  ConversationLines:
+  - SpeakingCharacterName: Player
+    ConversationText: Testing 4
+    DisplayPic: {fileID: 21300000, guid: 1b8077c3f7dd0554ea6a0d6b08f1ab97, type: 3}
+    DecisionToBeMade: 1
+    Decision1: 1
+    Decision1Text: Who are you?
+    Decision1Repeatable: 0
+    Decision1Convo: {fileID: 11400000, guid: 38a6bd7aeee997841b7f063ba58bd676, type: 2}
+    Quest1ToGive: {fileID: 0}
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}

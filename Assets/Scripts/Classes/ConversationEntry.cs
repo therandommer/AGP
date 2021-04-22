@@ -28,9 +28,17 @@ public class ConversationEntry
     public InventoryItem Item1ToGive;
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
     public GameObject Character1ToGive;
+    [Header("Use this on the NPC you want to have a TalkQuest with")]
+    [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
+    public Quest TalkQuestConfirm;
+    [Header("Use this on the NPC you want to have a FetchQuest with")]
+    [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
+    public Quest FetchQuestConfirm;
 
+    [Header("Descision 2")]
     [ConditionalHide("DecisionToBeMade")]
     public bool Decision2;
+    [Header("What text should be disaplayed on the button")]
     [ConditionalHide("Decision2")] 
     public string Decision2Text;
     [Header("Is this a one time decision")]
@@ -47,8 +55,10 @@ public class ConversationEntry
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision2")]
     public GameObject Character2ToGive;
 
+    [Header("Descision 3")]
     [ConditionalHide("DecisionToBeMade")]
     public bool Decision3;
+    [Header("What text should be disaplayed on the button")]
     [ConditionalHide("Decision3")]
     public string Decision3Text;
     [Header("Is this a one time decision")]
@@ -65,9 +75,11 @@ public class ConversationEntry
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision3")]
     public GameObject Character3ToGive;
 
+    [Header("Descision 4")]
     [ConditionalHide("DecisionToBeMade")]
     public bool Decision4;
     [ConditionalHide("Decision4")]
+    [Header("What text should be disaplayed on the button")]
     public string Decision4Text;
     [Header("Is this a one time decision")]
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision4")]
