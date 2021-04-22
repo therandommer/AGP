@@ -12,7 +12,7 @@ public class GameState : MonoBehaviour
     public static List<GameObject> PlayerParty = new List<GameObject>();
     public static List<GameObject> BattleParty = new List<GameObject>();
     public static GameObject[] PlayersToSpawn;
-    public List<GameObject> playerParty;
+    public static List<GameObject> playerParty = new List<GameObject>();
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
@@ -103,15 +103,15 @@ public class GameState : MonoBehaviour
         }
     }
 
-    public void AddToParty(GameObject PlayerToAdd)
+    public static void AddToParty(GameObject PlayerToAdd)
     {
         GameObject Player = Instantiate(PlayerToAdd, Vector3.zero, Quaternion.identity);
         Player.transform.position = new Vector3(40, 0, 1);
         Player.GetComponent<PlayerMovement>().CantMove = true;
         Player.name = Player.GetComponent<PlayerController>().stats.PlayerProfile.name;
+
         playerParty.Add(Player);
         PlayersToSpawn = playerParty.ToArray();
-        PlayerSpawned = true;
     }
 
     public static void MovePartyMembersOffScreen()

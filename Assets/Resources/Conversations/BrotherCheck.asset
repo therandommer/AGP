@@ -12,84 +12,166 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
   m_Name: BrotherCheck
   m_EditorClassIdentifier: 
+  Repeatable: 0
+  Skip: 0
   ConversationLines:
   - SpeakingCharacterName: Player
     ConversationText: Testing1
     DisplayPic: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
     DecisionToBeMade: 0
     Decision1: 0
-    Decision1Text: Test1
+    Decision1Text: 
+    Decision1Repeatable: 0
     Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Quest1ToGive: {fileID: 0}
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
     Decision2: 0
-    Decision2Text: Test2
+    Decision2Text: 
+    Decision2Repeatable: 0
     Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Quest2ToGive: {fileID: 0}
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
     Decision3: 0
-    Decision3Text: Test3
+    Decision3Text: 
+    Decision3Repeatable: 0
     Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Quest3ToGive: {fileID: 0}
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
     Decision4: 0
-    Decision4Text: Test4
+    Decision4Text: 
+    Decision4Repeatable: 0
     Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
+    Quest4ToGive: {fileID: 0}
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
   - SpeakingCharacterName: Player
     ConversationText: Testing2
     DisplayPic: {fileID: 21300000, guid: fa549ce08b8854d44ae905e7e05bb10e, type: 3}
     DecisionToBeMade: 0
     Decision1: 1
     Decision1Text: Test1
+    Decision1Repeatable: 0
     Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Quest1ToGive: {fileID: 0}
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
     Decision2: 1
     Decision2Text: Test2
+    Decision2Repeatable: 0
     Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Quest2ToGive: {fileID: 0}
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
     Decision3: 1
     Decision3Text: Test3
+    Decision3Repeatable: 0
     Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Quest3ToGive: {fileID: 0}
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
     Decision4: 1
     Decision4Text: Test4
+    Decision4Repeatable: 0
     Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
+    Quest4ToGive: {fileID: 0}
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
   - SpeakingCharacterName: Player
     ConversationText: Testing3
     DisplayPic: {fileID: 21300000, guid: f6df35b66502f5843acc07178169afd8, type: 3}
     DecisionToBeMade: 0
     Decision1: 1
     Decision1Text: Test1
+    Decision1Repeatable: 0
     Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Quest1ToGive: {fileID: 0}
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
     Decision2: 1
     Decision2Text: Test2
+    Decision2Repeatable: 0
     Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Quest2ToGive: {fileID: 0}
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
     Decision3: 1
     Decision3Text: Test3
+    Decision3Repeatable: 0
     Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Quest3ToGive: {fileID: 0}
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
     Decision4: 1
     Decision4Text: Test4
+    Decision4Repeatable: 0
     Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
+    Quest4ToGive: {fileID: 0}
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
   - SpeakingCharacterName: Player
     ConversationText: Testing4
     DisplayPic: {fileID: 21300000, guid: 4a2bd57a20dedc54cb8c4be3290c91a8, type: 3}
     DecisionToBeMade: 0
     Decision1: 1
     Decision1Text: Test1
+    Decision1Repeatable: 0
     Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Quest1ToGive: {fileID: 0}
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
     Decision2: 1
     Decision2Text: Test2
+    Decision2Repeatable: 0
     Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Quest2ToGive: {fileID: 0}
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
     Decision3: 1
     Decision3Text: Test3
+    Decision3Repeatable: 0
     Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Quest3ToGive: {fileID: 0}
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
     Decision4: 1
     Decision4Text: Test4
+    Decision4Repeatable: 0
     Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
+    Quest4ToGive: {fileID: 0}
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
   - SpeakingCharacterName: Player
     ConversationText: Testing
     DisplayPic: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Test1
+    Decision1Repeatable: 0
     Decision1Convo: {fileID: 11400000, guid: 3c882910bf7fae84a83aeac38963983d, type: 2}
+    Quest1ToGive: {fileID: 0}
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
     Decision2: 1
     Decision2Text: Test2
+    Decision2Repeatable: 0
     Decision2Convo: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15, type: 2}
+    Quest2ToGive: {fileID: 0}
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
     Decision3: 1
     Decision3Text: Test3
+    Decision3Repeatable: 0
     Decision3Convo: {fileID: 11400000, guid: 9642b31b538afb846bc7f3e548844932, type: 2}
+    Quest3ToGive: {fileID: 0}
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
     Decision4: 1
     Decision4Text: Test4
+    Decision4Repeatable: 0
     Decision4Convo: {fileID: 11400000, guid: 8e6acebd49ad22640910270206f0cd65, type: 2}
+    Quest4ToGive: {fileID: 0}
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
