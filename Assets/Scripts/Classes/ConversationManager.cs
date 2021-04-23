@@ -37,6 +37,10 @@ public class ConversationManager : Singleton<ConversationManager>
             Debug.Log("Starting " + conversation.name + " " + talking);
 
             StartCoroutine(DisplayConversation(conversation));
+            if(conversation.Repeatable == false)
+            {
+                conversation.Skip = true;
+            }
         }
     }
 

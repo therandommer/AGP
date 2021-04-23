@@ -24,16 +24,22 @@ public class ChoiceManager : MonoBehaviour
     public InventoryItem Choice1Item;
 
     public Conversation Choice2Convo;
+    public Conversation Choice2PendingConvo;
+    public Conversation Choice2CompleteConvo;
     public Quest Choice2Quest;
     public GameObject Choice2Character;
     public InventoryItem Choice2Item;
 
     public Conversation Choice3Convo;
+    public Conversation Choice3PendingConvo;
+    public Conversation Choice3CompleteConvo;
     public Quest Choice3Quest;
     public GameObject Choice3Character;
     public InventoryItem Choice3Item;
 
     public Conversation Choice4Convo;
+    public Conversation Choice4PendingConvo;
+    public Conversation Choice4CompleteConvo;
     public Quest Choice4Quest;
     public GameObject Choice4Character;
     public InventoryItem Choice4Item;
@@ -91,9 +97,33 @@ public class ChoiceManager : MonoBehaviour
 
         ///
         Button2Text.text = conversationLine.Decision2Text;
+        if (!conversationLine.Decision2Pending)
+        {
+            Button2Text.text = conversationLine.Decision2Text;
+        }
+        else
+        {
+            Button2Text.text = conversationLine.Quest2PendingButtonText;
+        }
+
         if (conversationLine.Decision2Convo != null)
         {
             Choice2Convo = conversationLine.Decision2Convo;
+        }
+
+        if (conversationLine.Quest2PendingConvo != null)
+        {
+            Choice2PendingConvo = conversationLine.Quest2PendingConvo;
+        }
+
+        if (conversationLine.Quest2CompleteConvo != null)
+        {
+            Choice2CompleteConvo = conversationLine.Quest2CompleteConvo;
+        }
+
+        if (conversationLine.Quest2PendingConvo != null)
+        {
+            Choice2PendingConvo = conversationLine.Quest2PendingConvo;
         }
 
         if (conversationLine.Character2ToGive != null)
@@ -101,7 +131,7 @@ public class ChoiceManager : MonoBehaviour
             Choice2Character = conversationLine.Character2ToGive;
         }
 
-        if (conversationLine.Item2ToGive)
+        if (conversationLine.Item2ToGive != null)
         {
             Choice2Item = conversationLine.Item2ToGive;
         }
@@ -112,10 +142,36 @@ public class ChoiceManager : MonoBehaviour
             Button2.image.color = Color.yellow;
         }
 
+        ///
+
         Button3Text.text = conversationLine.Decision3Text;
+        if (!conversationLine.Decision2Pending)
+        {
+            Button3Text.text = conversationLine.Decision3Text;
+        }
+        else
+        {
+            Button3Text.text = conversationLine.Quest3PendingButtonText;
+        }
+
         if (conversationLine.Decision3Convo != null)
         {
             Choice3Convo = conversationLine.Decision3Convo;
+        }
+
+        if (conversationLine.Quest3PendingConvo != null)
+        {
+            Choice3PendingConvo = conversationLine.Quest3PendingConvo;
+        }
+
+        if (conversationLine.Quest3CompleteConvo != null)
+        {
+            Choice3CompleteConvo = conversationLine.Quest3CompleteConvo;
+        }
+
+        if (conversationLine.Quest3PendingConvo != null)
+        {
+            Choice3PendingConvo = conversationLine.Quest3PendingConvo;
         }
 
         if (conversationLine.Character3ToGive != null)
@@ -123,7 +179,7 @@ public class ChoiceManager : MonoBehaviour
             Choice3Character = conversationLine.Character3ToGive;
         }
 
-        if (conversationLine.Item3ToGive)
+        if (conversationLine.Item3ToGive != null)
         {
             Choice3Item = conversationLine.Item3ToGive;
         }
@@ -134,10 +190,36 @@ public class ChoiceManager : MonoBehaviour
             Button3.image.color = Color.yellow;
         }
 
+        ///
+
         Button4Text.text = conversationLine.Decision4Text;
+        if (!conversationLine.Decision4Pending)
+        {
+            Button4Text.text = conversationLine.Decision4Text;
+        }
+        else
+        {
+            Button4Text.text = conversationLine.Quest4PendingButtonText;
+        }
+
         if (conversationLine.Decision4Convo != null)
         {
             Choice4Convo = conversationLine.Decision4Convo;
+        }
+
+        if (conversationLine.Quest4PendingConvo != null)
+        {
+            Choice4PendingConvo = conversationLine.Quest4PendingConvo;
+        }
+
+        if (conversationLine.Quest4CompleteConvo != null)
+        {
+            Choice4CompleteConvo = conversationLine.Quest4CompleteConvo;
+        }
+
+        if (conversationLine.Quest4PendingConvo != null)
+        {
+            Choice4PendingConvo = conversationLine.Quest4PendingConvo;
         }
 
         if (conversationLine.Character4ToGive != null)
@@ -145,9 +227,9 @@ public class ChoiceManager : MonoBehaviour
             Choice4Character = conversationLine.Character4ToGive;
         }
 
-        if (conversationLine.Item4ToGive)
+        if (conversationLine.Item4ToGive != null)
         {
-            Choice1Item = conversationLine.Item1ToGive;
+            Choice4Item = conversationLine.Item4ToGive;
         }
 
         if (conversationLine.Quest4ToGive != null)
@@ -202,6 +284,7 @@ public class ChoiceManager : MonoBehaviour
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
         ConversationManager.Instance.choice = false;
+        ResetChoices();
         if (Choice1Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -209,10 +292,35 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice1Convo);
         }
-        ResetChoices();
     }
     public void Choice2Diagloge()
     {
+        if (CurrentConversationLine.Decision2Pending)
+        {
+            foreach (Quest quest in GameState.CurrentPlayer.QuestLog)//Find quest given to player
+            {
+                if (quest == CurrentConversationLine.Quest2ToGive)
+                {
+                    if (quest.questAmountNeeded <= quest.actualAmount)
+                    {
+                        Debug.Log("Cliamed");
+                        GameState.CurrentPlayer.ClaimQuest(quest);
+                        ConversationManager.Instance.talking = false;
+                        ConversationManager.Instance.wait = false;
+                        ConversationManager.Instance.choice = false;
+                        ConversationManager.Instance.StartConversation(Choice2CompleteConvo);
+                    }
+                    else
+                    {
+                        ConversationManager.Instance.talking = false;
+                        ConversationManager.Instance.wait = false;
+                        ConversationManager.Instance.choice = false;
+                        ConversationManager.Instance.StartConversation(Choice2PendingConvo);
+                    }
+                    return;
+                }
+            }
+        }
         if (Choice2Character != null)
         {
             GameState.AddToParty(Choice2Character);
@@ -228,6 +336,7 @@ public class ChoiceManager : MonoBehaviour
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
         ConversationManager.Instance.choice = false;
+        ResetChoices();
         if (Choice2Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -235,10 +344,35 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice2Convo);
         }
-        ResetChoices();
     }
     public void Choice3Diagloge()
     {
+        if (CurrentConversationLine.Decision3Pending)
+        {
+            foreach (Quest quest in GameState.CurrentPlayer.QuestLog)//Find quest given to player
+            {
+                if (quest == CurrentConversationLine.Quest3ToGive)
+                {
+                    if (quest.questAmountNeeded <= quest.actualAmount)
+                    {
+                        Debug.Log("Cliamed");
+                        GameState.CurrentPlayer.ClaimQuest(quest);
+                        ConversationManager.Instance.talking = false;
+                        ConversationManager.Instance.wait = false;
+                        ConversationManager.Instance.choice = false;
+                        ConversationManager.Instance.StartConversation(Choice3CompleteConvo);
+                    }
+                    else
+                    {
+                        ConversationManager.Instance.talking = false;
+                        ConversationManager.Instance.wait = false;
+                        ConversationManager.Instance.choice = false;
+                        ConversationManager.Instance.StartConversation(Choice3PendingConvo);
+                    }
+                    return;
+                }
+            }
+        }
         if (Choice3Character != null)
         {
             GameState.AddToParty(Choice3Character);
@@ -254,6 +388,7 @@ public class ChoiceManager : MonoBehaviour
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
         ConversationManager.Instance.choice = false;
+        ResetChoices();
         if (Choice3Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -261,10 +396,35 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice3Convo);
         }
-        ResetChoices();
     }
     public void Choice4Diagloge()
     {
+        if (CurrentConversationLine.Decision4Pending)
+        {
+            foreach (Quest quest in GameState.CurrentPlayer.QuestLog)//Find quest given to player
+            {
+                if (quest == CurrentConversationLine.Quest4ToGive)
+                {
+                    if (quest.questAmountNeeded <= quest.actualAmount)
+                    {
+                        Debug.Log("Cliamed");
+                        GameState.CurrentPlayer.ClaimQuest(quest);
+                        ConversationManager.Instance.talking = false;
+                        ConversationManager.Instance.wait = false;
+                        ConversationManager.Instance.choice = false;
+                        ConversationManager.Instance.StartConversation(Choice4CompleteConvo);
+                    }
+                    else
+                    {
+                        ConversationManager.Instance.talking = false;
+                        ConversationManager.Instance.wait = false;
+                        ConversationManager.Instance.choice = false;
+                        ConversationManager.Instance.StartConversation(Choice4PendingConvo);
+                    }
+                    return;
+                }
+            }
+        }
         if (Choice4Character != null)
         {
             GameState.AddToParty(Choice1Character);
@@ -280,6 +440,7 @@ public class ChoiceManager : MonoBehaviour
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
         ConversationManager.Instance.choice = false;
+        ResetChoices();
         if (Choice4Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -287,7 +448,6 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice4Convo);
         }
-        ResetChoices();
     }
 
     public void ResetChoices()
@@ -311,6 +471,21 @@ public class ChoiceManager : MonoBehaviour
         Choice2Quest = null;
         Choice3Quest = null;
         Choice4Quest = null;
+
+        Choice1PendingConvo = null;
+        Choice2PendingConvo = null;
+        Choice3PendingConvo = null;
+        Choice4PendingConvo = null;
+
+        Choice1CompleteConvo = null;
+        Choice2CompleteConvo = null;
+        Choice3CompleteConvo = null;
+        Choice4CompleteConvo = null;
+
+        Button1.image.color = Color.white;
+        Button2.image.color = Color.white;
+        Button3.image.color = Color.white;
+        Button4.image.color = Color.white;
     }
 
 }

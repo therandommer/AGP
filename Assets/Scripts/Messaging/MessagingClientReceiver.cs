@@ -2,22 +2,31 @@
 
 public class MessagingClientReceiver : MonoBehaviour
 {
+    Conversation conversation;
+
     void Start()
     {
-        MessagingManager.Instance.Subscribe(ThePlayerIsTryingToLeave);
+        MessagingManager.Instance.Subscribe(StartConvo);
     }
-    
-    void ThePlayerIsTryingToLeave()
+
+    void StartConvo()
     {
-       var dialog = GetComponent<ConversationComponent>();
-       if (dialog != null)
-       {
-           if (dialog.Conversations != null && dialog.Conversations.Length > 0)
+        Debug.Log("starting convo");
+        var dialog = GetComponent<ConversationComponent>();
+        if (dialog != null)
+        {
+            if (dialog.Conversations != null && dialog.Conversations.Length > 0)
             {
-               var conversation = dialog.Conversations[0];
-                if (conversation != null)
+                Debug.Log("Convo list is bigger than 0");
+                for (int i = 0; i < dialog.Conversations.Length; i++)
                 {
-                    ConversationManager.Instance.StartConversation(conversation);
+                    Debug.Log("Looking for convo with no skip " + dialog.Conversations[i].Skip);
+                    if (dialog.Conversations[i].Skip == false)
+                    {
+                        Debug.Log("Found Convo without skip");
+                        conversation = dialog.Conversations[i];
+                        ConversationManager.Instance.StartConversation(conversation);
+                    }
                 }
             }
         }
@@ -26,8 +35,8 @@ public class MessagingClientReceiver : MonoBehaviour
     {
         if (MessagingManager.Instance != null)
         {
-            MessagingManager.Instance.UnSubscribe(ThePlayerIsTryingToLeave);
+            MessagingManager.Instance.UnSubscribe(StartConvo);
         }
     }
-    
+
 }

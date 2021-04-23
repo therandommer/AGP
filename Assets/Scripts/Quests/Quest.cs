@@ -39,7 +39,7 @@ public class Quest : ScriptableObject , IComparable<Quest>
 
     public QuestReward[] Reward;
 
-    public void ResetQuest()
+    public void Reset()
     {
         actualAmount = 0;
         Status = QuestStatus.NotAccepted;

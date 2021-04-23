@@ -9,4 +9,13 @@ public class Conversation : ScriptableObject
     [Header("If one off, has this convo occured, if yes skip")]
     public bool Skip;
     public ConversationEntry[] ConversationLines;
+
+    public void Reset()
+    {
+        Skip = false;
+        foreach(ConversationEntry entry in ConversationLines)
+        {
+            entry.Reset();
+        }
+    }
 }

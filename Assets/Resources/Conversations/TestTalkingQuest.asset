@@ -23,7 +23,7 @@ MonoBehaviour:
     Decision1Text: Will do!
     Decision1Repeatable: 0
     Decision1Pending: 1
-    Decision1Convo: {fileID: 0}
+    Decision1Convo: {fileID: 11400000, guid: a5754738d01a8d2448f37b57e20eff03, type: 2}
     Quest1ToGive: {fileID: 11400000, guid: f75cd9bc305d1904198dff834e381d6f, type: 2}
     Quest1PendingConvo: {fileID: 11400000, guid: a5754738d01a8d2448f37b57e20eff03,
       type: 2}
@@ -32,26 +32,44 @@ MonoBehaviour:
     Quest1PendingButtonText: What was I supposed to do again?
     Item1ToGive: {fileID: 0}
     Character1ToGive: {fileID: 0}
-    TalkQuestConfirm: {fileID: 0}
-    FetchQuestConfirm: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
     Decision2: 0
     Decision2Text: 
     Decision2Repeatable: 0
+    Decision2Pending: 0
     Decision2Convo: {fileID: 0}
     Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
     Item2ToGive: {fileID: 0}
     Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
     Decision3: 0
     Decision3Text: 
     Decision3Repeatable: 0
+    Decision3Pending: 0
     Decision3Convo: {fileID: 0}
     Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
     Item3ToGive: {fileID: 0}
     Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
     Decision4: 0
     Decision4Text: 
     Decision4Repeatable: 0
+    Decision4Pending: 0
     Decision4Convo: {fileID: 0}
     Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
     Item4ToGive: {fileID: 0}
     Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}

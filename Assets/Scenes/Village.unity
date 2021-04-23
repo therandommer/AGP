@@ -5572,7 +5572,7 @@ PrefabInstance:
     - target: {fileID: 67325586373272698, guid: e0876eca1fdc2364080cc9c5ce37dab0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 67325586373272698, guid: e0876eca1fdc2364080cc9c5ce37dab0,
         type: 3}
@@ -5846,6 +5846,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &735290251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6218218275178927864, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6218218275092853163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &735290252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735290251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bca8ea1ef8b824b93ba5007491bf0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &735290254 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6218218275092853163}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &753040289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6998692176177766876, guid: ed56dd39a14f30742a2b650c5c169919,
@@ -7131,29 +7155,47 @@ MonoBehaviour:
     Quest1PendingButtonText: 
     Item1ToGive: {fileID: 0}
     Character1ToGive: {fileID: 0}
-    TalkQuestConfirm: {fileID: 0}
-    FetchQuestConfirm: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
     Decision2: 0
     Decision2Text: 
     Decision2Repeatable: 0
+    Decision2Pending: 0
     Decision2Convo: {fileID: 0}
     Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
     Item2ToGive: {fileID: 0}
     Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
     Decision3: 0
     Decision3Text: 
     Decision3Repeatable: 0
+    Decision3Pending: 0
     Decision3Convo: {fileID: 0}
     Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
     Item3ToGive: {fileID: 0}
     Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
     Decision4: 0
     Decision4Text: 
     Decision4Repeatable: 0
+    Decision4Pending: 0
     Decision4Convo: {fileID: 0}
     Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
     Item4ToGive: {fileID: 0}
     Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
   Choice1Convo: {fileID: 0}
   Choice1PendingConvo: {fileID: 0}
   Choice1CompleteConvo: {fileID: 0}
@@ -7161,14 +7203,20 @@ MonoBehaviour:
   Choice1Character: {fileID: 0}
   Choice1Item: {fileID: 0}
   Choice2Convo: {fileID: 0}
+  Choice2PendingConvo: {fileID: 0}
+  Choice2CompleteConvo: {fileID: 0}
   Choice2Quest: {fileID: 0}
   Choice2Character: {fileID: 0}
   Choice2Item: {fileID: 0}
   Choice3Convo: {fileID: 0}
+  Choice3PendingConvo: {fileID: 0}
+  Choice3CompleteConvo: {fileID: 0}
   Choice3Quest: {fileID: 0}
   Choice3Character: {fileID: 0}
   Choice3Item: {fileID: 0}
   Choice4Convo: {fileID: 0}
+  Choice4PendingConvo: {fileID: 0}
+  Choice4CompleteConvo: {fileID: 0}
   Choice4Quest: {fileID: 0}
   Choice4Character: {fileID: 0}
   Choice4Item: {fileID: 0}
@@ -7184,7 +7232,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &890591249
 PrefabInstance:
@@ -11044,6 +11092,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1568159053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568159054}
+  m_Layer: 0
+  m_Name: DisableThisWhenUsingOtherScenes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1568159054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568159053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 529.14886, y: 164.38992, z: -38.9375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 735290254}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1583294411
 GameObject:
   m_ObjectHideFlags: 0
@@ -18295,7 +18374,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1568159054}
     m_Modifications:
     - target: {fileID: 6218218275178927864, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
@@ -18310,32 +18389,32 @@ PrefabInstance:
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -529.14886
       objectReference: {fileID: 0}
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -164.38992
       objectReference: {fileID: 0}
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 39.9375
       objectReference: {fileID: 0}
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
@@ -18345,7 +18424,7 @@ PrefabInstance:
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6218218275178927870, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
         type: 3}
