@@ -31,6 +31,7 @@ public class Quest : ScriptableObject , IComparable<Quest>
     public InventoryItem ItemNeeded;
     public string NpcToTalkTo;
     public Enemy Target;
+    public Sprite TargetSprite;
 
     public int ExperienceReward;//Need this for sorting purposes
     [TextArea(2,3)]

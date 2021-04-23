@@ -110,12 +110,22 @@ public class PopulateQuestList : MonoBehaviour
                 break;
         }
 
-        TargetImage.sprite = SelQ.Target.EnemySprite;
+        TargetImage.sprite = SelQ.TargetSprite;
 
         SelectedQuestType.text = SelQ.questType.ToString();
         QuestDescription.text = SelQ.QuestDescription;
-
-        AmountNeededToKill.text = "Amount needed to kill: " + SelQ.questAmountNeeded + "/" + SelQ.actualAmount + "\n (" + (SelQ.questAmountNeeded - SelQ.actualAmount) + " left)";
+        switch (SelQ.questType)
+        {
+            case QuestType.KillQuest:
+                AmountNeededToKill.text = "Amount needed to kill: " + SelQ.questAmountNeeded + "/" + SelQ.actualAmount + "\n (" + (SelQ.questAmountNeeded - SelQ.actualAmount) + " left)";
+                break;
+            case QuestType.FetchQuest:
+                AmountNeededToKill.text = "Amount needed to collect: " + SelQ.questAmountNeeded + "/" + SelQ.actualAmount + "\n (" + (SelQ.questAmountNeeded - SelQ.actualAmount) + " left)";
+                break;
+            case QuestType.TalkingQuest:
+                AmountNeededToKill.text = "You need to talk to: " + SelQ.NpcToTalkTo;
+                break;
+        }
 
         foreach (QuestReward reward in SelQ.Reward)
         {
