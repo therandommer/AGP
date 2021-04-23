@@ -17,13 +17,21 @@ public class ConversationEntry
     public string Decision1Text;
     [Header("Is this a one time decision")]
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
-    public bool Decision1Repeatable;
+    public bool Decision1Repeatable;    
+    [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
+    public bool Decision1Pending;
     [Header("If you want to have a convo after decision fill this in")]
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
     public Conversation Decision1Convo;
     [Header("What does the button give on press")]
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
-    public Quest Quest1ToGive;
+    public Quest Quest1ToGive;    
+    [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
+    public Conversation Quest1PendingConvo;    
+    [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
+    public Conversation Quest1CompleteConvo;
+    [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
+    public string Quest1PendingButtonText;
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
     public InventoryItem Item1ToGive;
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision1")]
@@ -94,5 +102,10 @@ public class ConversationEntry
     public InventoryItem Item4ToGive;
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision4")]
     public GameObject Character4ToGive;
+
+    public void Reset()
+    {
+        Decision1Pending = false;
+    }
 }
 

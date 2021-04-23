@@ -14,7 +14,11 @@ public class ChoiceManager : MonoBehaviour
     public Button Button4;
     public TMP_Text Button4Text;
 
+    public ConversationEntry CurrentConversationLine;
+
     public Conversation Choice1Convo;
+    public Conversation Choice1PendingConvo;
+    public Conversation Choice1CompleteConvo;
     public Quest Choice1Quest;
     public GameObject Choice1Character;
     public InventoryItem Choice1Item;
@@ -37,11 +41,34 @@ public class ChoiceManager : MonoBehaviour
 
     public void ChangeButtonText(ConversationEntry conversationLine)
     {
-        Button1Text.text = conversationLine.Decision1Text;
+        CurrentConversationLine = conversationLine;
+        if(!conversationLine.Decision1Pending)
+        {
+            Button1Text.text = conversationLine.Decision1Text;
+        }
+        else
+        {
+            Button1Text.text = conversationLine.Quest1PendingButtonText;
+        }
 
         if (conversationLine.Decision1Convo != null)
         {
             Choice1Convo = conversationLine.Decision1Convo;
+        }
+
+        if (conversationLine.Quest1PendingConvo != null)
+        {
+            Choice1PendingConvo = conversationLine.Quest1PendingConvo;
+        }
+
+        if (conversationLine.Quest1CompleteConvo != null)
+        {
+            Choice1CompleteConvo = conversationLine.Quest1CompleteConvo;
+        }
+
+        if (conversationLine.Quest1PendingConvo != null)
+        {
+            Choice1PendingConvo = conversationLine.Quest1PendingConvo;
         }
 
         if (conversationLine.Character1ToGive != null)
@@ -49,17 +76,20 @@ public class ChoiceManager : MonoBehaviour
             Choice1Character = conversationLine.Character1ToGive;
         }
 
-        if (conversationLine.Item1ToGive)
+        if (conversationLine.Item1ToGive != null)
         {
             Choice1Item = conversationLine.Item1ToGive;
         }
 
-        if (conversationLine.Quest1ToGive != null)
+        if (conversationLine.Quest1ToGive != null && !conversationLine.Decision1Pending)
         {
             Choice1Quest = conversationLine.Quest1ToGive;
             Button1.image.color = Color.yellow;
         }
 
+
+
+        ///
         Button2Text.text = conversationLine.Decision2Text;
         if (conversationLine.Decision2Convo != null)
         {
@@ -129,14 +159,40 @@ public class ChoiceManager : MonoBehaviour
 
     public void Choice1Diagloge()
     {
-        //StartCoroutine(DisplayConversation(Choice1Convo));
-        //StartConversation(Choice1Convo);
+        if(CurrentConversationLine.Decision1Pending)
+        {
+            foreach(Quest quest in GameState.CurrentPlayer.QuestLog)//Find quest given to player
+            {
+                if(quest == CurrentConversationLine.Quest1ToGive)
+                {
+                    if (quest.questAmountNeeded <= quest.actualAmount)
+                    {
+                        Debug.Log("Cliamed");
+                        GameState.CurrentPlayer.ClaimQuest(quest);
+                        ConversationManager.Instance.talking = false;
+                        ConversationManager.Instance.wait = false;
+                        ConversationManager.Instance.choice = false;
+                        ConversationManager.Instance.StartConversation(Choice1CompleteConvo);
+                    }
+                    else
+                    {
+                        ConversationManager.Instance.talking = false;
+                        ConversationManager.Instance.wait = false;
+                        ConversationManager.Instance.choice = false;
+                        ConversationManager.Instance.StartConversation(Choice1PendingConvo);
+                    }
+                    return;
+                }
+            }
+        }
+
         if (Choice1Character != null)
         {
             GameState.AddToParty(Choice1Character);
         }
         if (Choice1Quest != null)
         {
+            CurrentConversationLine.Decision1Pending = true;
             GameState.CurrentPlayer.QuestLog.Add(Choice1Quest);
         }
         if (Choice1Item != null)

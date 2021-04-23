@@ -7115,7 +7115,48 @@ MonoBehaviour:
   Button3Text: {fileID: 1753935513}
   Button4: {fileID: 1777030224}
   Button4Text: {fileID: 1707591518}
+  CurrentConversationLine:
+    SpeakingCharacterName: 
+    ConversationText: 
+    DisplayPic: {fileID: 0}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuestConfirm: {fileID: 0}
+    FetchQuestConfirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
   Choice1Convo: {fileID: 0}
+  Choice1PendingConvo: {fileID: 0}
+  Choice1CompleteConvo: {fileID: 0}
   Choice1Quest: {fileID: 0}
   Choice1Character: {fileID: 0}
   Choice1Item: {fileID: 0}
@@ -9817,9 +9858,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4935566840830467891, guid: 632472128f7e63e4c9eadfed3d47f543,
         type: 3}
+      propertyPath: Conversations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935566840830467891, guid: 632472128f7e63e4c9eadfed3d47f543,
+        type: 3}
       propertyPath: Conversations.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 826a8ebb0c7b3bb4a9c02f33bb869d15,
+      objectReference: {fileID: 11400000, guid: ac7574d7fffb9f44a8d7b91ffd85b814,
         type: 2}
     - target: {fileID: 4935566840830467894, guid: 632472128f7e63e4c9eadfed3d47f543,
         type: 3}

@@ -34,6 +34,7 @@ public class ConversationManager : Singleton<ConversationManager>
         if (!talking)
         {
             talking = true;
+            Debug.Log("Starting " + conversation.name + " " + talking);
 
             StartCoroutine(DisplayConversation(conversation));
         }

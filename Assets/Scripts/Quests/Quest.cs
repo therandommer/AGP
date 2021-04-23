@@ -29,9 +29,8 @@ public class Quest : ScriptableObject , IComparable<Quest>
     public EnemyClass EnemyToKill;
     [Tooltip("Use only if questType is FetchQuest")]
     public InventoryItem ItemNeeded;
-    [Tooltip("NOT IMPLEMENTED YET! Use only if questType is TalkingQuest")]
-    public Npc NpcToTalkTo;
-    public Sprite TargetSprite;
+    public string NpcToTalkTo;
+    public Enemy Target;
 
     public int ExperienceReward;//Need this for sorting purposes
     [TextArea(2,3)]
@@ -39,17 +38,15 @@ public class Quest : ScriptableObject , IComparable<Quest>
 
     public QuestReward[] Reward;
 
+    public void ResetQuest()
+    {
+        actualAmount = 0;
+        Status = QuestStatus.NotAccepted;
+    }
+
     public void increaseAmount()
     {
         actualAmount++;
-        if(actualAmount >= questAmountNeeded)
-        {
-            if(Status != QuestStatus.Complete)
-            {
-                Status = QuestStatus.Complete;
-                Debug.Log(QuestName + " has been completed");
-            }
-        }
     }
     public int CompareTo(Quest other)
     {

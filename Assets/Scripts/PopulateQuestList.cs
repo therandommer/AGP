@@ -110,7 +110,7 @@ public class PopulateQuestList : MonoBehaviour
                 break;
         }
 
-        TargetImage.sprite = SelQ.TargetSprite;
+        TargetImage.sprite = SelQ.Target.EnemySprite;
 
         SelectedQuestType.text = SelQ.questType.ToString();
         QuestDescription.text = SelQ.QuestDescription;
@@ -214,29 +214,6 @@ public class PopulateQuestList : MonoBehaviour
                     AbilityRewardImage.sprite = reward.RewardAbility.AbilityImage;
                     break;
             }
-        }
-        if (SelQ.questAmountNeeded <= SelQ.actualAmount && SelQ.Status == QuestStatus.Accepted)
-        {
-            CompleteQuestButton.interactable = true;
-        }
-        else
-        {
-            CompleteQuestButton.interactable = false;
-        }
-    }
-
-    public void CheckIfQuestCompleted()
-    {
-        if (SelectedQuest.questAmountNeeded <= SelectedQuest.actualAmount)
-        {
-            GameState.CurrentPlayer.ClaimQuest(SelectedQuest);
-            QuestListToShow.Remove(SelectedQuest);
-            populateQuestList(QuestListToShow);
-            ReadSelectedQuest(SelectedQuest);
-        }
-        else
-        {
-            Debug.Log("Quest is not completed");
         }
     }
 

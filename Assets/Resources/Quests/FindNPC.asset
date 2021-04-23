@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58472016962655f48b07b203fac70cb0, type: 3}
+  m_Name: FindNPC
+  m_EditorClassIdentifier: 
+  Status: 2
+  QuestName: FindNPC
+  questType: 2
+  questAmountNeeded: 1
+  actualAmount: 44
+  EnemyToKill: 0
+  ItemNeeded: {fileID: 0}
+  NpcToTalkTo: Brother
+  Target: {fileID: 0}
+  ExperienceReward: 25
+  QuestDescription: 'Go find brother he should be in the Village
+
+    (South Village)'
+  Reward:
+  - questReward: 0
+    RewardAmount: 20
+    RewardItem: {fileID: 0}
+    RewardAbility: {fileID: 0}
