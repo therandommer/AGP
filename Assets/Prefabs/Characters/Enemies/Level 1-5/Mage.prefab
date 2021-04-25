@@ -916,7 +916,7 @@ Animator:
   m_GameObject: {fileID: 7372007125214807464}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 012e7c09b3799b943b05f6c9fc7dc045, type: 2}
+  m_Controller: {fileID: 9100000, guid: ec19eec87b00553459d568c73ef37ece, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -957,14 +957,15 @@ MonoBehaviour:
   sliderLerpTime: 0.5
   battleManager: {fileID: 0}
   EnemyProfile: {fileID: 11400000, guid: 3dfac1680bdca8c44ae5749e488173df, type: 2}
-  targetPlayer: {fileID: 0}
   selectionCircle: {fileID: 0}
   TargetReticle: {fileID: 2384440438624879504}
   attacking: 0
+  selectedAttack: {fileID: 0}
+  selectedTarget: {fileID: 0}
+  EnemiesToDamage: []
+  AbilitiesList: []
   attackGap: -0.3
   stats: {fileID: 2649556087642031425}
-  Skills:
-  - {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}
 --- !u!61 &6220031001262296059
 BoxCollider2D:
   m_ObjectHideFlags: 0
