@@ -786,8 +786,11 @@ public class BattleManager : MonoBehaviour
                 StartCoroutine(ShowResults());
                 break;
             case BattleState.Battle_End:
-                NavigationManager.NavigateTo("Overworld");
-                //Any animation and move back to Overworld
+                GameState.justExitedBattle = true;
+                GameState.MovePartyMembersOffScreen();
+                GameState.PlayerParty[0].GetComponent<PlayerMovement>().CantMove = false;
+                GameState.CurrentPlayer.gameObject.transform.position = GameState.CurrentPlayer.LastScenePosition;
+                NavigationManager.NavigateTo("Overworld");                //Any animation and move back to Overworld
                 break;
             default:
                 break;

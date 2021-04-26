@@ -1,10 +1,19 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerLocation
+{
+    North,
+    South,
+    East,
+    West
+}
+
 public class GameState : MonoBehaviour
 {
     public static PlayerController CurrentPlayer;
     public static GameObject PlayerObject;
+    public static PlayerLocation PlayerLoc;
     public GameObject player;
     public GameObject partymembertoSpawn;
     public Player PlayerProfile;
