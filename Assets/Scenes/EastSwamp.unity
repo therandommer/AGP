@@ -24551,7 +24551,7 @@ PrefabInstance:
     - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}
       propertyPath: battleProbability
-      value: 1
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}
@@ -63849,7 +63849,7 @@ PrefabInstance:
     - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}
       propertyPath: battleProbability
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}
@@ -64042,7 +64042,7 @@ PrefabInstance:
     - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}
       propertyPath: battleProbability
-      value: 1
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}
