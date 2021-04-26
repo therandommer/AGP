@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c26109ea096a8941a241d1d22e2e8b9, type: 3}
-  m_Name: Holy Burst
+  m_Name: Axe Throw
   m_EditorClassIdentifier: 
   Passive: 0
-  Targetable: 0
+  Targetable: 1
   BaseType: 0
-  AbilityType: 3
-  AbilityDescription: Hit with a holy burst of light
-  AbilityImage: {fileID: 9164951061357751311, guid: cefdeb2a13a844d4fba7043b90c76b84,
+  AbilityType: 0
+  AbilityDescription: Throw your weapon at the enemy.
+  AbilityImage: {fileID: 8376264838464322660, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
-  CastEffect: {fileID: 8335750205670191616, guid: 799622fee3aa1dd4cb370b7f44e5e65d,
-    type: 3}
+  CastEffect: {fileID: 0}
   isMelee: 0
-  abilityRange: 2
-  AbilityCost: 10
+  abilityRange: 0
+  AbilityCost: 0
   AbilityAmount: 15

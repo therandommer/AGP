@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c26109ea096a8941a241d1d22e2e8b9, type: 3}
-  m_Name: Dark Orb
+  m_Name: Backstab
   m_EditorClassIdentifier: 
   Passive: 0
-  Targetable: 0
-  BaseType: 1
-  AbilityType: 4
-  AbilityDescription: 
-  AbilityImage: {fileID: -3808112592595356675, guid: cefdeb2a13a844d4fba7043b90c76b84,
+  Targetable: 1
+  BaseType: 0
+  AbilityType: 1
+  AbilityDescription: Stab your enemy, but in the back!
+  AbilityImage: {fileID: 8376264838464322660, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
-  CastEffect: {fileID: 7678159497909189357, guid: 36d3f5ff1bafd1340b46d5c8ee8e50a0,
-    type: 3}
-  isMelee: 0
-  abilityRange: 3
-  AbilityCost: 7
-  AbilityAmount: 45
+  CastEffect: {fileID: 0}
+  isMelee: 1
+  abilityRange: 0
+  AbilityCost: 0
+  AbilityAmount: 25
