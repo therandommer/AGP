@@ -14,6 +14,7 @@ public class GameState : MonoBehaviour
     public static PlayerController CurrentPlayer;
     public static GameObject PlayerObject;
     public static PlayerLocation PlayerLoc;
+    public PlayerLocation PlayerLocTest;
     public GameObject player;
     public GameObject partymembertoSpawn;
     public Player PlayerProfile;
@@ -28,6 +29,10 @@ public class GameState : MonoBehaviour
 
     public static TimeOfDay Time;
 
+    public TimeOfDay TimeSetter;
+
+    public BattleEnvironmentStorage Storage;
+
     public static GameObject[] EnemyPrefabsForBattle;
 
     public bool PlayerSpawned = false;
@@ -40,6 +45,8 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        PlayerLoc = PlayerLocTest;
+        Time = TimeSetter;
         PlayersToSpawn = playerParty.ToArray();
         PlayerParty = playerParty;
         if (BattleSceneTest)
@@ -48,6 +55,7 @@ public class GameState : MonoBehaviour
             PlayerController = PlayerObject.GetComponent<PlayerController>();
             CurrentPlayer = PlayerObject.GetComponent<PlayerController>();
             SetUpGameState();
+            Instantiate(Storage.CheckTimeForBackground(Time.GetTimeOfDay()._Hours));
         }
         DontDestroyOnLoad(gameObject);
     }

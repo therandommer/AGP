@@ -508,9 +508,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2104851371
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: -723562327
+  m_SortingLayer: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -558,9 +558,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.038958296, y: -0.0016195774}
   m_SpriteTilingProperty:
-    border: {x: 0.22999999, y: 0.07, z: 0.14, w: 0.11}
+    border: {x: 0.69696975, y: 0.21212122, z: 0.42424244, w: 0.33333334}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1.939394, y: 1.939394}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -584,9 +584,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.039542034, y: -0.0006900728}
   m_SpriteTilingProperty:
-    border: {x: 0.22999999, y: 0.07, z: 0.14, w: 0.11}
+    border: {x: 0.69696975, y: 0.21212122, z: 0.42424244, w: 0.33333334}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1.939394, y: 1.939394}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -675,6 +675,8 @@ MonoBehaviour:
   selectedAttack: {fileID: 0}
   selectedTarget: {fileID: 0}
   EnemiesToDamage: []
+  Dead: 0
+  LastScenePosition: {x: 0, y: 0, z: 0}
   Skills: []
   EquipedSkills: []
   Money: 0
