@@ -6,6 +6,7 @@ public class PopulateStatList : MonoBehaviour
     public Player Profile;
     public TMP_Text Name;
     public TMP_Text Level;
+    public TMP_Text Experience;
     public TMP_Text Health;
     public TMP_Text Strength;
     public TMP_Text Magic;
@@ -28,7 +29,11 @@ public class PopulateStatList : MonoBehaviour
                     Name.text = PC.name;
                 if (Level != null)
                 {
-                    Level.text = "Level:\n" + PC.stats.Level.ToString();
+                    Level.text = "Level:" + PC.stats.Level.ToString();
+                }
+                if(Experience != null)
+                {
+                    Experience.text = "Exp: " + PC.Experience + "/" + PC.ExperienceNeededToLevel;
                 }
                 if (Health != null)
                     Health.text = "Health:\n" + PC.stats.Health.ToString();
@@ -47,7 +52,7 @@ public class PopulateStatList : MonoBehaviour
             }
             else
             {
-                Name.text = PC.name;
+                //Name.text = PC.name;
                 //Level.text = PC.Level.ToString();
                 Health.text = PC.stats.Health.ToString();
                 Strength.text = PC.stats.Strength.ToString();

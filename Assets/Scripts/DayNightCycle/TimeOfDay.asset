@@ -9,41 +9,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: a89692897551fc24ea7b57c8754da66f, type: 3}
   m_Name: TimeOfDay
   m_EditorClassIdentifier: Assembly-CSharp::TimeOfDay
   _PerDayLength:
     _Hours: 0
     _Minutes: 0
-    _Seconds: 30
+    _Seconds: 0
   _bOnlyUpdateHandsPerMinute: 1
   _TimeMultipliers:
-    _DefaultTime: 1
-    _Town: 1
-    _Combat: 1
-    _WorldMapMoving: 1
-    _WorldMapIdle: 1
-    _InDialogue: 1
+    _DefaultTime: 0
+    _Town: 0
+    _Combat: 0
+    _WorldMapMoving: 0
+    _WorldMapIdle: 0
+    _InDialogue: 0
   _StartingTime:
-    _Hours: 18
+    _Hours: 0
     _Minutes: 0
     _Seconds: 0
   _NightTimeFadeStart:
-    _Hours: 18
+    _Hours: 0
     _Minutes: 0
     _Seconds: 0
   _NightTimeStart:
-    _Hours: 21
+    _Hours: 0
     _Minutes: 0
     _Seconds: 0
   _FadeToDayTimeStart:
-    _Hours: 3
+    _Hours: 0
     _Minutes: 0
     _Seconds: 0
   _NightTimeEnd:
-    _Hours: 6
+    _Hours: 0
     _Minutes: 0
     _Seconds: 0
-  _NightTime: 0.8
-  _TimeSkipLerpAmount: 0.9
-  _NightTimeColour: {r: 0.13283195, g: 0.1348737, b: 0.14150941, a: 0}
+  _NightTime: 0
+  _TimeSkipLerpAmount: 1
+  _NightTimeColour: {r: 0, g: 0, b: 0, a: 0}
