@@ -14,7 +14,8 @@ public enum Effect
 public enum InitialEffect
 {
     AddArmour,
-    AddDamage
+    AddDamage,
+    AddHealth
 }
 [System.Serializable]
 public class ItemEffect

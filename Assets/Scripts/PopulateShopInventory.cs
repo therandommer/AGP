@@ -22,7 +22,13 @@ public class PopulateShopInventory : MonoBehaviour
 
     public LoadEquippedItem Load;
 
-    public Items ShopInventory;
+    public List<InventoryItem> ShopInventory;
+
+    public bool Shop1;
+    public bool Shop2;
+    public bool Shop3;
+    public bool Shop4;
+
 
     [Header("Colors")]
     public Color32 LegendaryColor;
@@ -117,7 +123,22 @@ public class PopulateShopInventory : MonoBehaviour
 
     public void BuyAndEquipFromShop()
     {
-        ShopInventory.ShopInventoryList.Remove(Load.SelectedItem);
+        if(Shop1)
+        {
+            GameState.ShopStorage.NorthernShopInventoryList.Remove(Load.SelectedItem);
+        }
+        if (Shop2)
+        {
+            GameState.ShopStorage.EasternShopInventoryList.Remove(Load.SelectedItem);
+        }
+        if (Shop3)
+        {
+            GameState.ShopStorage.SouthernShopInventoryList.Remove(Load.SelectedItem);
+        }
+        if (Shop4)
+        {
+            GameState.ShopStorage.WesternShopInventoryList.Remove(Load.SelectedItem);
+        }
         ItemsToShow.Remove(Load.SelectedItem);
 
         Load.EquipItem();
@@ -126,7 +147,22 @@ public class PopulateShopInventory : MonoBehaviour
 
     public void BuyFromShop()
     {
-        ShopInventory.ShopInventoryList.Remove(Load.SelectedItem);
+        if (Shop1)
+        {
+            GameState.ShopStorage.NorthernShopInventoryList.Remove(Load.SelectedItem);
+        }
+        if (Shop2)
+        {
+            GameState.ShopStorage.EasternShopInventoryList.Remove(Load.SelectedItem);
+        }
+        if (Shop3)
+        {
+            GameState.ShopStorage.SouthernShopInventoryList.Remove(Load.SelectedItem);
+        }
+        if (Shop4)
+        {
+            GameState.ShopStorage.WesternShopInventoryList.Remove(Load.SelectedItem);
+        }
         ItemsToShow.Remove(Load.SelectedItem);
 
         GameState.CurrentPlayer.Inventory.Add(Load.SelectedItem);
@@ -142,71 +178,229 @@ public class PopulateShopInventory : MonoBehaviour
 
     public void ShowAllArmour()
     {
-        ItemsToShow = ShopInventory.GetAllArmourItems();
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetAllArmourItems(GameState.ShopStorage.NorthernShopInventoryList);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetAllArmourItems(GameState.ShopStorage.NorthernShopInventoryList);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetAllArmourItems(GameState.ShopStorage.NorthernShopInventoryList);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetAllArmourItems(GameState.ShopStorage.NorthernShopInventoryList);
+        }
 
         ShowItems(ItemsToShow);
     }
 
     public void ShowOnlyHelmets()
     {
-        ItemsToShow = ShopInventory.GetArmourItemsOfType(ArmourItems.Helmet);
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.NorthernShopInventoryList, ArmourItems.Helmet);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.EasternShopInventoryList, ArmourItems.Helmet);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.SouthernShopInventoryList, ArmourItems.Helmet);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.WesternShopInventoryList, ArmourItems.Helmet);
+        }
 
         ShowItems(ItemsToShow);
     }
 
     public void ShowOnlyChests()
     {
-        ItemsToShow = ShopInventory.GetArmourItemsOfType(ArmourItems.Chest);
-
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.NorthernShopInventoryList, ArmourItems.Chest);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.EasternShopInventoryList, ArmourItems.Chest);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.SouthernShopInventoryList, ArmourItems.Chest);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.WesternShopInventoryList, ArmourItems.Chest);
+        }
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyArms()
     {
-        ItemsToShow = ShopInventory.GetArmourItemsOfType(ArmourItems.Arms);
-
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.NorthernShopInventoryList, ArmourItems.Arms);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.EasternShopInventoryList, ArmourItems.Arms);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.SouthernShopInventoryList, ArmourItems.Arms);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.WesternShopInventoryList, ArmourItems.Arms);
+        }
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyBoots()
     {
-        ItemsToShow = ShopInventory.GetArmourItemsOfType(ArmourItems.Boots);
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.NorthernShopInventoryList, ArmourItems.Boots);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.EasternShopInventoryList, ArmourItems.Boots);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.SouthernShopInventoryList, ArmourItems.Boots);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetArmourItemsOfType(GameState.ShopStorage.WesternShopInventoryList, ArmourItems.Boots);
+        }
 
         ShowItems(ItemsToShow);
     }
 
     public void ShowAllWeapons()
     {
-        ItemsToShow = ShopInventory.GetAllWeaponItems();
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetAllWeaponItems(GameState.ShopStorage.NorthernShopInventoryList);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetAllWeaponItems(GameState.ShopStorage.NorthernShopInventoryList);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetAllWeaponItems(GameState.ShopStorage.NorthernShopInventoryList);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetAllWeaponItems(GameState.ShopStorage.NorthernShopInventoryList);
+        }
         ShowItems(ItemsToShow);
     }
 
     public void ShowOnlyAxe()
     {
-        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Axe);
-
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.NorthernShopInventoryList, WeaponItem.Axe);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.EasternShopInventoryList, WeaponItem.Axe);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.SouthernShopInventoryList, WeaponItem.Axe);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.WesternShopInventoryList, WeaponItem.Axe);
+        }
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyDaggers()
     {
-        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Dagger);
-
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.NorthernShopInventoryList, WeaponItem.Dagger);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.EasternShopInventoryList, WeaponItem.Dagger);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.SouthernShopInventoryList, WeaponItem.Dagger);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.WesternShopInventoryList, WeaponItem.Dagger);
+        }
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyHammers()
     {
-        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Hammer);
-
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.NorthernShopInventoryList, WeaponItem.Hammer);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.EasternShopInventoryList, WeaponItem.Hammer);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.SouthernShopInventoryList, WeaponItem.Hammer);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.WesternShopInventoryList, WeaponItem.Hammer);
+        }
         ShowItems(ItemsToShow);
     }
     public void ShowOnlyStaves()
     {
-        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Staff);
-
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.NorthernShopInventoryList, WeaponItem.Staff);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.EasternShopInventoryList, WeaponItem.Staff);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.SouthernShopInventoryList, WeaponItem.Staff);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.WesternShopInventoryList, WeaponItem.Staff);
+        }
         ShowItems(ItemsToShow);
     }
     public void ShowOnlySwords()
     {
-        ItemsToShow = ShopInventory.GetWeaponItemsOfType(WeaponItem.Sword);
-
+        if (Shop1)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.NorthernShopInventoryList, WeaponItem.Sword);
+        }
+        if (Shop2)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.EasternShopInventoryList, WeaponItem.Sword);
+        }
+        if (Shop3)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.SouthernShopInventoryList, WeaponItem.Sword);
+        }
+        if (Shop4)
+        {
+            ItemsToShow = GameState.ShopStorage.GetWeaponItemsOfType(GameState.ShopStorage.WesternShopInventoryList, WeaponItem.Sword);
+        }
         ShowItems(ItemsToShow);
     }
 }

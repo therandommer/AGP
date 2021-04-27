@@ -34,6 +34,9 @@ public class GameState : MonoBehaviour
     public FollowCamera CameraSetter;
     public static FollowCamera Camera;
 
+    public ShopStorageHolder ShopStorageSetter;
+    public static ShopStorageHolder ShopStorage;
+
     public BattleEnvironmentStorage Storage;
 
     public static GameObject[] EnemyPrefabsForBattle;
@@ -49,6 +52,7 @@ public class GameState : MonoBehaviour
     void Awake()
     {
         Camera = CameraSetter;
+        ShopStorage = ShopStorageSetter;
         PlayerLoc = PlayerLocTest;
         Time = TimeSetter;
         PlayersToSpawn = playerParty.ToArray();

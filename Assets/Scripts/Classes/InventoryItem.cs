@@ -23,6 +23,13 @@ public enum WeaponItem
     Staff,
     Sword
 }
+
+public enum HealItem
+{
+    None,
+    SingleTarget,
+    PartyWide
+}
 [System.Serializable]
 public class InventoryItem : ScriptableObject, IComparable<InventoryItem>
 {
@@ -37,6 +44,9 @@ public class InventoryItem : ScriptableObject, IComparable<InventoryItem>
     [ConditionalHide("isWeapon")]
     public WeaponItem weaponItem;
 
+    public bool isHeal;
+    public HealItem healType;
+
     public RarityOptions rarity;
     public Sprite itemImage;
     public string itemName;
@@ -46,7 +56,6 @@ public class InventoryItem : ScriptableObject, IComparable<InventoryItem>
     public int InitialEffectAmount;
     [Header("Additonal Effects")]
     public ItemEffect[] AdditionalItemEffects;
-    //public List<ItemEffect[] AdditionalItemEffects;
     [Header("Don't touch this, gets set automatically")]
     public Sprite ItemUiImage;
 
