@@ -29,6 +29,10 @@ public class NavigationPrompt : MonoBehaviour
 			GameState.saveLastPosition = false;
 			GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, startingPosition);
 		}
+		else
+        {
+			Debug.Log("You cannot enter here yet");
+        }
 	}
 
 

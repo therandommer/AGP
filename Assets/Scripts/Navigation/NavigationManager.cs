@@ -15,10 +15,18 @@ public static class NavigationManager
         
         { "Village", new Route {RouteDescription = "A bustling Village", CanTravel = true}},
         
-        { "Town", new Route {RouteDescription = "A town surrounded by walls", CanTravel = true}},
-        
-        { "Cave", new Route {RouteDescription = "A cave in the woods", CanTravel = false}},
-        
+        { "NorthTown", new Route {RouteDescription = "A series of dwellings to the north", CanTravel = true}},
+        { "NorthCave", new Route {RouteDescription = "A series of dwellings to the north", CanTravel = true}},
+
+        { "EastTown", new Route {RouteDescription = "A frozen camp to the east", CanTravel = true}},
+        { "EastSwamp", new Route {RouteDescription = "A frozen camp to the east", CanTravel = true}},
+
+        { "WestTown", new Route {RouteDescription = "A desert town that is being attacked by bandits", CanTravel = true}},
+        { "WestOasis", new Route {RouteDescription = "A desert town that is being attacked by bandits", CanTravel = true}},
+
+        { "SouthTown", new Route {RouteDescription = "A small town surrounded by walls to the south", CanTravel = true}},
+        { "SouthForest", new Route {RouteDescription = "A small town surrounded by walls to the south", CanTravel = true}},
+                
         { "Shop", new Route{RouteDescription="The village shop", CanTravel=true}},
 
     };
