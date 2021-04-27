@@ -347,7 +347,7 @@ public class Attack : MonoBehaviour
         switch (Attack.abilityRange)
         {
             case AbilityRange.OneEnemy:
-                Spot2.enabled = true;
+                Spot5.enabled = true;
                 break;
             case AbilityRange.AllEnemies:
                 Spot1.enabled = true;
@@ -366,9 +366,9 @@ public class Attack : MonoBehaviour
                 Spot8.enabled = true;
                 break;
             case AbilityRange.ColumnOfEnemies:
-                Spot1.enabled = true;
-                Spot2.enabled = true;
-                Spot3.enabled = true;
+                Spot4.enabled = true;
+                Spot5.enabled = true;
+                Spot6.enabled = true;
                 break;
         }
         if (Attack.Targetable)

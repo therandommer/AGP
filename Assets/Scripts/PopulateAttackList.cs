@@ -50,6 +50,33 @@ public class PopulateAttackList : MonoBehaviour
                     ButtonUI.AttackTypeBackground.color = Color.blue;
                     break;
             }
+            switch (Abilities.abilityRange)
+            {
+                case AbilityRange.OneEnemy:
+                    ButtonUI.Spot5.enabled = true;
+                    break;
+                case AbilityRange.AllEnemies:
+                    ButtonUI.Spot1.enabled = true;
+                    ButtonUI.Spot2.enabled = true;
+                    ButtonUI.Spot3.enabled = true;
+                    ButtonUI.Spot4.enabled = true;
+                    ButtonUI.Spot5.enabled = true;
+                    ButtonUI.Spot6.enabled = true;
+                    ButtonUI.Spot7.enabled = true;
+                    ButtonUI.Spot8.enabled = true;
+                    ButtonUI.Spot9.enabled = true;
+                    break;
+                case AbilityRange.RowOfEnemies:
+                    ButtonUI.Spot2.enabled = true;
+                    ButtonUI.Spot5.enabled = true;
+                    ButtonUI.Spot8.enabled = true;
+                    break;
+                case AbilityRange.ColumnOfEnemies:
+                    ButtonUI.Spot4.enabled = true;
+                    ButtonUI.Spot5.enabled = true;
+                    ButtonUI.Spot6.enabled = true;
+                    break;
+            }
         }
     }
 
