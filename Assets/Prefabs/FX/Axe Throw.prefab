@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7678159497909189357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.559563, y: -1.1067125, z: -6.584055}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   destroyTimer: 2.1
   isHitEffect: 0
   isProjectile: 1
-  hitEffect: {fileID: 7672817113307296492, guid: 746ee8e9de4054842a22be65bec1add1,
+  hitEffect: {fileID: 2679226797502053530, guid: 6846cd116f5cf114b9e495b0f89a19f1,
     type: 3}
 --- !u!212 &3368161728993667260
 SpriteRenderer:
