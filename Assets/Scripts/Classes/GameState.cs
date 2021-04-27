@@ -31,6 +31,9 @@ public class GameState : MonoBehaviour
 
     public TimeOfDay TimeSetter;
 
+    public FollowCamera CameraSetter;
+    public static FollowCamera Camera;
+
     public BattleEnvironmentStorage Storage;
 
     public static GameObject[] EnemyPrefabsForBattle;
@@ -45,16 +48,18 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        Camera = CameraSetter;
         PlayerLoc = PlayerLocTest;
         Time = TimeSetter;
         PlayersToSpawn = playerParty.ToArray();
         PlayerParty = playerParty;
+
+        PlayerObject = player;
+        PlayerController = PlayerObject.GetComponent<PlayerController>();
+        CurrentPlayer = PlayerObject.GetComponent<PlayerController>();
+        SetUpGameState();
         if (BattleSceneTest)
         {
-            PlayerObject = player;
-            PlayerController = PlayerObject.GetComponent<PlayerController>();
-            CurrentPlayer = PlayerObject.GetComponent<PlayerController>();
-            SetUpGameState();
             Instantiate(Storage.CheckTimeForBackground(Time.GetTimeOfDay()._Hours));
         }
         DontDestroyOnLoad(gameObject);
@@ -108,15 +113,15 @@ public class GameState : MonoBehaviour
         if (!PlayerSpawned)
         {
             GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
+            Camera.player = Player;
             PlayerObject = Player;
-            Player.transform.position = new Vector3(0,0,1);
+            Player.transform.position = new Vector3(-2,0,1);
             Player.name = "Player";
             playerParty.Add(Player);
             PlayersToSpawn = playerParty.ToArray();
             PlayerController = Player.GetComponent<PlayerController>();
             CurrentPlayer = Player.GetComponent<PlayerController>();
             PlayerSpawned = true;
-            AddToParty(partymembertoSpawn);
         }
     }
 
@@ -154,8 +159,6 @@ public class GameState : MonoBehaviour
                 if ((i + 1) <= PlayerParty.Count)
                 {
                     Debug.Log("Go to next player");
-                    Debug.Log("Player was " + CurrentPlayer.name);
-
                     PlayerParty[i + 1].transform.position = PlayerParty[i].transform.position;
                     PlayerParty[i].transform.position = new Vector3(40,0,1);
                     PlayerParty[i].GetComponent<PlayerMovement>().CantMove = true;
@@ -163,7 +166,6 @@ public class GameState : MonoBehaviour
                     PlayerParty[i + 1].GetComponent<PlayerMovement>().CantMove = false;
                     PlayerObject = PlayerParty[i + 1];
                     CurrentPlayer = PlayerParty[i + 1].GetComponent<PlayerController>();
-                    Debug.Log("Player is now " + CurrentPlayer.name);
                     return;
                 }
                 else
