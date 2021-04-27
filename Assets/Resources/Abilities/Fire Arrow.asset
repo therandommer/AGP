@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c26109ea096a8941a241d1d22e2e8b9, type: 3}
+  m_Name: Fire Arrow
+  m_EditorClassIdentifier: 
+  Passive: 0
+  Targetable: 1
+  BaseType: 0
+  AbilityType: 5
+  AbilityDescription: Shoot an arrow, but its on fire!
+  AbilityImage: {fileID: 21300000, guid: 4d192661632fa874d98bca49c39314cb, type: 3}
+  CastEffect: {fileID: 4081951240457043890, guid: 85e90959d1c07914483140488b1a0274,
+    type: 3}
+  isMelee: 0
+  abilityRange: 3
+  AbilityCost: 0
+  AbilityAmount: 10

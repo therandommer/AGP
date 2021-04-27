@@ -34,10 +34,21 @@ MonoBehaviour:
   StartingSkills:
   - {fileID: 11400000, guid: 2ec3db44f2a1cf846acd02bccda89a0d, type: 2}
   - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
-  - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
+  - {fileID: 11400000, guid: c227bb07357fea340941fd3f7cd06d47, type: 2}
   - {fileID: 11400000, guid: b8a26cc11b5674e4c85556e05bc6beab, type: 2}
   StartingMoney: 0
   StartingQuestLog: []
   StrongWith: 030000000600000001000000
   WeakAgainst: 020000000400000005000000
   Elements: 00000000
+  LevelRewards:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: bd22ad62c5b07cd4aac3a56b8f43df7e, type: 2}
+  - {fileID: 11400000, guid: c1201666f043f6f4ebb0072381cdb453, type: 2}
+  - {fileID: 11400000, guid: 2ec3db44f2a1cf846acd02bccda89a0d, type: 2}
+  - {fileID: 11400000, guid: 50fafdacffe0946449bca87e5e8bd106, type: 2}
+  - {fileID: 11400000, guid: 9038040b056fe734f991fcc1f0fadbab, type: 2}
+  - {fileID: 11400000, guid: 8b516c6b41b6103448da4124222f3bc2, type: 2}
+  - {fileID: 11400000, guid: 433e9fe1c1205de459260e6f2c0bc06c, type: 2}
+  - {fileID: 11400000, guid: c29ed965767a9b94f9bef44337633f25, type: 2}
+  - {fileID: 0}
