@@ -6,15 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Village.unity
-    guid: 674d64f999c178142949fa35e8167d19
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6f046749e5b4c144aa5208418bd6e7c9
   - enabled: 1
-    path: Assets/Scenes/TownBattle.unity
-    guid: 1a2bf82397dd64c4c8f59b138ddb2dae
+    path: Assets/Scenes/EastTown.unity
+    guid: bbde3aa70f9cd4f4da8face9a0c772fc
+  - enabled: 1
+    path: Assets/Scenes/EastSwamp.unity
+    guid: a1bbdc0a668b4a94eae7e21c4e51ea58
+  - enabled: 1
+    path: Assets/Scenes/NorthTown.unity
+    guid: a221ef51e9b2fbe4c994b44311f4c1f7
+  - enabled: 1
+    path: Assets/Scenes/NorthCave.unity
+    guid: e3afcb66021ee1d45823bb8670fe05ac
+  - enabled: 1
+    path: Assets/Scenes/SouthTown.unity
+    guid: 5f3247ca56a770e41a445c03b3db910d
+  - enabled: 1
+    path: Assets/Scenes/SouthForest.unity
+    guid: f374a054ff98acc4db6e5a2d816fa976
+  - enabled: 1
+    path: Assets/Scenes/WestTown.unity
+    guid: b2b50a474a2cf7f47babb25714ca5403
+  - enabled: 1
+    path: Assets/Scenes/WestOasis.unity
+    guid: 09870ca60c52cac488eb183da09154c7
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: 0c915028c57a3084f8d05a78765384f9
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 106bcb670311f294f93a9cfd42390687
   - enabled: 1
-    path: Assets/Scenes/Overworld.unity
-    guid: 6cf087a231b269c4db06e500dbcf3e80
+    path: Assets/Scenes/TownBattle.unity
+    guid: 1a2bf82397dd64c4c8f59b138ddb2dae
   m_configObjects: {}

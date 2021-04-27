@@ -23,16 +23,16 @@ public class StartOfGameManager : MonoBehaviour
         switch (GameState.CurrentPlayer.stats.PlayerProfile.Type)
         {
             case EntityType.Angel:
-                NavigationManager.NavigateTo("Village");
+                NavigationManager.NavigateTo("SouthTown");
                 break;
             case EntityType.Demon:
-                NavigationManager.NavigateTo("Village");
+                NavigationManager.NavigateTo("NorthTown");
                 break;
             case EntityType.Human:
-                NavigationManager.NavigateTo("Village");
+                NavigationManager.NavigateTo("WestTown");
                 break;
             case EntityType.Mage:
-                NavigationManager.NavigateTo("Village");
+                NavigationManager.NavigateTo("EastTown");
                 break;
         }
     }
