@@ -44,17 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c24c4aec22f614aa54aa8cd167c2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerLocTest: 0
   player: {fileID: 6275971143486845660, guid: 09fe918fd3774914d9cf3cc43a8e8e95, type: 3}
+  partymembertoSpawn: {fileID: 0}
   PlayerProfile: {fileID: 0}
   PlayerController: {fileID: 0}
-  PlayerParty:
-  - {fileID: 6275971143486845660, guid: 09fe918fd3774914d9cf3cc43a8e8e95, type: 3}
-  - {fileID: 6275971143486845660, guid: 83e4e97e619154042a8b7259052c8487, type: 3}
-  - {fileID: 6275971143486845660, guid: e3279915906925c41b131ccbb9a7d3bf, type: 3}
-  - {fileID: 6275971143486845660, guid: c8917362835a2354b8cd5ad52c1b286a, type: 3}
+  TimeSetter: {fileID: 11400000, guid: b280ef643a8d1de419cb6e6004d710cc, type: 2}
+  CameraSetter: {fileID: 0}
+  ShopStorageSetter: {fileID: 0}
+  Storage: {fileID: 0}
   PlayerSpawned: 0
   CanHaveConvo: 0
-  BattleSceneTest: 1
+  BattleSceneTest: 0
 --- !u!114 &649623377
 MonoBehaviour:
   m_ObjectHideFlags: 0

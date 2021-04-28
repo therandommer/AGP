@@ -20,9 +20,25 @@ public class StartOfGameManager : MonoBehaviour
         GameObject GS = Instantiate(gameState);
         GS.GetComponent<GameState>().player = selectedCharacterProfile;
         GS.GetComponent<GameState>().SetUpGameState();
+        GS.GetComponent<GameState>().SetupInitialSpawnPoints();
+
         switch (GameState.CurrentPlayer.stats.PlayerProfile.Type)
         {
             case EntityType.Angel:
+                var lastPosition = GameState.GetLastScenePosition("SouthTown");
+
+                Debug.Log("Last know pos for " + this.tag + " is " + lastPosition);
+
+                if (lastPosition != Vector3.zero)
+                {
+                    GameState.CurrentPlayer.gameObject.transform.position = lastPosition;
+                }
+                else
+                {
+                    Debug.Log("Set pos to 0");
+                    GameState.CurrentPlayer.gameObject.transform.position = Vector3.zero;
+                }
+
                 NavigationManager.NavigateTo("SouthTown");
                 break;
             case EntityType.Demon:

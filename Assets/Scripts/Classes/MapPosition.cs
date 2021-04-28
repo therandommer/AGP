@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MapPosition : MonoBehaviour
 {
 
-    void Awake()
+    void GetLastPos()
     {
         var lastPosition = GameState.GetLastScenePosition(SceneManager.GetActiveScene().name);
 
@@ -17,7 +17,7 @@ public class MapPosition : MonoBehaviour
         }
     }
 
-    void OnDestroy()
+    void SetLastPos()
     {
         if (GameState.saveLastPosition)
         {

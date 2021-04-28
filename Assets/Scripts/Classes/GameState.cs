@@ -117,7 +117,7 @@ public class GameState : MonoBehaviour
         if (!PlayerSpawned)
         {
             GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
-            Camera.player = Player;
+            //Camera.player = Player;
             PlayerObject = Player;
             Player.transform.position = new Vector3(-2,0,1);
             Player.name = "Player";
@@ -219,6 +219,7 @@ public class GameState : MonoBehaviour
         }
         else//If not return a null value, means that the player will spawn at the default location
         {
+            Debug.Log("Cannot find last know position on this map: " + sceneName);
             return Vector3.zero;
         }
     }
@@ -232,6 +233,52 @@ public class GameState : MonoBehaviour
         else
         {
             GameState.LastScenePositions.Add(sceneName, position);
+        }
+    }
+
+    public void SetupInitialSpawnPoints()
+    {
+        ///Setting up initial spawn areas for the farm zones
+        SetLastScenePosition("EastSwamp", new Vector3(-64, -16, 0));
+        SetLastScenePosition("NorthCave", new Vector3(12, -24, 0));
+        SetLastScenePosition("SouthForest", new Vector3(5, -29, 0));
+        SetLastScenePosition("WestOasis", new Vector3(-22, 7, 0));
+
+        ///Setting up initial town zones, if the player starts there they spawn more centrally
+        switch (GameState.CurrentPlayer.stats.PlayerProfile.Type)
+        {
+            case EntityType.Angel:
+                SetLastScenePosition("EastTown", new Vector3(-22, 1, 0));
+                SetLastScenePosition("NorthTown", new Vector3(-2, -26, 0));
+                SetLastScenePosition("SouthTown", new Vector3(2, -3, 0));
+                SetLastScenePosition("WestTown", new Vector3(30, 7, 0));
+                SetLastScenePosition("Overworld", new Vector3(-2, -4, 0));
+                NavigationManager.NavigateTo("SouthTown");
+                break;
+            case EntityType.Demon:
+                SetLastScenePosition("EastTown", new Vector3(-22, 1, 0));
+                SetLastScenePosition("NorthTown", new Vector3(-2, -6, 0));
+                SetLastScenePosition("SouthTown", new Vector3(17, -3, 0));
+                SetLastScenePosition("WestTown", new Vector3(30, 7, 0));
+                SetLastScenePosition("Overworld", new Vector3(30, 7, 0));
+                NavigationManager.NavigateTo("NorthTown");
+                break;
+            case EntityType.Human:
+                SetLastScenePosition("EastTown", new Vector3(-22, 1, 0));
+                SetLastScenePosition("NorthTown", new Vector3(-2, -26, 0));
+                SetLastScenePosition("SouthTown", new Vector3(17, -3, 0));
+                SetLastScenePosition("WestTown", new Vector3(12, 8, 0));
+                SetLastScenePosition("Overworld", new Vector3(-18, 14, 0));
+                NavigationManager.NavigateTo("WestTown");
+                break;
+            case EntityType.Mage:
+                SetLastScenePosition("EastTown", new Vector3(-9, 3, 0));
+                SetLastScenePosition("NorthTown", new Vector3(-2, -26, 0));
+                SetLastScenePosition("SouthTown", new Vector3(17, -3, 0));
+                SetLastScenePosition("WestTown", new Vector3(30, 7, 0));
+                SetLastScenePosition("Overworld", new Vector3(27, 15, 0));
+                NavigationManager.NavigateTo("EastTown");
+                break;
         }
     }
 }

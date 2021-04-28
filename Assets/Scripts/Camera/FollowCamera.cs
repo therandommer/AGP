@@ -16,10 +16,16 @@ public class FollowCamera : MonoBehaviour
     public float MaxYCamera;
 
     // Reference to the player's transform. 
-    public GameObject player;
+    GameObject player;
 
     void LateUpdate()
     {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
+            Debug.Log("Moving Camera to " + new Vector3(player.transform.position.x, player.transform.position.y, -10));
+        }
         this.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x + xOffset, MinXCamera, MaxXCamera), 
                                               Mathf.Clamp(player.transform.position.y + yOffset, MinYCamera, MaxYCamera), 
                                               transform.position.z);

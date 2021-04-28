@@ -10,9 +10,9 @@ public class RandomBattle : MonoBehaviour
     public int secondsBetweenBattles;
     public string battleSceneName;
 
-    List<GameObject> EnemyList;
-    public GameObject[] DayTimeEnemyPrefabs;
-    public GameObject[] NightTimeEnemyPrefabs;
+    public List<GameObject> EnemyList = new List<GameObject>();
+    public List<GameObject> DayTimeEnemyPrefabs = new List<GameObject>();
+    public List<GameObject> NightTimeEnemyPrefabs = new List<GameObject>();
 
 
     void OnTriggerEnter2D(Collider2D col)
@@ -52,8 +52,8 @@ public class RandomBattle : MonoBehaviour
 
             for (int i = 0; i < NumOfEnemies; i++)
             {
-                int RandomDayEnemy = Random.Range(1, DayTimeEnemyPrefabs.Length);
-                int RandomNightEnemy = Random.Range(1, NightTimeEnemyPrefabs.Length);
+                int RandomDayEnemy = Random.Range(1, DayTimeEnemyPrefabs.Count);
+                int RandomNightEnemy = Random.Range(1, NightTimeEnemyPrefabs.Count);
 
                 if (GameState.Time.GetTimeOfDay()._Hours > 6 && GameState.Time.GetTimeOfDay()._Hours < 18)
                 {
