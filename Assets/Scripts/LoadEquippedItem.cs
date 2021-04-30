@@ -61,7 +61,7 @@ public class LoadEquippedItem : MonoBehaviour
                 EquippedItemImageCanvas.alpha = 1;
                 EquippedItemName.text = II.name;
                 EquippedAE.ReadAdditionalEffectsFromItem(II);
-                switch (SelectedItem.InitialEffect)
+                switch (II.InitialEffect)
                 {
                     case InitialEffect.AddArmour:
                         EquippedInitialItemValue.text = "Armour: " + II.InitialEffectAmount;
@@ -84,7 +84,8 @@ public class LoadEquippedItem : MonoBehaviour
                 EquippedItemImage.sprite = II.itemImage;
                 EquippedItemImageCanvas.alpha = 1;
                 EquippedItemName.text = II.name;
-                switch (SelectedItem.InitialEffect)
+                EquippedAE.ReadAdditionalEffectsFromItem(II);
+                switch (II.InitialEffect)
                 {
                     case InitialEffect.AddArmour:
                         EquippedInitialItemValue.text = "Armour: " + II.InitialEffectAmount;
@@ -93,7 +94,6 @@ public class LoadEquippedItem : MonoBehaviour
                         EquippedInitialItemValue.text = "Attack: " + II.InitialEffectAmount;
                         break;
                 }
-                EquippedAE.ReadAdditionalEffectsFromItem(II);
             }
         }
     }

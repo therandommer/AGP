@@ -14,6 +14,7 @@ public class GameState : MonoBehaviour
     public static PlayerController CurrentPlayer;
     public static GameObject PlayerObject;
     public static PlayerLocation PlayerLoc;
+    [Header("Debug lines will be overset")]
     public PlayerLocation PlayerLocTest;
     public GameObject player;
     public GameObject partymembertoSpawn;
@@ -28,26 +29,26 @@ public class GameState : MonoBehaviour
     public static bool saveLastPosition = true;
 
     public static TimeOfDay Time;
-
+    [Header("Setters")]
     public TimeOfDay TimeSetter;
-
     public FollowCamera CameraSetter;
+    public ShopStorageHolder ShopStorageSetter;
+
     public static FollowCamera Camera;
 
-    public ShopStorageHolder ShopStorageSetter;
     public static ShopStorageHolder ShopStorage;
 
     public BattleEnvironmentStorage Storage;
 
     public static GameObject[] EnemyPrefabsForBattle;
-
+    [Header("Debug to stop duplication")]
     public bool PlayerSpawned = false;
 
     public bool CanHaveConvo;
     [Header("Use this is testing battlescene")]
     public bool BattleSceneTest;
-    [Header("BattleScene Info")]
-    public static GameObject PlayerSpawn;
+    //[Header("BattleScene Info")]
+    //public static GameObject PlayerSpawn;
     // Start is called before the first frame update
     void Awake()
     {
