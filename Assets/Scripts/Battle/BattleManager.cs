@@ -672,6 +672,12 @@ public class BattleManager : MonoBehaviour
         NavigationManager.NavigateTo("Overworld");
     }
 
+    public void TriggerEnding()
+    {
+        ///Trigger Convo for ending
+        NavigationManager.NavigateTo("Ending");
+    }
+
     void GetAnimationStates()
     {
         foreach (BattleState state in (BattleState[])System.Enum.GetValues(typeof(BattleState)))

@@ -14,11 +14,17 @@ public class GameState : MonoBehaviour
     public static PlayerController CurrentPlayer;
     public static GameObject PlayerObject;
     public static PlayerLocation PlayerLoc;
-    [Header("Debug lines will be overset")]
+    [Header("Debug lines that will be overset")]
     public PlayerLocation PlayerLocTest;
     public GameObject player;
     public GameObject partymembertoSpawn;
     public Player PlayerProfile;
+    public int NumberofBossesNeededToFightFinalBossDebug;
+    public static int NumberofBossesNeededToFightFinalBoss;
+    public bool CanFightFinalBossDebug = false;
+    public static bool CanFightFinalBoss;
+    public int NumberOfBossesDefeatedDebug;
+    public static int NumberOfBossesDefeated = 0;
     public PlayerController PlayerController;
     public static List<GameObject> PlayerParty = new List<GameObject>();
     public static List<GameObject> BattleParty = new List<GameObject>();
@@ -74,6 +80,17 @@ public class GameState : MonoBehaviour
     {
         EnemyPrefabsForBattle = EnemyArray;
     }
+
+    public static void IncreaseNumberOfBossesDefeated()
+    {
+        NumberOfBossesDefeated++;
+        Debug.Log("Num of Bosses: " + NumberOfBossesDefeated);
+        if (NumberOfBossesDefeated >= NumberofBossesNeededToFightFinalBoss)
+        {
+            CanFightFinalBoss = true;
+        }
+    }
+
 
     public static void SetBattleParty()
     {

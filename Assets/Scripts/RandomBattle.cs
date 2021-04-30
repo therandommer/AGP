@@ -10,10 +10,16 @@ public class RandomBattle : MonoBehaviour
     public int secondsBetweenBattles;
     public string battleSceneName;
 
-    public List<GameObject> EnemyList = new List<GameObject>();
+    [Header("6am - 6pm enemies")]
     public List<GameObject> DayTimeEnemyPrefabs = new List<GameObject>();
+    [Header("6:01pm - 5:59am enemies")]
     public List<GameObject> NightTimeEnemyPrefabs = new List<GameObject>();
+    [Header("Use this for Boss encounters or Tutorial fights")]
+    public List<GameObject> GuarnteedEnemies = new List<GameObject>();
+    [Header("If you don't want other enemies in the encounter")]
+    public bool OnlyGuaranteedEnemies = false;
 
+    public List<GameObject> EnemyList = new List<GameObject>();
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -47,21 +53,26 @@ public class RandomBattle : MonoBehaviour
         {
             Debug.Log("Battle");
             GameObject.Find("Player").GetComponent<PlayerController>().LastScenePosition = GameObject.Find("Player").transform.position;
-
-            int NumOfEnemies = Random.Range(1, 9);
-
-            for (int i = 0; i < NumOfEnemies; i++)
+            foreach (GameObject Enemy in GuarnteedEnemies)
             {
-                int RandomDayEnemy = Random.Range(1, DayTimeEnemyPrefabs.Count);
-                int RandomNightEnemy = Random.Range(1, NightTimeEnemyPrefabs.Count);
+                EnemyList.Add(Enemy);
+            }
+            if (!OnlyGuaranteedEnemies)
+            {
+                int NumOfEnemies = Random.Range(1, 9 - GuarnteedEnemies.Count);
+                for (int i = 0; i < NumOfEnemies; i++)
+                {
+                    int RandomDayEnemy = Random.Range(1, DayTimeEnemyPrefabs.Count);
+                    int RandomNightEnemy = Random.Range(1, NightTimeEnemyPrefabs.Count);
 
-                if (GameState.Time.GetTimeOfDay()._Hours > 6 && GameState.Time.GetTimeOfDay()._Hours < 18)
-                {
-                    EnemyList.Add(DayTimeEnemyPrefabs[RandomDayEnemy]);
-                }
-                else
-                {
-                    EnemyList.Add(NightTimeEnemyPrefabs[RandomNightEnemy]);
+                    if (GameState.Time.GetTimeOfDay()._Hours > 6 && GameState.Time.GetTimeOfDay()._Hours < 18)
+                    {
+                        EnemyList.Add(DayTimeEnemyPrefabs[RandomDayEnemy]);
+                    }
+                    else
+                    {
+                        EnemyList.Add(NightTimeEnemyPrefabs[RandomNightEnemy]);
+                    }
                 }
             }
             GameState.EnemyPrefabsForBattle = EnemyList.ToArray();

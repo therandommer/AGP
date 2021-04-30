@@ -298,7 +298,15 @@ public class EnemyController : MonoBehaviour
 
         GameState.CurrentPlayer.PingKillQuests(EnemyProfile.Class);
         GameState.CurrentPlayer.AddExperience(ExperienceOnKill());
+        if(EnemyProfile.isBoss)
+        {
+            GameState.IncreaseNumberOfBossesDefeated();
+        }
 
+        if(EnemyProfile.isFinalBoss)
+        {
+
+        }
         battleManager.enemyCount--;
         Destroy(this.gameObject);
     }

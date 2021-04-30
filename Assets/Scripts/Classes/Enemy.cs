@@ -11,4 +11,6 @@ public class Enemy : Entity
 
     public Abilities[] StartingSkills;
 
+    public bool isBoss;
+    public bool isFinalBoss;
 }
