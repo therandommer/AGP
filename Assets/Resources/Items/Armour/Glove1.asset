@@ -17,12 +17,17 @@ MonoBehaviour:
   armourItem: 2
   isWeapon: 0
   weaponItem: 0
+  isHeal: 0
+  healType: 0
   rarity: 0
   itemImage: {fileID: 21300000, guid: d9a7fb42ce2fb58468724947f78bb226, type: 3}
   itemName: Gauntlet
   shopCost: 0
   InitialEffect: 0
   InitialEffectAmount: 30
-  AdditionalItemEffects: []
+  AdditionalItemEffects:
+  - itemEffect: 0
+    EffectAmount: 0
+    AbilityImmunity: 0
   ItemUiImage: {fileID: -4946886622354854868, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}

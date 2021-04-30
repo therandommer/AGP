@@ -48,6 +48,76 @@ public class LoadEquippedItem : MonoBehaviour
         statsDifference.PreviewStatChange(selectedItem);
     }
 
+    public void ReadItemInSlot(ArmourItems AI)
+    {
+        WipeUiInfo();
+        for (int i = 0; i < GameState.CurrentPlayer.EquippedItems.Count; i++)
+        {
+            if (GameState.CurrentPlayer.EquippedItems[i].armourItem == AI)
+            {
+                InventoryItem II = GameState.CurrentPlayer.EquippedItems[i];
+                EquippedItemTypeImage.sprite = II.ItemUiImage;
+                EquippedItemImage.sprite = II.itemImage;
+                EquippedItemImageCanvas.alpha = 1;
+                EquippedItemName.text = II.name;
+                EquippedAE.ReadAdditionalEffectsFromItem(II);
+                switch (SelectedItem.InitialEffect)
+                {
+                    case InitialEffect.AddArmour:
+                        EquippedInitialItemValue.text = "Armour: " + II.InitialEffectAmount;
+                        break;
+                    case InitialEffect.AddDamage:
+                        EquippedInitialItemValue.text = "Attack: " + II.InitialEffectAmount;
+                        break;
+                }
+            }
+        }
+    }
+    public void ReadItemInSlot()
+    {
+        for (int i = 0; i < GameState.CurrentPlayer.EquippedItems.Count; i++)
+        {
+            if (GameState.CurrentPlayer.EquippedItems[i].isWeapon)
+            {
+                InventoryItem II = GameState.CurrentPlayer.EquippedItems[i];
+                EquippedItemTypeImage.sprite = II.ItemUiImage;
+                EquippedItemImage.sprite = II.itemImage;
+                EquippedItemImageCanvas.alpha = 1;
+                EquippedItemName.text = II.name;
+                switch (SelectedItem.InitialEffect)
+                {
+                    case InitialEffect.AddArmour:
+                        EquippedInitialItemValue.text = "Armour: " + II.InitialEffectAmount;
+                        break;
+                    case InitialEffect.AddDamage:
+                        EquippedInitialItemValue.text = "Attack: " + II.InitialEffectAmount;
+                        break;
+                }
+                EquippedAE.ReadAdditionalEffectsFromItem(II);
+            }
+        }
+    }
+    public void ReadHelmetInSlot()
+    {
+        ReadItemInSlot(ArmourItems.Helmet);
+    }
+    public void ReadChestInSlot()
+    {
+        ReadItemInSlot(ArmourItems.Chest);
+    }
+    public void ReadArmsInSlot()
+    {
+        ReadItemInSlot(ArmourItems.Arms);
+    }
+    public void ReadBootsInSlot()
+    {
+        ReadItemInSlot(ArmourItems.Boots);
+    }
+    public void ReadWeaponInSlot()
+    {
+        ReadItemInSlot();
+    }
+
     public void EquipItem()
     {
         for (int i = 0; i < GameState.CurrentPlayer.EquippedItems.Count; i++)

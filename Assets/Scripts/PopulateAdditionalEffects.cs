@@ -17,10 +17,12 @@ public class PopulateAdditionalEffects : MonoBehaviour
     {
         if (Item.AdditionalItemEffects.Length <= 0)
             return;
+
         foreach (Transform child in transform)
         {
             GameObject.Destroy(child.gameObject);
         }
+
         for (int i = 0; i < Item.AdditionalItemEffects.Length; i++)
         {
             TMP_Text text = Instantiate(AdditionalEffectsTextPrefab, Vector3.zero, Quaternion.identity);
