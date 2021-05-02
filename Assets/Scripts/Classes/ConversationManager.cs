@@ -1,6 +1,9 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class ConversationManager : Singleton<ConversationManager>
 {
     //
@@ -19,7 +22,7 @@ public class ConversationManager : Singleton<ConversationManager>
     public Text textHolder;//the text holder
     public CanvasGroup choicesCanvas;
     public ChoiceManager choiceManager;
-
+    public List<GameObject> EnemiesToFight = new List<GameObject>();
 
 
     public void StartConversation(Conversation conversation)
@@ -92,6 +95,13 @@ public class ConversationManager : Singleton<ConversationManager>
             talking = false;
             choice = false;
             wait = false;
+            if(EnemiesToFight.Count > 0)
+            {
+                GameState.EnemyPrefabsForBattle = EnemiesToFight.ToArray();
+
+                EnemiesToFight.Clear();
+                SceneManager.LoadScene("TownBattle");
+            }
         }
     }
 

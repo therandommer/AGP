@@ -78,7 +78,6 @@ public class ReadEuippedItems : MonoBehaviour
                         HelmetInitalEffect.text = "Armour: " + IV.InitialEffectAmount.ToString();
                         for (int j = 0; j < IV.AdditionalItemEffects.Length; j++)
                         {
-                            Debug.Log("Writing " + IV.AdditionalItemEffects[j].itemEffect);
                             switch (IV.AdditionalItemEffects[j].itemEffect)
                             {
                                 case Effect.BuffHealth:

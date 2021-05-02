@@ -4125,6 +4125,11 @@ PrefabInstance:
       propertyPath: startingPosition.y
       value: 8.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3553854194386694821, guid: 105fa87b53cfc0c4f98d30a735855ee9,
+        type: 3}
+      propertyPath: m_TagString
+      value: SouthBoss
+      objectReference: {fileID: 0}
     - target: {fileID: 3553854194386694822, guid: 105fa87b53cfc0c4f98d30a735855ee9,
         type: 3}
       propertyPath: m_LocalPosition.x

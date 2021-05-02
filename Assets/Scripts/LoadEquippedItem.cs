@@ -28,11 +28,6 @@ public class LoadEquippedItem : MonoBehaviour
     [Header("Stat Difference Manager")]
     public StatsDifferenceManager statsDifference;
 
-    void Start()
-    {
-        WipeUiInfo();
-    }
-
     void HideCanvas()
     {
         ItemImageCanvas.alpha = 0;
