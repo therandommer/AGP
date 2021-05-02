@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46ff2fa9a75d16c4cb735406cf4b0eea, type: 3}
-  m_Name: New InventoryItem
+  m_Name: Bandage
   m_EditorClassIdentifier: 
   ItemLevel: 0
   isArmour: 0
   armourItem: 0
   isWeapon: 0
   weaponItem: 0
+  isHeal: 0
+  healType: 0
   rarity: 0
   itemImage: {fileID: 0}
   itemName: 
