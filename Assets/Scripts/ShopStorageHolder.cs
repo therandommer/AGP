@@ -5,11 +5,10 @@ using System.Linq;
 
 public class ShopStorageHolder : MonoBehaviour
 {
-    public int NumItemsToGenerate;
     int ArmourItemsToMake = 12;
     int WeaponItemsToMake = 15;
     public ItemGenerator ItemGen;
-    public LoadEquippedItem Load;
+    //public LoadEquippedItem Load;
 
     public InventoryItem ItemTemplate;
     public List<InventoryItem> ItemsToShow = new List<InventoryItem>();
@@ -23,6 +22,14 @@ public class ShopStorageHolder : MonoBehaviour
     public List<InventoryItem> SouthernShopInventoryList = new List<InventoryItem>();
 
     public List<InventoryItem> WesternShopInventoryList = new List<InventoryItem>();
+
+    public void GenerateAllShopsInv()
+    {
+        GernerateShopInv(NorthernShopInventoryList);
+        GernerateShopInv(EasternShopInventoryList);
+        GernerateShopInv(SouthernShopInventoryList);
+        GernerateShopInv(WesternShopInventoryList);
+    }
 
     public void GernerateShopInv(List<InventoryItem> ShopInventoryList)
     {

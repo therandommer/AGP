@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class MessagingClientReceiver : MonoBehaviour
 {
     Conversation conversation;
+    [Header("Use this if you want a fight after a convo")]
+    public List<GameObject> EnemiesToFight = new List<GameObject>();
 
     void Start()
     {
@@ -26,11 +30,13 @@ public class MessagingClientReceiver : MonoBehaviour
                         Debug.Log("Found Convo without skip");
                         conversation = dialog.Conversations[i];
                         ConversationManager.Instance.StartConversation(conversation);
+                        ConversationManager.Instance.EnemiesToFight = EnemiesToFight;
                     }
                 }
             }
         }
     }
+
     void OnDestroy()
     {
         if (MessagingManager.Instance != null)

@@ -144,6 +144,7 @@ public class GameState : MonoBehaviour
             PlayerController = Player.GetComponent<PlayerController>();
             CurrentPlayer = Player.GetComponent<PlayerController>();
             PlayerSpawned = true;
+            ShopStorage.GenerateAllShopsInv();
         }
     }
 

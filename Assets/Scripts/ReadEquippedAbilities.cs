@@ -52,7 +52,6 @@ public class ReadEquippedAbilities : MonoBehaviour
             {
                 UiReferences CurrentButton = EquipedAbilitiesButtons[i].GetComponent<UiReferences>();
 
-                Debug.Log("Reading " + Profile.StartingSkills[i].name);
                 CurrentButton.AttackTitle.text = Profile.StartingSkills[i].name;
                 CurrentButton.AttackType.text = Profile.StartingSkills[i].AbilityType.ToString();
                 CurrentButton.DamageNumber.text = "DMG: " + Profile.StartingSkills[i].AbilityAmount.ToString();

@@ -21,6 +21,9 @@ TagManager:
   - EastTown
   - WestOasis
   - WestTown
+  - NorthBoss
+  - EastBoss
+  - SouthBoss
   layers:
   - Default
   - TransparentFX
