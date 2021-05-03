@@ -1824,6 +1824,7 @@ MonoBehaviour:
   Profile: {fileID: 11400000, guid: 09dab5ab4cbcd874bb522b9b83ffd8b9, type: 2}
   Name: {fileID: 342531906}
   Level: {fileID: 219448819}
+  Experience: {fileID: 0}
   Health: {fileID: 398702972}
   Strength: {fileID: 1837424500}
   Magic: {fileID: 306606519}
@@ -4018,6 +4019,7 @@ MonoBehaviour:
   Profile: {fileID: 11400000, guid: 2388b1abf475dfa4eac0895e2f181a6d, type: 2}
   Name: {fileID: 535272267}
   Level: {fileID: 1289696066}
+  Experience: {fileID: 0}
   Health: {fileID: 768167184}
   Strength: {fileID: 841123737}
   Magic: {fileID: 301286206}
@@ -7449,6 +7451,7 @@ GameObject:
   - component: {fileID: 1555612268}
   - component: {fileID: 1555612267}
   - component: {fileID: 1555612266}
+  - component: {fileID: 1555612269}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -7518,7 +7521,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1555612267}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1555612269}
+        m_MethodName: QuitApp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1555612267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7556,6 +7570,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555612264}
   m_CullTransparentMesh: 0
+--- !u!114 &1555612269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555612264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8096793d9ed4e4fbfd00b17a268013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1573043274
 GameObject:
   m_ObjectHideFlags: 0
@@ -8198,6 +8224,7 @@ MonoBehaviour:
   Profile: {fileID: 11400000, guid: 5c73ca11ebe3e084eb7060c7337e2ad9, type: 2}
   Name: {fileID: 1854897565}
   Level: {fileID: 1263482167}
+  Experience: {fileID: 0}
   Health: {fileID: 541656859}
   Strength: {fileID: 1445492048}
   Magic: {fileID: 1414045566}
@@ -13166,6 +13193,7 @@ MonoBehaviour:
   Profile: {fileID: 11400000, guid: ec8da291a58a0dd49bdede9d79236f7e, type: 2}
   Name: {fileID: 2136191851}
   Level: {fileID: 3817928756838420493}
+  Experience: {fileID: 0}
   Health: {fileID: 3817928756915523301}
   Strength: {fileID: 3817928755758183178}
   Magic: {fileID: 3817928756600569486}
@@ -13783,6 +13811,7 @@ MonoBehaviour:
   Profile: {fileID: 11400000, guid: ec8da291a58a0dd49bdede9d79236f7e, type: 2}
   Name: {fileID: 699836936}
   Level: {fileID: 2011932847}
+  Experience: {fileID: 0}
   Health: {fileID: 4004429720491058238}
   Strength: {fileID: 4004429719467923921}
   Magic: {fileID: 4004429721377756245}

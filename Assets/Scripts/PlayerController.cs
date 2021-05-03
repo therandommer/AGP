@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [Header("Is the character attacking")]
     public bool Attacking = false;
 
+    public bool Invincible = false;
+
     [Header("Profile Details")]
     public List<InventoryItem> Inventory = new List<InventoryItem>();
 

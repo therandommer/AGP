@@ -149,7 +149,12 @@ public class GameState : MonoBehaviour
             ShopStorage.GenerateAllShopsInv();
         }
     }
-
+    public static void ClearParty()
+    {
+        playerParty.Clear();
+        playerParty.Add(PlayerObject);
+        PlayersToSpawn = playerParty.ToArray();
+    }
     public static void AddToParty(GameObject PlayerToAdd)
     {
         GameObject Player = Instantiate(PlayerToAdd, Vector3.zero, Quaternion.identity);
