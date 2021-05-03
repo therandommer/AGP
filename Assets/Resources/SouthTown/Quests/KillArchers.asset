@@ -15,6 +15,8 @@ MonoBehaviour:
   Status: 0
   QuestName: Kill Archers
   questType: 0
+  QuestUISprite: {fileID: 234302937187606189, guid: cefdeb2a13a844d4fba7043b90c76b84,
+    type: 3}
   questAmountNeeded: 5
   actualAmount: 0
   EnemyToKill: 0

@@ -287,9 +287,7 @@ public class ChoiceManager : MonoBehaviour
             ShowMessage.Instance.StartCouroutineForMessage("Gained Item!", Choice1Item.name,
                                    Choice1Item.itemImage, 2f);
         }
-        ConversationManager.Instance.talking = false;
-        ConversationManager.Instance.wait = false;
-        ConversationManager.Instance.choice = false;
+
         if (Choice1Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -297,7 +295,12 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice1Convo);
         }
-        ResetChoices();
+        else
+        {
+            ConversationManager.Instance.talking = false;
+            ConversationManager.Instance.wait = false;
+            ConversationManager.Instance.choice = false;
+        }
     }
     public void Choice2Diagloge()
     {
@@ -345,9 +348,6 @@ public class ChoiceManager : MonoBehaviour
             ShowMessage.Instance.StartCouroutineForMessage("Gained Item!", Choice2Item.name,
                        Choice2Item.itemImage, 2f);
         }
-        ConversationManager.Instance.talking = false;
-        ConversationManager.Instance.wait = false;
-        ConversationManager.Instance.choice = false;
         if (Choice2Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -355,7 +355,12 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice2Convo);
         }
-        ResetChoices();
+        else
+        {
+            ConversationManager.Instance.talking = false;
+            ConversationManager.Instance.wait = false;
+            ConversationManager.Instance.choice = false;
+        }
     }
     public void Choice3Diagloge()
     {
@@ -403,9 +408,6 @@ public class ChoiceManager : MonoBehaviour
             ShowMessage.Instance.StartCouroutineForMessage("Gained Item!", Choice3Item.name,
            Choice3Item.itemImage, 2f);
         }
-        ConversationManager.Instance.talking = false;
-        ConversationManager.Instance.wait = false;
-        ConversationManager.Instance.choice = false;
         if (Choice3Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -413,7 +415,12 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice3Convo);
         }
-        ResetChoices();
+        else
+        {
+            ConversationManager.Instance.talking = false;
+            ConversationManager.Instance.wait = false;
+            ConversationManager.Instance.choice = false;
+        }
     }
     public void Choice4Diagloge()
     {
@@ -461,9 +468,6 @@ public class ChoiceManager : MonoBehaviour
             ShowMessage.Instance.StartCouroutineForMessage("Gained Item!", Choice4Item.name,
             Choice4Item.itemImage, 2f);
         }
-        ConversationManager.Instance.talking = false;
-        ConversationManager.Instance.wait = false;
-        ConversationManager.Instance.choice = false;
         if (Choice4Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -471,7 +475,12 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice4Convo);
         }
-        ResetChoices();
+        else
+        {
+            ConversationManager.Instance.talking = false;
+            ConversationManager.Instance.wait = false;
+            ConversationManager.Instance.choice = false;
+        }
     }
 
     public void ResetChoices()

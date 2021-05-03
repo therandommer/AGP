@@ -37,7 +37,7 @@ public class ConversationManager : Singleton<ConversationManager>
         if (!talking)
         {
             talking = true;
-            Debug.Log("Starting " + conversation.name + " " + talking);
+
 
             StartCoroutine(DisplayConversation(conversation));
             if(conversation.Repeatable == false)
@@ -52,7 +52,6 @@ public class ConversationManager : Singleton<ConversationManager>
         //foreach (var conversationLine in conversation.ConversationLines)
         for (int i = 0; i < conversation.ConversationLines.Length; i++)
         {
-            Debug.Log("showing line " + i + " of " + conversation.name);
             currentConversationLine = conversation.ConversationLines[i];
 
             textHolder.text = currentConversationLine.ConversationText;
@@ -90,8 +89,9 @@ public class ConversationManager : Singleton<ConversationManager>
             }
 
         }
-        if (talking)
+        if (talking && choiceManager.Choice1Convo == null && choiceManager.Choice2Convo == null && choiceManager.Choice3Convo == null && choiceManager.Choice4Convo == null)
         {
+            Debug.Log(conversation.name + " has finished it's loop");
             talking = false;
             choice = false;
             wait = false;
@@ -103,6 +103,7 @@ public class ConversationManager : Singleton<ConversationManager>
                 SceneManager.LoadScene("TownBattle");
             }
         }
+        choiceManager.ResetChoices();
     }
 
     void OnGUI()
