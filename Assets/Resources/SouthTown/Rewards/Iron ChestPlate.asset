@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ff2fa9a75d16c4cb735406cf4b0eea, type: 3}
+  m_Name: Iron ChestPlate
+  m_EditorClassIdentifier: 
+  ItemLevel: 3
+  isArmour: 1
+  armourItem: 3
+  isWeapon: 0
+  weaponItem: 0
+  isHeal: 0
+  healType: 0
+  rarity: 1
+  itemImage: {fileID: 21300000, guid: abbaacd5c395b904dbabe8152d7a4be6, type: 3}
+  itemName: 
+  shopCost: 0
+  InitialEffect: 0
+  InitialEffectAmount: 5
+  AdditionalItemEffects:
+  - itemEffect: 3
+    EffectAmount: 2
+    AbilityImmunity: 0
+  ItemUiImage: {fileID: 0}

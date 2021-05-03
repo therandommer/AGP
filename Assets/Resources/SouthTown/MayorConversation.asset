@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
+  m_Name: MayorConversation
+  m_EditorClassIdentifier: 
+  Repeatable: 1
+  Skip: 0
+  ConversationLines:
+  - SpeakingCharacterName: Mayor
+    ConversationText: Greetings traveller, welcome to our humble town. How can I
+      help you?
+    DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    DecisionToBeMade: 1
+    Decision1: 1
+    Decision1Text: Rumours
+    Decision1Repeatable: 1
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 11400000, guid: d260a49fb3f11ce4f9e30805a63f41ca, type: 2}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 1
+    Decision2Text: Who are you?
+    Decision2Repeatable: 1
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 11400000, guid: 806359177b3326142848c1676ae693e2, type: 2}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 1
+    Decision3Text: Where are we?
+    Decision3Repeatable: 1
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 11400000, guid: f8701068d3674b04fa87ed0f9eea0c54, type: 2}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 1
+    Decision4Text: Can I have some gear?
+    Decision4Repeatable: 0
+    Decision4Pending: 1
+    Decision4Convo: {fileID: 11400000, guid: 50a05a9b071046b40bdf39ce5b3c6337, type: 2}
+    Quest4ToGive: {fileID: 11400000, guid: f75cd9bc305d1904198dff834e381d6f, type: 2}
+    Quest4PendingConvo: {fileID: 11400000, guid: 880c370a0108ad34cb235982f5e6f913,
+      type: 2}
+    Quest4CompleteConvo: {fileID: 11400000, guid: 0aba165e473b2664aa54d726a069bbea,
+      type: 2}
+    Quest4PendingButtonText: Where is the blacksmith?
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}

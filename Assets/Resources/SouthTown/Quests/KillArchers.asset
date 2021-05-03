@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58472016962655f48b07b203fac70cb0, type: 3}
+  m_Name: KillArchers
+  m_EditorClassIdentifier: 
+  Status: 0
+  QuestName: Kill Archers
+  questType: 0
+  questAmountNeeded: 5
+  actualAmount: 0
+  EnemyToKill: 0
+  ItemNeeded: {fileID: 0}
+  NpcToTalkTo: 
+  Target: {fileID: 11400000, guid: c1884749bfcb7fd47936de4ea9264932, type: 2}
+  TargetSprite: {fileID: 21300000, guid: 9fabec2ee38771b4d8ea4adca009a594, type: 3}
+  ExperienceReward: 40
+  QuestDescription: 'The Blacksmith has encouraged you to brave the woods to the
+    east and slay the archers running rampant there.
+
+    -Kill Archers in the zone:
+    South Forest'
+  Reward:
+  - questReward: 0
+    RewardAmount: 50
+    RewardItem: {fileID: 0}
+    RewardAbility: {fileID: 0}
+  - questReward: 2
+    RewardAmount: 0
+    RewardItem: {fileID: 11400000, guid: 6dfed9213888e3e46b970e10b31b2c35, type: 2}
+    RewardAbility: {fileID: 0}

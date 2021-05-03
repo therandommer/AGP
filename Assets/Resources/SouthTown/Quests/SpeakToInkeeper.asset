@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58472016962655f48b07b203fac70cb0, type: 3}
+  m_Name: SpeakToInkeeper
+  m_EditorClassIdentifier: 
+  Status: 0
+  QuestName: Talk to the Innkeeper
+  questType: 2
+  questAmountNeeded: 0
+  actualAmount: 0
+  EnemyToKill: 0
+  ItemNeeded: {fileID: 0}
+  NpcToTalkTo: Innkeeper
+  Target: {fileID: 0}
+  TargetSprite: {fileID: 0}
+  ExperienceReward: 5
+  QuestDescription: 'The mayor warned you of the dangers that lurk in the dark and
+    advised you sleep off the nights.
+
+    -Speak to the Innkeeper'
+  Reward:
+  - questReward: 0
+    RewardAmount: 10
+    RewardItem: {fileID: 0}
+    RewardAbility: {fileID: 0}
