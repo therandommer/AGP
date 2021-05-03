@@ -267,6 +267,12 @@ public class GameState : MonoBehaviour
         SetLastScenePosition("SouthForest", new Vector3(5, -29, 0));
         SetLastScenePosition("WestOasis", new Vector3(-22, 7, 0));
 
+
+        SetLastScenePosition("NorthBoss", new Vector3(0, -3, 0));
+        SetLastScenePosition("EastBoss", new Vector3(-12, 3, 0));
+        SetLastScenePosition("SouthBoss", new Vector3(-1, -8, 0));
+        SetLastScenePosition("WestBoss", new Vector3(0, -2, 0));
+
         ///Setting up initial town zones, if the player starts there they spawn more centrally
         switch (GameState.CurrentPlayer.stats.PlayerProfile.Type)
         {
