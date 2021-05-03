@@ -166,7 +166,6 @@ public class BattleManager : MonoBehaviour
             ListOfEntities.Add(newEnemy);
 
             var controller = newEnemy.GetComponent<EnemyController>();
-            controller.stats.Speed = Random.Range(5, 10);
             newEnemy.name = controller.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
             controller.battleManager = this;
             newEnemy.transform.position = new Vector3(10, -1, 0);

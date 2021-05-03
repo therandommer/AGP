@@ -2243,6 +2243,12 @@ PrefabInstance:
       propertyPath: PlayerLocTest
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6218218275178927871, guid: 6eb64f876a4e1cc41a82ad91db98d8e6,
+        type: 3}
+      propertyPath: TestMap
+      value: 
+      objectReference: {fileID: 567658683687768293, guid: 91b86d093f19db54986d226888b1d812,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 649623377, guid: 6eb64f876a4e1cc41a82ad91db98d8e6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6eb64f876a4e1cc41a82ad91db98d8e6, type: 3}

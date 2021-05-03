@@ -14,6 +14,7 @@ public class GameState : MonoBehaviour
     public static PlayerController CurrentPlayer;
     public static GameObject PlayerObject;
     public static PlayerLocation PlayerLoc;
+    public GameObject TestMap;
     [Header("Debug lines that will be overset")]
     public PlayerLocation PlayerLocTest;
     public GameObject player;
@@ -71,7 +72,8 @@ public class GameState : MonoBehaviour
         SetUpGameState();
         if (BattleSceneTest)
         {
-            Instantiate(Storage.CheckTimeForBackground(Time.GetTimeOfDay()._Hours));
+            //Instantiate(Storage.CheckTimeForBackground(Time.GetTimeOfDay()._Hours));
+            Instantiate(TestMap);
         }
         DontDestroyOnLoad(gameObject);
     }
@@ -282,6 +284,7 @@ public class GameState : MonoBehaviour
                 SetLastScenePosition("SouthTown", new Vector3(2, -3, 0));
                 SetLastScenePosition("WestTown", new Vector3(30, 7, 0));
                 SetLastScenePosition("Overworld", new Vector3(-2, -4, 0));
+                PlayerLoc = PlayerLocation.South;
                 NavigationManager.NavigateTo("SouthTown");
                 break;
             case EntityType.Demon:
@@ -290,6 +293,7 @@ public class GameState : MonoBehaviour
                 SetLastScenePosition("SouthTown", new Vector3(17, -3, 0));
                 SetLastScenePosition("WestTown", new Vector3(30, 7, 0));
                 SetLastScenePosition("Overworld", new Vector3(30, 7, 0));
+                PlayerLoc = PlayerLocation.North;
                 NavigationManager.NavigateTo("NorthTown");
                 break;
             case EntityType.Human:
@@ -298,6 +302,7 @@ public class GameState : MonoBehaviour
                 SetLastScenePosition("SouthTown", new Vector3(17, -3, 0));
                 SetLastScenePosition("WestTown", new Vector3(12, 8, 0));
                 SetLastScenePosition("Overworld", new Vector3(-18, 14, 0));
+                PlayerLoc = PlayerLocation.West;
                 NavigationManager.NavigateTo("WestTown");
                 break;
             case EntityType.Mage:
@@ -306,6 +311,7 @@ public class GameState : MonoBehaviour
                 SetLastScenePosition("SouthTown", new Vector3(17, -3, 0));
                 SetLastScenePosition("WestTown", new Vector3(30, 7, 0));
                 SetLastScenePosition("Overworld", new Vector3(27, 15, 0));
+                PlayerLoc = PlayerLocation.East;
                 NavigationManager.NavigateTo("EastTown");
                 break;
         }
