@@ -1,0 +1,809 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
+  m_Name: WizardConversationExplainElements
+  m_EditorClassIdentifier: 
+  Repeatable: 1
+  Skip: 0
+  ConversationLines:
+  - SpeakingCharacterName: Wizard
+    ConversationText: Ah you want to know about the elements of this world?
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: The first elemental trinity I will talk about is the one of
+      basic elements.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: 'This elemental circle involves the elements: Fire, Water and
+      Lightning.'
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: These elements have strengths and weaknesses with each other.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: Water is strong as Fire, Fire is strong against Lightning and
+      Lightning is strong against Water.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: If you attack an enemy with a type that is strong against your
+      attack, you will deal reduced damage.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: So bare this in mind when fighting your foes.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: There is another trinity, but one of the blades.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: Normal is strong against Blunt, Blunt is strong against Slashing
+      and Slashing is strong againt Normal.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: Like the other trinity if you go the opposite way to this stated
+      direction, you'll deal less damage.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: There is one more elemental reaction that breaks the rules
+      of the other trinities.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: Holy and Dark attacks are strong against each other.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: Each trinity cannot interact with another trinity, so you will
+      just deal normal damage.
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+  - SpeakingCharacterName: Wizard
+    ConversationText: Hopefully that explains things. Do you have more questions?
+    DisplayPic: {fileID: 21300000, guid: ac7fab1102abd39498ca914097258b87, type: 3}
+    DecisionToBeMade: 1
+    Decision1: 1
+    Decision1Text: Yes, I have more questions.
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 11400000, guid: bb21abcdc922c9444a9ab93842ee0500, type: 2}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 1
+    Decision2Text: No thanks, farewell!
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
