@@ -284,14 +284,15 @@ public class ChoiceManager : MonoBehaviour
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
         ConversationManager.Instance.choice = false;
-        ResetChoices();
         if (Choice1Convo != null)
         {
+            Debug.Log("Should start anouther convo");
             ConversationManager.Instance.talking = false;
             ConversationManager.Instance.wait = false;
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice1Convo);
         }
+        ResetChoices();
     }
     public void Choice2Diagloge()
     {
@@ -336,7 +337,6 @@ public class ChoiceManager : MonoBehaviour
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
         ConversationManager.Instance.choice = false;
-        ResetChoices();
         if (Choice2Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -344,6 +344,7 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice2Convo);
         }
+        ResetChoices();
     }
     public void Choice3Diagloge()
     {
@@ -388,7 +389,6 @@ public class ChoiceManager : MonoBehaviour
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
         ConversationManager.Instance.choice = false;
-        ResetChoices();
         if (Choice3Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -396,6 +396,7 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice3Convo);
         }
+        ResetChoices();
     }
     public void Choice4Diagloge()
     {
@@ -440,7 +441,6 @@ public class ChoiceManager : MonoBehaviour
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
         ConversationManager.Instance.choice = false;
-        ResetChoices();
         if (Choice4Convo != null)
         {
             ConversationManager.Instance.talking = false;
@@ -448,6 +448,7 @@ public class ChoiceManager : MonoBehaviour
             ConversationManager.Instance.choice = false;
             ConversationManager.Instance.StartConversation(Choice4Convo);
         }
+        ResetChoices();
     }
 
     public void ResetChoices()
