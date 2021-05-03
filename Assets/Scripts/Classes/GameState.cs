@@ -64,7 +64,7 @@ public class GameState : MonoBehaviour
         Time = TimeSetter;
         PlayersToSpawn = playerParty.ToArray();
         PlayerParty = playerParty;
-
+        NumberofBossesNeededToFightFinalBoss = 4;
         PlayerObject = player;
         PlayerController = PlayerObject.GetComponent<PlayerController>();
         CurrentPlayer = PlayerObject.GetComponent<PlayerController>();

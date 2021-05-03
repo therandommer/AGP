@@ -15,6 +15,8 @@ public class FollowCamera : MonoBehaviour
     public float MinYCamera;
     public float MaxYCamera;
 
+    public float Zoom = -10;
+
     // Reference to the player's transform. 
     GameObject player;
 
@@ -23,12 +25,15 @@ public class FollowCamera : MonoBehaviour
         if(player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
-            Debug.Log("Moving Camera to " + new Vector3(player.transform.position.x, player.transform.position.y, -10));
+
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, Zoom);
+
         }
+        Zoom += Input.mouseScrollDelta.y * 0.1f;
+
         this.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x + xOffset, MinXCamera, MaxXCamera), 
                                               Mathf.Clamp(player.transform.position.y + yOffset, MinYCamera, MaxYCamera), 
-                                              transform.position.z);
+                                              Zoom);
     }
 
 }

@@ -52,7 +52,7 @@ public class ConversationManager : Singleton<ConversationManager>
         //foreach (var conversationLine in conversation.ConversationLines)
         for (int i = 0; i < conversation.ConversationLines.Length; i++)
         {
-            Debug.Log("showing line " + i);
+            Debug.Log("showing line " + i + " of " + conversation.name);
             currentConversationLine = conversation.ConversationLines[i];
 
             textHolder.text = currentConversationLine.ConversationText;

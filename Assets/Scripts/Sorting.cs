@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Sorting : MonoBehaviour
 {
@@ -8,6 +6,11 @@ public class Sorting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         if (transform.position.y >= player.transform.position.y)
         {
             //Debug.Log("behind player");

@@ -10,12 +10,12 @@ public class MessagingClientReceiver : MonoBehaviour
 
     void Start()
     {
-        MessagingManager.Instance.Subscribe(StartConvo);
+        //MessagingManager.Instance.Subscribe(StartConvo);
     }
 
-    void StartConvo()
+    public void StartConvo()
     {
-        Debug.Log("starting convo");
+        Debug.Log(gameObject.name + " is trying to start a convo starting convo");
         var dialog = GetComponent<ConversationComponent>();
         if (dialog != null)
         {

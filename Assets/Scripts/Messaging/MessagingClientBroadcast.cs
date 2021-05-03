@@ -7,6 +7,9 @@ public class MessagingClientBroadcast : MonoBehaviour {
         MessagingManager.Instance.Broadcast();
     }
     */
+
+    public MessagingClientReceiver MCR;
+
     void OnTriggerEnter2D(Collider2D col)
     {
         foreach(Quest quest in GameState.CurrentPlayer.QuestLog)
@@ -19,7 +22,11 @@ public class MessagingClientBroadcast : MonoBehaviour {
                 }
             }
         }
+        MessagingManager.Instance.Subscribe(MCR.StartConvo);
 
         MessagingManager.Instance.Broadcast();
+
+        MessagingManager.Instance.UnSubscribe(MCR.StartConvo);
+
     }
 }

@@ -11985,52 +11985,67 @@ PrefabInstance:
     - target: {fileID: 8729927789332102663, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8729927789332102663, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8729927789332102663, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8729927789332102663, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8729927789332102663, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8729927789440221954, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8729927789440221954, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8729927789440221954, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8729927789440221954, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8729927789440221954, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729927789440221954, guid: ec0eee775bb22754eb2be9deeec4e1cb,
+        type: 3}
+      propertyPath: m_text
+      value: Go find Your Brother!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729927789440221954, guid: ec0eee775bb22754eb2be9deeec4e1cb,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 41.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729927789440221954, guid: ec0eee775bb22754eb2be9deeec4e1cb,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8729927790031799962, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
@@ -12145,7 +12160,7 @@ PrefabInstance:
     - target: {fileID: 8729927790031799963, guid: ec0eee775bb22754eb2be9deeec4e1cb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec0eee775bb22754eb2be9deeec4e1cb, type: 3}
