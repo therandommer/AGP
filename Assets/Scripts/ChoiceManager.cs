@@ -271,22 +271,27 @@ public class ChoiceManager : MonoBehaviour
         if (Choice1Character != null)
         {
             GameState.AddToParty(Choice1Character);
+            ShowMessage.Instance.StartCouroutineForMessage("New Character", Choice1Character.GetComponent<PlayerController>().stats.PlayerProfile.Name + " has joined the party", 
+                                                           Choice1Character.GetComponent<SpriteRenderer>().sprite, 2f);
         }
         if (Choice1Quest != null)
         {
             CurrentConversationLine.Decision1Pending = true;
             GameState.CurrentPlayer.QuestLog.Add(Choice1Quest);
+            ShowMessage.Instance.StartCouroutineForMessage("Gained Quest!", Choice1Quest.QuestName,
+                                               Choice1Quest.QuestUISprite, 2f);
         }
         if (Choice1Item != null)
         {
             GameState.CurrentPlayer.Inventory.Add(Choice1Item);
+            ShowMessage.Instance.StartCouroutineForMessage("Gained Item!", Choice1Item.name,
+                                   Choice1Item.itemImage, 2f);
         }
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
         ConversationManager.Instance.choice = false;
         if (Choice1Convo != null)
         {
-            Debug.Log("Should start anouther convo");
             ConversationManager.Instance.talking = false;
             ConversationManager.Instance.wait = false;
             ConversationManager.Instance.choice = false;
@@ -325,14 +330,20 @@ public class ChoiceManager : MonoBehaviour
         if (Choice2Character != null)
         {
             GameState.AddToParty(Choice2Character);
+            ShowMessage.Instance.StartCouroutineForMessage("New Character", Choice2Character.GetComponent<PlayerController>().stats.PlayerProfile.Name + " has joined the party",
+                                               Choice2Character.GetComponent<SpriteRenderer>().sprite, 2f);
         }
         if (Choice2Quest != null)
         {
             GameState.CurrentPlayer.QuestLog.Add(Choice2Quest);
+            ShowMessage.Instance.StartCouroutineForMessage("Gained Quest!", Choice2Quest.QuestName,
+                                   Choice2Quest.QuestUISprite, 2f);
         }
         if (Choice2Item != null)
         {
             GameState.CurrentPlayer.Inventory.Add(Choice2Item);
+            ShowMessage.Instance.StartCouroutineForMessage("Gained Item!", Choice2Item.name,
+                       Choice2Item.itemImage, 2f);
         }
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
@@ -377,14 +388,20 @@ public class ChoiceManager : MonoBehaviour
         if (Choice3Character != null)
         {
             GameState.AddToParty(Choice3Character);
+            ShowMessage.Instance.StartCouroutineForMessage("New Character", Choice3Character.GetComponent<PlayerController>().stats.PlayerProfile.Name + " has joined the party",
+                                   Choice3Character.GetComponent<SpriteRenderer>().sprite, 2f);
         }
         if (Choice3Quest != null)
         {
             GameState.CurrentPlayer.QuestLog.Add(Choice3Quest);
+            ShowMessage.Instance.StartCouroutineForMessage("Gained Quest!", Choice3Quest.QuestName,
+                       Choice3Quest.QuestUISprite, 2f);
         }
         if (Choice3Item != null)
         {
             GameState.CurrentPlayer.Inventory.Add(Choice3Item);
+            ShowMessage.Instance.StartCouroutineForMessage("Gained Item!", Choice3Item.name,
+           Choice3Item.itemImage, 2f);
         }
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;
@@ -428,15 +445,21 @@ public class ChoiceManager : MonoBehaviour
         }
         if (Choice4Character != null)
         {
-            GameState.AddToParty(Choice1Character);
+            GameState.AddToParty(Choice4Character);
+            ShowMessage.Instance.StartCouroutineForMessage("New Character", Choice4Character.GetComponent<PlayerController>().stats.PlayerProfile.Name + " has joined the party",
+                       Choice4Character.GetComponent<SpriteRenderer>().sprite, 2f);
         }
         if (Choice4Quest != null)
         {
             GameState.CurrentPlayer.QuestLog.Add(Choice4Quest);
+            ShowMessage.Instance.StartCouroutineForMessage("Gained Quest!", Choice4Quest.QuestName,
+                                                            Choice4Quest.QuestUISprite, 2f);
         }
         if (Choice4Item != null)
         {
             GameState.CurrentPlayer.Inventory.Add(Choice4Item);
+            ShowMessage.Instance.StartCouroutineForMessage("Gained Item!", Choice4Item.name,
+            Choice4Item.itemImage, 2f);
         }
         ConversationManager.Instance.talking = false;
         ConversationManager.Instance.wait = false;

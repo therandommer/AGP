@@ -22,6 +22,7 @@ public class Quest : ScriptableObject , IComparable<Quest>
     public QuestStatus Status;
     public string QuestName;
     public QuestType questType;
+    public Sprite QuestUISprite;
 
     public int questAmountNeeded;
     public int actualAmount;
@@ -38,6 +39,58 @@ public class Quest : ScriptableObject , IComparable<Quest>
     public string QuestDescription;
 
     public QuestReward[] Reward;
+    int Exp;
+    public int ReturnAllExp()
+    {
+        Exp = 0;
+        for (int i = 0; i < Reward.Length; i++)
+        {
+            if(Reward[i].questReward == global::Reward.Exp)
+            {
+                Exp += Reward[i].RewardAmount;
+            }
+        }
+
+        return Exp;
+    }
+    int Money;
+    public int ReturnAllMoney()
+    {
+        Money = 0;
+        for (int i = 0; i < Reward.Length; i++)
+        {
+            if (Reward[i].questReward == global::Reward.Money)
+            {
+                Money += Reward[i].RewardAmount;
+            }
+        }
+
+        return Money;
+    }
+
+    public string ReturnNameOfItem()
+    {
+        for (int i = 0; i < Reward.Length; i++)
+        {
+            if (Reward[i].questReward == global::Reward.Item)
+            {
+                return Reward[i].RewardItem.itemName;
+            }
+        }
+        return "";
+    }
+
+    public string ReturnNameOfAbility()
+    {
+        for (int i = 0; i < Reward.Length; i++)
+        {
+            if (Reward[i].questReward == global::Reward.Ability)
+            {
+                return Reward[i].RewardAbility.name;
+            }
+        }
+        return "";
+    }
 
     public void Reset()
     {

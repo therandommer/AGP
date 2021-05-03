@@ -281,6 +281,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         QuestToComplete.Status = QuestStatus.Complete;
+        ShowMessage.Instance.StartCouroutineForMessage("Quest Complete! - " + QuestToComplete.QuestName, " +" + QuestToComplete.ReturnAllExp() + " Exp", QuestToComplete.QuestUISprite, 2f);
     }
 
 }
