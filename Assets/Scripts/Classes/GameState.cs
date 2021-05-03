@@ -186,6 +186,10 @@ public class GameState : MonoBehaviour
                     PlayerParty[i].transform.position = new Vector3(40,0,1);
                     PlayerParty[i].GetComponent<PlayerMovement>().CantMove = true;
 
+                    PlayerParty[i + 1].GetComponent<PlayerController>().Inventory = PlayerParty[i].GetComponent<PlayerController>().Inventory;
+                    PlayerParty[i + 1].GetComponent<PlayerController>().QuestLog = PlayerParty[i].GetComponent<PlayerController>().QuestLog;
+                    PlayerParty[i + 1].GetComponent<PlayerController>().Money = PlayerParty[i].GetComponent<PlayerController>().Money;
+
                     PlayerParty[i + 1].GetComponent<PlayerMovement>().CantMove = false;
                     PlayerObject = PlayerParty[i + 1];
                     CurrentPlayer = PlayerParty[i + 1].GetComponent<PlayerController>();
