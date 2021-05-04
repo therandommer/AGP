@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58472016962655f48b07b203fac70cb0, type: 3}
+  m_Name: KillBarbarian
+  m_EditorClassIdentifier: 
+  Status: 0
+  QuestName: Kill barbarians
+  questType: 0
+  QuestUISprite: {fileID: 21300000, guid: 48c28868515bf394f9798391fe6cda67, type: 3}
+  questAmountNeeded: 5
+  actualAmount: 0
+  EnemyToKill: 0
+  ItemNeeded: {fileID: 0}
+  NpcToTalkTo: 
+  Target: {fileID: 11400000, guid: b7ae92aae0ac460469a118777996ebf1, type: 2}
+  TargetSprite: {fileID: 0}
+  ExperienceReward: 50
+  QuestDescription: Kill 5 traitorous barbarians in the caves to the north
+  Reward:
+  - questReward: 0
+    RewardAmount: 50
+    RewardItem: {fileID: 0}
+    RewardAbility: {fileID: 0}
+  - questReward: 2
+    RewardAmount: 0
+    RewardItem: {fileID: 11400000, guid: 2156e408514bef14181114846e3dc61a, type: 2}
+    RewardAbility: {fileID: 0}
