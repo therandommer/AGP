@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
-  m_Name: BlacksmithConversation
+  m_Name: Blacksmith East Kill Explain
   m_EditorClassIdentifier: 
-  Repeatable: 1
+  Repeatable: 0
   Skip: 0
   ConversationLines:
   - SpeakingCharacterName: Blacksmith
-    ConversationText: Greetings traveller! How can I help you today?
-    DisplayPic: {fileID: 21300000, guid: d4d64419ed932da43b717ba1e0f9136c, type: 3}
+    ConversationText: I want you to kill 5 pesky mages in the swamps to the west.
+      They keep burning our igloos...
+    DisplayPic: {fileID: 21300000, guid: a30940bd23398bf49856cb0ec84edb53, type: 3}
     DecisionToBeMade: 1
     Decision1: 1
-    Decision1Text: What do you do?
-    Decision1Repeatable: 1
+    Decision1Text: Okay.
+    Decision1Repeatable: 0
     Decision1Pending: 0
     Decision1Convo: {fileID: 0}
-    Quest1ToGive: {fileID: 0}
+    Quest1ToGive: {fileID: 11400000, guid: 3793c2be9bacc0841a19e06512b41ff1, type: 2}
     Quest1PendingConvo: {fileID: 0}
     Quest1CompleteConvo: {fileID: 0}
     Quest1PendingButtonText: 
@@ -32,12 +33,12 @@ MonoBehaviour:
     Character1ToGive: {fileID: 0}
     TalkQuest1Confirm: {fileID: 0}
     FetchQuest1Confirm: {fileID: 0}
-    Decision2: 1
+    Decision2: 0
     Decision2Text: 
     Decision2Repeatable: 0
     Decision2Pending: 0
     Decision2Convo: {fileID: 0}
-    Quest2ToGive: {fileID: 11400000, guid: a0a8b4bb3ffffc0408a98c5928815d77, type: 2}
+    Quest2ToGive: {fileID: 0}
     Quest2PendingConvo: {fileID: 0}
     Quest2CompleteConvo: {fileID: 0}
     Quest2PendingButtonText: 
