@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Demon
   Age: 16
-  Type: 0
+  Type: 1
   Occupation: Protector
   level: 1
   health: 150
@@ -29,6 +29,7 @@ MonoBehaviour:
   Weapon: 
   Position: {x: 0, y: 0}
   PlayerImage: {fileID: 21300000, guid: bc1ca079af89ed4428e8bd889701ed88, type: 3}
+  Class: 0
   StartingInventory: []
   StartingEquipment: []
   StartingSkills:

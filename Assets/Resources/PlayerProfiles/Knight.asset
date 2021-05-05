@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Knight
   Age: 16
-  Type: 0
+  Type: 2
   Occupation: Protector
   level: 1
   health: 100
@@ -29,6 +29,7 @@ MonoBehaviour:
   Weapon: 
   Position: {x: 0, y: 0}
   PlayerImage: {fileID: 21300000, guid: bd12080f6b809ae44970a17ba23f8257, type: 3}
+  Class: 0
   StartingInventory: []
   StartingEquipment: []
   StartingSkills:

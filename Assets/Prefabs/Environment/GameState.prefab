@@ -280,8 +280,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c24c4aec22f614aa54aa8cd167c2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestMap: {fileID: 0}
   PlayerLocTest: 0
-  player: {fileID: 6275971143486845660, guid: 09fe918fd3774914d9cf3cc43a8e8e95, type: 3}
+  player: {fileID: 0}
   partymembertoSpawn: {fileID: 0}
   PlayerProfile: {fileID: 0}
   NumberofBossesNeededToFightFinalBossDebug: 0
@@ -311,6 +312,7 @@ MonoBehaviour:
   PlayerProfile: {fileID: 0}
   isEnemy: 0
   EnemyProfile: {fileID: 0}
+  Id: 0
 --- !u!114 &6063364470163521082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,9 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71062ff48d07ced4e898c63a93539aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumItemsToGenerate: 0
   ItemGen: {fileID: 4301226161013148060}
-  Load: {fileID: 0}
   ItemTemplate: {fileID: 11400000, guid: f867f44af85089742a8898d16f7b38df, type: 2}
   ItemsToShow: []
   NorthernShopInventoryList: []

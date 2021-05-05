@@ -6,6 +6,7 @@ public class ConversationEntry
     public string SpeakingCharacterName;
     public string ConversationText;
     public Sprite DisplayPic;
+    public Sprite MainDisplayPic;
 
     public bool DecisionToBeMade;
 
@@ -145,6 +146,8 @@ public class ConversationEntry
     [ConditionalHide("DecisionToBeMade", ConditionalSourceField2 = "Decision4")]
     public Quest FetchQuest4Confirm;
 
+    [Header("Leave blank unless you want to move to another scene")]
+    public string NextSceneName;
     public void Reset()
     {
         Decision1Pending = false;

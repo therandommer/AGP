@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ConversationManager : Singleton<ConversationManager>
 {
@@ -20,6 +20,7 @@ public class ConversationManager : Singleton<ConversationManager>
     public CanvasGroup dialogBox;//the Canvas Group for the dialog box
     public Image imageHolder;//the image holder
     public Text textHolder;//the text holder
+    public Image mainImageHolder;//the image holder
     public CanvasGroup choicesCanvas;
     public ChoiceManager choiceManager;
     public List<GameObject> EnemiesToFight = new List<GameObject>();
@@ -29,6 +30,7 @@ public class ConversationManager : Singleton<ConversationManager>
     {
         dialogBox = GameObject.Find("Dialog Box").GetComponent<CanvasGroup>();
         imageHolder = GameObject.Find("Speaker Image").GetComponent<Image>();
+        mainImageHolder = GameObject.Find("MainDisplayImage").GetComponent<Image>();
         textHolder = GameObject.Find("Dialog Text").GetComponent<Text>();
         choicesCanvas = GameObject.Find("Choices").GetComponent<CanvasGroup>();
         choiceManager = GameObject.Find("ChoiceManager").GetComponent<ChoiceManager>();
@@ -40,7 +42,7 @@ public class ConversationManager : Singleton<ConversationManager>
 
 
             StartCoroutine(DisplayConversation(conversation));
-            if(conversation.Repeatable == false)
+            if (conversation.Repeatable == false)
             {
                 conversation.Skip = true;
             }
@@ -56,7 +58,14 @@ public class ConversationManager : Singleton<ConversationManager>
 
             textHolder.text = currentConversationLine.ConversationText;
             imageHolder.sprite = currentConversationLine.DisplayPic;
-
+            if (currentConversationLine.MainDisplayPic == null)
+            {
+                mainImageHolder.GetComponent<CanvasGroup>().alpha = 0;
+            }
+            else
+            {
+                mainImageHolder.sprite = currentConversationLine.MainDisplayPic;
+            }
             if (currentConversationLine.DecisionToBeMade)
             {
                 //Change button text
@@ -81,7 +90,23 @@ public class ConversationManager : Singleton<ConversationManager>
                     if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         Debug.Log("Clicked");
+                        if (currentConversationLine.NextSceneName != null)
+                        {
+                            var lastPosition = GameState.GetLastScenePosition(currentConversationLine.NextSceneName);
 
+                            Debug.Log("Last know pos for " + this.tag + " is " + lastPosition);
+
+                            if (lastPosition != Vector3.zero)
+                            {
+                                GameState.CurrentPlayer.gameObject.transform.position = lastPosition;
+                            }
+                            else
+                            {
+                                Debug.Log("Set pos to 0");
+                                GameState.CurrentPlayer.gameObject.transform.position = Vector3.zero;
+                            }
+                            NavigationManager.NavigateTo(currentConversationLine.NextSceneName);
+                        }
                         done = true;
                     }
                     yield return null;
@@ -95,7 +120,7 @@ public class ConversationManager : Singleton<ConversationManager>
             talking = false;
             choice = false;
             wait = false;
-            if(EnemiesToFight.Count > 0)
+            if (EnemiesToFight.Count > 0)
             {
                 GameState.EnemyPrefabsForBattle = EnemiesToFight.ToArray();
 

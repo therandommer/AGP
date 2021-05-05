@@ -940,6 +940,7 @@ MonoBehaviour:
   PlayerProfile: {fileID: 0}
   isEnemy: 1
   EnemyProfile: {fileID: 11400000, guid: c1884749bfcb7fd47936de4ea9264932, type: 2}
+  Id: 0
 --- !u!114 &4354988330869913322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,6 +955,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderObject: {fileID: 3729130180540435648}
   sliderLerpTime: 0.5
+  ExpSprite: {fileID: -5936835998644394925, guid: cefdeb2a13a844d4fba7043b90c76b84,
+    type: 3}
   battleManager: {fileID: 0}
   EnemyProfile: {fileID: 11400000, guid: c1884749bfcb7fd47936de4ea9264932, type: 2}
   selectionCircle: {fileID: 0}

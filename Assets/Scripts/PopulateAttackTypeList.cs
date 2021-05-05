@@ -86,7 +86,9 @@ public class PopulateAttackTypeList : MonoBehaviour
             for (int i = 0; i < Profile.StrongWith.Count; i++)
             {
                 GameObject attackTypePrefab = Instantiate(AttackTypePrefab, Vector3.zero, Quaternion.identity);
-                attackTypePrefab.transform.parent = transform;
+
+                attackTypePrefab.transform.SetParent(transform);
+
                 UiReferences ButtonUI = attackTypePrefab.GetComponent<UiReferences>();
                 if (StrongWith)
                 {

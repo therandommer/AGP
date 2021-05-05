@@ -273,6 +273,7 @@ MonoBehaviour:
   PlayerProfile: {fileID: 0}
   isEnemy: 1
   EnemyProfile: {fileID: 11400000, guid: fc2d249411621b44bbb2cb08105ce06d, type: 2}
+  Id: 0
 --- !u!114 &6150546458723603562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,16 +288,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderObject: {fileID: 6551523179652984384}
   sliderLerpTime: 0.5
+  ExpSprite: {fileID: -5936835998644394925, guid: cefdeb2a13a844d4fba7043b90c76b84,
+    type: 3}
   battleManager: {fileID: 0}
   EnemyProfile: {fileID: 11400000, guid: 91304b5be3343dc42b366e1701c9d64b, type: 2}
-  targetPlayer: {fileID: 0}
   selectionCircle: {fileID: 0}
   TargetReticle: {fileID: 6756788523693835771}
   attacking: 0
+  selectedAttack: {fileID: 0}
+  selectedTarget: {fileID: 0}
+  EnemiesToDamage: []
+  AbilitiesList: []
   attackGap: -0.3
   stats: {fileID: 6347482372468212522}
-  Skills:
-  - {fileID: 11400000, guid: b8a26cc11b5674e4c85556e05bc6beab, type: 2}
 --- !u!61 &3063056405877296528
 BoxCollider2D:
   m_ObjectHideFlags: 0

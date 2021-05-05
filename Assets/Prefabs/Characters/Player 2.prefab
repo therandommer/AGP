@@ -466,7 +466,7 @@ Transform:
   m_GameObject: {fileID: 6275971143486845660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7020634079039080611}
   m_Father: {fileID: 0}
@@ -560,7 +560,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1.939394, y: 1.939394}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -586,7 +586,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1.939394, y: 1.939394}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -656,6 +656,7 @@ MonoBehaviour:
   PlayerProfile: {fileID: 11400000, guid: 2388b1abf475dfa4eac0895e2f181a6d, type: 2}
   isEnemy: 0
   EnemyProfile: {fileID: 0}
+  Id: 3
 --- !u!114 &4576505716379105210
 MonoBehaviour:
   m_ObjectHideFlags: 0

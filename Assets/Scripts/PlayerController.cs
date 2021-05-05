@@ -36,8 +36,12 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
-        Dead = true;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        if(!Invincible)
+        {
+            Dead = true;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(this);
+        }
     }
 
 

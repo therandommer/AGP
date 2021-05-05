@@ -731,6 +731,7 @@ MonoBehaviour:
   PlayerProfile: {fileID: 11400000, guid: ec8da291a58a0dd49bdede9d79236f7e, type: 2}
   isEnemy: 0
   EnemyProfile: {fileID: 0}
+  Id: 1
 --- !u!114 &4576505716379105210
 MonoBehaviour:
   m_ObjectHideFlags: 0

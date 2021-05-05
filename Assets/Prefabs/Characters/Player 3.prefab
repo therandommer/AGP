@@ -541,7 +541,7 @@ Transform:
   m_GameObject: {fileID: 6275971143486845660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7020634079039080611}
   m_Father: {fileID: 0}
@@ -635,7 +635,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.93, y: 0.93}
+    oldSize: {x: 2.8181818, y: 2.8181818}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -661,7 +661,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.93, y: 0.93}
+    oldSize: {x: 2.8181818, y: 2.8181818}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -731,6 +731,7 @@ MonoBehaviour:
   PlayerProfile: {fileID: 11400000, guid: 5c73ca11ebe3e084eb7060c7337e2ad9, type: 2}
   isEnemy: 0
   EnemyProfile: {fileID: 0}
+  Id: 4
 --- !u!114 &4576505716379105210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,7 +752,7 @@ MonoBehaviour:
   selectedAttack: {fileID: 0}
   selectedTarget: {fileID: 0}
   EnemiesToDamage: []
-  CurrentPlayerPointer: {fileID: 0}
+  CurrentPlayerPointer: {fileID: 7330557854840969901}
   Dead: 0
   LastScenePosition: {x: 0, y: 0, z: 0}
   LastSceneName: 

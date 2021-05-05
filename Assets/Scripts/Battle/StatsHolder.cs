@@ -73,6 +73,8 @@ public class StatsHolder : MonoBehaviour, IComparable<StatsHolder>
 
     private string Weapon; //Again switch, adds in bonus damage
 
+    public int Id;
+
     void Awake()
     {
         if(isPlayer)

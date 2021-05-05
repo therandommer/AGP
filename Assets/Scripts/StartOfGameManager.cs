@@ -10,9 +10,14 @@ public class StartOfGameManager : MonoBehaviour
 
     public GameObject selectedCharacterProfile;
 
-    public GameObject Test;
-    public GameObject Test2;
-    public GameObject Test3;
+    public Conversation AngelIntro;
+
+    public Conversation DemonIntro;
+
+    public Conversation MageIntro;
+
+    public Conversation WarriorIntro;
+
     public void SelectCharacter(GameObject SelectCharacter)
     {
         selectedCharacterProfile = SelectCharacter;
@@ -21,40 +26,25 @@ public class StartOfGameManager : MonoBehaviour
     public void StartGame()
     {
         GameObject GS = Instantiate(gameState);
-        GS.GetComponent<GameState>().player = selectedCharacterProfile;
+        GameState.PlayerObject = selectedCharacterProfile;
         GS.GetComponent<GameState>().SetUpGameState();
         GS.GetComponent<GameState>().SetupInitialSpawnPoints();
-        GameState.AddToParty(Test);
-        GameState.AddToParty(Test2);
-        GameState.AddToParty(Test3);
+
+        Debug.Log("Current Player is a " + GameState.CurrentPlayer.stats.PlayerProfile.Type);
 
         switch (GameState.CurrentPlayer.stats.PlayerProfile.Type)
         {
             case EntityType.Angel:
-                var lastPosition = GameState.GetLastScenePosition("SouthTown");
-
-                Debug.Log("Last know pos for " + this.tag + " is " + lastPosition);
-
-                if (lastPosition != Vector3.zero)
-                {
-                    GameState.CurrentPlayer.gameObject.transform.position = lastPosition;
-                }
-                else
-                {
-                    Debug.Log("Set pos to 0");
-                    GameState.CurrentPlayer.gameObject.transform.position = Vector3.zero;
-                }
-
-                NavigationManager.NavigateTo("SouthTown");
+                ConversationManager.Instance.StartConversation(AngelIntro);
                 break;
             case EntityType.Demon:
-                NavigationManager.NavigateTo("NorthTown");
+                ConversationManager.Instance.StartConversation(DemonIntro);
                 break;
             case EntityType.Human:
-                NavigationManager.NavigateTo("WestTown");
+                ConversationManager.Instance.StartConversation(WarriorIntro);
                 break;
             case EntityType.Mage:
-                NavigationManager.NavigateTo("EastTown");
+                ConversationManager.Instance.StartConversation(MageIntro);
                 break;
         }
     }

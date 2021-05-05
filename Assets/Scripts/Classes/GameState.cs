@@ -66,12 +66,10 @@ public class GameState : MonoBehaviour
         PlayerLoc = PlayerLocTest;
         Time = TimeSetter;
         NumberofBossesNeededToFightFinalBoss = 4;
-        PlayerObject = player;
-        PlayerController = PlayerObject.GetComponent<PlayerController>();
-        CurrentPlayer = PlayerObject.GetComponent<PlayerController>();
-        SetUpGameState();
+
         if (BattleSceneTest)
         {
+            SetUpGameState();
             //Instantiate(Storage.CheckTimeForBackground(Time.GetTimeOfDay()._Hours));
             Instantiate(TestMap);
             PreSetCombat = false;
@@ -113,21 +111,14 @@ public class GameState : MonoBehaviour
             {
                 if ((i + 1) <= (ActiveParty.Count - 1))
                 {
-                    Debug.Log("Go to next player");
-                    Debug.Log("Player was " + CurrentPlayer.name);
-                    Debug.Log((i + 1) + " " + ActiveParty.Count);
                     PlayerObject = ActiveParty[i + 1];
                     CurrentPlayer = ActiveParty[i + 1].GetComponent<PlayerController>();
-                    Debug.Log("Player is now " + CurrentPlayer.name);
                     return;
                 }
                 else
                 {
-                    Debug.Log("Go back to first " + (i + 1));
-                    Debug.Log("Player was " + CurrentPlayer.name);
                     PlayerObject = ActiveParty[0];
                     CurrentPlayer = ActiveParty[0].GetComponent<PlayerController>();
-                    Debug.Log("Player is now " + CurrentPlayer.name);
                     return;
                 }
             }
@@ -136,7 +127,6 @@ public class GameState : MonoBehaviour
 
     public void SetUpGameState()
     {
-        PlayerObject = player;
         if (!PlayerSpawned)
         {
             GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
@@ -309,7 +299,6 @@ public class GameState : MonoBehaviour
                 SetLastScenePosition("WestTown", new Vector3(30, 7, 0));
                 SetLastScenePosition("Overworld", new Vector3(-2, -4, 0));
                 PlayerLoc = PlayerLocation.South;
-                NavigationManager.NavigateTo("SouthTown");
                 break;
             case EntityType.Demon:
                 SetLastScenePosition("EastTown", new Vector3(-22, 1, 0));
@@ -318,7 +307,6 @@ public class GameState : MonoBehaviour
                 SetLastScenePosition("WestTown", new Vector3(30, 7, 0));
                 SetLastScenePosition("Overworld", new Vector3(30, 7, 0));
                 PlayerLoc = PlayerLocation.North;
-                NavigationManager.NavigateTo("NorthTown");
                 break;
             case EntityType.Human:
                 SetLastScenePosition("EastTown", new Vector3(-22, 1, 0));
@@ -327,7 +315,6 @@ public class GameState : MonoBehaviour
                 SetLastScenePosition("WestTown", new Vector3(12, 8, 0));
                 SetLastScenePosition("Overworld", new Vector3(-18, 14, 0));
                 PlayerLoc = PlayerLocation.West;
-                NavigationManager.NavigateTo("WestTown");
                 break;
             case EntityType.Mage:
                 SetLastScenePosition("EastTown", new Vector3(-9, 3, 0));
@@ -336,7 +323,6 @@ public class GameState : MonoBehaviour
                 SetLastScenePosition("WestTown", new Vector3(30, 7, 0));
                 SetLastScenePosition("Overworld", new Vector3(27, 15, 0));
                 PlayerLoc = PlayerLocation.East;
-                NavigationManager.NavigateTo("EastTown");
                 break;
         }
     }

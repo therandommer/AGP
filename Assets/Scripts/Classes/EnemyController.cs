@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     float sliderLerpTime = 0.5f;
 
+    public Sprite ExpSprite;
+
     AnimationManager anim;
     public BattleManager battleManager;
     public Enemy EnemyProfile;
@@ -297,7 +299,11 @@ public class EnemyController : MonoBehaviour
         //battleManager.ListOfEntities.Remove(this.gameObject);
 
         GameState.CurrentPlayer.PingKillQuests(EnemyProfile.Class);
-        GameState.CurrentPlayer.AddExperience(ExperienceOnKill());
+        int Exp = ExperienceOnKill();
+        GameState.CurrentPlayer.AddExperience(Exp);
+
+        ShowMessage.Instance.StartCouroutineForMessage("Gained Experience!", "You have gained " + Exp + " Exp." + "\n" + GameState.CurrentPlayer.Experience + "/" + GameState.CurrentPlayer.ExperienceNeededToLevel, ExpSprite, 2f);
+
         if(EnemyProfile.isBoss)
         {
             GameState.IncreaseNumberOfBossesDefeated();
@@ -305,7 +311,7 @@ public class EnemyController : MonoBehaviour
 
         if(EnemyProfile.isFinalBoss)
         {
-
+            NavigationManager.NavigateTo("EndGame");
         }
         battleManager.enemyCount--;
         Destroy(this.gameObject);

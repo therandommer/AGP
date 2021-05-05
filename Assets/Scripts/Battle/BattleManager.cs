@@ -12,7 +12,7 @@ public class BattleManager : MonoBehaviour
     public List<EnemyController> Enemies;
     public AnimationCurve SpawnAnimationCurve;
     public int enemyCount;
-    private int playerCount;
+    public int playerCount;
     [Header("Intro")]
     public Animator battleStateManager;
     public GameObject introPanel;
@@ -28,6 +28,8 @@ public class BattleManager : MonoBehaviour
     public CanvasGroup MainButtons;
     public CanvasGroup AttackButtons;
     public CanvasGroup FinalAttackButton;
+    public TMP_Text CurrentPlayer;
+    public Image CurrentPlayerImage;
     [Tooltip("Used to lock enemy popup")]
     public bool LockEnemyPopup = false;
     [Header("Attack/Abilities")]
@@ -40,6 +42,11 @@ public class BattleManager : MonoBehaviour
     private bool HideUI = false;
     public bool BattleSceneTest;
     public List<GameObject> BattleSceneTestList = new List<GameObject>();
+    [Header("Player Pics")]
+    public Image[] PlayerImages;
+    [Header("Enemy Pics")]
+    public Image[] EnemyImages;
+
 
     public bool attacking = false;
     [Tooltip("Use if you want to have player go first in the fight")]
@@ -89,11 +96,6 @@ public class BattleManager : MonoBehaviour
 
     public static GameObject StorredPlayer;
 
-    [Header("AttackParticles")]
-    public GameObject Attack1Particle;
-    public GameObject Attack2Particle;
-    public GameObject Attack3Particle;
-    public GameObject Attack4Particle;
     private GameObject attackParticle;
 
     string[] Names = new string[] { "Arnita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda" };
@@ -135,28 +137,26 @@ public class BattleManager : MonoBehaviour
         GameState.CurrentPlayer.transform.position = new Vector3(40, 0, 1);
         GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
         StorredPlayer = GameState.CurrentPlayer.gameObject;
-        
     }
 
     void Start()
     {
-        
-
         for (int i = 0; i < GameState.ActiveParty.Count; i++)
         {
             GameObject Player = Instantiate(GameState.ActiveParty[i]);
-
+            PlayerImages[i].sprite = Player.GetComponent<PlayerController>().stats.PlayerProfile.PlayerImage;
             Player.transform.localScale = new Vector3(0.33f,0.33f,1);
-
+            Player.SetActive(true);
             Player.transform.SetParent(PlayerSpawnPoints[i].transform);
             Player.transform.position = PlayerSpawnPoints[i].transform.position;
             Player.GetComponent<PlayerMovement>().CantMove = true;
             Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Player.GetComponent<SpriteRenderer>().flipX = true;
+
             ListOfPlayers.Add(Player);
             ListOfEntities.Add(ListOfPlayers[i]);
         }
-
+        playerCount = ListOfPlayers.Count;
         GameState.CurrentPlayer = ListOfPlayers[0].GetComponent<PlayerController>();
 
         HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
@@ -174,6 +174,13 @@ public class BattleManager : MonoBehaviour
 
         GetAnimationStates();
 
+        
+    }
+
+    public void ReadCurrentPlayer()
+    {
+        CurrentPlayer.text = "Now playing as: " + GameState.CurrentPlayer.stats.PlayerProfile.Name;
+        CurrentPlayerImage.sprite = GameState.CurrentPlayer.stats.PlayerProfile.PlayerImage;
     }
 
     IEnumerator SpawnEnemies(GameObject[] EnemyPrefabs)
@@ -218,6 +225,25 @@ public class BattleManager : MonoBehaviour
             return (a.GetComponent<StatsHolder>().CompareTo(b.GetComponent<StatsHolder>()));
 
         });
+        for (int i = 0; i < Enemies.Count; i++)
+        {
+            EnemyImages[i].sprite = Enemies[i].stats.EnemyProfile.EnemySprite;
+        }
+
+        for (int i = 0; i < PlayerImages.Length; i++)
+        {
+            if(PlayerImages[i].sprite == null)
+            {
+                PlayerImages[i].GetComponent<PopUpMenu>().DisableTheMenu();
+            }
+        }
+        for (int i = 0; i < EnemyImages.Length; i++)
+        {
+            if (EnemyImages[i].sprite == null)
+            {
+                EnemyImages[i].GetComponent<PopUpMenu>().DisableTheMenu();
+            }
+        }
     }
 
     IEnumerator MoveCharacterToPoint(GameObject destination, GameObject character)
@@ -419,9 +445,12 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < CurrentPlayer.EnemiesToDamage.Count; i++)
         {
-            if (CurrentPlayer.EnemiesToDamage[i].stats.Health < 1)
+            if(CurrentPlayer.EnemiesToDamage[i] != null)
             {
-                CurrentPlayer.EnemiesToDamage[i].Die();
+                if (CurrentPlayer.EnemiesToDamage[i].stats.Health < 1)
+                {
+                    CurrentPlayer.EnemiesToDamage[i].Die();
+                }
             }
         }
         attack.ResetRange();
@@ -763,6 +792,8 @@ public class BattleManager : MonoBehaviour
                 break;
             case BattleState.Player_Move:
                 GameState.CurrentPlayer.CurrentPlayerPointer.enabled = true;
+                Debug.Log("Trying to set " + GameState.CurrentPlayer.name);
+                ReadCurrentPlayer();
                 attack.ReadPlayersSkills();
                 battleStateManager.SetBool("FinishedAllAttacks", false);
                 battleStateManager.SetBool("AllPlayersReady", false);
@@ -796,13 +827,14 @@ public class BattleManager : MonoBehaviour
                 attack.ResetSelectionCircle();
                 attack.HidePopup();
                 attack.EnemyPopupCanvas.alpha = 0;
+                GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
+                //GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
                 for (int i = 0; i < ListOfPlayers.Count; i++)
                 {
                     if (!ListOfPlayers[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet
                     {
                         Debug.Log("Changing player");
-                        GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
-                        GameState.ChangeCurrentPlayerBattle();
+                        ChangeCurrentPlayerBattle();
                         HideUI = false;
                         battleStateManager.SetBool("PlayerReady", false);
                         battleStateManager.SetBool("AllPlayersReady", false);
@@ -812,7 +844,6 @@ public class BattleManager : MonoBehaviour
 
                 if (HideUI)
                 {
-                    GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
                     HideButtons();
                     CombatTextCanvas.alpha = 1;
                     battleStateManager.SetBool("AllPlayersReady", true);
@@ -844,6 +875,28 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    public void ChangeCurrentPlayerBattle()
+    {
+        for (int i = 0; i < ListOfPlayers.Count; i++)
+        {
+            if (ListOfPlayers[i].GetComponent<PlayerController>().stats.Id == GameState.PlayerObject.GetComponent<PlayerController>().stats.Id)
+            {
+                if ((i + 1) <= (ListOfPlayers.Count - 1))
+                {
+                    Debug.Log("Changing to: " + ListOfPlayers[i + 1].name);
+                    GameState.PlayerObject = ListOfPlayers[i + 1];
+                    GameState.CurrentPlayer = ListOfPlayers[i + 1].GetComponent<PlayerController>();
+                    return;
+                }
+                else
+                {
+                    GameState.PlayerObject = ListOfPlayers[0];
+                    GameState.CurrentPlayer = ListOfPlayers[0].GetComponent<PlayerController>();
+                    return;
+                }
+            }
+        }
+    }
     bool ContinueBattle()
     {
         //Check whether there are no players or enemies alive, if either end the battle
@@ -852,7 +905,7 @@ public class BattleManager : MonoBehaviour
         attack.ResetHighlightSquares();
         attack.HidePopup();
 
-        if (enemyCount == 0)
+        if (enemyCount == 0 || playerCount == 0)
         {
             return false;
         }

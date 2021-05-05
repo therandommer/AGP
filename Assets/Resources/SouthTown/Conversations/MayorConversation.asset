@@ -19,6 +19,7 @@ MonoBehaviour:
     ConversationText: Greetings traveller, welcome to our humble town. How can I
       help you?
     DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Rumours
