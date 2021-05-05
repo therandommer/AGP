@@ -753,6 +753,8 @@ MonoBehaviour:
   selectedTarget: {fileID: 0}
   EnemiesToDamage: []
   CurrentPlayerPointer: {fileID: 6196263679085437232}
+  LevelUpSprite: {fileID: -2538545291959784308, guid: cefdeb2a13a844d4fba7043b90c76b84,
+    type: 3}
   Dead: 0
   LastScenePosition: {x: 0, y: 0, z: 0}
   LastSceneName: 

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class NavigationPrompt : MonoBehaviour
 {
     public Vector3 startingPosition;
-
+	/*
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (NavigationManager.CanNavigate(this.tag))
@@ -33,7 +33,7 @@ public class NavigationPrompt : MonoBehaviour
 
 		}
 	}
-
+	*/
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		Debug.Log("attempting to exit via " + tag);
@@ -50,12 +50,15 @@ public class NavigationPrompt : MonoBehaviour
 		else
 		{
 			Debug.Log("Set pos to 0");
+			GameState.saveLastPosition = true;
 			GameState.CurrentPlayer.gameObject.transform.position = Vector3.zero;
 		}
 		if(GameState.saveLastPosition != false)
         {
 			GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, startingPosition);
         }
+
+		GameState.CurrentPlayer.LastSceneName = SceneManager.GetActiveScene().name;
 
 		NavigationManager.NavigateTo(this.tag);
 

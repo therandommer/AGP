@@ -8,11 +8,6 @@ public class MessagingClientReceiver : MonoBehaviour
     [Header("Use this if you want a fight after a convo")]
     public List<GameObject> EnemiesToFight = new List<GameObject>();
 
-    void Start()
-    {
-        //MessagingManager.Instance.Subscribe(StartConvo);
-    }
-
     public void StartConvo()
     {
         Debug.Log(gameObject.name + " is trying to start a convo starting convo");

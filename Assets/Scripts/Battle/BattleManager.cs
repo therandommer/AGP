@@ -136,6 +136,7 @@ public class BattleManager : MonoBehaviour
 
         GameState.CurrentPlayer.transform.position = new Vector3(40, 0, 1);
         GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
+        GameState.CurrentPlayer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         StorredPlayer = GameState.CurrentPlayer.gameObject;
     }
 

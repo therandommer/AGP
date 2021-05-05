@@ -29,6 +29,7 @@ MonoBehaviour:
   Weapon: 
   Position: {x: 0, y: 0}
   PlayerImage: {fileID: 21300000, guid: 5e0ba234d6069464bbf66f6ea7e454bd, type: 3}
+  Class: 0
   StartingInventory:
   - {fileID: 11400000, guid: 59d2d8d8673ca9e4f9ae4d9c0f688fb3, type: 2}
   - {fileID: 11400000, guid: 635291a23a0cd524189949de2962167e, type: 2}

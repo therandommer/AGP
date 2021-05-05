@@ -90,7 +90,7 @@ public class ConversationManager : Singleton<ConversationManager>
                     if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         Debug.Log("Clicked");
-                        if (currentConversationLine.NextSceneName != null)
+                        if (currentConversationLine.NextSceneName != "")
                         {
                             var lastPosition = GameState.GetLastScenePosition(currentConversationLine.NextSceneName);
 

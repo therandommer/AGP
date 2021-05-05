@@ -18,6 +18,7 @@ public class BattleEnvironmentStorage : MonoBehaviour
     public GameObject WestDesertNight;
 
     public GameObject TownNight;
+    public GameObject FinalFight;
 
 
     public GameObject CheckTimeForBackground(int HourOfTheDay)

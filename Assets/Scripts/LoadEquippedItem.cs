@@ -24,6 +24,13 @@ public class LoadEquippedItem : MonoBehaviour
     public TMP_Text ItemName;
     public TMP_Text InitialItemValue;
     public PopulateAdditionalEffects AE;
+    public PopulateStatList PopStat;
+    public PopUpMenu Buttons;
+    public PopUpMenu EquippedItems;
+    public PopUpMenu EquippedInSlot;
+    public PopUpMenu BuyItemCanvas;
+    public Image BuyItemImage;
+    public TMP_Text ItemCost;
 
     [Header("Stat Difference Manager")]
     public StatsDifferenceManager statsDifference;
@@ -34,6 +41,11 @@ public class LoadEquippedItem : MonoBehaviour
         EquippedItemImageCanvas.alpha = 0;
     }
 
+    public void ClearSI()
+    {
+        SelectedItem = null;
+    }
+
     public void SelectItem(InventoryItem selectedItem)
     {
         SelectedItem = selectedItem;
@@ -41,6 +53,19 @@ public class LoadEquippedItem : MonoBehaviour
         ReadItemSelected();
         ReadEquippedItemInSlot();
         statsDifference.PreviewStatChange(selectedItem);
+        Buttons.EnableTheMenu();
+        if(EquippedItems != null)
+        {
+            PopStat.populateStat();
+            EquippedItems.DisableTheMenu();
+            EquippedInSlot.EnableTheMenu();
+        }
+        if(BuyItemCanvas != null)
+        {
+            BuyItemImage.sprite = selectedItem.itemImage;
+            BuyItemCanvas.EnableTheMenu();
+            ItemCost.text = selectedItem.shopCost.ToString();
+        }
     }
 
     public void ReadItemInSlot(ArmourItems AI)

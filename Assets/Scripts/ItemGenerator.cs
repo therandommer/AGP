@@ -187,6 +187,24 @@ public class ItemGenerator : MonoBehaviour
             Item.isWeapon = true;
             GenerateItemImage(Item.isArmour, Item.isWeapon);
         }
+        switch (Item.rarity)
+        {
+            case RarityOptions.Basic:
+                Item.shopCost = _itemLevel * 5;
+                break;
+            case RarityOptions.Common:
+                Item.shopCost = (int)(_itemLevel * 5 * 1.2);
+                break;
+            case RarityOptions.Rare:
+                Item.shopCost = (int)(_itemLevel * 5 * 1.5);
+                break;
+            case RarityOptions.Epic:
+                Item.shopCost = (int)(_itemLevel * 5 * 1.7);
+                break;
+            case RarityOptions.Legendary:
+                Item.shopCost = (int)(_itemLevel * 5 * 2);
+                break;
+        }
     }
 
     public void GenerateSpecificItem(bool isArmour = false, ArmourItems armourItem = ArmourItems.None, bool isWeapon = false, WeaponItem weaponItem = WeaponItem.None)

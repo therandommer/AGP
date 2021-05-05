@@ -36,7 +36,6 @@ public class PopulateInventoryList : MonoBehaviour
         }
         foreach (InventoryItem items in ItemsToShow)
         {
-
             Button item = Instantiate(ArmourItemPrefab, Vector3.zero, Quaternion.identity);
             item.transform.parent = transform;
             ItemUIManager ItemUI = item.GetComponent<ItemUIManager>();

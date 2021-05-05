@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PopulateShopInventory : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class PopulateShopInventory : MonoBehaviour
     public Sprite MaceTypeImage;
     public Sprite StaffTypeImage;
     public Sprite SwordTypeImage;
+
+    public Sprite ErrorSprite;
 
     public List<InventoryItem> ItemsToShow = new List<InventoryItem>();
 
@@ -133,6 +136,12 @@ public class PopulateShopInventory : MonoBehaviour
 
     public void BuyAndEquipFromShop()
     {
+        Debug.Log(GameState.CurrentPlayer.Money + " - " + Load.SelectedItem.shopCost + " = " + (GameState.CurrentPlayer.Money - Load.SelectedItem.shopCost));
+        if ((GameState.CurrentPlayer.Money - Load.SelectedItem.shopCost) < 0)
+        {
+            ShowMessage.Instance.StartCouroutineForMessage("Cannot buy!", "You cannot affort this item!", ErrorSprite, 2f);
+            return;
+        }
         switch (GameState.PlayerLoc)
         {
             case PlayerLocation.North:
@@ -156,6 +165,11 @@ public class PopulateShopInventory : MonoBehaviour
 
     public void BuyFromShop()
     {
+        if((GameState.CurrentPlayer.Money - Load.SelectedItem.shopCost) < 0)
+        {
+            ShowMessage.Instance.StartCouroutineForMessage("Cannot buy!", "You cannot affort this item!", ErrorSprite, 2f);
+            return;
+        }
         switch (GameState.PlayerLoc)
         {
             case PlayerLocation.North:
@@ -180,7 +194,23 @@ public class PopulateShopInventory : MonoBehaviour
 
     public void LeaveTheShop()
     {
-        NavigationManager.NavigateTo("Village");
+
+        var lastPosition = GameState.GetLastScenePosition(GameState.CurrentPlayer.LastSceneName);
+
+        Debug.Log("Last know pos for " + this.tag + " is " + lastPosition);
+
+        if (lastPosition != Vector3.zero)
+        {
+            GameState.CurrentPlayer.gameObject.transform.position = lastPosition;
+            GameState.saveLastPosition = false;
+        }
+        else
+        {
+            Debug.Log("Set pos to 0");
+            GameState.saveLastPosition = true;
+        }
+        GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = false;
+        NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);
     }
 
 

@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public EnemyController selectedTarget;
     public List<EnemyController> EnemiesToDamage;
     public Image CurrentPlayerPointer;
+    public Sprite LevelUpSprite;
 
     public bool Dead = false;
 
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     public void AddInventoryItem(InventoryItem item)
     {
-        Inventory.Add(item);
+            Inventory.Add(item);
     }
 
     public void KillPlayer()
@@ -117,6 +118,7 @@ public class PlayerController : MonoBehaviour
         if(Experience >= ExperienceNeededToLevel)
         {
             stats.LevelUp();
+            ShowMessage.Instance.StartCouroutineForMessage("Level Up!", GameState.CurrentPlayer.stats.name + " has leveled up!", LevelUpSprite, 2f);
             ExperienceNeededToLevel *= 1.5;
         }
     }
