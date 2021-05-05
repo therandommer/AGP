@@ -65,6 +65,7 @@ public class ReadEuippedItems : MonoBehaviour
 
     public void PopulateEquippedItems()
     {
+        ClearAllEquippedItems();
         for (int i = 0; i < GameState.CurrentPlayer.EquippedItems.Count; i++)
         {
             InventoryItem IV = GameState.CurrentPlayer.EquippedItems[i];

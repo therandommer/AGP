@@ -38,6 +38,8 @@ public class BattleManager : MonoBehaviour
     public GameObject selectionCircle;
     private bool canSelectEnemy;
     private bool HideUI = false;
+    public bool BattleSceneTest;
+    public List<GameObject> BattleSceneTestList = new List<GameObject>();
 
     public bool attacking = false;
     [Tooltip("Use if you want to have player go first in the fight")]
@@ -128,7 +130,7 @@ public class BattleManager : MonoBehaviour
             Debug.LogError("No battleStateMachine Animator found.");
         }
         introPanelAnim = introPanel.GetComponent<Animator>();
-        ListOfPlayers = GameState.ActiveParty;
+
 
         GameState.CurrentPlayer.transform.position = new Vector3(40, 0, 1);
         GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
@@ -138,24 +140,35 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < ListOfPlayers.Count; i++)
+        
+
+        for (int i = 0; i < GameState.ActiveParty.Count; i++)
         {
-            GameObject Player = Instantiate(ListOfPlayers[i]);
+            GameObject Player = Instantiate(GameState.ActiveParty[i]);
+
+            Player.transform.localScale = new Vector3(0.33f,0.33f,1);
 
             Player.transform.SetParent(PlayerSpawnPoints[i].transform);
-
+            Player.transform.position = PlayerSpawnPoints[i].transform.position;
             Player.GetComponent<PlayerMovement>().CantMove = true;
             Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Player.GetComponent<SpriteRenderer>().flipX = true;
-
+            ListOfPlayers.Add(Player);
             ListOfEntities.Add(ListOfPlayers[i]);
-
         }
+
         GameState.CurrentPlayer = ListOfPlayers[0].GetComponent<PlayerController>();
 
         HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
         // Calculate how many enemies 
-        enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
+        if(!GameState.PreSetCombat)
+        {
+            enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
+        }
+        else
+        {
+            enemyCount = GameState.EnemyPrefabsForBattle.Length - 1;
+        }
         // Spawn the enemies in 
         StartCoroutine(SpawnEnemies(GameState.EnemyPrefabsForBattle));
 
@@ -168,17 +181,34 @@ public class BattleManager : MonoBehaviour
         //Spawn enemies in over time 
         for (int i = 0; i < enemyCount; i++)
         {
-            var newEnemy = (GameObject)Instantiate(EnemyPrefabs[i]);
-            ListOfEntities.Add(newEnemy);
+            if(!BattleSceneTest)
+            {
+                var newEnemy = (GameObject)Instantiate(EnemyPrefabs[i]);
+                ListOfEntities.Add(newEnemy);
 
-            var controller = newEnemy.GetComponent<EnemyController>();
-            newEnemy.name = controller.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
-            controller.battleManager = this;
-            newEnemy.transform.position = new Vector3(10, -1, 0);
-            yield return StartCoroutine(
-            MoveCharacterToPoint(EnemySpawnPoints[i], newEnemy));
-            newEnemy.transform.parent = EnemySpawnPoints[i].transform;
-            Enemies.Add(controller);
+                var controller = newEnemy.GetComponent<EnemyController>();
+                newEnemy.name = controller.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
+                controller.battleManager = this;
+                newEnemy.transform.position = new Vector3(10, -1, 0);
+                yield return StartCoroutine(
+                MoveCharacterToPoint(EnemySpawnPoints[i], newEnemy));
+                newEnemy.transform.parent = EnemySpawnPoints[i].transform;
+                Enemies.Add(controller);
+            }
+            else
+            {
+                var newEnemy = (GameObject)Instantiate(BattleSceneTestList[Random.Range(0, BattleSceneTestList.Count - 1)]);
+                ListOfEntities.Add(newEnemy);
+
+                var controller = newEnemy.GetComponent<EnemyController>();
+                newEnemy.name = controller.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
+                controller.battleManager = this;
+                newEnemy.transform.position = new Vector3(10, -1, 0);
+                yield return StartCoroutine(
+                MoveCharacterToPoint(EnemySpawnPoints[i], newEnemy));
+                newEnemy.transform.parent = EnemySpawnPoints[i].transform;
+                Enemies.Add(controller);
+            }
         }
         battleStateManager.SetBool("BattleReady", true);
 
@@ -732,6 +762,7 @@ public class BattleManager : MonoBehaviour
                 ShowMainButtons();
                 break;
             case BattleState.Player_Move:
+                GameState.CurrentPlayer.CurrentPlayerPointer.enabled = true;
                 attack.ReadPlayersSkills();
                 battleStateManager.SetBool("FinishedAllAttacks", false);
                 battleStateManager.SetBool("AllPlayersReady", false);
@@ -770,6 +801,7 @@ public class BattleManager : MonoBehaviour
                     if (!ListOfPlayers[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet
                     {
                         Debug.Log("Changing player");
+                        GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
                         GameState.ChangeCurrentPlayerBattle();
                         HideUI = false;
                         battleStateManager.SetBool("PlayerReady", false);
@@ -780,6 +812,7 @@ public class BattleManager : MonoBehaviour
 
                 if (HideUI)
                 {
+                    GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
                     HideButtons();
                     CombatTextCanvas.alpha = 1;
                     battleStateManager.SetBool("AllPlayersReady", true);

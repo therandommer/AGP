@@ -4310,7 +4310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &876573298
 Transform:
   m_ObjectHideFlags: 0
@@ -5418,6 +5418,11 @@ MonoBehaviour:
   selectedTargetName: 
   selectionCircle: {fileID: 1151566774660212997, guid: 63e347bc52f537a40ad7e427903a19ee,
     type: 3}
+  BattleSceneTest: 1
+  BattleSceneTestList:
+  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
+  - {fileID: 5380418724147385418, guid: ede789e2cdce09a4c996a598771e93fe, type: 3}
+  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
   attacking: 0
   DebugPlayerAttack: 0
   moveSpeed: 1
@@ -5429,6 +5434,7 @@ MonoBehaviour:
   stabBonus: 1.5
   currentBattleState: 0
   ListOfEntities: []
+  ListOfPlayers: []
   Attack1Particle: {fileID: 8335750205670191616, guid: 799622fee3aa1dd4cb370b7f44e5e65d,
     type: 3}
   Attack2Particle: {fileID: 8335750205670191616, guid: 799622fee3aa1dd4cb370b7f44e5e65d,

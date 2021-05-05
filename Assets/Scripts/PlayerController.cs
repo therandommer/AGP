@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public Abilities selectedAttack;
     public EnemyController selectedTarget;
     public List<EnemyController> EnemiesToDamage;
+    public Image CurrentPlayerPointer;
 
     public bool Dead = false;
 

@@ -49,6 +49,7 @@ public class GameState : MonoBehaviour
     public BattleEnvironmentStorage Storage;
 
     public static GameObject[] EnemyPrefabsForBattle;
+    public static bool PreSetCombat;
     [Header("Debug to stop duplication")]
     public bool PlayerSpawned = false;
 
@@ -73,6 +74,7 @@ public class GameState : MonoBehaviour
         {
             //Instantiate(Storage.CheckTimeForBackground(Time.GetTimeOfDay()._Hours));
             Instantiate(TestMap);
+            PreSetCombat = false;
         }
         DontDestroyOnLoad(gameObject);
     }
@@ -156,16 +158,16 @@ public class GameState : MonoBehaviour
     }
     public static void AddToParty(GameObject PlayerToAdd)
     {
+        GameObject newPlayer = Instantiate(PlayerToAdd);
         if (ActiveParty.Count < 4)
         {
-            GameObject newPlayer = Instantiate(PlayerToAdd);
             ActiveParty.Add(newPlayer);
-            newPlayer.SetActive(false);
         }
         else
         {
             PartyMembers.Add(PlayerToAdd);
         }
+        newPlayer.SetActive(false);
     }
 
     public static void MovePartyMembersOffScreen()
