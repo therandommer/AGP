@@ -52,7 +52,9 @@ public class RandomBattle : MonoBehaviour
         if (encounterChance <= battleProbability)
         {
             Debug.Log("Battle");
-            GameObject.Find("Player").GetComponent<PlayerController>().LastScenePosition = GameObject.Find("Player").transform.position;
+            GameState.CurrentPlayer.LastScenePosition = GameState.CurrentPlayer.gameObject.transform.position;
+
+            GameState.CurrentPlayer.LastSceneName = SceneManager.GetActiveScene().name;
             foreach (GameObject Enemy in GuarnteedEnemies)
             {
                 EnemyList.Add(Enemy);

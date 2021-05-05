@@ -205,13 +205,13 @@ public class EnemyController : MonoBehaviour
 
     bool AttackPlayer()
     {
-        if (GameState.BattleParty.Count > 0)
+        if (battleManager.ListOfPlayers.Count > 0)
         {
             int rnd = UnityEngine.Random.Range(0, AbilitiesList.Count);
             selectedAttack = AbilitiesList[rnd];
-            int rndPlayer = UnityEngine.Random.Range(0, GameState.PlayerParty.Count);
+            int rndPlayer = UnityEngine.Random.Range(0, battleManager.ListOfPlayers.Count);
 
-            selectedTarget = GameState.BattleParty[rndPlayer].GetComponent<PlayerController>();
+            selectedTarget = battleManager.ListOfPlayers[rndPlayer].GetComponent<PlayerController>();
 
             StartCoroutine(AttackDelay());
 

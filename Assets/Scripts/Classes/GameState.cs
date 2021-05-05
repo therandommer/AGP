@@ -27,10 +27,11 @@ public class GameState : MonoBehaviour
     public int NumberOfBossesDefeatedDebug;
     public static int NumberOfBossesDefeated = 0;
     public PlayerController PlayerController;
-    public static List<GameObject> PlayerParty = new List<GameObject>();
-    public static List<GameObject> BattleParty = new List<GameObject>();
-    public static GameObject[] PlayersToSpawn;
-    public static List<GameObject> playerParty = new List<GameObject>();
+
+    public static List<GameObject> PartyMembers = new List<GameObject>();
+
+    public static List<GameObject> ActiveParty = new List<GameObject>();
+
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
@@ -63,8 +64,6 @@ public class GameState : MonoBehaviour
         ShopStorage = ShopStorageSetter;
         PlayerLoc = PlayerLocTest;
         Time = TimeSetter;
-        PlayersToSpawn = playerParty.ToArray();
-        PlayerParty = playerParty;
         NumberofBossesNeededToFightFinalBoss = 4;
         PlayerObject = player;
         PlayerController = PlayerObject.GetComponent<PlayerController>();
@@ -93,28 +92,30 @@ public class GameState : MonoBehaviour
         }
     }
 
-
-    public static void SetBattleParty()
+    public static void RemoveFromActiveParty(GameObject PlayerToRemove)
     {
-        for(int i = 0; i < PlayerParty.Count; i++)
+        for(int i = 0; i < ActiveParty.Count; i++)
         {
-            BattleParty.Add(PlayerParty[i]);
+            if(ActiveParty[i] == PlayerToRemove)
+            {
+                ActiveParty.RemoveAt(i);
+            }
         }
     }
 
     public static void ChangeCurrentPlayerBattle()
     {
-        for (int i = 0; i < BattleParty.Count; i++)
+        for (int i = 0; i < ActiveParty.Count; i++)
         {
-            if (BattleParty[i] == PlayerObject)
+            if (ActiveParty[i] == PlayerObject)
             {
-                if ((i + 1) <= (BattleParty.Count - 1))
+                if ((i + 1) <= (ActiveParty.Count - 1))
                 {
                     Debug.Log("Go to next player");
                     Debug.Log("Player was " + CurrentPlayer.name);
-                    Debug.Log((i + 1) + " " + BattleParty.Count);
-                    PlayerObject = BattleParty[i + 1];
-                    CurrentPlayer = BattleParty[i + 1].GetComponent<PlayerController>();
+                    Debug.Log((i + 1) + " " + ActiveParty.Count);
+                    PlayerObject = ActiveParty[i + 1];
+                    CurrentPlayer = ActiveParty[i + 1].GetComponent<PlayerController>();
                     Debug.Log("Player is now " + CurrentPlayer.name);
                     return;
                 }
@@ -122,8 +123,8 @@ public class GameState : MonoBehaviour
                 {
                     Debug.Log("Go back to first " + (i + 1));
                     Debug.Log("Player was " + CurrentPlayer.name);
-                    PlayerObject = BattleParty[0];
-                    CurrentPlayer = BattleParty[0].GetComponent<PlayerController>();
+                    PlayerObject = ActiveParty[0];
+                    CurrentPlayer = ActiveParty[0].GetComponent<PlayerController>();
                     Debug.Log("Player is now " + CurrentPlayer.name);
                     return;
                 }
@@ -141,8 +142,7 @@ public class GameState : MonoBehaviour
             PlayerObject = Player;
             Player.transform.position = new Vector3(-2,0,1);
             Player.name = "Player";
-            playerParty.Add(Player);
-            PlayersToSpawn = playerParty.ToArray();
+            ActiveParty.Add(Player);
             PlayerController = Player.GetComponent<PlayerController>();
             CurrentPlayer = Player.GetComponent<PlayerController>();
             PlayerSpawned = true;
@@ -151,70 +151,69 @@ public class GameState : MonoBehaviour
     }
     public static void ClearParty()
     {
-        playerParty.Clear();
-        playerParty.Add(PlayerObject);
-        PlayersToSpawn = playerParty.ToArray();
+        ActiveParty.Clear();
+        ActiveParty.Add(PlayerObject);
     }
     public static void AddToParty(GameObject PlayerToAdd)
-    {
-        GameObject Player = Instantiate(PlayerToAdd, Vector3.zero, Quaternion.identity);
-        Player.transform.position = new Vector3(40, 0, 1);
-        Player.GetComponent<PlayerMovement>().CantMove = true;
-        Player.name = Player.GetComponent<PlayerController>().stats.PlayerProfile.name;
-
-        playerParty.Add(Player);
-        PlayersToSpawn = playerParty.ToArray();
+    { 
+        if(ActiveParty.Count < 4)
+        {
+            GameObject newPlayer = Instantiate(PlayerToAdd);
+            ActiveParty.Add(newPlayer);
+            newPlayer.SetActive(false);
+        }
+        else
+        {
+            PartyMembers.Add(PlayerToAdd);
+        }
     }
 
     public static void MovePartyMembersOffScreen()
     {
-        for (int i = 0; i < PlayerParty.Count; i++)
+        for (int i = 0; i < ActiveParty.Count; i++)
         {
-            if(PlayerParty[i].GetComponent<PlayerController>() != CurrentPlayer)
+            if(ActiveParty[i].GetComponent<PlayerController>() != CurrentPlayer)
             {
-                PlayerParty[i].transform.position = new Vector3(40, 0, 1);
-                PlayerParty[i].GetComponent<PlayerMovement>().CantMove = true;
-                PlayersToSpawn = PlayerParty.ToArray();
+                ActiveParty[i].transform.position = new Vector3(40, 0, 1);
+                ActiveParty[i].GetComponent<PlayerMovement>().CantMove = true;
             }
         }
     }
 
     public static void ChangeCurrentPlayer()
     {
-        Debug.Log(PlayerParty.Count);
-        for (int i = 0; i < PlayerParty.Count; i++)
+        Debug.Log("Active: " +ActiveParty.Count);
+        for (int i = 0; i < ActiveParty.Count; i++)
         {
-            if (PlayerParty[i] == PlayerObject)
+            Debug.Log("Looking for: " + PlayerObject.name + " " + ActiveParty[i].name);
+            if (ActiveParty[i].name == PlayerObject.name)
             {
-                if ((i + 1) <= PlayerParty.Count)
+                if ((i + 1) <= ActiveParty.Count - 1)
                 {
                     Debug.Log("Go to next player");
-                    PlayerParty[i + 1].transform.position = PlayerParty[i].transform.position;
-                    PlayerParty[i].transform.position = new Vector3(40,0,1);
-                    PlayerParty[i].GetComponent<PlayerMovement>().CantMove = true;
+                    ActiveParty[i].SetActive(false);
+                    ActiveParty[i + 1].SetActive(true);
+                    ActiveParty[i + 1].transform.position = ActiveParty[i].transform.position;
+                    ActiveParty[i + 1].GetComponent<PlayerController>().Inventory = ActiveParty[i].GetComponent<PlayerController>().Inventory;
+                    ActiveParty[i + 1].GetComponent<PlayerController>().QuestLog = ActiveParty[i].GetComponent<PlayerController>().QuestLog;
+                    ActiveParty[i + 1].GetComponent<PlayerController>().Money = ActiveParty[i].GetComponent<PlayerController>().Money;
 
-                    PlayerParty[i + 1].GetComponent<PlayerController>().Inventory = PlayerParty[i].GetComponent<PlayerController>().Inventory;
-                    PlayerParty[i + 1].GetComponent<PlayerController>().QuestLog = PlayerParty[i].GetComponent<PlayerController>().QuestLog;
-                    PlayerParty[i + 1].GetComponent<PlayerController>().Money = PlayerParty[i].GetComponent<PlayerController>().Money;
-
-                    PlayerParty[i + 1].GetComponent<PlayerMovement>().CantMove = false;
-                    PlayerObject = PlayerParty[i + 1];
-                    CurrentPlayer = PlayerParty[i + 1].GetComponent<PlayerController>();
+                    ActiveParty[i + 1].GetComponent<PlayerMovement>().CantMove = false;
+                    PlayerObject = ActiveParty[i + 1];
+                    Debug.Log(PlayerObject.name + " active");
+                    CurrentPlayer = ActiveParty[i + 1].GetComponent<PlayerController>();
                     return;
                 }
                 else
                 {
                     Debug.Log("Go back to first ");
                     Debug.Log("Player was " + CurrentPlayer.name);
+                    ActiveParty[i].SetActive(false);
+                    ActiveParty[0].SetActive(true);
+                    ActiveParty[0].transform.position = ActiveParty[i].transform.position;
 
-                    PlayerParty[0].transform.position = PlayerParty[i].transform.position;
-                    PlayerParty[i].transform.position = new Vector3(40, 0, 1);
-                    PlayerParty[i].GetComponent<PlayerMovement>().CantMove = true;
-
-                    PlayerParty[0].GetComponent<PlayerMovement>().CantMove = false;
-
-                    PlayerObject = PlayerParty[0];
-                    CurrentPlayer = PlayerParty[0].GetComponent<PlayerController>();
+                    PlayerObject = ActiveParty[0];
+                    CurrentPlayer = ActiveParty[0].GetComponent<PlayerController>();
                     Debug.Log("Player is now " + CurrentPlayer.name);
                     return;
                 }

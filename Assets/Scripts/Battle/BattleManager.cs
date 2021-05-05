@@ -83,6 +83,10 @@ public class BattleManager : MonoBehaviour
 
     public List<GameObject> ListOfEntities = new List<GameObject>();
 
+    public List<GameObject> ListOfPlayers = new List<GameObject>();
+
+    public static GameObject StorredPlayer;
+
     [Header("AttackParticles")]
     public GameObject Attack1Particle;
     public GameObject Attack2Particle;
@@ -124,32 +128,34 @@ public class BattleManager : MonoBehaviour
             Debug.LogError("No battleStateMachine Animator found.");
         }
         introPanelAnim = introPanel.GetComponent<Animator>();
+        ListOfPlayers = GameState.ActiveParty;
+
+        GameState.CurrentPlayer.transform.position = new Vector3(40, 0, 1);
+        GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
+        StorredPlayer = GameState.CurrentPlayer.gameObject;
+        
     }
 
     void Start()
     {
-        GameState.SetBattleParty();
-
-        //EnemyPrefabs = GameState.EnemyPrefabsForBattle;
-
-        for (int i = 0; i < GameState.PlayersToSpawn.Length; i++)
+        for (int i = 0; i < ListOfPlayers.Count; i++)
         {
-            GameState.PlayersToSpawn[i].transform.position = PlayerSpawnPoints[i].transform.position;
+            GameObject Player = Instantiate(ListOfPlayers[i]);
 
-            GameState.PlayersToSpawn[i].GetComponent<PlayerMovement>().CantMove = true;
-            GameState.PlayersToSpawn[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            GameState.PlayersToSpawn[i].GetComponent<SpriteRenderer>().flipX = true;
+            Player.transform.SetParent(PlayerSpawnPoints[i].transform);
 
-            ListOfEntities.Add(GameState.PlayersToSpawn[i]);
-            playerParty.Add(GameState.PlayersToSpawn[i]);
+            Player.GetComponent<PlayerMovement>().CantMove = true;
+            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Player.GetComponent<SpriteRenderer>().flipX = true;
+
+            ListOfEntities.Add(ListOfPlayers[i]);
 
         }
-        GameState.CurrentPlayer = GameObject.Find("Player").GetComponent<PlayerController>();
-        GameState.PlayerParty = playerParty;
+        GameState.CurrentPlayer = ListOfPlayers[0].GetComponent<PlayerController>();
+
         HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
         // Calculate how many enemies 
-        //enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
-        enemyCount = 9;
+        enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
         // Spawn the enemies in 
         StartCoroutine(SpawnEnemies(GameState.EnemyPrefabsForBattle));
 
@@ -665,10 +671,12 @@ public class BattleManager : MonoBehaviour
     public void RunAway()
     {
         GameState.justExitedBattle = true;
-        GameState.MovePartyMembersOffScreen();
-        GameState.PlayerParty[0].GetComponent<PlayerMovement>().CantMove = false;
+
+        StorredPlayer.GetComponent<PlayerMovement>().CantMove = false;
+        GameState.CurrentPlayer = StorredPlayer.GetComponent<PlayerController>();
         GameState.CurrentPlayer.gameObject.transform.position = GameState.CurrentPlayer.LastScenePosition;
-        NavigationManager.NavigateTo("Overworld");
+
+        NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);
     }
 
     public void TriggerEnding()
@@ -757,9 +765,9 @@ public class BattleManager : MonoBehaviour
                 attack.ResetSelectionCircle();
                 attack.HidePopup();
                 attack.EnemyPopupCanvas.alpha = 0;
-                for (int i = 0; i < GameState.BattleParty.Count; i++)
+                for (int i = 0; i < ListOfPlayers.Count; i++)
                 {
-                    if (!GameState.BattleParty[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet
+                    if (!ListOfPlayers[i].GetComponent<PlayerController>().Attacking)//If one of the party hasn't acted yet
                     {
                         Debug.Log("Changing player");
                         GameState.ChangeCurrentPlayerBattle();
@@ -792,10 +800,11 @@ public class BattleManager : MonoBehaviour
                 break;
             case BattleState.Battle_End:
                 GameState.justExitedBattle = true;
-                GameState.MovePartyMembersOffScreen();
-                GameState.PlayerParty[0].GetComponent<PlayerMovement>().CantMove = false;
+                StorredPlayer.GetComponent<PlayerMovement>().CantMove = false;
+                GameState.CurrentPlayer = StorredPlayer.GetComponent<PlayerController>();
                 GameState.CurrentPlayer.gameObject.transform.position = GameState.CurrentPlayer.LastScenePosition;
-                NavigationManager.NavigateTo("Overworld");                //Any animation and move back to Overworld
+
+                NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);                //Any animation and move back to Overworld
                 break;
             default:
                 break;

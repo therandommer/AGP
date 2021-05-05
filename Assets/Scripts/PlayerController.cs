@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public bool Dead = false;
 
     public Vector3 LastScenePosition;
+    public string LastSceneName;
 
     public void AddInventoryItem(InventoryItem item)
     {
@@ -33,11 +34,8 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
-        gameObject.transform.position = new Vector3(40, 0, 1);
         Dead = true;
-        Debug.Log("Check deletion before " + GameState.BattleParty.Count);
-        GameState.BattleParty.Remove(gameObject);
-        Debug.Log("Check deletion after " + GameState.BattleParty.Count);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 

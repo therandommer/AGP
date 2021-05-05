@@ -10,6 +10,7 @@ public class StartOfGameManager : MonoBehaviour
 
     public GameObject selectedCharacterProfile;
 
+    public GameObject Test;
     public void SelectCharacter(GameObject SelectCharacter)
     {
         selectedCharacterProfile = SelectCharacter;
@@ -21,6 +22,7 @@ public class StartOfGameManager : MonoBehaviour
         GS.GetComponent<GameState>().player = selectedCharacterProfile;
         GS.GetComponent<GameState>().SetUpGameState();
         GS.GetComponent<GameState>().SetupInitialSpawnPoints();
+        GameState.AddToParty(Test);
 
         switch (GameState.CurrentPlayer.stats.PlayerProfile.Type)
         {
