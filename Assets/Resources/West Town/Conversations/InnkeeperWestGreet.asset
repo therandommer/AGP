@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
-  m_Name: BlacksmithConversation
+  m_Name: InnkeeperWestGreet
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
   ConversationLines:
-  - SpeakingCharacterName: Blacksmith
-    ConversationText: Greetings traveller! How can I help you today?
-    DisplayPic: {fileID: 21300000, guid: d4d64419ed932da43b717ba1e0f9136c, type: 3}
+  - SpeakingCharacterName: Innkeeper
+    ConversationText: Zzzzzz (The innkeeper seems fast asleep)
+    DisplayPic: {fileID: 21300000, guid: bcedfcaf373ff4c49aeb669724a72294, type: 3}
     DecisionToBeMade: 1
     Decision1: 1
-    Decision1Text: What do you do?
+    Decision1Text: Helllo! Can you wake up!?
     Decision1Repeatable: 1
     Decision1Pending: 0
-    Decision1Convo: {fileID: 0}
+    Decision1Convo: {fileID: 11400000, guid: a4b3fed9c524fd54182a21d5f0fcb016, type: 2}
     Quest1ToGive: {fileID: 0}
     Quest1PendingConvo: {fileID: 0}
     Quest1CompleteConvo: {fileID: 0}
@@ -32,12 +32,12 @@ MonoBehaviour:
     Character1ToGive: {fileID: 0}
     TalkQuest1Confirm: {fileID: 0}
     FetchQuest1Confirm: {fileID: 0}
-    Decision2: 1
+    Decision2: 0
     Decision2Text: 
     Decision2Repeatable: 0
     Decision2Pending: 0
     Decision2Convo: {fileID: 0}
-    Quest2ToGive: {fileID: 11400000, guid: a0a8b4bb3ffffc0408a98c5928815d77, type: 2}
+    Quest2ToGive: {fileID: 0}
     Quest2PendingConvo: {fileID: 0}
     Quest2CompleteConvo: {fileID: 0}
     Quest2PendingButtonText: 
