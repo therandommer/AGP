@@ -94,9 +94,9 @@ public class GameState : MonoBehaviour
 
     public static void RemoveFromActiveParty(GameObject PlayerToRemove)
     {
-        for(int i = 0; i < ActiveParty.Count; i++)
+        for (int i = 0; i < ActiveParty.Count; i++)
         {
-            if(ActiveParty[i] == PlayerToRemove)
+            if (ActiveParty[i] == PlayerToRemove)
             {
                 ActiveParty.RemoveAt(i);
             }
@@ -140,7 +140,7 @@ public class GameState : MonoBehaviour
             GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
             //Camera.player = Player;
             PlayerObject = Player;
-            Player.transform.position = new Vector3(-2,0,1);
+            Player.transform.position = new Vector3(-2, 0, 1);
             Player.name = "Player";
             ActiveParty.Add(Player);
             PlayerController = Player.GetComponent<PlayerController>();
@@ -155,8 +155,8 @@ public class GameState : MonoBehaviour
         ActiveParty.Add(PlayerObject);
     }
     public static void AddToParty(GameObject PlayerToAdd)
-    { 
-        if(ActiveParty.Count < 4)
+    {
+        if (ActiveParty.Count < 4)
         {
             GameObject newPlayer = Instantiate(PlayerToAdd);
             ActiveParty.Add(newPlayer);
@@ -172,7 +172,7 @@ public class GameState : MonoBehaviour
     {
         for (int i = 0; i < ActiveParty.Count; i++)
         {
-            if(ActiveParty[i].GetComponent<PlayerController>() != CurrentPlayer)
+            if (ActiveParty[i].GetComponent<PlayerController>() != CurrentPlayer)
             {
                 ActiveParty[i].transform.position = new Vector3(40, 0, 1);
                 ActiveParty[i].GetComponent<PlayerMovement>().CantMove = true;
@@ -182,7 +182,7 @@ public class GameState : MonoBehaviour
 
     public static void ChangeCurrentPlayer()
     {
-        Debug.Log("Active: " +ActiveParty.Count);
+        Debug.Log("Active: " + ActiveParty.Count);
         for (int i = 0; i < ActiveParty.Count; i++)
         {
             Debug.Log("Looking for: " + PlayerObject.name + " " + ActiveParty[i].name);
@@ -219,9 +219,27 @@ public class GameState : MonoBehaviour
                 }
             }
         }
-
     }
+    public static void ChangeCurrentPlayer(GameObject newPlayer)
+    {
+        for (int i = 0; i < ActiveParty.Count; i++) //Look for active
+        {
+            if (ActiveParty[i] == GameState.CurrentPlayer.gameObject)
+            {
+                Debug.Log("Go to next player");
+                ActiveParty[i].SetActive(false);
+                newPlayer.SetActive(true);
+                newPlayer.transform.position = ActiveParty[i].transform.position;
+                newPlayer.GetComponent<PlayerController>().Inventory = ActiveParty[i].GetComponent<PlayerController>().Inventory;
+                newPlayer.GetComponent<PlayerController>().QuestLog = ActiveParty[i].GetComponent<PlayerController>().QuestLog;
+                newPlayer.GetComponent<PlayerController>().Money = ActiveParty[i].GetComponent<PlayerController>().Money;
 
+                newPlayer.GetComponent<PlayerMovement>().CantMove = false;
+                PlayerObject = newPlayer;
+                CurrentPlayer = newPlayer.GetComponent<PlayerController>();
+            }
+        }
+    }
     void Update()
     {
         if (PlayerObject == null)

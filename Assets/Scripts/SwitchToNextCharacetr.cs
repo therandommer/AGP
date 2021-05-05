@@ -10,4 +10,5 @@ public class SwitchToNextCharacetr : MonoBehaviour
         GameState.ChangeCurrentPlayer();
     }
 
+
 }

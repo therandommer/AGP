@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+public enum PlayerClass
+{
+    Warrior,
+    Mage,
+    Rouge,
+    Paladin
+}
 public class Player : Entity
 {
     public Sprite PlayerImage;
+
+    public PlayerClass Class;
 
     public List<InventoryItem> StartingInventory = new List<InventoryItem>();
     public void AddInventoryItem(InventoryItem item)
