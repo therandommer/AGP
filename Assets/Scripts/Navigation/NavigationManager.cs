@@ -51,6 +51,9 @@ public static class NavigationManager
 
     public static void NavigateTo(string destination) //Actually move to the destination, add effects here
     {
-        SceneManager.LoadScene(destination);
+        if(destination != null || destination != "")
+        {
+            SceneManager.LoadScene(destination);
+        }
     }
 }

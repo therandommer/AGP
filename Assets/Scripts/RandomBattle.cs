@@ -67,7 +67,7 @@ public class RandomBattle : MonoBehaviour
                     int RandomDayEnemy = Random.Range(1, DayTimeEnemyPrefabs.Count);
                     int RandomNightEnemy = Random.Range(1, NightTimeEnemyPrefabs.Count);
 
-                    if (GameState.Time.GetTimeOfDay()._Hours > 6 && GameState.Time.GetTimeOfDay()._Hours < 18)
+                    if (GameState.Time.GetComponent<DayNightCycle>()._TimeOfDay.GetTimeOfDay()._Hours > 6 && GameState.Time.GetComponent<DayNightCycle>()._TimeOfDay.GetTimeOfDay()._Hours < 18)
                     {
                         EnemyList.Add(DayTimeEnemyPrefabs[RandomDayEnemy]);
                     }

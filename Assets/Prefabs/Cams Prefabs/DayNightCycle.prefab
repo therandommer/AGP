@@ -610,6 +610,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6998692176177766876}
   - component: {fileID: 6998692176177766867}
+  - component: {fileID: 1467546016}
+  - component: {fileID: 1467546015}
+  - component: {fileID: 6711377445710445916}
   m_Layer: 0
   m_Name: DayNightCycle
   m_TagString: DayNightCycle
@@ -625,7 +628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6998692176177766866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.62237024, y: -0.5192277, z: -0.75185734}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6998692176692144152}
@@ -648,6 +651,53 @@ MonoBehaviour:
   _TimeOfDay: {fileID: 11400000, guid: b280ef643a8d1de419cb6e6004d710cc, type: 2}
   _NightTimeCanvas: {fileID: 6998692176672536000}
   _ClockUI: {fileID: 6998692176692144153}
+  _bTimeSkipping: 0
+--- !u!114 &1467546016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998692176177766866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a4ef76d09fed648bdb43e146c43243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 1467546015}
+--- !u!225 &1467546015
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998692176177766866}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &6711377445710445916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998692176177766866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e0635214bf31645b7a969942360662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: 0
+  yOffset: 0
+  MinXCamera: 0
+  MaxXCamera: 0
+  MinYCamera: 0
+  MaxYCamera: 0
+  Zoom: -10
+  JustFollowPlayer: 1
+  player: {fileID: 0}
 --- !u!1 &6998692176191466560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6998692176672536002}
   - component: {fileID: 6998692176672536001}
+  - component: {fileID: 3051871304311346681}
   m_Layer: 0
   m_Name: NightTimeCanvas
   m_TagString: Untagged
@@ -1357,8 +1408,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6998692176672536000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.014, y: 0.2539, z: 1.2818573}
-  m_LocalScale: {x: 10.77645, y: 7.0124707, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1000, y: 1000, z: 1}
   m_Children: []
   m_Father: {fileID: 6998692176177766876}
   m_RootOrder: 1
@@ -1401,9 +1452,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -723562327
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300058, guid: 34ecf51bcd3f4424eafda7dafd885bd0, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1413,6 +1464,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3051871304311346681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998692176672536000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e0635214bf31645b7a969942360662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: 0
+  yOffset: 0
+  MinXCamera: 0
+  MaxXCamera: 0
+  MinYCamera: 0
+  MaxYCamera: 0
+  Zoom: -10
+  JustFollowPlayer: 1
+  player: {fileID: 0}
 --- !u!1 &6998692176692144159
 GameObject:
   m_ObjectHideFlags: 0

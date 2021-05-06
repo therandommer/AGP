@@ -31,7 +31,6 @@ public class StartOfGameManager : MonoBehaviour
         GS.GetComponent<GameState>().SetupInitialSpawnPoints();
 
         Debug.Log("Current Player is a " + GameState.CurrentPlayer.stats.PlayerProfile.Type);
-
         switch (GameState.CurrentPlayer.stats.PlayerProfile.Type)
         {
             case EntityType.Angel:

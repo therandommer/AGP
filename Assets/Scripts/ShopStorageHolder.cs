@@ -25,6 +25,10 @@ public class ShopStorageHolder : MonoBehaviour
 
     public void GenerateAllShopsInv()
     {
+        NorthernShopInventoryList.Clear();
+        EasternShopInventoryList.Clear();
+        SouthernShopInventoryList.Clear();
+        WesternShopInventoryList.Clear();
         GernerateShopInv(NorthernShopInventoryList);
         GernerateShopInv(EasternShopInventoryList);
         GernerateShopInv(SouthernShopInventoryList);

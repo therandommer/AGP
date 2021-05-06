@@ -65,7 +65,7 @@ MonoBehaviour:
     Decision4Repeatable: 0
     Decision4Pending: 1
     Decision4Convo: {fileID: 11400000, guid: 50a05a9b071046b40bdf39ce5b3c6337, type: 2}
-    Quest4ToGive: {fileID: 11400000, guid: f75cd9bc305d1904198dff834e381d6f, type: 2}
+    Quest4ToGive: {fileID: 11400000, guid: a0a8b4bb3ffffc0408a98c5928815d77, type: 2}
     Quest4PendingConvo: {fileID: 11400000, guid: 880c370a0108ad34cb235982f5e6f913,
       type: 2}
     Quest4CompleteConvo: {fileID: 11400000, guid: 0aba165e473b2664aa54d726a069bbea,
@@ -75,3 +75,4 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 

@@ -35,6 +35,7 @@ public class ConversationManager : Singleton<ConversationManager>
         choicesCanvas = GameObject.Find("Choices").GetComponent<CanvasGroup>();
         choiceManager = GameObject.Find("ChoiceManager").GetComponent<ChoiceManager>();
         Debug.Log("trying to start " + conversation.name);
+        GameState.DiableTime();
         //Start displying the supplied conversation
         if (!talking)
         {
@@ -89,8 +90,7 @@ public class ConversationManager : Singleton<ConversationManager>
                 {
                     if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
-                        Debug.Log("Clicked");
-                        if (currentConversationLine.NextSceneName != "")
+                        if (currentConversationLine.NextSceneName != null && currentConversationLine.NextSceneName != "")
                         {
                             var lastPosition = GameState.GetLastScenePosition(currentConversationLine.NextSceneName);
 
@@ -129,6 +129,8 @@ public class ConversationManager : Singleton<ConversationManager>
             }
         }
         choiceManager.ResetChoices();
+        GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = false;
+        GameState.EnableTime();
     }
 
     void OnGUI()

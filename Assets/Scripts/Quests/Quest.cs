@@ -95,12 +95,17 @@ public class Quest : ScriptableObject , IComparable<Quest>
     public void Reset()
     {
         actualAmount = 0;
-        Status = QuestStatus.NotAccepted;
+        Status = QuestStatus.Accepted;
     }
 
     public void increaseAmount()
     {
         actualAmount++;
+        if(actualAmount >= questAmountNeeded && Status == QuestStatus.Accepted)
+        {
+            ShowMessage.Instance.StartCouroutineForMessage("Quest Completed!", this.name + " has been cpmpleted", QuestUISprite, 2f);
+            Status = QuestStatus.Complete;
+        }
     }
     public int CompareTo(Quest other)
     {

@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58472016962655f48b07b203fac70cb0, type: 3}
   m_Name: FindNPC
   m_EditorClassIdentifier: 
-  Status: 2
+  Status: 0
   QuestName: FindNPC
   questType: 2
+  QuestUISprite: {fileID: 0}
   questAmountNeeded: 1
   actualAmount: 44
   EnemyToKill: 0
   ItemNeeded: {fileID: 0}
   NpcToTalkTo: Brother
   Target: {fileID: 0}
+  TargetSprite: {fileID: 0}
   ExperienceReward: 25
   QuestDescription: 'Go find brother he should be in the Village
 

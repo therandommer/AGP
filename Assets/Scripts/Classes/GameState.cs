@@ -36,17 +36,17 @@ public class GameState : MonoBehaviour
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
 
-    public static TimeOfDay Time;
     [Header("Setters")]
-    public TimeOfDay TimeSetter;
     public FollowCamera CameraSetter;
     public ShopStorageHolder ShopStorageSetter;
+    public BattleEnvironmentStorage MapStorageSetter;
+    public GameObject DayNightObject;
 
     public static FollowCamera Camera;
-
+    public static GameObject Time;
     public static ShopStorageHolder ShopStorage;
+    public static BattleEnvironmentStorage MapStorage;
 
-    public BattleEnvironmentStorage Storage;
 
     public static GameObject[] EnemyPrefabsForBattle;
     public static bool PreSetCombat;
@@ -64,9 +64,10 @@ public class GameState : MonoBehaviour
         Camera = CameraSetter;
         ShopStorage = ShopStorageSetter;
         PlayerLoc = PlayerLocTest;
-        Time = TimeSetter;
+        Time = DayNightObject;
+        MapStorage = MapStorageSetter;
         NumberofBossesNeededToFightFinalBoss = 4;
-
+        Time = Instantiate(DayNightObject);
         if (BattleSceneTest)
         {
             SetUpGameState();
@@ -75,6 +76,23 @@ public class GameState : MonoBehaviour
             PreSetCombat = false;
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public static void DiableTime()
+    {
+        Time.GetComponent<DayNightCycle>()._TimeOfDay.PauseTime(true);
+        Time.GetComponent<PopUpMenu>().DisableTheMenu();
+    }
+
+    public static void EnableTime()
+    {
+        Time.GetComponent<PopUpMenu>().EnableTheMenu();
+        Time.GetComponent<DayNightCycle>()._TimeOfDay.PauseTime(false);
+    }
+
+    public static GameObject CheckTimeForMap()
+    {
+        return MapStorage.CheckTimeForBackground(Time.GetComponent<DayNightCycle>()._TimeOfDay.GetTimeOfDay()._Hours);
     }
 
     public static void LoadEnemyPrefabs(GameObject[] EnemyArray)
@@ -245,6 +263,11 @@ public class GameState : MonoBehaviour
             {
                 PlayerObject = player;
             }
+        }
+
+        if(Time.GetComponent<DayNightCycle>()._TimeOfDay.GetTimeOfDay()._Hours == 0)
+        {
+            ShopStorage.GenerateAllShopsInv();
         }
 
     }

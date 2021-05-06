@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MessagingClientBroadcast : MonoBehaviour
 {
@@ -8,38 +9,30 @@ public class MessagingClientBroadcast : MonoBehaviour
         MessagingManager.Instance.Broadcast();
     }
     */
-    public bool OnTrigger;
     public MessagingClientReceiver MCR;
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        OnTrigger = true;
-    }
-    void OnTriggerExit2D(Collider2D col)
-    {
-        OnTrigger = false;
-    }
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && OnTrigger)
+        GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
+        GameState.CurrentPlayer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        foreach (Quest quest in GameState.CurrentPlayer.QuestLog)
         {
-            OnTrigger = false;
-            GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
-            foreach (Quest quest in GameState.CurrentPlayer.QuestLog)
+            if (quest.questType == QuestType.TalkingQuest)
             {
-                if (quest.questType == QuestType.TalkingQuest)
+                if (gameObject.GetComponent<Npc>().Name == quest.NpcToTalkTo)
                 {
-                    if (gameObject.GetComponent<Npc>().Name == quest.NpcToTalkTo)
-                    {
-                        quest.increaseAmount();
-                    }
+                    quest.increaseAmount();
                 }
             }
-            MessagingManager.Instance.Subscribe(MCR.StartConvo);
-
-            MessagingManager.Instance.Broadcast();
-
-            MessagingManager.Instance.UnSubscribe(MCR.StartConvo);
         }
+        GameState.CurrentPlayer.LastSceneName = SceneManager.GetActiveScene().name;
+
+        GameState.CurrentPlayer.LastScenePosition = GameState.CurrentPlayer.gameObject.transform.position;
+
+        MessagingManager.Instance.Subscribe(MCR.StartConvo);
+
+        MessagingManager.Instance.Broadcast();
+
+        MessagingManager.Instance.UnSubscribe(MCR.StartConvo);
     }
 }

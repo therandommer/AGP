@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class FollowCamera : MonoBehaviour
 {
@@ -17,23 +16,34 @@ public class FollowCamera : MonoBehaviour
 
     public float Zoom = -10;
 
+    public bool JustFollowPlayer;
     // Reference to the player's transform. 
-    GameObject player;
+    public GameObject player;
 
     void LateUpdate()
     {
-        if(player == null)
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
 
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, Zoom);
 
         }
-        Zoom += Input.mouseScrollDelta.y * 0.1f;
 
-        this.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x + xOffset, MinXCamera, MaxXCamera), 
-                                              Mathf.Clamp(player.transform.position.y + yOffset, MinYCamera, MaxYCamera), 
-                                              Zoom);
+        if (JustFollowPlayer)
+        {
+            this.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x + xOffset, MinXCamera, MaxXCamera),
+                                      Mathf.Clamp(player.transform.position.y + yOffset, MinYCamera, MaxYCamera),
+                                      0);
+        }
+        else
+        {
+            Zoom += Input.mouseScrollDelta.y * 0.1f;
+
+            this.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x + xOffset, MinXCamera, MaxXCamera),
+                                                  Mathf.Clamp(player.transform.position.y + yOffset, MinYCamera, MaxYCamera),
+                                                  Zoom);
+        }
     }
 
 }

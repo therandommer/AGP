@@ -40,6 +40,10 @@ public class PopulateQuestList : MonoBehaviour
     public Image ItemRewardImage;
     public TMP_Text AbilityReward;
     public Image AbilityRewardImage;
+    public PopUpMenu MoneyCanavs;
+    public PopUpMenu ExpCanvas;
+    public PopUpMenu AbilityCanavs;
+    public PopUpMenu ItemCanavs;
 
     int TotalRewardMoney;
     int TotalRewardExperience;
@@ -95,6 +99,11 @@ public class PopulateQuestList : MonoBehaviour
     public void ReadSelectedQuest(Quest SelQ)
     {
         SelectedQuestTitle.text = SelQ.name;
+        ItemReward.text = "";
+        AbilityReward.text = "";
+        TotalRewardMoney = 0;
+        TotalRewardExperience = 0;
+
         switch (SelQ.questType)
         {
             case QuestType.KillQuest:
@@ -107,6 +116,7 @@ public class PopulateQuestList : MonoBehaviour
                 break;
             case QuestType.TalkingQuest:
                 SelectedQuestTypeImage.sprite = TalkQuestSprite;
+                TargetTypeName.text = SelQ.NpcToTalkTo;
                 break;
         }
 
@@ -126,22 +136,42 @@ public class PopulateQuestList : MonoBehaviour
                 AmountNeededToKill.text = "You need to talk to: " + SelQ.NpcToTalkTo;
                 break;
         }
-
+        if(SelQ.Reward.Length < 1)
+        {
+            MoneyCanavs.DisableTheMenu();
+            ItemCanavs.DisableTheMenu();
+            AbilityCanavs.DisableTheMenu();
+        }
+        else
+        {
+            ExpCanvas.EnableTheMenu();
+            MoneyCanavs.EnableTheMenu();
+            ItemCanavs.EnableTheMenu();
+            AbilityCanavs.EnableTheMenu();
+        }
         foreach (QuestReward reward in SelQ.Reward)
         {
             switch (reward.questReward)
             {
                 case Reward.Money:
-                    TotalRewardMoney = 0;
                     TotalRewardMoney += reward.RewardAmount;
-                    ExpReward.text = "+ " + TotalRewardMoney + " Money";
+                    MoneyReward.text = "+ " + TotalRewardMoney + " Money";
+                    if(TotalRewardMoney == 0)
+                    {
+                        MoneyCanavs.DisableTheMenu();
+                    }
                     break;
                 case Reward.Exp:
-                    TotalRewardExperience = 0;
                     TotalRewardExperience += reward.RewardAmount;
+                    TotalRewardExperience += SelQ.ExperienceReward;
                     ExpReward.text = "+ " + TotalRewardExperience + " Exp";
+                    if (TotalRewardExperience == 0)
+                    {
+                        ExpCanvas.DisableTheMenu();
+                    }
                     break;
                 case Reward.Item:
+                    Debug.Log("Reading: " + reward.questReward);
                     ItemReward.text = reward.RewardItem.itemName;
                     switch (reward.RewardItem.rarity)
                     {
@@ -197,6 +227,10 @@ public class PopulateQuestList : MonoBehaviour
                                 break;
                         }
                     }
+                    if(ItemReward.text == "")
+                    {
+                        ItemCanavs.DisableTheMenu();
+                    }
                     break;
                 case Reward.Ability:
                     AbilityReward.text = reward.RewardAbility.name;
@@ -222,6 +256,10 @@ public class PopulateQuestList : MonoBehaviour
                             break;
                     }
                     AbilityRewardImage.sprite = reward.RewardAbility.AbilityImage;
+                    if (AbilityReward.text == "" || AbilityReward.text == null)
+                    {
+                        AbilityCanavs.DisableTheMenu();
+                    }
                     break;
             }
         }

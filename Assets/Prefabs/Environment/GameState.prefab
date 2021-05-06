@@ -289,10 +289,11 @@ MonoBehaviour:
   CanFightFinalBossDebug: 0
   NumberOfBossesDefeatedDebug: 0
   PlayerController: {fileID: 0}
-  TimeSetter: {fileID: 11400000, guid: b280ef643a8d1de419cb6e6004d710cc, type: 2}
   CameraSetter: {fileID: 0}
   ShopStorageSetter: {fileID: 7844578740849113851}
-  Storage: {fileID: 6063364470163521082}
+  MapStorageSetter: {fileID: 6063364470163521082}
+  DayNightObject: {fileID: 6998692176177766866, guid: ed56dd39a14f30742a2b650c5c169919,
+    type: 3}
   PlayerSpawned: 0
   CanHaveConvo: 0
   BattleSceneTest: 0

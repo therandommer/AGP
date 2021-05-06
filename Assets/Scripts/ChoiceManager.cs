@@ -338,6 +338,7 @@ public class ChoiceManager : MonoBehaviour
         }
         if (Choice2Quest != null)
         {
+            CurrentConversationLine.Decision2Pending = true;
             GameState.CurrentPlayer.QuestLog.Add(Choice2Quest);
             ShowMessage.Instance.StartCouroutineForMessage("Gained Quest!", Choice2Quest.QuestName,
                                    Choice2Quest.QuestUISprite, 2f);
@@ -398,6 +399,7 @@ public class ChoiceManager : MonoBehaviour
         }
         if (Choice3Quest != null)
         {
+            CurrentConversationLine.Decision3Pending = true;
             GameState.CurrentPlayer.QuestLog.Add(Choice3Quest);
             ShowMessage.Instance.StartCouroutineForMessage("Gained Quest!", Choice3Quest.QuestName,
                        Choice3Quest.QuestUISprite, 2f);
@@ -458,6 +460,7 @@ public class ChoiceManager : MonoBehaviour
         }
         if (Choice4Quest != null)
         {
+            CurrentConversationLine.Decision4Pending = true;
             GameState.CurrentPlayer.QuestLog.Add(Choice4Quest);
             ShowMessage.Instance.StartCouroutineForMessage("Gained Quest!", Choice4Quest.QuestName,
                                                             Choice4Quest.QuestUISprite, 2f);

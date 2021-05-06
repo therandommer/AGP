@@ -15,14 +15,16 @@ MonoBehaviour:
   Status: 1
   QuestName: Kill Assassin
   questType: 0
+  QuestUISprite: {fileID: 0}
   questAmountNeeded: 1
   actualAmount: 1
   EnemyToKill: 2
   ItemNeeded: {fileID: 0}
-  NpcToTalkTo: {fileID: 0}
+  NpcToTalkTo: 
+  Target: {fileID: 0}
   TargetSprite: {fileID: 21300000, guid: 6e90e5c1d015cfe4db410f6857dd5b09, type: 3}
   ExperienceReward: 0
-  QuestDescription: 'Can be found nearby in the woods (Quel Forrest)
+  QuestDescription: 'Can be found nearby in the woods (West Oasis)
 
 '
   Reward:

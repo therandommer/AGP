@@ -126,6 +126,7 @@ public class BattleManager : MonoBehaviour
 
     void Awake()
     {
+        Instantiate(GameState.CheckTimeForMap());
         battleStateManager = GetComponent<Animator>();
         if (battleStateManager == null)
         {
@@ -172,7 +173,7 @@ public class BattleManager : MonoBehaviour
         }
         // Spawn the enemies in 
         StartCoroutine(SpawnEnemies(GameState.EnemyPrefabsForBattle));
-
+        enemyCount = GameState.EnemyPrefabsForBattle.Length;
         GetAnimationStates();
 
         
@@ -869,7 +870,8 @@ public class BattleManager : MonoBehaviour
                 GameState.CurrentPlayer = StorredPlayer.GetComponent<PlayerController>();
                 GameState.CurrentPlayer.gameObject.transform.position = GameState.CurrentPlayer.LastScenePosition;
 
-                NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);                //Any animation and move back to Overworld
+                NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);                
+                //Any animation and move back to Overworld
                 break;
             default:
                 break;

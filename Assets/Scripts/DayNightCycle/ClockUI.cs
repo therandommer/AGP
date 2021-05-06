@@ -41,6 +41,7 @@ public class ClockUI : MonoBehaviour
 
         _TimeText.text = TimeTextHours + " : " + TimeTextMinutes;
 
+
         float MinuteRotation = 6 * _TimeOfDay.GetTimeOfDay()._Minutes;
         Quaternion FinalMinuteRot = Quaternion.Euler(0, 0, -MinuteRotation);
         _MinuteHand.transform.rotation = FinalMinuteRot;

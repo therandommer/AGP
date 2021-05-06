@@ -8,7 +8,7 @@ public class DayNightCycle : MonoBehaviour
      Private Editable Variables
      =====*/
     [Header("Time Settings")]
-    [SerializeField] private TimeOfDay _TimeOfDay;
+    [SerializeField] public TimeOfDay _TimeOfDay;
     [SerializeField] GameObject _NightTimeCanvas;
     [SerializeField] private ClockUI _ClockUI;
 
@@ -30,7 +30,7 @@ public class DayNightCycle : MonoBehaviour
     /*===
     Time Skip Variables 
     ===*/
-    private bool _bTimeSkipping = false;
+    public bool _bTimeSkipping = false;
     private float _CurrentSkipTimeInMins = 0;
     private float _SkipTimeToInMins = 0;
     //=====
@@ -81,7 +81,10 @@ public class DayNightCycle : MonoBehaviour
         }
 
         if (!_bTimeSkipping)
+        {
             UpdateTime();
+
+        }
         else
             TimeSkip();
 
@@ -110,7 +113,7 @@ public class DayNightCycle : MonoBehaviour
             _LastHour = _TimeOfDay.GetTimeOfDay()._Hours;
     }
 
-    void UpdateTime()
+    public void UpdateTime()
     {
         if (!_TimeOfDay.IsTimePaused())
         {
@@ -177,11 +180,11 @@ public class DayNightCycle : MonoBehaviour
 
                 float PercentOfDaytime = 100 - ((100 / TotalFadeTime) * (TimeTillNightTime));
                 NightFade *= PercentOfDaytime / 100;
-                //Debug.Log(TotalFadeTime + " : " + TimeTillNightTime + " : " + PercentOfDaytime);
-
+                //Debug.Log(TotalFadeTime + " : " + TimeTillNightTime + " : " + PercentOfDaytime + " : " + NightFade);
             }
 
             SpriteRenderer MatRen = _NightTimeCanvas.GetComponent<SpriteRenderer>();
+            //Debug.Log("Alpha should be " + NightFade + " Is " + MatRen.color.a);
             MatRen.color = new Color(_TimeOfDay._NightTimeColour.r, _TimeOfDay._NightTimeColour.g,
                                      _TimeOfDay._NightTimeColour.b, NightFade);
 
