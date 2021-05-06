@@ -4822,6 +4822,8 @@ MonoBehaviour:
   MinYCamera: -9.55
   MaxYCamera: 1
   Zoom: -10
+  JustFollowPlayer: 0
+  player: {fileID: 0}
 --- !u!1 &1172209898
 GameObject:
   m_ObjectHideFlags: 0
@@ -26066,13 +26068,19 @@ PrefabInstance:
     - target: {fileID: 4935566840830467891, guid: 632472128f7e63e4c9eadfed3d47f543,
         type: 3}
       propertyPath: Conversations.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4935566840830467891, guid: 632472128f7e63e4c9eadfed3d47f543,
         type: 3}
       propertyPath: Conversations.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 692283db7a5089f4d8adc526736ad052,
+        type: 2}
+    - target: {fileID: 4935566840830467891, guid: 632472128f7e63e4c9eadfed3d47f543,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78304c6ef74ea2046ad38eb9b9a1b7bb,
         type: 2}
     - target: {fileID: 4935566840830467893, guid: 632472128f7e63e4c9eadfed3d47f543,
         type: 3}
@@ -26094,7 +26102,7 @@ PrefabInstance:
     - target: {fileID: 4935566840830467894, guid: 632472128f7e63e4c9eadfed3d47f543,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.06
+      value: -11.4
       objectReference: {fileID: 0}
     - target: {fileID: 4935566840830467894, guid: 632472128f7e63e4c9eadfed3d47f543,
         type: 3}
@@ -26266,6 +26274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1.3320553
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804725323791864849, guid: 70deff5a6656b9d4da905750111aa7f0,
+        type: 3}
+      propertyPath: Name
+      value: Innkeeper
       objectReference: {fileID: 0}
     - target: {fileID: 2804725323791864851, guid: 70deff5a6656b9d4da905750111aa7f0,
         type: 3}

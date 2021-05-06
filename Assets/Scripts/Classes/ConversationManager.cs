@@ -23,7 +23,6 @@ public class ConversationManager : Singleton<ConversationManager>
     public Image mainImageHolder;//the image holder
     public CanvasGroup choicesCanvas;
     public ChoiceManager choiceManager;
-    public List<GameObject> EnemiesToFight = new List<GameObject>();
 
 
     public void StartConversation(Conversation conversation)
@@ -120,11 +119,10 @@ public class ConversationManager : Singleton<ConversationManager>
             talking = false;
             choice = false;
             wait = false;
-            if (EnemiesToFight.Count > 0)
+            if (conversation.EnemiesToFight != null && conversation.EnemiesToFight.Length > 0)
             {
-                GameState.EnemyPrefabsForBattle = EnemiesToFight.ToArray();
+                GameState.EnemyPrefabsForBattle = conversation.EnemiesToFight;
 
-                EnemiesToFight.Clear();
                 SceneManager.LoadScene("TownBattle");
             }
         }

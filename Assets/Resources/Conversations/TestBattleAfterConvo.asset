@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: TestBattleAfterConvo
   m_EditorClassIdentifier: 
   Repeatable: 0
-  Skip: 0
+  Skip: 1
+  Fight: 1
   ConversationLines:
   - SpeakingCharacterName: Guy
     ConversationText: Fight me bitch
     DisplayPic: {fileID: 0}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -71,3 +73,8 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight:
+  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
+  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
+  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58472016962655f48b07b203fac70cb0, type: 3}
   m_Name: SpeakToInkeeper
   m_EditorClassIdentifier: 
-  Status: 0
+  Status: 1
   QuestName: Talk to the Innkeeper
   questType: 2
-  questAmountNeeded: 0
+  QuestUISprite: {fileID: 0}
+  questAmountNeeded: 1
   actualAmount: 0
   EnemyToKill: 0
   ItemNeeded: {fileID: 0}

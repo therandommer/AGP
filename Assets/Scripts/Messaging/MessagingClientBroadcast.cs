@@ -13,26 +13,29 @@ public class MessagingClientBroadcast : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
-        GameState.CurrentPlayer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        foreach (Quest quest in GameState.CurrentPlayer.QuestLog)
+        if (col.tag == "Player")
         {
-            if (quest.questType == QuestType.TalkingQuest)
+            GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
+            GameState.CurrentPlayer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            foreach (Quest quest in GameState.CurrentPlayer.QuestLog)
             {
-                if (gameObject.GetComponent<Npc>().Name == quest.NpcToTalkTo)
+                if (quest.questType == QuestType.TalkingQuest)
                 {
-                    quest.increaseAmount();
+                    if (gameObject.GetComponent<Npc>().Name == quest.NpcToTalkTo)
+                    {
+                        quest.increaseAmount();
+                    }
                 }
             }
+            GameState.CurrentPlayer.LastSceneName = SceneManager.GetActiveScene().name;
+
+            GameState.CurrentPlayer.LastScenePosition = GameState.CurrentPlayer.gameObject.transform.position;
+
+            MessagingManager.Instance.Subscribe(MCR.StartConvo);
+
+            MessagingManager.Instance.Broadcast();
+
+            MessagingManager.Instance.UnSubscribe(MCR.StartConvo);
         }
-        GameState.CurrentPlayer.LastSceneName = SceneManager.GetActiveScene().name;
-
-        GameState.CurrentPlayer.LastScenePosition = GameState.CurrentPlayer.gameObject.transform.position;
-
-        MessagingManager.Instance.Subscribe(MCR.StartConvo);
-
-        MessagingManager.Instance.Broadcast();
-
-        MessagingManager.Instance.UnSubscribe(MCR.StartConvo);
     }
 }

@@ -18,7 +18,7 @@ MonoBehaviour:
     _Seconds: 1
   _bOnlyUpdateHandsPerMinute: 0
   _TimeMultipliers:
-    _DefaultTime: 1500
+    _DefaultTime: 15000
     _Town: 1
     _Combat: 1
     _WorldMapMoving: 1
@@ -44,6 +44,6 @@ MonoBehaviour:
     _Hours: 8
     _Minutes: 0
     _Seconds: 0
-  _NightTime: 0.75
+  _NightTime: 0.7
   _TimeSkipLerpAmount: 1
   _NightTimeColour: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 0}

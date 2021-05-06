@@ -8,8 +8,10 @@ public class Conversation : ScriptableObject
     public bool Repeatable;
     [Header("If one off, has this convo occured, if yes skip")]
     public bool Skip;
+    public bool Fight;
     public ConversationEntry[] ConversationLines;
 
+    public GameObject[] EnemiesToFight;
     public void Reset()
     {
         Skip = false;
