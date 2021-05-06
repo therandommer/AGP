@@ -75,19 +75,23 @@ public class AnimationManager : MonoBehaviour
         if(isEffective && !isNotEffective)
 		{
             damageText.text = "" + receivedDamage + "!!";
+            damageText.color = Color.red;
 		}
         else if(!isEffective && isNotEffective)
 		{
             damageText.text = "" + receivedDamage + "...";
-		}
+            damageText.color = Color.gray;
+        }
         else
 		{
             damageText.text = "" + receivedDamage;
+            damageText.color = Color.black;
         }
         if(receivedDamage == 0)
 		{
             damageText.text = "Miss";
-		}
+            damageText.color = Color.gray;
+        }
         yield return new WaitForSeconds(displayTime);
         damageObject.SetActive(false);
         Debug.Log("Disabling Damage Value display for " + gameObject.name);
