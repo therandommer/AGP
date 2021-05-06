@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Mayor
     ConversationText: So this town. We're currently under seige.
     DisplayPic: {fileID: 21300000, guid: 9b8d4c2bf09f89849a180bf6fc845789, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -71,9 +73,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: The bandits overwhelmed us... And took over our water source.
     DisplayPic: {fileID: 21300000, guid: 9b8d4c2bf09f89849a180bf6fc845789, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -127,9 +131,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: They are trying to take over the whole desert!
     DisplayPic: {fileID: 21300000, guid: 9b8d4c2bf09f89849a180bf6fc845789, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -183,10 +189,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: We used to be a bustling town but now most of our citizens
       have fled.
     DisplayPic: {fileID: 21300000, guid: 9b8d4c2bf09f89849a180bf6fc845789, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -240,10 +248,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: This just leaves the few, and we urged any remaining citizens
       to stay indoors.
     DisplayPic: {fileID: 21300000, guid: 9b8d4c2bf09f89849a180bf6fc845789, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -297,10 +307,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Anyways, the blacksmith is to the east of me. You'll need the
       gear they offer.
     DisplayPic: {fileID: 21300000, guid: 9b8d4c2bf09f89849a180bf6fc845789, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -354,9 +366,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: The inn is to the west, though we don't get many visitors anymore.
     DisplayPic: {fileID: 21300000, guid: 9b8d4c2bf09f89849a180bf6fc845789, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -410,9 +424,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Anyways, any more questions? I'm still quite busy.
     DisplayPic: {fileID: 21300000, guid: 9b8d4c2bf09f89849a180bf6fc845789, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Yes, I have more questions.
@@ -466,3 +482,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Mayor
-    ConversationText: I'm the mayor of this small town.
+    ConversationText: I'm the mayor of this small town, well so much a town eh?
     DisplayPic: {fileID: 21300000, guid: 2f0168a7fb835f34da3222d1ed8bd484, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -71,9 +73,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: I help run and keep everything up and running around here.
     DisplayPic: {fileID: 21300000, guid: 2f0168a7fb835f34da3222d1ed8bd484, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -127,9 +131,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Though I would by lying if I said I did it by myself.
     DisplayPic: {fileID: 21300000, guid: 2f0168a7fb835f34da3222d1ed8bd484, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -183,10 +189,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: The innkeeper to the west has provided their luxury beds to
       all locals helping us sleep off this nasty winter.
     DisplayPic: {fileID: 21300000, guid: 2f0168a7fb835f34da3222d1ed8bd484, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -240,10 +248,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: The blacksmith to the east keeps the forges and fires burning
       and provides great equipment for everyone!
     DisplayPic: {fileID: 21300000, guid: 2f0168a7fb835f34da3222d1ed8bd484, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -297,10 +307,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Together we have ensured this a safe haven for any who need
       a small respite.
     DisplayPic: {fileID: 21300000, guid: 2f0168a7fb835f34da3222d1ed8bd484, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -354,9 +366,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Do you have more questions?
     DisplayPic: {fileID: 21300000, guid: 2f0168a7fb835f34da3222d1ed8bd484, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Yes, I have more questions.
@@ -410,3 +424,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

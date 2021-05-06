@@ -52,6 +52,9 @@ public class BattleManager : MonoBehaviour
     [Tooltip("Use if you want to have player go first in the fight")]
     public bool DebugPlayerAttack = false;
 
+    public int MoneyToGive;
+    public Sprite MoneyImage;
+
     //used for attack movement lerps
     Vector2 posA = Vector2.zero;
     Vector2 posB = Vector2.zero;
@@ -165,15 +168,19 @@ public class BattleManager : MonoBehaviour
         // Calculate how many enemies 
         if(!GameState.PreSetCombat)
         {
-            enemyCount = Random.Range(1, EnemySpawnPoints.Length); //Dynamically set enemy numbers based on level/party members, stops swarming
+            enemyCount = Random.Range(1, EnemySpawnPoints.Length); 
         }
         else
         {
-            enemyCount = GameState.EnemyPrefabsForBattle.Length - 1;
+            enemyCount = GameState.EnemyPrefabsForBattle.Length;//Dynamically set enemy numbers based on level/party members, stops swarming
         }
         // Spawn the enemies in 
+        if(!BattleSceneTest)
+        {
+            enemyCount = GameState.EnemyPrefabsForBattle.Length;
+        }
+
         StartCoroutine(SpawnEnemies(GameState.EnemyPrefabsForBattle));
-        enemyCount = GameState.EnemyPrefabsForBattle.Length;
         GetAnimationStates();
 
         
@@ -271,6 +278,7 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator ShowResults()//Add in wait for click then end the scene
     {
+        ShowMessage.Instance.StartCouroutineForMessage("Ganed Money!", "Looted " + MoneyToGive + " Gems", MoneyImage, 2f);
         yield return new WaitForSeconds(2);
         battleStateManager.SetBool("EndBattle", true);
     }
@@ -297,8 +305,8 @@ public class BattleManager : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
-                        done = true;
                         IdlePlayers();
+                        done = true;
                     }
                     yield return null;
                 }
@@ -445,6 +453,7 @@ public class BattleManager : MonoBehaviour
 
 
         yield return new WaitForSeconds(0.5f);
+        IdlePlayers();
         for (int i = 0; i < CurrentPlayer.EnemiesToDamage.Count; i++)
         {
             if(CurrentPlayer.EnemiesToDamage[i] != null)
@@ -462,6 +471,11 @@ public class BattleManager : MonoBehaviour
         attack.ResetSelectionCircle();
         attack.EnemyPopupCanvas.alpha = 0;
         Destroy(attackParticle);
+        GameObject[] Particles = GameObject.FindGameObjectsWithTag("Particle");
+        foreach(GameObject part in Particles)
+        { 
+            Destroy(part);
+        }
         attacking = false;
         CurrentPlayer.Attacking = false;
         yield return null;
@@ -611,9 +625,8 @@ public class BattleManager : MonoBehaviour
             {
                 DamageCalc = 1;
             }
-            //int DamageCalc = currentAI.stats.Strength + attack.hitAmount - TargetPlayer.stats.Defense;
-            //Debug.Log("Dealt " + DamageCalc + " to " + TargetPlayer.name);
-            //TargetPlayer.GetComponent<AnimationManager>().EnableDamageValues()
+
+
             TargetPlayer.gameObject.GetComponent<AnimationManager>().EnableDamageValues(Mathf.RoundToInt(DamageCalc), isEffective, isNotEffective);
             return Mathf.RoundToInt(DamageCalc);
         }

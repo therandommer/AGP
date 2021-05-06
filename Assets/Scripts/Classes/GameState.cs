@@ -147,9 +147,10 @@ public class GameState : MonoBehaviour
     {
         if (!PlayerSpawned)
         {
+            PlayerObject = player;
             GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
-            //Camera.player = Player;
             PlayerObject = Player;
+            //Camera.player = Player;
             Player.transform.position = new Vector3(-2, 0, 1);
             Player.name = "Player";
             ActiveParty.Add(Player);

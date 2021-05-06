@@ -157,13 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesToFight:
-  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
-  - {fileID: 1610123130608853937, guid: 77d0e73d926793b4a99752c8e87dc90c, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
 --- !u!114 &184749708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1ee9c3ec7a60d4e8328793a66b7e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCR: {fileID: 0}
+  MCR: {fileID: 184749707}
 --- !u!114 &184749709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Conversations:
-  - {fileID: 11400000, guid: 692283db7a5089f4d8adc526736ad052, type: 2}
+  - {fileID: 11400000, guid: da0553d3ca884fe48a4c60779254c16b, type: 2}
+  - {fileID: 11400000, guid: 4662c845d37253743b31199a5d5456ed, type: 2}
 --- !u!114 &184749710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16318,13 +16312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesToFight:
-  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
-  - {fileID: 1610123130608853937, guid: 77d0e73d926793b4a99752c8e87dc90c, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
 --- !u!114 &998126464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16337,7 +16324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1ee9c3ec7a60d4e8328793a66b7e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCR: {fileID: 0}
+  MCR: {fileID: 998126463}
 --- !u!114 &998126465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16351,7 +16338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Conversations:
-  - {fileID: 11400000, guid: 692283db7a5089f4d8adc526736ad052, type: 2}
+  - {fileID: 11400000, guid: 41df34fe8050b5a48b3e5966728d274d, type: 2}
+  - {fileID: 11400000, guid: 4662c845d37253743b31199a5d5456ed, type: 2}
 --- !u!114 &998126466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16547,13 +16535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesToFight:
-  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
-  - {fileID: 1610123130608853937, guid: 77d0e73d926793b4a99752c8e87dc90c, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
 --- !u!114 &1316025834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16566,7 +16547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1ee9c3ec7a60d4e8328793a66b7e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCR: {fileID: 0}
+  MCR: {fileID: 1316025833}
 --- !u!114 &1316025835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16580,7 +16561,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Conversations:
-  - {fileID: 11400000, guid: 692283db7a5089f4d8adc526736ad052, type: 2}
+  - {fileID: 11400000, guid: 12029bef6ea908543b4de2b90671d92b, type: 2}
+  - {fileID: 11400000, guid: 4662c845d37253743b31199a5d5456ed, type: 2}
 --- !u!114 &1316025836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16843,6 +16825,8 @@ MonoBehaviour:
   MinYCamera: -62
   MaxYCamera: 6
   Zoom: -10
+  JustFollowPlayer: 0
+  player: {fileID: 0}
 --- !u!1 &1507658357
 GameObject:
   m_ObjectHideFlags: 0
@@ -16879,13 +16863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesToFight:
-  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
-  - {fileID: 1610123130608853937, guid: 77d0e73d926793b4a99752c8e87dc90c, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
 --- !u!114 &1507658359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16898,7 +16875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1ee9c3ec7a60d4e8328793a66b7e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCR: {fileID: 0}
+  MCR: {fileID: 1507658358}
 --- !u!114 &1507658360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16912,7 +16889,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Conversations:
-  - {fileID: 11400000, guid: 692283db7a5089f4d8adc526736ad052, type: 2}
+  - {fileID: 11400000, guid: 0bf289b9bf692c24a927b0580380d56b, type: 2}
+  - {fileID: 11400000, guid: 4662c845d37253743b31199a5d5456ed, type: 2}
 --- !u!114 &1507658361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17155,13 +17133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesToFight:
-  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
-  - {fileID: 1610123130608853937, guid: 77d0e73d926793b4a99752c8e87dc90c, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
 --- !u!114 &1790262036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17174,7 +17145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1ee9c3ec7a60d4e8328793a66b7e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCR: {fileID: 0}
+  MCR: {fileID: 1790262035}
 --- !u!114 &1790262037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17188,7 +17159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Conversations:
-  - {fileID: 11400000, guid: 692283db7a5089f4d8adc526736ad052, type: 2}
+  - {fileID: 11400000, guid: da0553d3ca884fe48a4c60779254c16b, type: 2}
+  - {fileID: 11400000, guid: 4662c845d37253743b31199a5d5456ed, type: 2}
 --- !u!114 &1790262038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30605,13 +30577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesToFight:
-  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
-  - {fileID: 1610123130608853937, guid: 77d0e73d926793b4a99752c8e87dc90c, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
 --- !u!114 &2123988235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30624,7 +30589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1ee9c3ec7a60d4e8328793a66b7e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCR: {fileID: 0}
+  MCR: {fileID: 2123988234}
 --- !u!114 &2123988236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30638,7 +30603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Conversations:
-  - {fileID: 11400000, guid: 692283db7a5089f4d8adc526736ad052, type: 2}
+  - {fileID: 11400000, guid: 7f66f1d2e6737774abfcb071da32bc98, type: 2}
+  - {fileID: 11400000, guid: 4662c845d37253743b31199a5d5456ed, type: 2}
 --- !u!114 &2123988237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30850,13 +30816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesToFight:
-  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
-  - {fileID: 1610123130608853937, guid: 77d0e73d926793b4a99752c8e87dc90c, type: 3}
-  - {fileID: 7372007125214807464, guid: 18ba2a82c209b5644927c90698977857, type: 3}
-  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
 --- !u!61 &5936251431086542603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30896,7 +30855,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Conversations:
-  - {fileID: 11400000, guid: 692283db7a5089f4d8adc526736ad052, type: 2}
+  - {fileID: 11400000, guid: 5c51811c5e3be744087862710af94c50, type: 2}
+  - {fileID: 11400000, guid: 4662c845d37253743b31199a5d5456ed, type: 2}
 --- !u!114 &5936251431086542605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30909,7 +30869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1ee9c3ec7a60d4e8328793a66b7e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCR: {fileID: 0}
+  MCR: {fileID: 5936251431086542602}
 --- !u!114 &5936251431086542607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31139,9 +31099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesToFight:
-  - {fileID: 8540222929980850683, guid: 4dfae522c31b1814cbbee9d83479487f, type: 3}
-  - {fileID: 8337942461407027523, guid: 44d5ab33b559d61449b5c0b13ff93455, type: 3}
 --- !u!61 &6148453002919944785
 BoxCollider2D:
   m_ObjectHideFlags: 0

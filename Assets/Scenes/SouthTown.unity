@@ -2751,6 +2751,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667616252231449645, guid: 1bace7126ad016d41ab4fa19c2d0ad58,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667616252231449645, guid: 1bace7126ad016d41ab4fa19c2d0ad58,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3667616252233392096, guid: 1bace7126ad016d41ab4fa19c2d0ad58,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -26525,7 +26535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesToFight: []
 --- !u!61 &5943332196488693977
 BoxCollider2D:
   m_ObjectHideFlags: 0

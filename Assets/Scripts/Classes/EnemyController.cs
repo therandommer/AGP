@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
     [Header("Stats Holder")]
     public StatsHolder stats;
     [Header("Experience given on kill, Total experience = Exp*Level*5")]
-    int ExperienceToGive;
+    public int ExperienceToGive;
 
     public void UpdateUI()
     {
@@ -59,21 +59,22 @@ public class EnemyController : MonoBehaviour
         return ExperienceToGive * stats.Level * 5;
     }
 
+    public int GoldOnKill()
+    {
+        return stats.Level * 5;
+    }
+
     void Awake()
     {
         anim = GetComponent<AnimationManager>();
-        /*
-        ///Copy across all details, much easier to handle plus better for saving
-        Level = EnemyProfile.level;
-        Health = EnemyProfile.maxHealth;
-        MaxHealth = EnemyProfile.maxHealth;
-        Strength = EnemyProfile.strength;
-        Magic = EnemyProfile.magic;
-        Defense = EnemyProfile.defense;
-        Speed = EnemyProfile.speed;
-        Damage = EnemyProfile.BonusDamage;
-        Armor = EnemyProfile.armor;
-        */
+
+        int levelDifference = GameState.CurrentPlayer.stats.Level - stats.Level;
+
+        for(int i = 0; i < levelDifference; i++)
+        {
+            stats.LevelUp();
+        }
+
         if (sliderObject != null)
         {
             sliderObject.SetActive(true);
@@ -201,6 +202,7 @@ public class EnemyController : MonoBehaviour
         attacking = false;
         if (selectedTarget.stats.Health <= 0)
         {
+            battleManager.playerCount--;
             selectedTarget.KillPlayer();
         }
     }

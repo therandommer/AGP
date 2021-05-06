@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Blacksmith
     ConversationText: What do you want?
     DisplayPic: {fileID: 21300000, guid: 3a7c9ae6affa9554bb634fcfa90746ff, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Who are you?
@@ -71,3 +73,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

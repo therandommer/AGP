@@ -5374,6 +5374,8 @@ MonoBehaviour:
   MinYCamera: 0
   MaxYCamera: 14
   Zoom: -10
+  JustFollowPlayer: 0
+  player: {fileID: 0}
 --- !u!1001 &709028496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5384,7 +5386,7 @@ PrefabInstance:
     - target: {fileID: 7768625799248455629, guid: 45b64e45a29cf814ba64000895ffd14b,
         type: 3}
       propertyPath: m_Name
-      value: NPCBattle
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 7768625799248455630, guid: 45b64e45a29cf814ba64000895ffd14b,
         type: 3}
@@ -5516,8 +5518,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277,
         type: 3}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 258a1e8e636936844b52c3aa627756a4,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d43cc01b680cba40908244004462ac2,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 709028497}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &709028497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 709028496}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &786153257
 GameObject:
   m_ObjectHideFlags: 0
@@ -12175,6 +12211,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCBattle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455630, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e90e5c1d015cfe4db410f6857dd5b09,
+        type: 3}
     - target: {fileID: 7768625799248455631, guid: 45b64e45a29cf814ba64000895ffd14b,
         type: 3}
       propertyPath: m_Offset.x
@@ -12240,8 +12282,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 91342fb41fc01134a95e7ab974941c16,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b4b3e31303afbfa488a8ccb7ecc96976,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 1406559930}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &1406559930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1406559929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1501295264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12353,6 +12429,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCBattle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455630, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e90e5c1d015cfe4db410f6857dd5b09,
+        type: 3}
     - target: {fileID: 7768625799248455631, guid: 45b64e45a29cf814ba64000895ffd14b,
         type: 3}
       propertyPath: m_Offset.x
@@ -12418,8 +12500,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 91342fb41fc01134a95e7ab974941c16,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b4b3e31303afbfa488a8ccb7ecc96976,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 1687971506}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &1687971506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1687971505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1704657817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12437,6 +12553,12 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455630, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e90e5c1d015cfe4db410f6857dd5b09,
+        type: 3}
     - target: {fileID: 7768625799248455631, guid: 45b64e45a29cf814ba64000895ffd14b,
         type: 3}
       propertyPath: m_Offset.x
@@ -12532,5 +12654,39 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.35917908
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 91342fb41fc01134a95e7ab974941c16,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b4b3e31303afbfa488a8ccb7ecc96976,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 1704657818}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &1704657818 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1704657817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

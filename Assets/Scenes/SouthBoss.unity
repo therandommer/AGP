@@ -198,8 +198,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f26830f69fa29945b4732b9783ed4fd,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e5588e33ad1494949963a1f65be1f300,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 459872671}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &459872671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 459872670}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &462354272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 7768625799248455633, guid: 45b64e45a29cf814ba64000895ffd14b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.12
+      value: -11.55
       objectReference: {fileID: 0}
     - target: {fileID: 7768625799248455633, guid: 45b64e45a29cf814ba64000895ffd14b,
         type: 3}
@@ -277,8 +311,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0bf289b9bf692c24a927b0580380d56b,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4662c845d37253743b31199a5d5456ed,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 462354273}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &462354273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 462354272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &494209881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -356,8 +424,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8358a9859ae5a02459f8f1234548764f,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e5588e33ad1494949963a1f65be1f300,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 494209882}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &494209882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 494209881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &540656619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -435,8 +537,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c51811c5e3be744087862710af94c50,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4662c845d37253743b31199a5d5456ed,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 540656620}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &540656620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 540656619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &776607329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -801,8 +937,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e17e77906e58b14aad454c6be4df702,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e5588e33ad1494949963a1f65be1f300,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 938444709}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &938444709 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 938444708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1196338293
 GameObject:
   m_ObjectHideFlags: 0
@@ -23279,8 +23449,48 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.36994842
       objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d968f33fa96a1574599ba741dd09da03,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e5588e33ad1494949963a1f65be1f300,
+        type: 2}
+    - target: {fileID: 7768625799248455636, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: Conversations.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: e5588e33ad1494949963a1f65be1f300,
+        type: 2}
+    - target: {fileID: 7768625799248455637, guid: 45b64e45a29cf814ba64000895ffd14b,
+        type: 3}
+      propertyPath: MCR
+      value: 
+      objectReference: {fileID: 1639993292}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b64e45a29cf814ba64000895ffd14b, type: 3}
+--- !u!114 &1639993292 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768625799248455634, guid: 45b64e45a29cf814ba64000895ffd14b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1639993291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89109cc5b3717ca45a19ff2de889d115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2028414356
 GameObject:
   m_ObjectHideFlags: 0
@@ -44900,3 +45110,5 @@ MonoBehaviour:
   MinYCamera: -6
   MaxYCamera: 60
   Zoom: -10
+  JustFollowPlayer: 0
+  player: {fileID: 0}

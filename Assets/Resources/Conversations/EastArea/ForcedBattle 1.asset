@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
+  m_Name: ForcedBattle 1
+  m_EditorClassIdentifier: 
+  Repeatable: 0
+  Skip: 0
+  Fight: 0
+  ConversationLines:
+  - SpeakingCharacterName: Grunt
+    ConversationText: Protect the boss!
+    DisplayPic: {fileID: 21300000, guid: f25bbee7fc1e56545b4d609ed16be7e9, type: 3}
+    MainDisplayPic: {fileID: 0}
+    DecisionToBeMade: 0
+    Decision1: 0
+    Decision1Text: 
+    Decision1Repeatable: 0
+    Decision1Pending: 0
+    Decision1Convo: {fileID: 0}
+    Quest1ToGive: {fileID: 0}
+    Quest1PendingConvo: {fileID: 0}
+    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingButtonText: 
+    Item1ToGive: {fileID: 0}
+    Character1ToGive: {fileID: 0}
+    TalkQuest1Confirm: {fileID: 0}
+    FetchQuest1Confirm: {fileID: 0}
+    Decision2: 0
+    Decision2Text: 
+    Decision2Repeatable: 0
+    Decision2Pending: 0
+    Decision2Convo: {fileID: 0}
+    Quest2ToGive: {fileID: 0}
+    Quest2PendingConvo: {fileID: 0}
+    Quest2CompleteConvo: {fileID: 0}
+    Quest2PendingButtonText: 
+    Item2ToGive: {fileID: 0}
+    Character2ToGive: {fileID: 0}
+    TalkQuest2Confirm: {fileID: 0}
+    FetchQuest2Confirm: {fileID: 0}
+    Decision3: 0
+    Decision3Text: 
+    Decision3Repeatable: 0
+    Decision3Pending: 0
+    Decision3Convo: {fileID: 0}
+    Quest3ToGive: {fileID: 0}
+    Quest3PendingConvo: {fileID: 0}
+    Quest3CompleteConvo: {fileID: 0}
+    Quest3PendingButtonText: 
+    Item3ToGive: {fileID: 0}
+    Character3ToGive: {fileID: 0}
+    TalkQuest3Confirm: {fileID: 0}
+    FetchQuest3Confirm: {fileID: 0}
+    Decision4: 0
+    Decision4Text: 
+    Decision4Repeatable: 0
+    Decision4Pending: 0
+    Decision4Convo: {fileID: 0}
+    Quest4ToGive: {fileID: 0}
+    Quest4PendingConvo: {fileID: 0}
+    Quest4CompleteConvo: {fileID: 0}
+    Quest4PendingButtonText: 
+    Item4ToGive: {fileID: 0}
+    Character4ToGive: {fileID: 0}
+    TalkQuest4Confirm: {fileID: 0}
+    FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight:
+  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
+  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
+  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}

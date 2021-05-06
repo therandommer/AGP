@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Blacksmith
     ConversationText: Greetings traveller, how can I help you?
     DisplayPic: {fileID: 21300000, guid: a30940bd23398bf49856cb0ec84edb53, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Who are you?
@@ -38,9 +40,11 @@ MonoBehaviour:
     Decision2Pending: 0
     Decision2Convo: {fileID: 11400000, guid: 71c3bb5eef856bf45a8e41a88b4c8175, type: 2}
     Quest2ToGive: {fileID: 0}
-    Quest2PendingConvo: {fileID: 0}
-    Quest2CompleteConvo: {fileID: 0}
-    Quest2PendingButtonText: 
+    Quest2PendingConvo: {fileID: 11400000, guid: f0d157dd4a75d1646b24818e4eff4447,
+      type: 2}
+    Quest2CompleteConvo: {fileID: 11400000, guid: 149601ea4c7fb03469c6a84d22700496,
+      type: 2}
+    Quest2PendingButtonText: Check Quest
     Item2ToGive: {fileID: 0}
     Character2ToGive: {fileID: 0}
     TalkQuest2Confirm: {fileID: 0}
@@ -71,3 +75,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

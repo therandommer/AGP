@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Innkeeper
     ConversationText: Zzzzzz (The innkeeper seems fast asleep)
     DisplayPic: {fileID: 21300000, guid: bcedfcaf373ff4c49aeb669724a72294, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Helllo! Can you wake up!?
@@ -71,3 +73,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

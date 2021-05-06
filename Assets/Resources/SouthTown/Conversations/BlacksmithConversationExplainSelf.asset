@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Blacksmith
     ConversationText: Straight to the point I see! I like you already, chum!
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -71,10 +73,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: As the town blacksmith I have to provide everyone with the
       tools to survive these harsh lands.
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -128,10 +132,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: With the ever growing threat from the north and the east, I
       fear that we may have little time before danger strikes!
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -185,10 +191,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: Because of this, I have practiced my art every day for the
       past 40 years.
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -242,10 +250,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: The armour you see me wearing? I created it myself. Has saved
       me a few too many times as well.
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -299,10 +309,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: I can't recommend a strong suit of armour and a trusty, well
       made blade enough!
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -356,9 +368,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: And by the looks of it, you could use some better gear...
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -412,10 +426,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: Head into my shop and browse my wares, just know that it will
       cost ya!
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -469,10 +485,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: What? Were you expecting me to just give you great armour for
       free?
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -526,9 +544,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: 'I''ve got to make a living myself, you know? '
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -582,10 +602,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: Hmm, y'know what? I have just the thing for you to do to prove
       yourself.
     DisplayPic: {fileID: 21300000, guid: c568851678c5c0e4a89c396fbb932d78, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -639,9 +661,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: The most noble of quests! The most perilous of tasks!
     DisplayPic: {fileID: 21300000, guid: 7737094168790dd4f83138b59494d292, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -695,18 +719,21 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
-    ConversationText: I want you to kill 5 archers for me in the forests to the east!
-      Do you accept?
+    ConversationText: I want you to kill 5 archers for me in the forests to the east
+      and bring me back their ears! Do you accept?
     DisplayPic: {fileID: 21300000, guid: 7737094168790dd4f83138b59494d292, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Sure!
     Decision1Repeatable: 0
     Decision1Pending: 1
-    Decision1Convo: {fileID: 0}
-    Quest1ToGive: {fileID: 0}
-    Quest1PendingConvo: {fileID: 0}
+    Decision1Convo: {fileID: 11400000, guid: 44e775b3e27d1b14289b1f789212b9c6, type: 2}
+    Quest1ToGive: {fileID: 11400000, guid: c96d93ea678309448b33b1df014ab44b, type: 2}
+    Quest1PendingConvo: {fileID: 11400000, guid: 16c1eca5990c7964a81a7a278960d16c,
+      type: 2}
     Quest1CompleteConvo: {fileID: 0}
     Quest1PendingButtonText: 
     Item1ToGive: {fileID: 0}
@@ -752,3 +779,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

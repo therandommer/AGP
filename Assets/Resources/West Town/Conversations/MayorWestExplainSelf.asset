@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Mayor
     ConversationText: I'm the mayor of this town.
     DisplayPic: {fileID: 21300000, guid: 77783e7331a0d0f4989306fa8bbd9862, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -71,9 +73,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: I'm tasked with making sure we survive this onslaught.
     DisplayPic: {fileID: 21300000, guid: 77783e7331a0d0f4989306fa8bbd9862, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -127,10 +131,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: So if I'm a bit sudden or aggressive, you can understand I
       hope.
     DisplayPic: {fileID: 21300000, guid: 77783e7331a0d0f4989306fa8bbd9862, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -184,10 +190,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Anyways I help ensure that the blacksmith and inn are up and
       running.
     DisplayPic: {fileID: 21300000, guid: 77783e7331a0d0f4989306fa8bbd9862, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -241,9 +249,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Do you need to ask more questions? I'm quite busy.
     DisplayPic: {fileID: 21300000, guid: 77783e7331a0d0f4989306fa8bbd9862, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Yes, I have more questions.
@@ -297,3 +307,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

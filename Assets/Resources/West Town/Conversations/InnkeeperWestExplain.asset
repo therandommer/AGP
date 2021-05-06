@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Innkeeper
     ConversationText: Zzzzz... Leave me alone Zzzz
     DisplayPic: {fileID: 21300000, guid: bcedfcaf373ff4c49aeb669724a72294, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -71,9 +73,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Innkeeper
     ConversationText: Zzzzz... Inside you sleep Zzzz...
     DisplayPic: {fileID: 21300000, guid: bcedfcaf373ff4c49aeb669724a72294, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -127,9 +131,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Innkeeper
     ConversationText: Zzzzz... Choose time Zzzz...
     DisplayPic: {fileID: 21300000, guid: bcedfcaf373ff4c49aeb669724a72294, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -183,9 +189,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Innkeeper
     ConversationText: Zzzzz... Wake up when you select Zzzz...
     DisplayPic: {fileID: 21300000, guid: bcedfcaf373ff4c49aeb669724a72294, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -239,10 +247,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: You
     ConversationText: (You think to yourself. This innkeeper is clearly faking being
       asleep)
     DisplayPic: {fileID: 21300000, guid: bcedfcaf373ff4c49aeb669724a72294, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -296,10 +306,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: You
     ConversationText: (You note that you should head inside anytime you need to sleep
       to a certain time)
     DisplayPic: {fileID: 21300000, guid: bcedfcaf373ff4c49aeb669724a72294, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -353,9 +365,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Innkeeper
     ConversationText: Zzzzz... Leave me alone. Zzzzz (You walk away)
     DisplayPic: {fileID: 21300000, guid: bcedfcaf373ff4c49aeb669724a72294, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -409,3 +423,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

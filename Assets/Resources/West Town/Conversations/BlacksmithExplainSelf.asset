@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Blacksmith
     ConversationText: I'm the blacksmith. Why else do you think I'm wearing this?
     DisplayPic: {fileID: 21300000, guid: 3a7c9ae6affa9554bb634fcfa90746ff, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -71,9 +73,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: I have to make all the weapons and gear for everyone.
     DisplayPic: {fileID: 21300000, guid: 3a7c9ae6affa9554bb634fcfa90746ff, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -127,9 +131,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: If I don't we'll probably lose to the bandits.
     DisplayPic: {fileID: 21300000, guid: 3a7c9ae6affa9554bb634fcfa90746ff, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -183,9 +189,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: Anyways, if you want to buy my wares head inside.
     DisplayPic: {fileID: 21300000, guid: 3a7c9ae6affa9554bb634fcfa90746ff, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -239,9 +247,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: Any more questions?
     DisplayPic: {fileID: 21300000, guid: 3a7c9ae6affa9554bb634fcfa90746ff, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Yes, I have more questions.
@@ -295,3 +305,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

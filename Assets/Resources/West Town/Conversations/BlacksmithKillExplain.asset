@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
   m_Name: BlacksmithKillExplain
   m_EditorClassIdentifier: 
-  Repeatable: 0
+  Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Blacksmith
     ConversationText: So you're interested in helping us. I'll make it worth your
       while.
     DisplayPic: {fileID: 21300000, guid: 3a7c9ae6affa9554bb634fcfa90746ff, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -72,10 +74,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: Kill 5 bandits in the oasis near us and I'll give you a new
       piece of gear.
     DisplayPic: {fileID: 21300000, guid: 3a7c9ae6affa9554bb634fcfa90746ff, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Okay!
@@ -83,8 +87,10 @@ MonoBehaviour:
     Decision1Pending: 0
     Decision1Convo: {fileID: 0}
     Quest1ToGive: {fileID: 11400000, guid: 77197bfd3f5f7564288920c416f0ec6b, type: 2}
-    Quest1PendingConvo: {fileID: 0}
-    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingConvo: {fileID: 11400000, guid: 68b98772582c2a74e819c85d65ee469e,
+      type: 2}
+    Quest1CompleteConvo: {fileID: 11400000, guid: 21fbb6e71ccef1349a9dbfa9a9e0eede,
+      type: 2}
     Quest1PendingButtonText: 
     Item1ToGive: {fileID: 0}
     Character1ToGive: {fileID: 0}
@@ -129,3 +135,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132a05302b1382041876ff901082c58e, type: 3}
   m_Name: Blacksmith East Kill Explain
   m_EditorClassIdentifier: 
-  Repeatable: 0
+  Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Blacksmith
     ConversationText: I want you to kill 5 pesky mages in the swamps to the west.
       They keep burning our igloos...
     DisplayPic: {fileID: 21300000, guid: a30940bd23398bf49856cb0ec84edb53, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Okay.
@@ -72,3 +74,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Innkeeper
     ConversationText: I'm the innkeeper to help adventurers like you when they need
       to rest.
     DisplayPic: {fileID: 21300000, guid: 7219c38801fc12b4d896561c87764cdf, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -72,9 +74,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Innkeeper
     ConversationText: Just step into my tent here and rest your head.
     DisplayPic: {fileID: 21300000, guid: 7219c38801fc12b4d896561c87764cdf, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -128,9 +132,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Innkeeper
     ConversationText: We'll wake you up whenever you specify.
     DisplayPic: {fileID: 21300000, guid: 7219c38801fc12b4d896561c87764cdf, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -184,9 +190,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Innkeeper
     ConversationText: Our beds will help time fly by in the blink of an eye!
     DisplayPic: {fileID: 21300000, guid: 7219c38801fc12b4d896561c87764cdf, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -240,3 +248,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

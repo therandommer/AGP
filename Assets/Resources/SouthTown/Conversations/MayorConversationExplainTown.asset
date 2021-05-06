@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Mayor
     ConversationText: You want to know about this town, ey? Well, where to begin...
     DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -71,10 +73,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: We're a humble village that manages to survive mostly off the
       land.
     DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -128,10 +132,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: However, we do have some problems in the deeper parts of the
       woods.
     DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -185,10 +191,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Where are these woods you ask? Huh, straight to the point I
       see. Well...
     DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -242,10 +250,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: The woods are to the east, though I'd be careful if I were
       you.
     DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -299,10 +309,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: The villains there give me a run for my money, especially at
       night.
     DisplayPic: {fileID: 21300000, guid: 9b8d4c2bf09f89849a180bf6fc845789, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -356,10 +368,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Anyways. We also have an inn to the west where you can rest
       between adventures.
     DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -413,10 +427,12 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
-    ConversationText: And to the east we have our legendary blacksmith who will help
-      you with your needs.
+    ConversationText: And to the east we have our blacksmith who will help you with
+      your needs.
     DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -470,9 +486,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Mayor
     ConversationText: Do you have more questions?
     DisplayPic: {fileID: 21300000, guid: 36f4e64d7428f8142b14b1adb8c3f61b, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Yes, I have more questions
@@ -526,3 +544,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []

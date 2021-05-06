@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 0
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Blacksmith
     ConversationText: We angry... Barbarians North traitors.
     DisplayPic: {fileID: 21300000, guid: b86c5f54fa2a2824e9910d1ad0e8c2c6, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -71,9 +73,11 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
   - SpeakingCharacterName: Blacksmith
     ConversationText: You go north cave... Kill 5 for shiny axe! Yes?
     DisplayPic: {fileID: 21300000, guid: b86c5f54fa2a2824e9910d1ad0e8c2c6, type: 3}
+    MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 1
     Decision1: 1
     Decision1Text: Okay!
@@ -81,8 +85,10 @@ MonoBehaviour:
     Decision1Pending: 0
     Decision1Convo: {fileID: 0}
     Quest1ToGive: {fileID: 11400000, guid: 5396e4c5edef50d4291dea526e2e5e44, type: 2}
-    Quest1PendingConvo: {fileID: 0}
-    Quest1CompleteConvo: {fileID: 0}
+    Quest1PendingConvo: {fileID: 11400000, guid: e24dbccab80eee04fa87f9c7eede9266,
+      type: 2}
+    Quest1CompleteConvo: {fileID: 11400000, guid: e0c4bb89ae5c2a44cbc1ff9b56c21627,
+      type: 2}
     Quest1PendingButtonText: 
     Item1ToGive: {fileID: 0}
     Character1ToGive: {fileID: 0}
@@ -127,3 +133,5 @@ MonoBehaviour:
     Character4ToGive: {fileID: 0}
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
+    NextSceneName: 
+  EnemiesToFight: []
