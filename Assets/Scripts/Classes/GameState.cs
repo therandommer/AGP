@@ -147,7 +147,10 @@ public class GameState : MonoBehaviour
     {
         if (!PlayerSpawned)
         {
-            //PlayerObject = player;
+            if(BattleSceneTest)
+            {
+                PlayerObject = player;
+            }
             GameObject Player = Instantiate(PlayerObject, Vector3.zero, Quaternion.identity);
             PlayerObject = Player;
             //Camera.player = Player;
