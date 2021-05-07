@@ -8,6 +8,9 @@ public class ConversationEntry
     public Sprite DisplayPic;
     public Sprite MainDisplayPic;
 
+    public GameObject JustGainfollower;
+    public bool GainedFollower;
+
     public bool DecisionToBeMade;
 
     [Header("Decision 1")]
@@ -154,6 +157,7 @@ public class ConversationEntry
         Decision2Pending = false;
         Decision3Pending = false;
         Decision4Pending = false;
+        GainedFollower = false;
     }
 }
 

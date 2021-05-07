@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 5330072301005992704}
   - component: {fileID: 6477954777321415625}
   - component: {fileID: 6196263679085437232}
+  - component: {fileID: 362077914887224733}
+  - component: {fileID: 7429800144466797615}
   m_Layer: 5
   m_Name: Pointer
   m_TagString: Untagged
@@ -199,6 +201,31 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &362077914887224733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345277889183615531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a4ef76d09fed648bdb43e146c43243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 7429800144466797615}
+--- !u!225 &7429800144466797615
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345277889183615531}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1427349980346801034
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +658,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.120718, y: -0.08010882}
+  m_Offset: {x: 0.060424328, y: -0.05199951}
   m_SpriteTilingProperty:
     border: {x: 0.69696975, y: 0.21212122, z: 0.42424244, w: 0.33333334}
     pivot: {x: 0.5, y: 0.5}
@@ -642,7 +669,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8276777, y: 1.410276}
+  m_Size: {x: 1.0487276, y: 1.6265022}
   m_EdgeRadius: 0
 --- !u!61 &6275971143486845659
 BoxCollider2D:
@@ -651,13 +678,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6275971143486845660}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1180315, y: -0.07590878}
+  m_Offset: {x: 0.1180315, y: -0.051042795}
   m_SpriteTilingProperty:
     border: {x: 0.69696975, y: 0.21212122, z: 0.42424244, w: 0.33333334}
     pivot: {x: 0.5, y: 0.5}
@@ -668,7 +695,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8461323, y: 1.4158225}
+  m_Size: {x: 0.8461323, y: 1.4655545}
   m_EdgeRadius: 0
 --- !u!114 &6275971143486845657
 MonoBehaviour:
@@ -752,12 +779,13 @@ MonoBehaviour:
   selectedAttack: {fileID: 0}
   selectedTarget: {fileID: 0}
   EnemiesToDamage: []
-  CurrentPlayerPointer: {fileID: 6196263679085437232}
+  Pointer: {fileID: 362077914887224733}
   LevelUpSprite: {fileID: -2538545291959784308, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
   Dead: 0
   LastScenePosition: {x: 0, y: 0, z: 0}
   LastSceneName: 
+  EnemyToDelete: []
   Skills: []
   EquipedSkills: []
   Money: 0

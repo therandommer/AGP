@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     public Abilities selectedAttack;
     public EnemyController selectedTarget;
     public List<EnemyController> EnemiesToDamage;
-    public Image CurrentPlayerPointer;
+    //public Image CurrentPlayerPointer;
+    public PopUpMenu Pointer;
     public Sprite LevelUpSprite;
 
     public bool Dead = false;
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
             Destroy(this);
         }
     }
+    public List<string> EnemyToDelete;
 
 
     public List<InventoryItem> GetItems(bool ShowItemsPlayerDoesNotOwn = false, bool IncludeAllRarities = false, bool IncludeAllArmour = false, bool IncludeAllWeapons = false,

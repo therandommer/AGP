@@ -349,8 +349,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BossFightMinions:
   - {fileID: 4334149384658589342, guid: 4448b19e8aacf1541bb72e2f516b6ff5, type: 3}
-  - {fileID: 7530090093271011628, guid: 01d7868b656c5f74e9b2aa56a5788ed1, type: 3}
+  - {fileID: 7530090093271011628, guid: 34e72cd17110c124990bf47fbdc7ef94, type: 3}
   - {fileID: 4334149384658589342, guid: 4448b19e8aacf1541bb72e2f516b6ff5, type: 3}
+  - {fileID: 5380418724147385418, guid: ede789e2cdce09a4c996a598771e93fe, type: 3}
+  - {fileID: 8337942461407027523, guid: 938796f89e159cd4fb9a35578b945277, type: 3}
+  - {fileID: 1917818504920613827, guid: 44847fca9e473834e9f83d45215e0cc5, type: 3}
   BossResponceSprite: {fileID: -5936835998644394925, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
 --- !u!61 &538766335

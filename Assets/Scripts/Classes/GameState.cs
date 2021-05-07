@@ -29,6 +29,8 @@ public class GameState : MonoBehaviour
     public static int NumberOfBossesDefeated = 0;
     public PlayerController PlayerController;
 
+    
+
     public static List<GameObject> PartyMembers = new List<GameObject>();
 
     public static List<GameObject> ActiveParty = new List<GameObject>();

@@ -5,15 +5,21 @@ using UnityEngine.UI;
 
 public class GetItem : MonoBehaviour
 {
-    // Update is called once per frame
+    public Sprite CliamedSprite;
+
     void Update()
     {
-
+        if(claimed && gameObject.GetComponent<SpriteRenderer>().sprite != CliamedSprite)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = CliamedSprite;
+        }
     }
+    // Update is called once per frame
     string[] Names = new string[] { "Arnita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda" };
-
+    public bool claimed = false;
     public void GenerateItem()
     {
+        claimed = true;
         InventoryItem newItem = Instantiate(GameState.ShopStorage.ItemTemplate);
         newItem.itemName = Names[Random.Range(0, Names.Length-1)];
         GameState.ShopStorage.ItemGen.Item = newItem;
@@ -21,7 +27,7 @@ public class GetItem : MonoBehaviour
 
         if(RandomInt == 0)
         {
-        GameState.ShopStorage.ItemGen.GenerateRandom(GameState.CurrentPlayer.stats.Level, true, false);
+            GameState.ShopStorage.ItemGen.GenerateRandom(GameState.CurrentPlayer.stats.Level, true, false);
         }
         else
         {
@@ -37,6 +43,14 @@ public class GetItem : MonoBehaviour
         else if (newItem.isWeapon)
         {
             ShowMessage.Instance.StartCouroutineForMessage("Gained Weapon!", "You gained a " + newItem.weaponItem + ": " + newItem.itemName, newItem.itemImage, 2f);
+        }
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Player" && claimed == false)
+        {
+            GenerateItem();
+            Destroy(gameObject);
         }
     }
 }

@@ -37,7 +37,7 @@ public class NavigationPrompt : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		Debug.Log("attempting to exit via " + tag);
-
+		GameState.CurrentPlayer.EnemyToDelete.Clear();
 		var lastPosition = GameState.GetLastScenePosition(this.tag);
 
 		Debug.Log("Last know pos for " + this.tag + " is " + lastPosition);

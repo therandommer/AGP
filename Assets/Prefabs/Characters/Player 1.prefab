@@ -677,12 +677,13 @@ MonoBehaviour:
   selectedAttack: {fileID: 0}
   selectedTarget: {fileID: 0}
   EnemiesToDamage: []
-  CurrentPlayerPointer: {fileID: 8633740003530274669}
+  Pointer: {fileID: 5952170000233108444}
   LevelUpSprite: {fileID: -2538545291959784308, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
   Dead: 0
   LastScenePosition: {x: 0, y: 0, z: 0}
   LastSceneName: 
+  EnemyToDelete: []
   Skills: []
   EquipedSkills: []
   Money: 0
@@ -716,6 +717,8 @@ GameObject:
   - component: {fileID: 4316282744698026527}
   - component: {fileID: 2829650054348419916}
   - component: {fileID: 8633740003530274669}
+  - component: {fileID: 5952170000233108444}
+  - component: {fileID: 2514757746542955766}
   m_Layer: 5
   m_Name: Pointer
   m_TagString: Untagged
@@ -757,7 +760,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6821641173175626182}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -780,6 +783,31 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5952170000233108444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821641173175626182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a4ef76d09fed648bdb43e146c43243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 2514757746542955766}
+--- !u!225 &2514757746542955766
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821641173175626182}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &7781641964288766220
 GameObject:
   m_ObjectHideFlags: 0

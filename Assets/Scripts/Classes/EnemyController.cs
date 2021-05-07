@@ -308,9 +308,11 @@ public class EnemyController : MonoBehaviour
         if(stats.EnemyProfile.isBoss)
         {
             GameState.IncreaseNumberOfBossesDefeated();
+            ShowMessage.Instance.StartCouroutineForMessage("Killed a Boss!", "You have defeated " + GameState.NumberOfBossesDefeated + " bosses. " + (GameState.NumberofBossesNeededToFightFinalBoss - GameState.NumberOfBossesDefeated) + " left", ExpSprite, 2f);
+
         }
 
-        if(stats.EnemyProfile.isFinalBoss)
+        if (stats.EnemyProfile.isFinalBoss)
         {
             NavigationManager.NavigateTo("GameOver");
         }

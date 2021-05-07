@@ -27,7 +27,7 @@ public class ConversationManager : Singleton<ConversationManager>
     public ChoiceManager choiceManager;
 
 
-    public void StartConversation(Conversation conversation)
+    public void StartConversation(Conversation conversation,GameObject ObjectToDestroy = null)
     {
         dialogBox = GameObject.Find("Dialog Box").GetComponent<CanvasGroup>();
         imageHolder = GameObject.Find("Speaker Image").GetComponent<Image>();
@@ -43,8 +43,14 @@ public class ConversationManager : Singleton<ConversationManager>
         {
             talking = true;
 
-
-            StartCoroutine(DisplayConversation(conversation));
+            if(ObjectToDestroy ==null)
+            {
+                StartCoroutine(DisplayConversation(conversation));
+            }
+            else
+            {
+                StartCoroutine(DisplayConversation(conversation, ObjectToDestroy));
+            }
             if (conversation.Repeatable == false)
             {
                 conversation.Skip = true;
@@ -52,7 +58,7 @@ public class ConversationManager : Singleton<ConversationManager>
         }
     }
 
-    IEnumerator DisplayConversation(Conversation conversation)
+    IEnumerator DisplayConversation(Conversation conversation, GameObject ObjectToDestroy = null)
     {
         //foreach (var conversationLine in conversation.ConversationLines)
         for (int i = 0; i < conversation.ConversationLines.Length; i++)
@@ -114,6 +120,19 @@ public class ConversationManager : Singleton<ConversationManager>
             }
 
         }
+        if(currentConversationLine.JustGainfollower != null && currentConversationLine.GainedFollower == false)
+        {
+            GameState.AddToParty(currentConversationLine.JustGainfollower);
+            choiceManager.ResetChoices();
+            talking = false;
+            choice = false;
+            wait = false;
+            GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = false;
+
+            GameState.EnableTime();
+            yield break;
+        }
+
         if (talking && choiceManager.Choice1Convo == null && choiceManager.Choice2Convo == null && choiceManager.Choice3Convo == null && choiceManager.Choice4Convo == null)
         {
             Debug.Log(conversation.name + " has finished it's loop");
@@ -123,12 +142,15 @@ public class ConversationManager : Singleton<ConversationManager>
             if (conversation.EnemiesToFight != null && conversation.EnemiesToFight.Length > 0)
             {
                 conversation.Fight = false;
-                //GameState.CurrentPlayer.LastScenePosition = GameState.CurrentPlayer.gameObject.transform.position;
+                GameState.CurrentPlayer.LastScenePosition = GameState.CurrentPlayer.gameObject.transform.position;
 
                 GameState.CurrentPlayer.LastSceneName = SceneManager.GetActiveScene().name;
                 GameState.EnemyPrefabsForBattle = conversation.EnemiesToFight;
+                GameState.CurrentPlayer.EnemyToDelete.Add(ObjectToDestroy.name);
                 GameState.DiableTime();
+
                 SceneManager.LoadScene("TownBattle");
+                yield break;
             }
         }
         choiceManager.ResetChoices();

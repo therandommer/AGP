@@ -150,7 +150,7 @@ public class BattleManager : MonoBehaviour
         {
             GameObject Player = Instantiate(GameState.ActiveParty[i]);
             PlayerImages[i].sprite = Player.GetComponent<PlayerController>().stats.PlayerProfile.PlayerImage;
-            Player.transform.localScale = new Vector3(0.33f,0.33f,1);
+            Player.transform.localScale = new Vector3(0.33f, 0.33f, 1);
             Player.SetActive(true);
             Player.transform.SetParent(PlayerSpawnPoints[i].transform);
             Player.transform.position = PlayerSpawnPoints[i].transform.position;
@@ -166,27 +166,27 @@ public class BattleManager : MonoBehaviour
 
         HealthText.text = GameState.CurrentPlayer.stats.Health + "/" + GameState.CurrentPlayer.stats.MaxHealth;
         // Calculate how many enemies 
-        if(!GameState.PreSetCombat)
+        if (!GameState.PreSetCombat)
         {
-            enemyCount = Random.Range(1, EnemySpawnPoints.Length); 
+            enemyCount = Random.Range(1, EnemySpawnPoints.Length);
         }
         else
         {
             enemyCount = GameState.EnemyPrefabsForBattle.Length - 1;//Dynamically set enemy numbers based on level/party members, stops swarming
         }
         // Spawn the enemies in 
-        if(!BattleSceneTest)
+        if (!BattleSceneTest)
         {
             enemyCount = GameState.EnemyPrefabsForBattle.Length;
         }
-        if(enemyCount > 9)
+        if (enemyCount > 9)
         {
             enemyCount = 9;
         }
         StartCoroutine(SpawnEnemies(GameState.EnemyPrefabsForBattle));
         GetAnimationStates();
 
-        
+
     }
 
     public void ReadCurrentPlayer()
@@ -200,7 +200,7 @@ public class BattleManager : MonoBehaviour
         //Spawn enemies in over time 
         for (int i = 0; i < enemyCount; i++)
         {
-            if(!BattleSceneTest)
+            if (!BattleSceneTest)
             {
                 var newEnemy = (GameObject)Instantiate(EnemyPrefabs[i]);
                 ListOfEntities.Add(newEnemy);
@@ -243,7 +243,7 @@ public class BattleManager : MonoBehaviour
 
         for (int i = 0; i < PlayerImages.Length; i++)
         {
-            if(PlayerImages[i].sprite == null)
+            if (PlayerImages[i].sprite == null)
             {
                 PlayerImages[i].GetComponent<PopUpMenu>().DisableTheMenu();
             }
@@ -459,7 +459,7 @@ public class BattleManager : MonoBehaviour
         IdlePlayers();
         for (int i = 0; i < CurrentPlayer.EnemiesToDamage.Count; i++)
         {
-            if(CurrentPlayer.EnemiesToDamage[i] != null)
+            if (CurrentPlayer.EnemiesToDamage[i] != null)
             {
                 if (CurrentPlayer.EnemiesToDamage[i].stats.Health < 1)
                 {
@@ -475,8 +475,8 @@ public class BattleManager : MonoBehaviour
         attack.EnemyPopupCanvas.alpha = 0;
         Destroy(attackParticle);
         GameObject[] Particles = GameObject.FindGameObjectsWithTag("Particle");
-        foreach(GameObject part in Particles)
-        { 
+        foreach (GameObject part in Particles)
+        {
             Destroy(part);
         }
         attacking = false;
@@ -550,11 +550,11 @@ public class BattleManager : MonoBehaviour
             {
                 DamageCalc = 1;
             }
-            if(ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.stats.EnemyProfile.Elements[0]) > 1)
+            if (ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.stats.EnemyProfile.Elements[0]) > 1)
             {
                 CombatText.text = CurrentPlayer.stats.PlayerProfile.name + " attacked " + Target.name + " with " + DamageCalc + " damage\n" + "It was very effective!";
             }
-            else if(ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.stats.EnemyProfile.Elements[0]) < 1)
+            else if (ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.stats.EnemyProfile.Elements[0]) < 1)
             {
                 CombatText.text = CurrentPlayer.stats.PlayerProfile.name + " attacked " + Target.name + " with " + DamageCalc + " damage\n" + "It was not very effective...";
             }
@@ -760,12 +760,28 @@ public class BattleManager : MonoBehaviour
     public void RunAway()
     {
         GameState.justExitedBattle = true;
+        GameState.CurrentPlayer.Pointer.DisableTheMenu();
 
         StorredPlayer.GetComponent<PlayerMovement>().CantMove = false;
+        StorredPlayer.GetComponent<PlayerController>().Pointer.DisableTheMenu();
         GameState.CurrentPlayer = StorredPlayer.GetComponent<PlayerController>();
-        GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
+        GameState.CurrentPlayer.Pointer.DisableTheMenu();
         GameState.CurrentPlayer.gameObject.transform.position = GameState.CurrentPlayer.LastScenePosition;
         Debug.Log("Move to " + GameState.CurrentPlayer.LastScenePosition);
+
+        for (int i = 0; i < Enemies.Count; i++)
+        {
+            if (Enemies[i].stats.EnemyProfile.isBoss)
+            {
+                GameState.IncreaseNumberOfBossesDefeated();
+                ShowMessage.Instance.StartCouroutineForMessage("Killed a Boss!", "You have defeated " + GameState.NumberOfBossesDefeated + " bosses. " + (GameState.NumberofBossesNeededToFightFinalBoss - GameState.NumberOfBossesDefeated) + " left", null, 2f);
+            }
+            if (Enemies[i].stats.EnemyProfile.isFinalBoss)
+            {
+                NavigationManager.NavigateTo("GameOver");
+            }
+        }
+
         GameState.EnableTime();
         NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);
     }
@@ -823,9 +839,8 @@ public class BattleManager : MonoBehaviour
                 ShowMainButtons();
                 break;
             case BattleState.Player_Move:
-                GameState.CurrentPlayer.CurrentPlayerPointer.enabled = true;
-                Debug.Log("Trying to set " + GameState.CurrentPlayer.name);
                 ReadCurrentPlayer();
+                GameState.CurrentPlayer.Pointer.EnableTheMenu();
                 attack.ReadPlayersSkills();
                 battleStateManager.SetBool("FinishedAllAttacks", false);
                 battleStateManager.SetBool("AllPlayersReady", false);
@@ -859,7 +874,7 @@ public class BattleManager : MonoBehaviour
                 attack.ResetSelectionCircle();
                 attack.HidePopup();
                 attack.EnemyPopupCanvas.alpha = 0;
-                GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
+                GameState.CurrentPlayer.Pointer.DisableTheMenu();
                 //GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
                 for (int i = 0; i < ListOfPlayers.Count; i++)
                 {
@@ -896,12 +911,14 @@ public class BattleManager : MonoBehaviour
                 break;
             case BattleState.Battle_End:
                 GameState.justExitedBattle = true;
+                GameState.CurrentPlayer.Pointer.DisableTheMenu();
                 StorredPlayer.GetComponent<PlayerMovement>().CantMove = false;
+                StorredPlayer.GetComponent<PlayerController>().Pointer.DisableTheMenu();
                 GameState.CurrentPlayer = StorredPlayer.GetComponent<PlayerController>();
                 GameState.CurrentPlayer.gameObject.transform.position = GameState.CurrentPlayer.LastScenePosition;
                 GameState.EnableTime();
-                GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
-                NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);                
+                GameState.CurrentPlayer.Pointer.DisableTheMenu();
+                NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);
                 //Any animation and move back to Overworld
                 break;
             default:

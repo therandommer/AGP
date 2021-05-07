@@ -11,7 +11,6 @@ public class MessagingClientBroadcast : MonoBehaviour
     */
     public MessagingClientReceiver MCR;
 
-    public Vector3 test;
 
 
     void OnTriggerEnter2D(Collider2D col)
@@ -19,6 +18,7 @@ public class MessagingClientBroadcast : MonoBehaviour
         if (col.tag == "Player")
         {
             MCR.Check();
+            
             GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
             GameState.CurrentPlayer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             foreach (Quest quest in GameState.CurrentPlayer.QuestLog)
@@ -32,8 +32,6 @@ public class MessagingClientBroadcast : MonoBehaviour
                 }
             }
             GameState.CurrentPlayer.LastSceneName = SceneManager.GetActiveScene().name;
-
-            GameState.CurrentPlayer.LastScenePosition = test;
 
             MessagingManager.Instance.Subscribe(MCR.StartConvo);
 

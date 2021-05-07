@@ -7,6 +7,8 @@ public class MessagingClientReceiver : MonoBehaviour
     public Conversation conversation;
 
     public List<Conversation> tempConvo = new List<Conversation>();
+
+    public GameObject ObjectToDestroy;
     public void Check()
     {
         var dialog = GetComponent<ConversationComponent>();
@@ -40,7 +42,9 @@ public class MessagingClientReceiver : MonoBehaviour
                     {
                         Debug.Log("Going through with " + tempConvo[i].name);
                         conversation = tempConvo[i];
-                        ConversationManager.Instance.StartConversation(conversation);
+
+                        ConversationManager.Instance.StartConversation(conversation, ObjectToDestroy);
+                        
                         tempConvo.Remove(conversation);
                         dialog.Conversations = tempConvo.ToArray();
                         break;
@@ -55,6 +59,10 @@ public class MessagingClientReceiver : MonoBehaviour
                     GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = true;
                     return;
                 }
+            }
+            else
+            {
+                GameState.CurrentPlayer.GetComponent<PlayerMovement>().CantMove = false;
             }
         }
     }
