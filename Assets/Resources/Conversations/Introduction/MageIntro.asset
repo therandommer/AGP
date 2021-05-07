@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 0
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Game Dev
     ConversationText: You are a Mage, devouring all magical knowledge you can find
@@ -77,8 +78,8 @@ MonoBehaviour:
   - SpeakingCharacterName: Game Dev
     ConversationText: You have recently made your way to the island of Isla Nolr
       said to host a great power
-    DisplayPic: {fileID: 0}
-    MainDisplayPic: {fileID: 0}
+    DisplayPic: {fileID: 21300000, guid: f0e2859b65643984cb9488756ccf8d93, type: 3}
+    MainDisplayPic: {fileID: 21300000, guid: a282ee8939d4f464f9b35959b803c91c, type: 3}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -136,8 +137,8 @@ MonoBehaviour:
   - SpeakingCharacterName: Game Dev
     ConversationText: This great power is held in the center of the island sealed
       tight by 4 magical seals scattered into the four corners of the island
-    DisplayPic: {fileID: 0}
-    MainDisplayPic: {fileID: 0}
+    DisplayPic: {fileID: 21300000, guid: f0e2859b65643984cb9488756ccf8d93, type: 3}
+    MainDisplayPic: {fileID: 21300000, guid: b06d21710b8b3d24ba8f1b21d3fccb90, type: 3}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -195,8 +196,8 @@ MonoBehaviour:
   - SpeakingCharacterName: Game Dev
     ConversationText: Your travels have landed you in the town of Eastern Town Not
       much of a town with the few tents about
-    DisplayPic: {fileID: 0}
-    MainDisplayPic: {fileID: 0}
+    DisplayPic: {fileID: 21300000, guid: f0e2859b65643984cb9488756ccf8d93, type: 3}
+    MainDisplayPic: {fileID: 21300000, guid: 933ad5c4f994fe943bc478dae92fcd2e, type: 3}
     DecisionToBeMade: 0
     Decision1: 0
     Decision1Text: 
@@ -370,3 +371,4 @@ MonoBehaviour:
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
     NextSceneName: EastTown
+  EnemiesToFight: []
