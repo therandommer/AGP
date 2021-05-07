@@ -313,7 +313,7 @@ public class EnemyController : MonoBehaviour
 
         if(EnemyProfile.isFinalBoss)
         {
-            NavigationManager.NavigateTo("EndGame");
+            NavigationManager.NavigateTo("GameOver");
         }
         battleManager.enemyCount--;
         Destroy(this.gameObject);

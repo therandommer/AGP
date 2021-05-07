@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 538766333}
   - component: {fileID: 538766334}
   - component: {fileID: 538766335}
+  - component: {fileID: 538766336}
   m_Layer: 0
   m_Name: CheckForFinalBossFight
   m_TagString: Untagged
@@ -448,7 +449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9507df23b94f814fb682f2e2444fb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossFightMinions: []
+  BossFightMinions:
+  - {fileID: 4334149384658589342, guid: 4448b19e8aacf1541bb72e2f516b6ff5, type: 3}
+  - {fileID: 7530090093271011628, guid: 01d7868b656c5f74e9b2aa56a5788ed1, type: 3}
+  - {fileID: 4334149384658589342, guid: 4448b19e8aacf1541bb72e2f516b6ff5, type: 3}
   BossResponceSprite: {fileID: -5936835998644394925, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
 --- !u!61 &538766335
@@ -477,6 +481,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6238436, y: 2.1896553}
   m_EdgeRadius: 0
+--- !u!114 &538766336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538766332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c176ee73dca8044920b0c38f13a27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerLocationChange: 4
 --- !u!1 &575275487
 GameObject:
   m_ObjectHideFlags: 0
@@ -36891,6 +36908,8 @@ MonoBehaviour:
   MinYCamera: -27.3
   MaxYCamera: 21.8
   Zoom: -10
+  JustFollowPlayer: 0
+  player: {fileID: 0}
 --- !u!1 &1557458087
 GameObject:
   m_ObjectHideFlags: 0
@@ -37057,6 +37076,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1379472732, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379472732, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379472732, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445445327, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1509216814, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -37119,6 +37154,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1823303616, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851643678, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851643678, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851643678, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938795939, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1967163834, guid: 1bace7126ad016d41ab4fa19c2d0ad58, type: 3}
@@ -38983,6 +39034,11 @@ PrefabInstance:
     - target: {fileID: 3667616252998561131, guid: 1bace7126ad016d41ab4fa19c2d0ad58,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667616252998561131, guid: 1bace7126ad016d41ab4fa19c2d0ad58,
+        type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3667616253021665724, guid: 1bace7126ad016d41ab4fa19c2d0ad58,

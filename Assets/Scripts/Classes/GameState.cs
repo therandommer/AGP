@@ -6,7 +6,8 @@ public enum PlayerLocation
     North,
     South,
     East,
-    West
+    West,
+    Center
 }
 
 public class GameState : MonoBehaviour
