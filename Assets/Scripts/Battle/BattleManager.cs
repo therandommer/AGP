@@ -172,14 +172,17 @@ public class BattleManager : MonoBehaviour
         }
         else
         {
-            enemyCount = GameState.EnemyPrefabsForBattle.Length;//Dynamically set enemy numbers based on level/party members, stops swarming
+            enemyCount = GameState.EnemyPrefabsForBattle.Length - 1;//Dynamically set enemy numbers based on level/party members, stops swarming
         }
         // Spawn the enemies in 
         if(!BattleSceneTest)
         {
             enemyCount = GameState.EnemyPrefabsForBattle.Length;
         }
-
+        if(enemyCount > 9)
+        {
+            enemyCount = 9;
+        }
         StartCoroutine(SpawnEnemies(GameState.EnemyPrefabsForBattle));
         GetAnimationStates();
 
@@ -206,8 +209,7 @@ public class BattleManager : MonoBehaviour
                 newEnemy.name = controller.stats.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
                 controller.battleManager = this;
                 newEnemy.transform.position = new Vector3(10, -1, 0);
-                yield return StartCoroutine(
-                MoveCharacterToPoint(EnemySpawnPoints[i], newEnemy));
+                yield return StartCoroutine(MoveCharacterToPoint(EnemySpawnPoints[i], newEnemy));
                 newEnemy.transform.parent = EnemySpawnPoints[i].transform;
                 Enemies.Add(controller);
             }
@@ -761,8 +763,10 @@ public class BattleManager : MonoBehaviour
 
         StorredPlayer.GetComponent<PlayerMovement>().CantMove = false;
         GameState.CurrentPlayer = StorredPlayer.GetComponent<PlayerController>();
+        GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
         GameState.CurrentPlayer.gameObject.transform.position = GameState.CurrentPlayer.LastScenePosition;
-
+        Debug.Log("Move to " + GameState.CurrentPlayer.LastScenePosition);
+        GameState.EnableTime();
         NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);
     }
 
@@ -895,7 +899,8 @@ public class BattleManager : MonoBehaviour
                 StorredPlayer.GetComponent<PlayerMovement>().CantMove = false;
                 GameState.CurrentPlayer = StorredPlayer.GetComponent<PlayerController>();
                 GameState.CurrentPlayer.gameObject.transform.position = GameState.CurrentPlayer.LastScenePosition;
-
+                GameState.EnableTime();
+                GameState.CurrentPlayer.CurrentPlayerPointer.enabled = false;
                 NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);                
                 //Any animation and move back to Overworld
                 break;

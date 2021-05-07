@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Repeatable: 1
   Skip: 0
+  Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Ruffian
-    ConversationText: Ah you got me beat
-    DisplayPic: {fileID: 0}
+    ConversationText: Wait! don't hurt me!
+    DisplayPic: {fileID: 21300000, guid: 9d207334d91a1d04188e8dc89adf7ca0, type: 3}
     MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0
@@ -73,3 +74,4 @@ MonoBehaviour:
     TalkQuest4Confirm: {fileID: 0}
     FetchQuest4Confirm: {fileID: 0}
     NextSceneName: 
+  EnemiesToFight: []

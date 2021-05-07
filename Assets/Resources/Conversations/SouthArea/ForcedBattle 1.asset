@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ForcedBattle 1
   m_EditorClassIdentifier: 
   Repeatable: 0
-  Skip: 0
+  Skip: 1
   Fight: 0
   ConversationLines:
   - SpeakingCharacterName: Grunt

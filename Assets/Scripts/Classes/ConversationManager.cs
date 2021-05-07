@@ -81,10 +81,7 @@ public class ConversationManager : Singleton<ConversationManager>
                     yield return null;
                 }
             }
-            else
-            {
-                //yield return new WaitForSeconds(5);
-            }
+
 
             if (!wait)
             {
@@ -125,8 +122,12 @@ public class ConversationManager : Singleton<ConversationManager>
             wait = false;
             if (conversation.EnemiesToFight != null && conversation.EnemiesToFight.Length > 0)
             {
-                GameState.EnemyPrefabsForBattle = conversation.EnemiesToFight;
+                conversation.Fight = false;
+                //GameState.CurrentPlayer.LastScenePosition = GameState.CurrentPlayer.gameObject.transform.position;
 
+                GameState.CurrentPlayer.LastSceneName = SceneManager.GetActiveScene().name;
+                GameState.EnemyPrefabsForBattle = conversation.EnemiesToFight;
+                GameState.DiableTime();
                 SceneManager.LoadScene("TownBattle");
             }
         }

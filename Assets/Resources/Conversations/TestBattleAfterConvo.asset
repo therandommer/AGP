@@ -17,8 +17,8 @@ MonoBehaviour:
   Fight: 1
   ConversationLines:
   - SpeakingCharacterName: Guy
-    ConversationText: Fight me bitch
-    DisplayPic: {fileID: 0}
+    ConversationText: I bet you can't beat my friends!
+    DisplayPic: {fileID: 21300000, guid: 9d207334d91a1d04188e8dc89adf7ca0, type: 3}
     MainDisplayPic: {fileID: 0}
     DecisionToBeMade: 0
     Decision1: 0

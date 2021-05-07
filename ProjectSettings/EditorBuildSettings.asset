@@ -41,4 +41,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TownBattle.unity
     guid: 1a2bf82397dd64c4c8f59b138ddb2dae
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 7da3fad805fca4249b1be5a650771312
+  - enabled: 1
+    path: Assets/Scenes/EastBoss.unity
+    guid: 1fbda9661868b79468a23879a14aaade
+  - enabled: 1
+    path: Assets/Scenes/NorthBoss.unity
+    guid: 76c168e2777d1b04caed14598ccadf98
+  - enabled: 1
+    path: Assets/Scenes/SouthBoss.unity
+    guid: 05f31c69b5a872e4f97db09ac71b4b41
+  - enabled: 1
+    path: Assets/Scenes/WestBoss.unity
+    guid: fa66a06b3794669478039a50cc678f79
   m_configObjects: {}

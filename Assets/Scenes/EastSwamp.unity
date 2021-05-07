@@ -67091,12 +67091,12 @@ PrefabInstance:
     - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}
       propertyPath: battleProbability
-      value: 30
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}
       propertyPath: secondsBetweenBattles
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5415029838234539391, guid: 3fa9cd893d24a7744b4652b5d4741abd,
         type: 3}

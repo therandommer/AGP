@@ -15,7 +15,7 @@ public class ChoiceManager : MonoBehaviour
     public TMP_Text Button4Text;
 
     public ConversationEntry CurrentConversationLine;
-
+    public PopUpMenu buttonsCanvas;
     public Conversation Choice1Convo;
     public Conversation Choice1PendingConvo;
     public Conversation Choice1CompleteConvo;
@@ -47,6 +47,8 @@ public class ChoiceManager : MonoBehaviour
 
     public void ChangeButtonText(ConversationEntry conversationLine)
     {
+        buttonsCanvas.EnableTheMenu();
+        ResetChoices();
         CurrentConversationLine = conversationLine;
         if(!conversationLine.Decision1Pending)
         {

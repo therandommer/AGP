@@ -36,6 +36,7 @@ public class GameState : MonoBehaviour
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();//Save the scene and the position
     public static bool justExitedBattle;
     public static bool saveLastPosition = true;
+    public static bool JustFought = true;
 
     [Header("Setters")]
     public FollowCamera CameraSetter;

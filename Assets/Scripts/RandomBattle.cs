@@ -61,7 +61,19 @@ public class RandomBattle : MonoBehaviour
             }
             if (!OnlyGuaranteedEnemies)
             {
-                int NumOfEnemies = Random.Range(1, 9 - GuarnteedEnemies.Count);
+                int NumOfEnemies = 0;
+                if (GameState.CurrentPlayer.stats.Level < 6)
+                {
+                    NumOfEnemies = Random.Range(1, 3 - GuarnteedEnemies.Count);
+                }
+                else if (GameState.CurrentPlayer.stats.Level > 6 || GameState.CurrentPlayer.stats.Level < 10)
+                {
+                    NumOfEnemies = Random.Range(1, 6 - GuarnteedEnemies.Count);
+                }
+                else
+                {
+                    NumOfEnemies = Random.Range(1, 9 - GuarnteedEnemies.Count);
+                }
                 for (int i = 0; i < NumOfEnemies; i++)
                 {
                     int RandomDayEnemy = Random.Range(1, DayTimeEnemyPrefabs.Count);
@@ -78,7 +90,7 @@ public class RandomBattle : MonoBehaviour
                 }
             }
             GameState.EnemyPrefabsForBattle = EnemyList.ToArray();
-
+            GameState.DiableTime();
             SceneManager.LoadScene(battleSceneName);
         }
     }

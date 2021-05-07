@@ -4,22 +4,46 @@ using UnityEngine;
 
 public class MessagingClientReceiver : MonoBehaviour
 {
-    Conversation conversation;
+    public Conversation conversation;
 
+    public List<Conversation> tempConvo = new List<Conversation>();
+    public void Check()
+    {
+        var dialog = GetComponent<ConversationComponent>();
+        tempConvo.Clear();
+
+        foreach (Conversation convo in dialog.Conversations)
+        {
+            if (convo.Skip)
+            {
+                Debug.Log(convo.name + " has skip");
+            }
+            else
+            {
+                tempConvo.Add(convo);
+                Debug.Log("adding " + convo.name + " " + tempConvo.Count);
+            }
+        }
+    }
     public void StartConvo()
     {
         conversation = null;
         var dialog = GetComponent<ConversationComponent>();
+
         if (dialog != null)
         {
-            if (dialog.Conversations != null && dialog.Conversations.Length > 0)
+            if (tempConvo != null && tempConvo.Count > 0)
             {
-                for (int i = 0; i < dialog.Conversations.Length; i++)
+                for (int i = 0; i < tempConvo.Count; i++)
                 {
-                    if (dialog.Conversations[i].Skip == false)
+                    if (tempConvo[i].Skip == false)
                     {
-                        conversation = dialog.Conversations[i];
+                        Debug.Log("Going through with " + tempConvo[i].name);
+                        conversation = tempConvo[i];
                         ConversationManager.Instance.StartConversation(conversation);
+                        tempConvo.Remove(conversation);
+                        dialog.Conversations = tempConvo.ToArray();
+                        break;
                     }
                     else
                     {
@@ -32,14 +56,6 @@ public class MessagingClientReceiver : MonoBehaviour
                     return;
                 }
             }
-        }
-    }
-
-    void OnDestroy()
-    {
-        if (MessagingManager.Instance != null)
-        {
-            MessagingManager.Instance.UnSubscribe(StartConvo);
         }
     }
 
