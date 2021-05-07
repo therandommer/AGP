@@ -487,7 +487,7 @@ MonoBehaviour:
   ExpSprite: {fileID: -5936835998644394925, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
   battleManager: {fileID: 0}
-  EnemyProfile: {fileID: 11400000, guid: 3dfac1680bdca8c44ae5749e488173df, type: 2}
+  EnemyProfile: {fileID: 11400000, guid: 46ac846c23688804a8a08bffd3c8c0ec, type: 2}
   selectionCircle: {fileID: 0}
   TargetReticle: {fileID: 7374727904232353836}
   attacking: 0
@@ -497,6 +497,7 @@ MonoBehaviour:
   AbilitiesList: []
   attackGap: -0.3
   stats: {fileID: 7172665477831767805}
+  ExperienceToGive: 0
 --- !u!61 &1233578633303832647
 BoxCollider2D:
   m_ObjectHideFlags: 0

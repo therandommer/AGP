@@ -33,3 +33,7 @@ MonoBehaviour:
   Elements: 06000000
   StartingSkills:
   - {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}
+  - {fileID: 11400000, guid: 2b47ceb5e736a924c85c615587e6c972, type: 2}
+  - {fileID: 11400000, guid: c74cfb965de584f4db64807ceb93c545, type: 2}
+  isBoss: 0
+  isFinalBoss: 0

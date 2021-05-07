@@ -32,4 +32,8 @@ MonoBehaviour:
   EnemySprite: {fileID: 21300000, guid: 3f2970f152c549f43b9dd600a84c22b1, type: 3}
   Elements: 05000000
   StartingSkills:
-  - {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}
+  - {fileID: 11400000, guid: c1201666f043f6f4ebb0072381cdb453, type: 2}
+  - {fileID: 11400000, guid: c227bb07357fea340941fd3f7cd06d47, type: 2}
+  - {fileID: 11400000, guid: 444b0fbf9bba8524a9eda8a088fda442, type: 2}
+  isBoss: 0
+  isFinalBoss: 0

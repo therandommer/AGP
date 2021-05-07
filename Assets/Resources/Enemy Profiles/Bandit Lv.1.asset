@@ -30,6 +30,10 @@ MonoBehaviour:
   Position: {x: 0, y: 0}
   Class: 0
   EnemySprite: {fileID: 21300000, guid: 6bfc18933cfab884bbb9a7f1a06323a3, type: 3}
-  Elements: 02000000
+  Elements: 01000000
   StartingSkills:
-  - {fileID: 11400000, guid: f0857bcd62c901c4191c2fc05e7c72bc, type: 2}
+  - {fileID: 11400000, guid: 6c1c04b7ce10a6a44aeae7a546e2bf6d, type: 2}
+  - {fileID: 11400000, guid: bd22ad62c5b07cd4aac3a56b8f43df7e, type: 2}
+  - {fileID: 11400000, guid: 2afe853015574f44b9b10c62d186b9dd, type: 2}
+  isBoss: 0
+  isFinalBoss: 0
