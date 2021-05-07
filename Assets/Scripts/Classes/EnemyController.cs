@@ -16,7 +16,6 @@ public class EnemyController : MonoBehaviour
 
     AnimationManager anim;
     public BattleManager battleManager;
-    public Enemy EnemyProfile;
     Animator enemyAI;
     private bool selected;
     public GameObject selectionCircle;
@@ -119,9 +118,9 @@ public class EnemyController : MonoBehaviour
 
     public void UpdateAI()//To use with the animator/controller
     {
-        if (enemyAI != null && EnemyProfile != null && battleManager.EnemyCount == 0)
+        if (enemyAI != null && stats.EnemyProfile != null && battleManager.EnemyCount == 0)
         {
-            enemyAI.SetInteger("EnemyHealth", EnemyProfile.health);
+            enemyAI.SetInteger("EnemyHealth", stats.EnemyProfile.health);
             enemyAI.SetInteger("PlayerHealth", GameState.CurrentPlayer.stats.Health);
             enemyAI.SetInteger("EnemiesInBattle", battleManager.EnemyCount);
         }
@@ -157,7 +156,7 @@ public class EnemyController : MonoBehaviour
                 //StartCoroutine("SpinObject", selectionCircle);
             }
             battleManager.attack.ShowEnemyInfo(this.gameObject);
-            battleManager.SelectEnemy(this, EnemyProfile.name);
+            battleManager.SelectEnemy(this, stats.EnemyProfile.name);
             if (GameState.CurrentPlayer.selectedAttack != null)
                 battleManager.attack.HighlightEnemies();
 
@@ -300,18 +299,18 @@ public class EnemyController : MonoBehaviour
     {
         //battleManager.ListOfEntities.Remove(this.gameObject);
 
-        GameState.CurrentPlayer.PingKillQuests(EnemyProfile.Class);
+        GameState.CurrentPlayer.PingKillQuests(stats.EnemyProfile.Class);
         int Exp = ExperienceOnKill();
         GameState.CurrentPlayer.AddExperience(Exp);
 
         ShowMessage.Instance.StartCouroutineForMessage("Gained Experience!", "You have gained " + Exp + " Exp." + "\n" + GameState.CurrentPlayer.Experience + "/" + GameState.CurrentPlayer.ExperienceNeededToLevel, ExpSprite, 2f);
 
-        if(EnemyProfile.isBoss)
+        if(stats.EnemyProfile.isBoss)
         {
             GameState.IncreaseNumberOfBossesDefeated();
         }
 
-        if(EnemyProfile.isFinalBoss)
+        if(stats.EnemyProfile.isFinalBoss)
         {
             NavigationManager.NavigateTo("GameOver");
         }

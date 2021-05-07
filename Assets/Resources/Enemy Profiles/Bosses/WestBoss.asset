@@ -12,28 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fc2841b27486e4286b6c7d58108575, type: 3}
   m_Name: WestBoss
   m_EditorClassIdentifier: 
-  Name: Archer
+  Name: Bandit
   Age: 24
   Type: 0
   Occupation: Boss
   level: 1
-  health: 20
-  maxHealth: 20
-  strength: 5
-  magic: 3
-  defense: 6
-  speed: 10
+  health: 275
+  maxHealth: 275
+  strength: 14
+  magic: 10
+  defense: 12
+  speed: 18
   BonusDamage: 1
   armor: 0
   noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
   Class: 2
-  EnemySprite: {fileID: 21300000, guid: 9fabec2ee38771b4d8ea4adca009a594, type: 3}
-  Elements: 00000000
+  EnemySprite: {fileID: 21300000, guid: ce2451a36ceb78143b7818b8ec35ed67, type: 3}
+  Elements: 05000000
   StartingSkills:
-  - {fileID: 11400000, guid: c227bb07357fea340941fd3f7cd06d47, type: 2}
-  - {fileID: 11400000, guid: 444b0fbf9bba8524a9eda8a088fda442, type: 2}
-  - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
-  isBoss: 0
+  - {fileID: 11400000, guid: 105d94a424883a44e87a2ed0a234bb04, type: 2}
+  - {fileID: 11400000, guid: c1201666f043f6f4ebb0072381cdb453, type: 2}
+  - {fileID: 11400000, guid: c74cfb965de584f4db64807ceb93c545, type: 2}
+  - {fileID: 11400000, guid: 433e9fe1c1205de459260e6f2c0bc06c, type: 2}
+  isBoss: 1
   isFinalBoss: 0

@@ -12,28 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fc2841b27486e4286b6c7d58108575, type: 3}
   m_Name: SouthBoss
   m_EditorClassIdentifier: 
-  Name: Archer
+  Name: Lord
   Age: 24
-  Type: 0
+  Type: 2
   Occupation: Boss
   level: 1
-  health: 20
-  maxHealth: 20
-  strength: 5
-  magic: 3
-  defense: 6
-  speed: 10
+  health: 250
+  maxHealth: 250
+  strength: 12
+  magic: 12
+  defense: 12
+  speed: 15
   BonusDamage: 1
   armor: 0
   noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
-  Class: 2
-  EnemySprite: {fileID: 21300000, guid: 9fabec2ee38771b4d8ea4adca009a594, type: 3}
-  Elements: 00000000
+  Class: 0
+  EnemySprite: {fileID: 21300000, guid: 40440031a1c52474796c7f62aecdb39a, type: 3}
+  Elements: 01000000
   StartingSkills:
-  - {fileID: 11400000, guid: c227bb07357fea340941fd3f7cd06d47, type: 2}
-  - {fileID: 11400000, guid: 444b0fbf9bba8524a9eda8a088fda442, type: 2}
-  - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
-  isBoss: 0
+  - {fileID: 11400000, guid: c29ed965767a9b94f9bef44337633f25, type: 2}
+  - {fileID: 11400000, guid: 433e9fe1c1205de459260e6f2c0bc06c, type: 2}
+  - {fileID: 11400000, guid: 50fafdacffe0946449bca87e5e8bd106, type: 2}
+  - {fileID: 11400000, guid: 2ec3db44f2a1cf846acd02bccda89a0d, type: 2}
+  isBoss: 1
   isFinalBoss: 0

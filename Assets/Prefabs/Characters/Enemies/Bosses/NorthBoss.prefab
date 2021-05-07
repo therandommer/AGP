@@ -939,7 +939,7 @@ MonoBehaviour:
   isPlayer: 0
   PlayerProfile: {fileID: 0}
   isEnemy: 1
-  EnemyProfile: {fileID: 11400000, guid: c1884749bfcb7fd47936de4ea9264932, type: 2}
+  EnemyProfile: {fileID: 11400000, guid: 50d3d6f5d23a6d448bc0a6d4d81c3b51, type: 2}
   Id: 0
 --- !u!114 &4354988330869913322
 MonoBehaviour:
@@ -958,7 +958,7 @@ MonoBehaviour:
   ExpSprite: {fileID: -5936835998644394925, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
   battleManager: {fileID: 0}
-  EnemyProfile: {fileID: 11400000, guid: c1884749bfcb7fd47936de4ea9264932, type: 2}
+  EnemyProfile: {fileID: 11400000, guid: 50d3d6f5d23a6d448bc0a6d4d81c3b51, type: 2}
   selectionCircle: {fileID: 0}
   TargetReticle: {fileID: 3814488307653158779}
   attacking: 0
@@ -968,6 +968,7 @@ MonoBehaviour:
   AbilitiesList: []
   attackGap: -0.3
   stats: {fileID: 3548253957367046570}
+  ExperienceToGive: 35
 --- !u!61 &4875443638310809360
 BoxCollider2D:
   m_ObjectHideFlags: 0

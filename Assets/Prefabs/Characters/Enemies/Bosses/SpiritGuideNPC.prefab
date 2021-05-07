@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4154267484212780324}
   - component: {fileID: 3368450927395073286}
   m_Layer: 0
-  m_Name: SpiritGuide
+  m_Name: SpiritGuideNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 7530090093271011628}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cafc656b20feee547b4e19ce0cf616e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
