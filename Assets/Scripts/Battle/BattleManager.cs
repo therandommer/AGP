@@ -373,7 +373,8 @@ public class BattleManager : MonoBehaviour
                     attackParticle.GetComponent<Effects>().InitiateProjectile();
                 }
                 CurrentPlayer.EnemiesToDamage[i].stats.Health -= damageAmount;
-                CombatText.text = "The Player attacked " + CurrentPlayer.EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage";
+
+
                 Debug.Log("Attacked " + CurrentPlayer.EnemiesToDamage[i].gameObject.name + " with " + damageAmount + " damage");
                 Debug.Log(CurrentPlayer.EnemiesToDamage[i].gameObject.name + " has " + CurrentPlayer.EnemiesToDamage[i].stats.Health + " health left");
                 CurrentPlayer.EnemiesToDamage[i].UpdateUI(); //updates health slider to be accurate with current health bar + other things
@@ -546,6 +547,18 @@ public class BattleManager : MonoBehaviour
             if (DamageCalc <= 0)
             {
                 DamageCalc = 1;
+            }
+            if(ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.EnemyProfile.Elements[0]) > 1)
+            {
+                CombatText.text = CurrentPlayer.stats.PlayerProfile.name + " attacked " + Target.name + " with " + DamageCalc + " damage\n" + "It was very effective!";
+            }
+            else if(ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.EnemyProfile.Elements[0]) < 1)
+            {
+                CombatText.text = CurrentPlayer.stats.PlayerProfile.name + " attacked " + Target.name + " with " + DamageCalc + " damage\n" + "It was not very effective...";
+            }
+            else
+            {
+                CombatText.text = CurrentPlayer.stats.PlayerProfile.name + " attacked " + Target.name + " with " + DamageCalc + " damage";
             }
 
             Target.gameObject.GetComponent<AnimationManager>().EnableDamageValues(Mathf.RoundToInt(DamageCalc), isEffective, isNotEffective);

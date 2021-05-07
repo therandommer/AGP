@@ -35,6 +35,8 @@ public class BattleEnvironmentStorage : MonoBehaviour
                     return EastSwampDay;
                 case PlayerLocation.West:
                     return WestDesertDay;
+                case PlayerLocation.Center:
+                    return FinalFight;
             }
         }
         else
@@ -49,6 +51,8 @@ public class BattleEnvironmentStorage : MonoBehaviour
                     return EastSwampNight;
                 case PlayerLocation.West:
                     return WestDesertNight;
+                case PlayerLocation.Center:
+                    return FinalFight;
             }
         }
         return TownNight;

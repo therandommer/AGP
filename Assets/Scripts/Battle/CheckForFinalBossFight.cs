@@ -22,4 +22,11 @@ public class CheckForFinalBossFight : MonoBehaviour
 			ShowMessage.Instance.StartCouroutineForMessage("Cannot Enter!", "You see " + (GameState.NumberofBossesNeededToFightFinalBoss - GameState.NumberOfBossesDefeated) + " magical seals barring you from entry", BossResponceSprite, 2f);
         }
 	}
+
+	public void TestFinalBossFight()
+    {
+		GameState.EnemyPrefabsForBattle = BossFightMinions.ToArray();
+
+		SceneManager.LoadScene("TownBattle");
+	}
 }

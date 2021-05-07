@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GetItem : MonoBehaviour
 {
-    public 
     // Update is called once per frame
     void Update()
     {
