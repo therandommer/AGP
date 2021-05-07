@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class ConversationManager : Singleton<ConversationManager>
 {
@@ -19,7 +20,8 @@ public class ConversationManager : Singleton<ConversationManager>
 
     public CanvasGroup dialogBox;//the Canvas Group for the dialog box
     public Image imageHolder;//the image holder
-    public Text textHolder;//the text holder
+    public TMP_Text textHolder;//the text holder
+    public TMP_Text nameHolder;//the text holder
     public Image mainImageHolder;//the image holder
     public CanvasGroup choicesCanvas;
     public ChoiceManager choiceManager;
@@ -30,7 +32,8 @@ public class ConversationManager : Singleton<ConversationManager>
         dialogBox = GameObject.Find("Dialog Box").GetComponent<CanvasGroup>();
         imageHolder = GameObject.Find("Speaker Image").GetComponent<Image>();
         mainImageHolder = GameObject.Find("MainDisplayImage").GetComponent<Image>();
-        textHolder = GameObject.Find("Dialog Text").GetComponent<Text>();
+        textHolder = GameObject.Find("Dialog Text").GetComponent<TMP_Text>();
+        nameHolder = GameObject.Find("Name").GetComponent<TMP_Text>();
         choicesCanvas = GameObject.Find("Choices").GetComponent<CanvasGroup>();
         choiceManager = GameObject.Find("ChoiceManager").GetComponent<ChoiceManager>();
         Debug.Log("trying to start " + conversation.name);
@@ -58,6 +61,7 @@ public class ConversationManager : Singleton<ConversationManager>
 
             textHolder.text = currentConversationLine.ConversationText;
             imageHolder.sprite = currentConversationLine.DisplayPic;
+            nameHolder.text = currentConversationLine.SpeakingCharacterName;
             if (currentConversationLine.MainDisplayPic == null)
             {
                 mainImageHolder.GetComponent<CanvasGroup>().alpha = 0;
