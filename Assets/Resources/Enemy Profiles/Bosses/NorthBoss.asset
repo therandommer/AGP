@@ -12,28 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fc2841b27486e4286b6c7d58108575, type: 3}
   m_Name: NorthBoss
   m_EditorClassIdentifier: 
-  Name: Archer
+  Name: NorthBoss
   Age: 24
   Type: 0
   Occupation: Boss
   level: 1
-  health: 20
-  maxHealth: 20
-  strength: 5
-  magic: 3
-  defense: 6
-  speed: 10
+  health: 300
+  maxHealth: 300
+  strength: 18
+  magic: 6
+  defense: 12
+  speed: 12
   BonusDamage: 1
   armor: 0
   noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
-  Class: 2
-  EnemySprite: {fileID: 21300000, guid: 9fabec2ee38771b4d8ea4adca009a594, type: 3}
-  Elements: 00000000
+  Class: 0
+  EnemySprite: {fileID: 21300000, guid: 47ba800abe2e2c54692b0fd4fbec2d17, type: 3}
+  Elements: 02000000
   StartingSkills:
-  - {fileID: 11400000, guid: c227bb07357fea340941fd3f7cd06d47, type: 2}
-  - {fileID: 11400000, guid: 444b0fbf9bba8524a9eda8a088fda442, type: 2}
-  - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
-  isBoss: 0
+  - {fileID: 11400000, guid: f375ab637f0577b47b4a108d343bbe92, type: 2}
+  - {fileID: 11400000, guid: 433e9fe1c1205de459260e6f2c0bc06c, type: 2}
+  - {fileID: 11400000, guid: c29ed965767a9b94f9bef44337633f25, type: 2}
+  - {fileID: 11400000, guid: bd22ad62c5b07cd4aac3a56b8f43df7e, type: 2}
+  isBoss: 1
   isFinalBoss: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ReadSelectedCharacter : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ReadSelectedCharacter : MonoBehaviour
     public Player[] Array;
     public GameObject[] ObjectArray;
     public Player CurrentPlayerShown;
+
+    public PopUpMenu Disclaimer;
 
     public StartOfGameManager Start;
     public void GoToDetailed()
@@ -41,6 +44,21 @@ public class ReadSelectedCharacter : MonoBehaviour
                     return;
                 }
             }
+        }
+        switch (CurrentPlayerShown.Type)
+        {
+            case EntityType.Angel:
+                Disclaimer.EnableTheMenu();
+                break;
+            case EntityType.Demon:
+                Disclaimer.DisableTheMenu();
+                break;
+            case EntityType.Human:
+                Disclaimer.EnableTheMenu();
+                break;
+            case EntityType.Mage:
+                Disclaimer.DisableTheMenu();
+                break;
         }
     }
 

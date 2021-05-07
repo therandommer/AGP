@@ -51,10 +51,10 @@ public class Attack : MonoBehaviour
     {
         EnemyController EnemyInfo = Enemy.GetComponent<EnemyController>();
 
-        EnemyImage.sprite = EnemyInfo.EnemyProfile.EnemySprite;
+        EnemyImage.sprite = EnemyInfo.stats.EnemyProfile.EnemySprite;
         EnemyName.text = Enemy.name;
-        HealthText.text = EnemyInfo.stats.Health + "/" + EnemyInfo.EnemyProfile.maxHealth;
-        EnemyHealthSlider.value = EnemyInfo.stats.Health / (float)EnemyInfo.EnemyProfile.maxHealth;
+        HealthText.text = EnemyInfo.stats.Health + "/" + EnemyInfo.stats.EnemyProfile.maxHealth;
+        EnemyHealthSlider.value = EnemyInfo.stats.Health / (float)EnemyInfo.stats.EnemyProfile.maxHealth;
         EnemyPopupCanvas.alpha = 1;
     }
 

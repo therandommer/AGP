@@ -203,7 +203,7 @@ public class BattleManager : MonoBehaviour
                 ListOfEntities.Add(newEnemy);
 
                 var controller = newEnemy.GetComponent<EnemyController>();
-                newEnemy.name = controller.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
+                newEnemy.name = controller.stats.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
                 controller.battleManager = this;
                 newEnemy.transform.position = new Vector3(10, -1, 0);
                 yield return StartCoroutine(
@@ -217,7 +217,7 @@ public class BattleManager : MonoBehaviour
                 ListOfEntities.Add(newEnemy);
 
                 var controller = newEnemy.GetComponent<EnemyController>();
-                newEnemy.name = controller.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
+                newEnemy.name = controller.stats.EnemyProfile.Name + " " + Names[Random.Range(1, Names.Length)];
                 controller.battleManager = this;
                 newEnemy.transform.position = new Vector3(10, -1, 0);
                 yield return StartCoroutine(
@@ -401,9 +401,9 @@ public class BattleManager : MonoBehaviour
                 attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect, CurrentPlayer.EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
 
                 ///Add in a coroutine to slowly move the slider to the value instead of just setting it
-                attack.EnemyHealthSlider.value = CurrentPlayer.selectedTarget.stats.Health / (float)CurrentPlayer.selectedTarget.EnemyProfile.maxHealth;
+                attack.EnemyHealthSlider.value = CurrentPlayer.selectedTarget.stats.Health / (float)CurrentPlayer.selectedTarget.stats.EnemyProfile.maxHealth;
                 //Set the health text
-                attack.HealthText.text = CurrentPlayer.selectedTarget.stats.Health + "/" + CurrentPlayer.selectedTarget.EnemyProfile.maxHealth;
+                attack.HealthText.text = CurrentPlayer.selectedTarget.stats.Health + "/" + CurrentPlayer.selectedTarget.stats.EnemyProfile.maxHealth;
                 //GameState.CurrentPlayer.transform.position = new Vector2(posB.x, posB.y + 0.365f); //ensures player is actually at the position required
                 CurrentPlayer.GetComponent<AnimationManager>().UpdateAnimState("isMoving");
 
@@ -442,9 +442,9 @@ public class BattleManager : MonoBehaviour
                 attackParticle = GameObject.Instantiate(CurrentPlayer.selectedAttack.CastEffect, CurrentPlayer.EnemiesToDamage[i].gameObject.transform.position, Quaternion.identity); //should instantiate the correct effect which does its thing then destroys itself
             }
             ///Add in a coroutine to slowly move the slider to the value instead of just setting it
-            attack.EnemyHealthSlider.value = CurrentPlayer.selectedTarget.stats.Health / (float)CurrentPlayer.selectedTarget.EnemyProfile.maxHealth;
+            attack.EnemyHealthSlider.value = CurrentPlayer.selectedTarget.stats.Health / (float)CurrentPlayer.selectedTarget.stats.EnemyProfile.maxHealth;
             //Set the health text
-            attack.HealthText.text = CurrentPlayer.selectedTarget.stats.Health + "/" + CurrentPlayer.selectedTarget.EnemyProfile.maxHealth;
+            attack.HealthText.text = CurrentPlayer.selectedTarget.stats.Health + "/" + CurrentPlayer.selectedTarget.stats.EnemyProfile.maxHealth;
 
             if (attackParticle != null)
             {
@@ -509,9 +509,9 @@ public class BattleManager : MonoBehaviour
         {
             float DamageCalc = 0;
             float DamageModifier = 1.0f;
-            for (int i = 0; i < Target.EnemyProfile.Elements.Count; ++i)
+            for (int i = 0; i < Target.stats.EnemyProfile.Elements.Count; ++i)
             {
-                DamageModifier *= ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.EnemyProfile.Elements[i]);
+                DamageModifier *= ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.stats.EnemyProfile.Elements[i]);
             }
             for (int i = 0; i < CurrentPlayer.stats.PlayerProfile.Elements.Count; ++i)
             {
@@ -548,11 +548,11 @@ public class BattleManager : MonoBehaviour
             {
                 DamageCalc = 1;
             }
-            if(ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.EnemyProfile.Elements[0]) > 1)
+            if(ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.stats.EnemyProfile.Elements[0]) > 1)
             {
                 CombatText.text = CurrentPlayer.stats.PlayerProfile.name + " attacked " + Target.name + " with " + DamageCalc + " damage\n" + "It was very effective!";
             }
-            else if(ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.EnemyProfile.Elements[0]) < 1)
+            else if(ElementalModifier(CurrentPlayer.selectedAttack.AbilityType, Target.stats.EnemyProfile.Elements[0]) < 1)
             {
                 CombatText.text = CurrentPlayer.stats.PlayerProfile.name + " attacked " + Target.name + " with " + DamageCalc + " damage\n" + "It was not very effective...";
             }

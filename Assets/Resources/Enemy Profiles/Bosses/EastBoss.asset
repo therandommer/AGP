@@ -12,28 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fc2841b27486e4286b6c7d58108575, type: 3}
   m_Name: EastBoss
   m_EditorClassIdentifier: 
-  Name: Archer
+  Name: Necro
   Age: 24
   Type: 0
   Occupation: Boss
   level: 1
-  health: 20
-  maxHealth: 20
-  strength: 5
-  magic: 3
-  defense: 6
-  speed: 10
-  BonusDamage: 1
+  health: 250
+  maxHealth: 250
+  strength: 10
+  magic: 16
+  defense: 10
+  speed: 15
+  BonusDamage: 3
   armor: 0
   noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
   Class: 2
-  EnemySprite: {fileID: 21300000, guid: 9fabec2ee38771b4d8ea4adca009a594, type: 3}
-  Elements: 00000000
+  EnemySprite: {fileID: 21300000, guid: 3613a73d69c5c65459582cbf719eec46, type: 3}
+  Elements: 04000000
   StartingSkills:
-  - {fileID: 11400000, guid: c227bb07357fea340941fd3f7cd06d47, type: 2}
-  - {fileID: 11400000, guid: 444b0fbf9bba8524a9eda8a088fda442, type: 2}
-  - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
-  isBoss: 0
+  - {fileID: 11400000, guid: d93be53e91bc4e44b9e04085187d4476, type: 2}
+  - {fileID: 11400000, guid: 9038040b056fe734f991fcc1f0fadbab, type: 2}
+  - {fileID: 11400000, guid: 50fafdacffe0946449bca87e5e8bd106, type: 2}
+  - {fileID: 11400000, guid: c74cfb965de584f4db64807ceb93c545, type: 2}
+  isBoss: 1
   isFinalBoss: 0

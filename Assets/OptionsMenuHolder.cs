@@ -13,6 +13,7 @@ public class OptionsMenuHolder : MonoBehaviour
     public GameObject Knight;
     public GameObject Mage;
 
+    public Sprite CheatSprite;
 
     public void LevelUp()
     {
@@ -30,7 +31,17 @@ public class OptionsMenuHolder : MonoBehaviour
 
     public void Invincible()
     {
-        GameState.CurrentPlayer.Invincible = true;
+        if(GameState.CurrentPlayer.Invincible == true)
+        {
+            GameState.CurrentPlayer.Invincible = false;
+            ShowMessage.Instance.StartCouroutineForMessage("Invincibility!","Turned Invincability Off", CheatSprite, 2f);
+        }
+        else
+        {
+            GameState.CurrentPlayer.Invincible = true;
+            ShowMessage.Instance.StartCouroutineForMessage("Invincibility!","Turned Invincability On", CheatSprite, 2f);
+        }
+
     }
 
     public void addLegEquipment()

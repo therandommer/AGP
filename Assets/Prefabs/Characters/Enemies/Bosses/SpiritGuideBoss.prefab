@@ -470,7 +470,7 @@ RectTransform:
   m_GameObject: {fileID: 5841458380957102932}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 2, z: 1}
   m_Children:
   - {fileID: 6751399488120324369}
   - {fileID: 4650398611658369810}
@@ -479,7 +479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.061, y: 0}
+  m_AnchoredPosition: {x: 0.803, y: 0}
   m_SizeDelta: {x: 1, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8226746392199195843
@@ -580,6 +580,7 @@ GameObject:
   - component: {fileID: -1688087731065805903}
   - component: {fileID: -652537044373793112}
   - component: {fileID: 6820035371143131454}
+  - component: {fileID: -7356342752283661799}
   m_Layer: 0
   m_Name: SpiritGuideBoss
   m_TagString: Untagged
@@ -639,11 +640,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -723562327
+  m_SortingLayer: 3
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 78d759dc957bcb34d8eff594aa9450b3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -663,7 +664,7 @@ Animator:
   m_GameObject: {fileID: 7530090093271011628}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cafc656b20feee547b4e19ce0cf616e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -687,7 +688,7 @@ MonoBehaviour:
   isPlayer: 0
   PlayerProfile: {fileID: 0}
   isEnemy: 1
-  EnemyProfile: {fileID: 11400000, guid: c1884749bfcb7fd47936de4ea9264932, type: 2}
+  EnemyProfile: {fileID: 11400000, guid: 2f07d58e41164e744b6846ae059bc2ea, type: 2}
   Id: 0
 --- !u!114 &-652537044373793112
 MonoBehaviour:
@@ -706,7 +707,6 @@ MonoBehaviour:
   ExpSprite: {fileID: -5936835998644394925, guid: cefdeb2a13a844d4fba7043b90c76b84,
     type: 3}
   battleManager: {fileID: 0}
-  EnemyProfile: {fileID: 11400000, guid: c1884749bfcb7fd47936de4ea9264932, type: 2}
   selectionCircle: {fileID: 0}
   TargetReticle: {fileID: 6184055673654312304}
   attacking: 0
@@ -716,7 +716,7 @@ MonoBehaviour:
   AbilitiesList: []
   attackGap: -0.3
   stats: {fileID: -1688087731065805903}
-  ExperienceToGive: 0
+  ExperienceToGive: 35
 --- !u!114 &6820035371143131454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +733,32 @@ MonoBehaviour:
   damageText: {fileID: 3823726796808755653}
   displayTime: 5
   hitDelay: 0.5
+--- !u!61 &-7356342752283661799
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530090093271011628}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.10139379, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.939394, y: 1.939394}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6222136, y: 1.939394}
+  m_EdgeRadius: 0
 --- !u!1 &7547183193274177597
 GameObject:
   m_ObjectHideFlags: 0

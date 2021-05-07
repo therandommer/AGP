@@ -26,7 +26,7 @@ public class CheckForFinalBossFight : MonoBehaviour
 	public void TestFinalBossFight()
     {
 		GameState.EnemyPrefabsForBattle = BossFightMinions.ToArray();
-
+		GameState.PlayerLoc = PlayerLocation.Center;
 		SceneManager.LoadScene("TownBattle");
 	}
 }

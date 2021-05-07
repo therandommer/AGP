@@ -17,23 +17,24 @@ MonoBehaviour:
   Type: 0
   Occupation: Boss
   level: 1
-  health: 20
-  maxHealth: 20
-  strength: 5
-  magic: 3
-  defense: 6
-  speed: 10
+  health: 500
+  maxHealth: 500
+  strength: 20
+  magic: 25
+  defense: 22
+  speed: 20
   BonusDamage: 1
   armor: 0
   noOfAttacks: 1
   Weapon: 
   Position: {x: 0, y: 0}
   Class: 2
-  EnemySprite: {fileID: 21300000, guid: 9fabec2ee38771b4d8ea4adca009a594, type: 3}
+  EnemySprite: {fileID: 21300000, guid: 3651611f397767f45bfb02dc8c5dd2b7, type: 3}
   Elements: 00000000
   StartingSkills:
-  - {fileID: 11400000, guid: c227bb07357fea340941fd3f7cd06d47, type: 2}
-  - {fileID: 11400000, guid: 444b0fbf9bba8524a9eda8a088fda442, type: 2}
-  - {fileID: 11400000, guid: 5c14ab3c0bd791b4180a11969e57b447, type: 2}
+  - {fileID: 11400000, guid: 105d94a424883a44e87a2ed0a234bb04, type: 2}
+  - {fileID: 11400000, guid: 9038040b056fe734f991fcc1f0fadbab, type: 2}
+  - {fileID: 11400000, guid: 50fafdacffe0946449bca87e5e8bd106, type: 2}
+  - {fileID: 11400000, guid: 433e9fe1c1205de459260e6f2c0bc06c, type: 2}
   isBoss: 0
-  isFinalBoss: 0
+  isFinalBoss: 1

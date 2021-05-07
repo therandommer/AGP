@@ -939,7 +939,7 @@ MonoBehaviour:
   isPlayer: 0
   PlayerProfile: {fileID: 0}
   isEnemy: 1
-  EnemyProfile: {fileID: 11400000, guid: c1884749bfcb7fd47936de4ea9264932, type: 2}
+  EnemyProfile: {fileID: 11400000, guid: 4fc6c38826cfa9749a49a6cdb2f232d1, type: 2}
   Id: 0
 --- !u!114 &4354988330869913322
 MonoBehaviour:
@@ -968,6 +968,7 @@ MonoBehaviour:
   AbilitiesList: []
   attackGap: -0.3
   stats: {fileID: 3548253957367046570}
+  ExperienceToGive: 35
 --- !u!61 &4875443638310809360
 BoxCollider2D:
   m_ObjectHideFlags: 0
