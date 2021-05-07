@@ -1044,6 +1044,7 @@ MonoBehaviour:
   AbilitiesList: []
   attackGap: -0.3
   stats: {fileID: 3172819798155409831}
+  ExperienceToGive: 7
 --- !u!61 &6817604101332383517
 BoxCollider2D:
   m_ObjectHideFlags: 0
