@@ -53,10 +53,9 @@ public class NavigationPrompt : MonoBehaviour
 			GameState.saveLastPosition = true;
 			GameState.CurrentPlayer.gameObject.transform.position = Vector3.zero;
 		}
-		if(GameState.saveLastPosition != false)
-        {
-			GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, startingPosition);
-        }
+
+		GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, startingPosition);
+        
 
 		GameState.CurrentPlayer.LastSceneName = SceneManager.GetActiveScene().name;
 

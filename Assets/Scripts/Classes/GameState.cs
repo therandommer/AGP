@@ -183,6 +183,8 @@ public class GameState : MonoBehaviour
         {
             PartyMembers.Add(PlayerToAdd);
         }
+        ShowMessage.Instance.StartCouroutineForMessage("Gained new party member!", PlayerToAdd.GetComponent<PlayerController>().stats.PlayerProfile.name + " has joined the party!", PlayerToAdd.GetComponent<SpriteRenderer>().sprite, 2f);
+
         newPlayer.SetActive(false);
     }
 
@@ -309,16 +311,16 @@ public class GameState : MonoBehaviour
     public void SetupInitialSpawnPoints()
     {
         ///Setting up initial spawn areas for the farm zones
-        SetLastScenePosition("EastSwamp", new Vector3(-64, -16, 0));
-        SetLastScenePosition("NorthCave", new Vector3(12, -24, 0));
-        SetLastScenePosition("SouthForest", new Vector3(5, -29, 0));
-        SetLastScenePosition("WestOasis", new Vector3(-22, 7, 0));
+        SetLastScenePosition("EastSwamp", new Vector3(-20, -2, 0));
+        SetLastScenePosition("NorthCave", new Vector3(12, -26, 0));
+        SetLastScenePosition("SouthForest", new Vector3(5, -28, 0));
+        SetLastScenePosition("WestOasis", new Vector3(-20, 7, 0));
 
 
-        SetLastScenePosition("NorthBoss", new Vector3(0, -3, 0));
+        SetLastScenePosition("NorthBoss", new Vector3(0, -2, 0));
         SetLastScenePosition("EastBoss", new Vector3(-12, 3, 0));
-        SetLastScenePosition("SouthBoss", new Vector3(-1, -8, 0));
-        SetLastScenePosition("WestBoss", new Vector3(0, -2, 0));
+        SetLastScenePosition("SouthBoss", new Vector3(-1, -5, 0));
+        SetLastScenePosition("WestBoss", new Vector3(0, -1, 0));
 
         ///Setting up initial town zones, if the player starts there they spawn more centrally
         switch (GameState.CurrentPlayer.stats.PlayerProfile.Type)

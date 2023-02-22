@@ -43586,7 +43586,7 @@ PrefabInstance:
     - target: {fileID: 202545705143556474, guid: 817e43dbd34013540a2395e4629d4955,
         type: 3}
       propertyPath: m_TagString
-      value: SouthBoss
+      value: SouthForest
       objectReference: {fileID: 0}
     - target: {fileID: 1623804586009517763, guid: 817e43dbd34013540a2395e4629d4955,
         type: 3}
@@ -43616,7 +43616,7 @@ PrefabInstance:
     - target: {fileID: 3102852231225366539, guid: 817e43dbd34013540a2395e4629d4955,
         type: 3}
       propertyPath: startingPosition.x
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 817e43dbd34013540a2395e4629d4955, type: 3}

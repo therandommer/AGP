@@ -280,7 +280,7 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator ShowResults()//Add in wait for click then end the scene
     {
-        ShowMessage.Instance.StartCouroutineForMessage("Ganed Money!", "Looted " + MoneyToGive + " Gems", MoneyImage, 2f);
+        ShowMessage.Instance.StartCouroutineForMessage("Ganed Money!", "Looted " + MoneyToGive + " Gems", MoneyImage, 4f);
         yield return new WaitForSeconds(2);
         battleStateManager.SetBool("EndBattle", true);
     }
@@ -783,6 +783,11 @@ public class BattleManager : MonoBehaviour
         }
 
         GameState.EnableTime();
+        StartCoroutine(WaitBeforeMove());
+    }
+    IEnumerator WaitBeforeMove()
+    {
+        yield return new WaitForSeconds(1f);
         NavigationManager.NavigateTo(GameState.CurrentPlayer.LastSceneName);
     }
 

@@ -15,7 +15,7 @@ public class GetItem : MonoBehaviour
         }
     }
     // Update is called once per frame
-    string[] Names = new string[] { "Arnita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda" };
+    string[] Names = new string[] { "Brita", "Kristal", "Maryjane", "Minda", "Tanner", "Beaulah", "Myrtle", "Deon", "Reggie", "Jalisa", "Myong", "Denna", "Jayson", "Mafalda" };
     public bool claimed = false;
     public void GenerateItem()
     {
